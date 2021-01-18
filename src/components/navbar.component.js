@@ -10,7 +10,7 @@ const Navbar = () => {
                 { openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(false) }}>
                         <div style={{ height: "inherit" }}>
-                            <p>PRODUKTAI</p>
+                            <p   class="navbar-item-onhover">PRODUKTAI</p>
                             <DropdownMenu />
                         </div>
                     </div>}
@@ -19,7 +19,7 @@ const Navbar = () => {
                 {/* CLOSED */}
                 { !openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(true) }}>
-                        <p>PRODUKTAI</p>
+                        <p  class="navbar-item-onhover">PRODUKTAI</p>
                     </div>}
             </div>
         );
@@ -37,10 +37,10 @@ const Navbar = () => {
 
         return (
             // change to state rendering instead of a href asap
-            <ul className="dropdown" >
+            <ul  className="dropdown" >
                 <DropdownItem>
-                    <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
-                        <Link style={{ paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
+                    <li style={{ color: 'white',textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                        <Link style={{ color: 'white',paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
                             DIENOS SISTEMOS
                             </Link>
 
@@ -64,8 +64,8 @@ const Navbar = () => {
 
                 <DropdownItem>
                     <Link to="/" >
-                        <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
-                            <Link style={{ paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
+                        <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
+                            <Link style={{ color: 'white',paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
                                 NAKTIES SISTEMOS 25
                                 </Link>
                             <ul style={{ paddingLeft: '1rem', paddingTop: '0.5rem', listStyle: 'none' }}>
@@ -82,7 +82,7 @@ const Navbar = () => {
 
                 <DropdownItem>
                     <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
-                        <Link style={{ paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
+                        <Link style={{ color: 'white',paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
                             LUXURY GAMINTOJAI 30
                     </Link>
                     </li>
@@ -91,7 +91,7 @@ const Navbar = () => {
 
                 <DropdownItem>
                     <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
-                        <Link style={{ paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
+                        <Link style={{ fontWeight: 'bold', color: 'white',paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
                             VISI PRODUKTAI
                     </Link>
                     </li>
@@ -135,27 +135,26 @@ const Navbar = () => {
 
 
     return (
-        <div style={{ filter: 'drop-shadow(0rem 0.5rem0.5rem black' }}>
-
-            <navbar>
+        <div >
+            <navbar style={{ display: 'block'}}>
                 <ul id="navbar-list">
                     {/* pervadint i Products */}
-                    <Menu></Menu>
-                    <a>INTERJERUI</a>
-                    <div>
+                    <Menu class="navbar-item-onhover"></Menu>
+                    <a class="navbar-item-onhover">INTERJERUI</a>
+                    <div class="navbar-img-onhover" style={{transition: '0.5s all'}}>
 
                         <Link to="/">
                             <div id="navbar-logo-center">
                                 <div></div>
                                 <div>
-                                    <img id="navbar-logo" style={{ height: "70%", width: "60%", transform: 'scale(0.75)' }} src={logo} />
+                                    <img id="navbar-logo" style={{  height: "70%", width: "60%", transform: 'scale(0.75)' }} src={logo} />
                                 </div>
                                 <div></div>
                             </div>
                         </Link>
                     </div>
-                    <Link to="/gamintojai">GAMINTOJAI</Link>
-                    <Link to="/kontaktai">KONTAKTAI</Link>
+                    <Link class="navbar-item-onhover" to="/gamintojai">GAMINTOJAI</Link>
+                    <Link class="navbar-item-onhover" to="/kontaktai">KONTAKTAI</Link>
                 </ul>
 
 

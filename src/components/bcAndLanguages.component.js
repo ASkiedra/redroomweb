@@ -16,9 +16,8 @@ const BcAndLanguages = () => {
         spalva = 'rgba(0, 0, 0, 0.751)';
         backgroundas = '#E4E9ED';
     }
-    
     return (
-        <ul style={{ background: backgroundas }} id="bcnl-container">
+        <ul style={{background: backgroundas }} id="bcnl-container">
             <p style={{ paddingLeft: '1rem', transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto',  color: spalva, textTransform: 'uppercase' }}>pagrindinis{location.pathname}</p>
        
             <div style={{ paddingRight: '1rem', right: '1', display: 'grid', gridTemplateColumns: '90% 5% 5%' }}>

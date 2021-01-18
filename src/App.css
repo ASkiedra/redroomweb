@@ -26,6 +26,8 @@ html {
 navbar {
   position: sticky;
   z-index: 9999;
+  box-shadow:  0 3px 15px rgba(0, 0, 0, 0.411);
+  display: block;
 }
 
 #navbar-list {
@@ -301,3 +303,17 @@ a {
   font-size: 1.55rem;
 }
 
+.dropdown a:hover {
+  text-decoration: underline white;
+}
+
+
+.navbar-item-onhover:hover {
+  transition: 0.4s;
+  filter: drop-shadow(1px 0px 10px rgba(255, 0, 0, 0.75));
+}
+
+.navbar-img-onhover:hover {
+  transition: 0.4s;
+  filter: drop-shadow(1px 0px 10px rgba(255, 0, 0, 0.45));
+}

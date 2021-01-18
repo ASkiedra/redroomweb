@@ -4,7 +4,7 @@ import React, { Component } from "react";
 const Contacts = () => {
 
     return (
-        < div style ={{height: 'inherit', background: 'rgba(255, 255, 240, 0.651)'}}>
+        < div style ={{transition: '0.5s all',height: 'inherit', background: 'rgba(255, 255, 240, 0.651)'}}>
 
             <div className="fast-fix" >
                 <div id="container-contacts-text-grid">
@@ -19,7 +19,7 @@ const Contacts = () => {
 
                 <div id="container-contacts-text-grid" className="fast-fix-2">
                     <p>SUSISIEKIME:</p>
-                    <p>+37064310657</p>
+                    <p>+370 6 431 `0657</p>
                     <p>INFO@RED-ROOM.LT</p>
                 </div>
             </div>
