@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, } from "react-router-dom";
+
 import './App.css';
 
+import Contacts from './components/contacts.component';
+import Navbar from './components/navbar.component';
+import Main from './components/Main.component';
+import Gamintojai from './components/gamintojai.component';
+import BcAndLanguages from './components/bcAndLanguages.component';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Navbar />
+
+
+
+
+
+
+      <div class='container'>
+        <BcAndLanguages />
+        <Route exact path='/' >
+          <Main />
+        </Route>
+        <Route path='/gamintojai' exact component={Gamintojai} />
+        <Route path="/kontaktai" exact component={Contacts} />
+
+      </div>
+
+
+
+
+    </BrowserRouter >
   );
-}
+};
 
 export default App;

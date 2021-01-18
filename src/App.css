@@ -1,38 +1,303 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inria Serif", serif;
+}
+
+html {
+  font-size: 18px;
+}
+
+#navbar-logo-center {
+  display: grid;
+  /* same as #navbar-list height */
+  height: 5rem;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  grid-template-rows: 33.333% 33.333% 33.333%;
+}
+
+navbar {
+  position: sticky;
+  z-index: 9999;
+}
+
+#navbar-list {
+  padding: 0;
+  margin: 0 6rem;
+  height: 5rem;
+  /* border-bottom: 2px solid rgb(197, 0, 0); */
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+#navbar-list *::selection {
+  background: none;
+}
+
+#navbar-list ul li {
+  font-family: "Quicksand", sans-serif;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+#navbar-list p {
+  cursor: pointer;
+}
+
+navbar a,
+navbar div p {
+  color:black;
+  list-style: none;
+  padding-top: 1.8rem;
+  flex-basis: 20%;
+  transition: 0.5s;
+  text-align: center;
+  font-weight: 400;
+  margin: 0 auto;
+  width: 100%;
+  font-family: "Quicksand", sans-serif;
+}
+
+
+.fast-fix {
+  position: relative;
+  top: 7rem;
+}
+
+.fast-fix-2 {
+  position: relative;
+  bottom: 0;
+  top: 50%;
+}
+
+navbar ul li {
+  font-size: 1.2rem;
+}
+navbar ul li img {
+  width: 60%;
+}
+
+
+.content-box {
+  background: rgba(0, 0, 0, 0.65);
+  width: fit-content;
+  max-width: 30%;
+  margin: 0 auto;
+  top: 35vh;
+  padding-top: 2.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 2.5rem;
+  position: relative;
+  box-sizing: content-box;
+}
+
+.content-box p {
+  color: white;
+  font-family: "Inria Serif", serif;
+  font-size: 5rem;
+  letter-spacing: 0.15rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content-box img {
+  margin-bottom: 1.5rem;
+  height: 2.6rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content-text {
+  transition: 0.5s;
+}
+.centered-parent {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.terms-of-use {
+  left: 45vw;
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  color: black;
+  background: rgba(255, 255, 255, 0.232);
+  padding: 0.1rem 1rem;
+  border-radius: 0.25rem;
+}
+
+/* /////////////////////// */
+/* start of footer  */
+footer {
+  z-index: 9999;
+  position: relative;
+}
+#first-footer {
+  background-color: #f5f3f4;
+}
+#first-footer ul {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+#first-footer li {
+  text-align: center;
+  color: BLACK;
+  padding: 0.5rem 0;
+  list-style: none;
+}
+
+#first-footer-right {
+  display: grid;
+  grid-template-rows: 33% 33% 33%;
+  background: #f5f3f4;
+  position: relative;
+  display: grid;
+  text-align: center;
   align-items: center;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.ffr-item img {
+  width: 2rem;
+  height: 2rem;
+  filter: invert(1);
+  border-radius: 10px;
+}
+
+/* second footer part */
+#second-footer {
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  padding-top: 1rem;
+  border-top: 1px solid white;
+}
+
+#second-footer p,
+#div-for-text {
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+#grid-for-text {
+  display: grid;
+  grid-template-columns: 14% 90%;
+}
+
+footer p,
+footer span {
+  font-family: "Quicksand", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+}
+
+#div-for-text p,
+#div-for-text span {
+  font-size: 1.7rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+#gamintoju-container {
+  overflow: hidden;
+  background-color: #e4e9ed;
+}
+
+#gamintoju-grid {
+  display: grid;
+  height: inherit;
+  grid-template-columns: 33.33333333% 33.33333333% 33.33333333%;
+}
+
+#gamintoju-grid div {
+  /* border: 3px solid black; */
+  width: 22.5rem;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin: 0 auto;
+  padding: 4rem;
+}
+
+#gamintoju-grid div img {
+  width: 100%;
+  /* height: 6rem; */
+  max-height: 6rem;
+  cursor: pointer;
+}
+
+#container-contacts-text-grid {
+  padding-left: 4rem;
+  display: grid;
+  grid-template-rows: 50% 25% 25%;
+}
+
+#container-contacts-text-grid p,
+#container-contacts-text-grid span {
+  font-family: "Quicksand", sans-serif;
+  color: black;
+  font-size: 1.3rem;
+}
+
+#container-contacts-text-grid span {
+  font-size: 3rem;
+}
+
+.dropdown {
+  /* left = same as #navbar-list margin second  value */
+  left: -6rem;
+
+  position: relative;
+  top: 2rem;
+}
+
+.dropdown li {
+  padding: 1rem 0;
+  list-style: none;
+}
+
+
+.container {
+  height: calc(100vh - 5.0rem);
+  overflow: auto;
+  background: #e4e9ed;
+  overflow-x: hidden;
+}
+
+#brrr {
+  display: grid;
+  grid-template-columns: 100px 10px auto;
+}
+
+#bcnl-container {
+  list-style: none;
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#bcnl-container li {
+  cursor: pointer;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#bcnl-container li,
+#bcnl-container p {
+  font-size: 1.55rem;
 }
+
