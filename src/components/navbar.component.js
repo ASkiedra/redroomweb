@@ -5,12 +5,12 @@ import logo from './Logo_V4.png';
 const Navbar = () => {
     const Menu = () => {
         return (
-            <div style={{ height: "inherit" }} >
+            <div id="produktai"  style={{ height: "inherit" }} >
                 {/* OPENED */}
                 { openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(false) }}>
                         <div style={{ height: "inherit" }}>
-                            <p class="navbar-item-onhover">PRODUKTAI</p>
+                            <p id="produktai"  style={{height: 'calc(100% - 1.8rem)'}} class="navbar-item-onhover">PRODUKTAI</p>
                             <DropdownMenu />
                         </div>
                     </div>}
@@ -19,7 +19,7 @@ const Navbar = () => {
                 {/* CLOSED */}
                 { !openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(true) }}>
-                        <p class="navbar-item-onhover">PRODUKTAI</p>
+                        <p id="produktai"  style={{height: 'calc(100% - 1.8rem)'}} class="navbar-item-onhover">PRODUKTAI</p>
                     </div>}
             </div>
         );
@@ -130,13 +130,14 @@ const Navbar = () => {
             }
         }
 
-        // const handleMouseClick = (event) => {
-        //     // if the click wasnt on threelines or cart or purchase button
-        //     if (event.target.id !== "three-lines-img" && event.target.id !== 'cart-img' && event.target.id !== 'buyBtn' && event.target.id !== 'decrease-amount' && event.target.id !== 'increase-amount' && event.target.parentNode.classList[0] !== 'productSizing') {
-        //         setOPD(false);
-        //     }
-        // }
-        // document.addEventListener('click', handleMouseClick);
+        const handleMouseClick = (event) => {
+            // if the click wasnt on the products button
+            if (event.target.id !== "produktai")
+            {
+                setOPD(false);
+            }
+        }
+        document.addEventListener('click', handleMouseClick);
 
         document.addEventListener('keydown', handleKeyPress);
     }, []); // end of React.useEffect()
@@ -151,7 +152,7 @@ const Navbar = () => {
             <navbar style={{ display: 'block' }}>
                 <ul id="navbar-list">
                     {/* pervadint i Products */}
-                    <Menu class="navbar-item-onhover"></Menu>
+                    <Menu id="produktai" class="navbar-item-onhover"></Menu>
                     <a class="navbar-item-onhover">INTERJERUI</a>
                     <div class="navbar-img-onhover" style={{ transition: '0.5s all' }}>
 
