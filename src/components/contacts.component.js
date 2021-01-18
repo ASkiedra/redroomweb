@@ -19,7 +19,7 @@ const Contacts = () => {
 
                 <div id="container-contacts-text-grid" className="fast-fix-2">
                     <p>SUSISIEKIME:</p>
-                    <p>+370 6 431 `0657</p>
+                    <p>+370 6 431 0657</p>
                     <p>INFO@RED-ROOM.LT</p>
                 </div>
             </div>

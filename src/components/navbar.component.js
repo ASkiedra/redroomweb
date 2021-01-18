@@ -10,7 +10,7 @@ const Navbar = () => {
                 { openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(false) }}>
                         <div style={{ height: "inherit" }}>
-                            <p   class="navbar-item-onhover">PRODUKTAI</p>
+                            <p class="navbar-item-onhover">PRODUKTAI</p>
                             <DropdownMenu />
                         </div>
                     </div>}
@@ -19,7 +19,7 @@ const Navbar = () => {
                 {/* CLOSED */}
                 { !openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(true) }}>
-                        <p  class="navbar-item-onhover">PRODUKTAI</p>
+                        <p class="navbar-item-onhover">PRODUKTAI</p>
                     </div>}
             </div>
         );
@@ -37,65 +37,77 @@ const Navbar = () => {
 
         return (
             // change to state rendering instead of a href asap
-            <ul  className="dropdown" >
+            <ul className="dropdown" >
                 <DropdownItem>
-                    <li style={{ color: 'white',textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
-                        <Link style={{ color: 'white',paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
+                    <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                        {/* heading text */}
+                        <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
                             DIENOS SISTEMOS
                             </Link>
 
                         <ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
-                            <li style={{ padding: '0', fontSize: '0.9rem', fontWeight: '300', textTransform: 'uppercase' }} >
-                                SOFOS IR TV BALDŲ SISTEMOS
-                            </li>
+                            <div>
+                                <Link className="dropdown-subtext">
+                                    SOFOS IR TV BALDŲ SISTEMOS
+                                </Link>
+                            </div>
 
-                            <li style={{ padding: '0', fontSize: '0.9rem', fontWeight: '300', textTransform: 'uppercase' }} >
-                                DARBO VIETOS
-                            </li>
+                            <div>
+                                <Link className="dropdown-subtext" >
+                                    DARBO VIETOS
+                                </Link>
+                            </div>
 
-                            <li style={{ padding: '0', fontSize: '0.9rem', fontWeight: '300', textTransform: 'uppercase' }} >
-                                STALAI IR KĖDĖS
-                            </li>
+                            <div>
+                                <Link className="dropdown-subtext" >
+                                    STALAI IR KĖDĖS
+                                </Link>
+                            </div>
 
                         </ul>
                     </li>
-                    {/* sarasiuka cia? */}
                 </DropdownItem>
+
+
+                <DropdownItem>
+                    <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                        {/* heading text */}
+                        <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
+                            NAKTIES SISTEMOS 25
+                            </Link>
+
+                        <ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
+                            <div>
+                                <Link className="dropdown-subtext">
+                                    SOFOS IR TV BALDŲ SISTEMOS 20
+
+                                </Link>
+                            </div>
+                        </ul>
+                    </li>
+                </DropdownItem>
+
 
                 <DropdownItem>
                     <Link to="/" >
                         <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
-                            <Link style={{ color: 'white',paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
-                                NAKTIES SISTEMOS 25
+                            <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
+                                LUXURY GAMINTOJAI 30
                                 </Link>
-                            <ul style={{ paddingLeft: '1rem', paddingTop: '0.5rem', listStyle: 'none' }}>
-                                <li style={{ padding: '0', fontSize: '0.9rem', fontWeight: '300', textTransform: 'uppercase' }} >
-                                    SOFOS IR TV BALDŲ SISTEMOS 20
-                            </li>
-
-                            </ul>
-
                         </li>
-                        {/* sarasiuka cia? */}
                     </Link>
                 </DropdownItem>
 
-                <DropdownItem>
-                    <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
-                        <Link style={{ color: 'white',paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
-                            LUXURY GAMINTOJAI 30
-                    </Link>
-                    </li>
-                    {/* sarasiuka cia? */}
-                </DropdownItem>
+                
 
                 <DropdownItem>
-                    <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
-                        <Link style={{ fontWeight: 'bold', color: 'white',paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
-                            VISI PRODUKTAI
+                    <Link to="/" >
+                        <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
+                            <Link style={{ fontWeight: 'bold', color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
+                                VISI GAMINTOJAI
+                                </Link>
+                        </li>
                     </Link>
-                    </li>
-                    {/* sarasiuka cia? */}
                 </DropdownItem>
 
             </ul>
@@ -136,18 +148,18 @@ const Navbar = () => {
 
     return (
         <div >
-            <navbar style={{ display: 'block'}}>
+            <navbar style={{ display: 'block' }}>
                 <ul id="navbar-list">
                     {/* pervadint i Products */}
                     <Menu class="navbar-item-onhover"></Menu>
                     <a class="navbar-item-onhover">INTERJERUI</a>
-                    <div class="navbar-img-onhover" style={{transition: '0.5s all'}}>
+                    <div class="navbar-img-onhover" style={{ transition: '0.5s all' }}>
 
                         <Link to="/">
                             <div id="navbar-logo-center">
                                 <div></div>
                                 <div>
-                                    <img id="navbar-logo" style={{  height: "70%", width: "60%", transform: 'scale(0.75)' }} src={logo} />
+                                    <img id="navbar-logo" style={{ height: "70%", width: "60%", transform: 'scale(0.75)' }} src={logo} />
                                 </div>
                                 <div></div>
                             </div>

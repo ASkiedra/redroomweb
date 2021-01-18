@@ -26,7 +26,7 @@ html {
 navbar {
   position: sticky;
   z-index: 9999;
-  box-shadow:  0 3px 15px rgba(0, 0, 0, 0.411);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.411);
   display: block;
 }
 
@@ -55,7 +55,7 @@ navbar {
 
 navbar a,
 navbar div p {
-  color:black;
+  color: black;
   list-style: none;
   padding-top: 1.8rem;
   flex-basis: 20%;
@@ -66,7 +66,6 @@ navbar div p {
   width: 100%;
   font-family: "Quicksand", sans-serif;
 }
-
 
 .fast-fix {
   position: relative;
@@ -85,7 +84,6 @@ navbar ul li {
 navbar ul li img {
   width: 60%;
 }
-
 
 .content-box {
   background: rgba(0, 0, 0, 0.65);
@@ -270,9 +268,8 @@ a {
   list-style: none;
 }
 
-
 .container {
-  height: calc(100vh - 5.0rem);
+  height: calc(100vh - 5rem);
   overflow: auto;
   background: #e4e9ed;
   overflow-x: hidden;
@@ -307,7 +304,6 @@ a {
   text-decoration: underline white;
 }
 
-
 .navbar-item-onhover:hover {
   transition: 0.4s;
   filter: drop-shadow(1px 0px 10px rgba(255, 0, 0, 0.75));
@@ -316,4 +312,13 @@ a {
 .navbar-img-onhover:hover {
   transition: 0.4s;
   filter: drop-shadow(1px 0px 10px rgba(255, 0, 0, 0.45));
+}
+
+.dropdown-subtext {
+  text-transform: uppercase;
+  color: white;
+  padding: 0;
+  padding-bottom: 2px;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
