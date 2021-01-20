@@ -152,7 +152,7 @@ const Navbar = () => {
                 <ul id="navbar-list">
                     {/* pervadint i Products */}
                     <Menu id="produktai" class="navbar-item-onhover"></Menu>
-                    <Link class="navbar-item-onhover" to="/interjeras">INTERJERUI</Link>
+                    <Link class="navbar-item-onhover" to="/interior">INTERJERUI</Link>
                     <div class="navbar-img-onhover" style={{ transition: '0.5s all' }}>
 
                         <Link to="/">
@@ -165,8 +165,8 @@ const Navbar = () => {
                             </div>
                         </Link>
                     </div>
-                    <Link class="navbar-item-onhover" to="/gamintojai">GAMINTOJAI</Link>
-                    <Link class="navbar-item-onhover" to="/kontaktai">KONTAKTAI</Link>
+                    <Link class="navbar-item-onhover" to="/manufacturers">GAMINTOJAI</Link>
+                    <Link class="navbar-item-onhover" to="/contacts">KONTAKTAI</Link>
                 </ul>
 
 

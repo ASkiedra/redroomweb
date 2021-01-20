@@ -6,7 +6,6 @@ import { useLocation } from 'react-router-dom'
 
 const Main = () => {
     return (
-                
         < div style ={{height: 'inherit'}}>
 
         </div >

@@ -4,12 +4,12 @@ import React, { Component } from "react";
 
 const BcAndLanguages = () => {
     const location = useLocation();
-    
-    
+
+
     var spalva = 'black',
         backgroundas = 'white';
 
-    if (location.pathname === '/kontaktai') {
+    if (location.pathname === '/contacts') {
         backgroundas = 'rgba(255, 255, 240, 0.651)';
     }
     else {
@@ -17,9 +17,12 @@ const BcAndLanguages = () => {
         backgroundas = '#E4E9ED';
     }
     return (
-        <ul style={{background: backgroundas }} id="bcnl-container">
-            <p style={{ paddingLeft: '1rem', transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto',  color: spalva, textTransform: 'uppercase' }}>pagrindinis{location.pathname}</p>
-       
+        <ul style={{ background: backgroundas }} id="bcnl-container">
+
+            {/*  if kalba === lt {PAGRINDINIS/INTERJERAS*/}
+            <p style={{ paddingLeft: '1rem', transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: spalva, textTransform: 'uppercase' }}>pagrindinis{location.pathname}</p>
+            {/* if kalba === en {MAIN/INTERIOR} */}
+
             <div style={{ paddingRight: '1rem', right: '1', display: 'grid', gridTemplateColumns: '90% 5% 5%' }}>
                 <div>
                 </div>

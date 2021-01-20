@@ -7,7 +7,6 @@ import natuzziLogo from '../images/natuzzi.png';
 import bontempiLogo from '../images/bontempi.png';
 import dienneLogo from '../images/dienne.png';
 import { useLocation } from 'react-router-dom'
-import Footer from './footer.component';
 
 // taip papt kaip pfe produktus cia daryt
 

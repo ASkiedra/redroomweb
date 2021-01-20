@@ -2,12 +2,14 @@ import { BrowserRouter, Route, } from "react-router-dom";
 
 import './App.css';
 
-import Contacts from './components/contacts.component';
-import Navbar from './components/navbar.component';
+import Contacts from './components/Contacts.component';
+import Navbar from './components/Navbar.component';
 import Main from './components/Main.component';
-import Gamintojai from './components/gamintojai.component';
-import BcAndLanguages from './components/bcAndLanguages.component';
-import Footer from './components/footer.component';
+import Gamintojai from './components/Manufacturers.component';
+import BcAndLanguages from './components/BcAndLanguages.component';
+import Footer from './components/Footer.component';
+import Interior from './components/Interior.component';
+
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -23,11 +25,12 @@ function App() {
         <Route exact path='/' >
           <Main />
         </Route>
-        <Route path='/gamintojai' exact component={Gamintojai} />
-        <Route path="/kontaktai" exact component={Contacts} />
+        <Route path='/manufacturers' exact component={Gamintojai} />
+        <Route path="/contacts" exact component={Contacts} />
+        <Route path="/interior" exact component={Interior} />
 
         <Footer />
-        
+
 
       </div>
 
