@@ -10,9 +10,9 @@ const Main = () => {
     var xd = location.pathname;
     return (
                 
-        < div >
-               
-            </div >
+        < div style ={{height: 'inherit'}}>
+
+        </div >
         );
 }
 

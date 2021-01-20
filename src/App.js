@@ -7,6 +7,7 @@ import Navbar from './components/navbar.component';
 import Main from './components/Main.component';
 import Gamintojai from './components/gamintojai.component';
 import BcAndLanguages from './components/bcAndLanguages.component';
+import Footer from './components/footer.component';
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -25,8 +26,10 @@ function App() {
         <Route path='/gamintojai' exact component={Gamintojai} />
         <Route path="/kontaktai" exact component={Contacts} />
 
-      </div>
+        <Footer />
+        
 
+      </div>
 
 
 

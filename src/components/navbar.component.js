@@ -5,12 +5,12 @@ import logo from './Logo_V4.png';
 const Navbar = () => {
     const Menu = () => {
         return (
-            <div id="produktai"  style={{ height: "inherit" }} >
+            <div id="produktai" style={{ height: "inherit" }} >
                 {/* OPENED */}
                 { openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(false) }}>
                         <div style={{ height: "inherit" }}>
-                            <p id="produktai"  style={{height: 'calc(100% - 1.8rem)'}} class="navbar-item-onhover">PRODUKTAI</p>
+                            <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} class="navbar-item-onhover">PRODUKTAI</p>
                             <DropdownMenu />
                         </div>
                     </div>}
@@ -19,7 +19,7 @@ const Navbar = () => {
                 {/* CLOSED */}
                 { !openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(true) }}>
-                        <p id="produktai"  style={{height: 'calc(100% - 1.8rem)'}} class="navbar-item-onhover">PRODUKTAI</p>
+                        <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} class="navbar-item-onhover">PRODUKTAI</p>
                     </div>}
             </div>
         );
@@ -98,7 +98,7 @@ const Navbar = () => {
                     </Link>
                 </DropdownItem>
 
-                
+
 
                 <DropdownItem>
                     <Link to="/" >
@@ -132,8 +132,7 @@ const Navbar = () => {
 
         const handleMouseClick = (event) => {
             // if the click wasnt on the products button
-            if (event.target.id !== "produktai")
-            {
+            if (event.target.id !== "produktai") {
                 setOPD(false);
             }
         }
@@ -153,7 +152,7 @@ const Navbar = () => {
                 <ul id="navbar-list">
                     {/* pervadint i Products */}
                     <Menu id="produktai" class="navbar-item-onhover"></Menu>
-                    <a class="navbar-item-onhover">INTERJERUI</a>
+                    <Link class="navbar-item-onhover" to="/interjeras">INTERJERUI</Link>
                     <div class="navbar-img-onhover" style={{ transition: '0.5s all' }}>
 
                         <Link to="/">

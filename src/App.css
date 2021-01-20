@@ -138,6 +138,8 @@ navbar ul li img {
 footer {
   z-index: 9999;
   position: relative;
+  bottom: 0;
+  width: 100%;
 }
 #first-footer {
   background-color: #f5f3f4;
