@@ -4,7 +4,7 @@ import React, { Component } from "react";
 const Contacts = () => {
 
     return (
-        < div style ={{height: 'inherit', background: 'rgba(255, 255, 240, 0.651)'}}>
+        < div style ={{height: 'inherit'}}>
 
             <div className="fast-fix" >
                 <div id="container-contacts-text-grid">

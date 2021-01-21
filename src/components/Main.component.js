@@ -1,8 +1,4 @@
-import React, { Component } from "react";
-
-import { useLocation } from 'react-router-dom'
-
-    
+import React from "react";
 
 const Main = () => {
     return (

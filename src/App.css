@@ -272,7 +272,7 @@ a {
 .container {
   height: calc(100vh - 5rem);
   overflow: auto;
-  background: #e4e9ed;
+  background: rgba(255, 255, 240, 0.651);
   overflow-x: hidden;
 }
 

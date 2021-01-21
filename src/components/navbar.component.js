@@ -1,6 +1,6 @@
-import React, { useState, Component } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from './Logo_V4.png';
+import logo from './Logo-V4.png';
 
 const Navbar = () => {
     const Menu = () => {
@@ -31,7 +31,6 @@ const Navbar = () => {
         function DropdownItem(props) {
             return props.children;
         }
-
 
 
 

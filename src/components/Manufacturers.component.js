@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
+
 import quintiLogo from '../images/quinti.png';
 import piancaLogo from '../images/pianca.png';
 import sovetLogo from '../images/sovet.png';
@@ -6,14 +7,15 @@ import poradaLogo from '../images/porada.png';
 import natuzziLogo from '../images/natuzzi.png';
 import bontempiLogo from '../images/bontempi.png';
 import dienneLogo from '../images/dienne.png';
-import { useLocation } from 'react-router-dom'
 
 // taip papt kaip pfe produktus cia daryt
-
 const Gamintojai = () => {
-    const location = useLocation();
-    console.log(location.pathname);
-    var xd = location.pathname;
+    if (document.getElementsByClassName('container')[0] !== undefined)
+    {
+      console.log('1')
+      document.getElementsByClassName('container')[0].scrollTop = 0;
+    }
+
     return (
         <div>
 
