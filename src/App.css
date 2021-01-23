@@ -297,8 +297,14 @@ a {
 }
 
 #bcnl-container li,
-#bcnl-container p {
+#bcnl-container a,
+#bcnl-container span {
   font-size: 1.55rem;
+  font-family: "Roboto";
+}
+
+#bcnl-container a:hover {
+  text-decoration: underline;
 }
 
 .dropdown a:hover {

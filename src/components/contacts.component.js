@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
 
-const Contacts = () => {
-
+const Contacts = (props) => {
     return (
-        < div style ={{height: 'inherit'}}>
+        < div style={{ height: 'inherit' }}>
 
             <div className="fast-fix" >
                 <div id="container-contacts-text-grid">
@@ -18,7 +17,14 @@ const Contacts = () => {
                 </div>
 
                 <div id="container-contacts-text-grid" className="fast-fix-2">
-                    <p>SUSISIEKIME:</p>
+                    <p>
+                        {
+                            props.match.params.lang === "LT" ? "SUSISIEKIME:" :
+                            props.match.params.lang === "EN" && "GET IN TOUCH:"
+                        }
+
+                        
+                    </p>
                     <p>+370 6 431 0657</p>
                     <p>INFO@RED-ROOM.LT</p>
                 </div>

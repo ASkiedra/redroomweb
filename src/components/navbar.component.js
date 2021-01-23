@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from './Logo-V4.png';
 
-const Navbar = () => {
+const Navbar = (props) => {
+    {/* pervadint i Products menu */ }
     const Menu = () => {
         return (
             <div id="produktai" style={{ height: "inherit" }} >
@@ -10,7 +11,12 @@ const Navbar = () => {
                 { openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(false) }}>
                         <div style={{ height: "inherit" }}>
-                            <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} class="navbar-item-onhover">PRODUKTAI</p>
+                            <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} class="navbar-item-onhover">
+                                {
+                                    props.language === "LT" ? "PRODUKTAI" :
+                                        props.language === "EN" && "PRODUCTS"
+                                }
+                            </p>
                             <DropdownMenu />
                         </div>
                     </div>}
@@ -19,7 +25,12 @@ const Navbar = () => {
                 {/* CLOSED */}
                 { !openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(true) }}>
-                        <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} class="navbar-item-onhover">PRODUKTAI</p>
+                        <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} class="navbar-item-onhover">
+                            {
+                                props.language === "LT" ? "PRODUKTAI" :
+                                    props.language === "EN" && "PRODUCTS"
+                            }</p>
+
                     </div>}
             </div>
         );
@@ -35,31 +46,44 @@ const Navbar = () => {
 
 
         return (
-            // change to state rendering instead of a href asap
+            // could have used `:` instead of `props.language === "EN"` but this seems more stable
             <ul className="dropdown" >
                 <DropdownItem>
                     <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
                         {/* heading text */}
                         <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
-                            DIENOS SISTEMOS
-                            </Link>
+                            {
+                                props.language === "LT" ? "DIENOS SISTEMOS" :
+                                    props.language === "EN" && "DAY SYSTEMS"
+                            }
+                        </Link>
 
                         <ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
                             <div>
                                 <Link className="dropdown-subtext">
-                                    SOFOS IR TV BALDŲ SISTEMOS
+                                    {
+                                        props.language === "LT" ? "SOFOS IR TV BALDŲ SISTEMOS" :
+                                            props.language === "EN" && "SOFA AND TV FURNITURE SYSTEMS"
+                                    }
+
                                 </Link>
                             </div>
 
                             <div>
                                 <Link className="dropdown-subtext" >
-                                    DARBO VIETOS
+                                    {
+                                        props.language === "LT" ? "DARBO VIETOS" :
+                                            props.language === "EN" && "WORKPLACE FURNITURE"
+                                    }
                                 </Link>
                             </div>
 
                             <div>
                                 <Link className="dropdown-subtext" >
-                                    STALAI IR KĖDĖS
+                                    {
+                                        props.language === "LT" ? "STALAI IR KĖDĖS" :
+                                            props.language === "EN" && "TABLES AND CHAIRS"
+                                    }
                                 </Link>
                             </div>
 
@@ -72,14 +96,19 @@ const Navbar = () => {
                     <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
                         {/* heading text */}
                         <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
-                            NAKTIES SISTEMOS 25
-                            </Link>
+                            {
+                                props.language === "LT" ? "NAKTIES SISTEMOS 25" :
+                                    props.language === "EN" && "NIGHT SYSTEMS 25"
+                            }
+                        </Link>
 
                         <ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
                             <div>
                                 <Link className="dropdown-subtext">
-                                    SOFOS IR TV BALDŲ SISTEMOS 20
-
+                                    {
+                                        props.language === "LT" ? "SOFOS IR TV BALDŲ SISTEMOS 20" :
+                                            props.language === "EN" && "SOFA AND TV FURNITURE SYSTEMS 20"
+                                    }
                                 </Link>
                             </div>
                         </ul>
@@ -91,8 +120,11 @@ const Navbar = () => {
                     <Link to="/" >
                         <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
                             <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
-                                LUXURY GAMINTOJAI 30
-                                </Link>
+                                {
+                                    props.language === "LT" ? "LUXURY GAMINTOJAI 30" :
+                                        props.language === "EN" && "LUXURY MANUFACTURERS 30"
+                                }
+                            </Link>
                         </li>
                     </Link>
                 </DropdownItem>
@@ -103,8 +135,10 @@ const Navbar = () => {
                     <Link to="/" >
                         <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
                             <Link style={{ fontWeight: 'bold', color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
-                                VISI GAMINTOJAI
-                                </Link>
+                            {
+                                    props.language === "LT" ? "VISI GAMINTOJAI" :
+                                        props.language === "EN" && "ALL MANUFACTURERS"
+                                }                                </Link>
                         </li>
                     </Link>
                 </DropdownItem>
@@ -149,12 +183,15 @@ const Navbar = () => {
         <div >
             <navbar style={{ display: 'block' }}>
                 <ul id="navbar-list">
-                    {/* pervadint i Products */}
                     <Menu id="produktai" class="navbar-item-onhover"></Menu>
-                    <Link class="navbar-item-onhover" to="/interior">INTERJERUI</Link>
-                    <div class="navbar-img-onhover" style={{ transition: '0.5s all' }}>
 
-                        <Link to="/">
+                    <Link class="navbar-item-onhover" to={"/" + props.language + "/interior"}>
+                        {props.language === "LT" ? "INTERJERUI"
+                            : props.language === "EN" && "INTERIOR"}
+                    </Link>
+
+                    <div class="navbar-img-onhover" style={{ transition: '0.5s all' }}>
+                        <Link to={"/" + props.language}>
                             <div id="navbar-logo-center">
                                 <div></div>
                                 <div>
@@ -164,13 +201,18 @@ const Navbar = () => {
                             </div>
                         </Link>
                     </div>
-                    <Link class="navbar-item-onhover" to="/manufacturers">GAMINTOJAI</Link>
-                    <Link class="navbar-item-onhover" to="/contacts">KONTAKTAI</Link>
+
+                    <Link class="navbar-item-onhover" to={"/" + props.language + "/manufacturers"}>
+                        {props.language === "LT" ? "GAMINTOJAI" :
+                            props.language === "EN" && "MANUFACTURERS"}
+
+                    </Link>
+
+                    <Link class="navbar-item-onhover" to={"/" + props.language + "/contacts"}>
+                        {props.language === "LT" ? "KONTAKTAI" :
+                            props.language === "EN" && "CONTACTS"}
+                    </Link>
                 </ul>
-
-
-
-
             </navbar>
             {/* <DropdownMenu /> */}
         </div>
