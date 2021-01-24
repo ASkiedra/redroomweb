@@ -78,7 +78,7 @@ const BcAndLanguages = (props) => {
                 }
 
 
-                {modifiedPathname.length > 1 && modifiedPathname[1] !== "null" &&
+                {modifiedPathname.length > 1 && modifiedPathname[1] !== "null"&& modifiedPathname[1] !== "undefined" &&
                     <>
                         <span style={{ color: 'black' }}>/</span>
                         <Link to={"/" + props.language + "/" + untranslatedPathname[0] + "/" + untranslatedPathname[1]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'black', textTransform: 'uppercase' }}>

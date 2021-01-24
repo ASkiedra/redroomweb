@@ -22,8 +22,12 @@ const Routes = () => {
             <Route exact path="/" component={MainContainer}  />
 
             <Route exact path="/:lang/manufacturers" component={Manufacturers} />
-            {/* maincategory: day systems, etccategory: sofas */}
-            <Route exact path="/:lang/products/:maincategory/:etccategory/:manufacturer" component={Products} />
+            {/* maincategory: day systems, type: sofas */}
+            <Route exact path="/:lang/products/:maincategory/:type/:manufacturer" component={Products} />
+
+            
+            <Route exact path="/:lang/products/:maincategory/:type/:manufacturer/:productcode/:productname/" />
+            <Route exact path="/:lang/products/:maincategory/:type/:manufacturer/:productcode/:productname/:productcolor" />
 
             <Route exact path="/:lang/products" component={Products} />
 

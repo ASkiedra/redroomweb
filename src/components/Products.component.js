@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from 'axios';
 
 export default class Main extends Component {
@@ -33,41 +32,34 @@ export default class Main extends Component {
         }
 
         render() {
+                console.log(this.props.match.params.lang)
                 if (this.props.match.params.manufacturer) {
                         var filteredProducts = [];
                         this.filter(filteredProducts)
 
+                        // sita visa grozi pakeist i viena returna ir bus ne fetched ar filtered o tiesiog arrayofproducts
                         return (
-                                <MainContainer fetchedProducts={filteredProducts} />
+                                <MainContainer lang={this.props.match.params.lang} fetchedProducts={filteredProducts} />
                         );
                 }
                 else
                         return (
 
-                                <MainContainer fetchedProducts={this.state.fetchedProducts} />
+                                <MainContainer lang={this.props.match.params.lang} fetchedProducts={this.state.fetchedProducts} />
                         );
         }
 }
 
 const MainContainer = (props) => {
-        // CIA PADARYT KAD LANGUAGE PERMESTU IS APP.JS. ILGAI APRASINET BET TAIP TIKRAI REIKIA
 
-        const location = useLocation();
-        let language;
-
-        // cant do props.match.param because some people may land on "/" instead of "/lt" or "/en"
-        if (location.pathname.length > 2)
-                language = location.pathname[1] + location.pathname[2];
-        else
-                language = "LT";
-
+      
 
         return (
 
                 < div style={{ background: 'white',height: 'inherit', display: 'grid', gridTemplateColumns: '33.33333% 33.33333% 33.33333%' }}>
                         {/* {language === "LT" ? "Sveiki atvyke" : "Welcome"} */}
                         {props.fetchedProducts.map(curProduct => {
-                                return <Product product={curProduct} />;
+                                return <Product lang={props.lang} product={curProduct} />;
                         })
                         }
                 </div >
@@ -87,11 +79,12 @@ const Product = (props) => {
                 http.open('HEAD', image_url, false);
                 http.send();
 
-                console.log(http.status != 404)
+                // c11onsole.log(http.status != 404)
                 return http.status != 404;
 
         }
         return (
+                <Link to ={"/"+props.lang+"/products/"+props.product.maincategory+"/"+props.product.type+"/"+props.product.manufacturer+"/"+props.product.productCode+"/"+props.product.name+"/"+props.product.color}>
                 <div className={props.product.name} style={{ textAlign: 'center' }}>
                         {/* cant use <picture> because IE support is bad and some customers definitely use IE or opera mini */}
 
@@ -116,6 +109,6 @@ const Product = (props) => {
 
                         <p>{props.product.name}</p>
                 </div>
-
+                </Link>
         );
 }
