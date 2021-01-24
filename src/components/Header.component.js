@@ -11,7 +11,7 @@ const Header = (props) => {
                 { openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(false) }}>
                         <div style={{ height: "inherit" }}>
-                            <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} class="header-item-onhover">
+                            <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} className="header-item-onhover">
                                 {
                                     props.language === "LT" ? "PRODUKTAI" :
                                         props.language === "EN" && "PRODUCTS"
@@ -25,7 +25,7 @@ const Header = (props) => {
                 {/* CLOSED */}
                 { !openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(true) }}>
-                        <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} class="header-item-onhover">
+                        <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} className="header-item-onhover">
                             {
                                 props.language === "LT" ? "PRODUKTAI" :
                                     props.language === "EN" && "PRODUCTS"

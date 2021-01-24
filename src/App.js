@@ -26,7 +26,7 @@ function App() {
 
 
 
-      <div class='container'>
+      <div className='container'>
         <BcAndLanguages language={language} setLanguage={setLanguage} />
 
         <Routes setPathname={setPathname} />
