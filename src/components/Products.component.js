@@ -20,10 +20,32 @@ export default class Main extends Component {
                         })
         }
 
+
+        filter(filteredArr) {
+                this.state.fetchedProducts.map(product => {
+                        // sitam turi but filtruotas o ne fetched
+                        if (product.manufacturer === this.props.match.params.manufacturer) {
+                                filteredArr.push(product)
+                        }
+                });
+
+
+        }
+
         render() {
-                return (
-                        <MainContainer fetchedProducts={this.state.fetchedProducts} />
-                );
+                if (this.props.match.params.manufacturer) {
+                        var filteredProducts = [];
+                        this.filter(filteredProducts)
+
+                        return (
+                                <MainContainer fetchedProducts={filteredProducts} />
+                        );
+                }
+                else
+                        return (
+
+                                <MainContainer fetchedProducts={this.state.fetchedProducts} />
+                        );
         }
 }
 
@@ -42,7 +64,7 @@ const MainContainer = (props) => {
 
         return (
 
-                < div style={{ height: 'inherit', display: 'grid', gridTemplateColumns: '33.33333% 33.33333% 33.33333%'}}>
+                < div style={{ background: 'white',height: 'inherit', display: 'grid', gridTemplateColumns: '33.33333% 33.33333% 33.33333%' }}>
                         {/* {language === "LT" ? "Sveiki atvyke" : "Welcome"} */}
                         {props.fetchedProducts.map(curProduct => {
                                 return <Product product={curProduct} />;
@@ -69,7 +91,6 @@ const Product = (props) => {
                 return http.status != 404;
 
         }
-        var type = "";
         return (
                 <div className={props.product.name} style={{ textAlign: 'center' }}>
                         {/* cant use <picture> because IE support is bad and some customers definitely use IE or opera mini */}
@@ -87,7 +108,7 @@ const Product = (props) => {
                                                                 imageExists("/images/products/" + props.product.imagename + ".bmp") ? <img width={400} height={300} src={"/images/products/" + props.product.imagename + '.bmp'} alt="logo" />
                                                                         :
 
-                                                                        <img width={400} height={300}  src={"/images/products/" + props.product.imagename + '.404'} alt="404-img-logo" />
+                                                                        <img width={400} height={300} src={"/images/products/" + props.product.imagename + '.404'} alt="404-img-logo" />
                         }
 
 

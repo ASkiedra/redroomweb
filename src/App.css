@@ -136,7 +136,6 @@ header ul li img {
 /* /////////////////////// */
 /* start of footer  */
 footer {
-  z-index: 9999;
   position: relative;
   bottom: 0;
   width: 100%;

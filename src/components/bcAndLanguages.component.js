@@ -9,7 +9,7 @@ const BcAndLanguages = (props) => {
     // if any location is present ( [0] is always /, so im checking the 1st element), e.g. /lt or /en
     if (location.pathname[1] !== undefined)
         if (location.pathname[1].toUpperCase() + location.pathname[2].toUpperCase() === "LT" || location.pathname[1].toUpperCase() + location.pathname[2].toUpperCase() === "EN")
-        props.setLanguage(location.pathname[1].toUpperCase() + location.pathname[2].toUpperCase())
+            props.setLanguage(location.pathname[1].toUpperCase() + location.pathname[2].toUpperCase())
 
     // if breadcrumbs are longer than PAGRINDINIS/*PAGE*
     // example: PAGRINDINIS/*PAGE*/*CRITERIA*
@@ -22,6 +22,14 @@ const BcAndLanguages = (props) => {
     var pathnameWO = "";
     for (let i = 3; i < location.pathname.length; i++)
         pathnameWO += location.pathname[i];
+
+    var bgspalva = 'e4e9ed';
+
+    if (modifiedPathname[0] !== undefined && modifiedPathname[0].toUpperCase() === "PRODUCTS")
+        bgspalva = "white";
+    else
+        bgspalva = "e4e9ed"
+
 
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
     if (props.language === "LT" && modifiedPathname[0] !== undefined)
@@ -38,12 +46,18 @@ const BcAndLanguages = (props) => {
                 modifiedPathname[0] = "INTERJERAS";
                 break;
 
+            case "PRODUCTS":
+                modifiedPathname[0] = "PRODUKTAI";
+                break;
+
             default:
                 break;
         }
 
+    console.log(bgspalva);
     return (
-        <ul style={{ background: 'rgba(255, 255, 240, 0.651)' }} id="bcnl-container">
+
+        <ul style={{ background: bgspalva }} id="bcnl-container">
             <div>
                 <Link to={"/" + props.language} style={{ paddingLeft: '1rem', transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'black' }}>
                     {/* kalba == lt? pagrindinis: main */}

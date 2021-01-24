@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import { Route, Switch, useLocation } from "react-router-dom"
 
 import Contacts from '../components/Contacts.component';
-import Main from '../components/Main.component';
+import Products from './Products.component';
 import Manufacturers from '../components/Manufacturers.component';
 import Interior from '../components/Interior.component';
+import MainContainer from '../components/MainContainer.component.js';
 
 const Routes = () => {
     const location = useLocation();
@@ -17,10 +18,15 @@ const Routes = () => {
 
     return (
         <Switch>
-            <Route exact path='/:lang' component={Main} />
-            <Route exact path="/" component={Main} />
+            <Route exact path='/:lang' component={MainContainer}/>
+            <Route exact path="/" component={MainContainer}  />
 
             <Route exact path="/:lang/manufacturers" component={Manufacturers} />
+            {/* maincategory: day systems, etccategory: sofas */}
+            <Route exact path="/:lang/products/:maincategory/:etccategory/:manufacturer" component={Products} />
+
+            <Route exact path="/:lang/products" component={Products} />
+
             <Route exact path="/:lang/contacts" component={Contacts} />
             <Route exact path="/:lang/interior" component={Interior} />
 

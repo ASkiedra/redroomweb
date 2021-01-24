@@ -132,9 +132,9 @@ const Header = (props) => {
 
 
                 <DropdownItem>
-                    <Link to="/" >
+                    <Link to={"/"+props.language+"/products"} >
                         <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
-                            <Link style={{ fontWeight: 'bold', color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
+                            <Link style={{ fontWeight: 'bold', color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/"+props.language+"/products"}>
                             {
                                     props.language === "LT" ? "VISI GAMINTOJAI" :
                                         props.language === "EN" && "ALL MANUFACTURERS"
