@@ -1,18 +1,15 @@
 {
-	"type": 
-	"",
-	
 	"name":
 	"",
+
+	"imagename":
+	"",
 	
-	"season":
+	"type": 
 	"",
 	
 	"color":
 	[""],
-	
-	"primeCost":
-	[],
 	
 	"price":
 	[],
@@ -20,45 +17,14 @@
 	"orderBy":
 	[],
 	
-	"unitsSold":
-	[],
-	
-	"designers":
+	"manufacturer":
 	"",
-	
-	"releaseDate":
-	[""],
-	
-
-
-
-	
 	
 	"productCode":
 	"PFC'20_01-0001",
 	
-
-
-
-
-
-
-
-	"sizes":
-	{
-		"OS": [],
-		"XS": [],
-		"S" : [],
-		"M" : [],
-		"L" : [],
-		"XL": []
-	},
-	
 	"info":
 	"",
-	
-	"public":
-	[],
 
 	"available":
 	[],

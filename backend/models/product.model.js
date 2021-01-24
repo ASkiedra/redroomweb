@@ -4,23 +4,18 @@ const Schema = mongoose.Schema;
 
 // if rows are removed from this, POSTING a request to put products in the database will only work for the rows that have remained
 const productSchema = new Schema({
-    type: { type: String, required: true },
     name: { type: String, required: true },
-    season: { type: String, required: true },
+    imagename: { type: String, required: true },
+    type: { type: String, required: true },
     color: { type: Array, required: true },
-    primeCost: { type: Array, required: true },
-    price: { type: Array, required: true },
-    orderBy: { type: Array, required: true },
-    unitsSold: { type: Array, required: true },
-    designers: { type: String, required: true },
-    releaseDate: { type: Array, required: true },
+    price: { type: Array, required: false },
+    orderBy: { type: Array, required: false },
+    manufacturer: { type: String, required: true },
     productCode: { type: String, required: true },
-    sizes: { type: Object, required: true },
-    info: { type: String, required: true },
-    public: { type: Array, required: true },
+    info: { type: String, required: false },
     available: { type: Array, required: true },
-    description: { type: Array, required: true },
-    extraField: {type: Array, required: true}
+    description: { type: Array, required: false },
+    extraField: {type: Array, required: false}
 },
     {
         timestamps: true,

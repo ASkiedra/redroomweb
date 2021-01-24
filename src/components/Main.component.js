@@ -1,15 +1,15 @@
 import React, { Component } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
 
-export default class ProductList extends Component {
+export default class Main extends Component {
         constructor(props) {
                 super(props);
                 this.state = { fetchedProducts: [], loading: true };
         }
 
-        constcomponentDidMount() {
-                document.title = 'P L A S T I C F U T U R E '
+        componentDidMount() {
 
                 axios.get("http://localhost:5000/products/")
                         .then(response => {
@@ -22,12 +22,12 @@ export default class ProductList extends Component {
 
         render() {
                 return (
-                        <Main fetchedProducts={this.state.fetchedProducts} />
+                        <MainContainer fetchedProducts={this.state.fetchedProducts} />
                 );
         }
 }
 
-const Main = (props) => {
+const MainContainer = (props) => {
         // CIA PADARYT KAD LANGUAGE PERMESTU IS APP.JS. ILGAI APRASINET BET TAIP TIKRAI REIKIA
 
         const location = useLocation();
@@ -42,11 +42,59 @@ const Main = (props) => {
 
         return (
 
-                < div style={{ height: 'inherit' }}>
-                        {language === "LT" ? "KANYE WESTAS" : "KANYE WEST"}
-                        {props.fetchedProducts.forEach(element => {
-                                console.log(element)
-                        })}
+                < div style={{ height: 'inherit', display: 'grid', gridTemplateColumns: '33.33333% 33.33333% 33.33333%'}}>
+                        {/* {language === "LT" ? "Sveiki atvyke" : "Welcome"} */}
+                        {props.fetchedProducts.map(curProduct => {
+                                return <Product product={curProduct} />;
+                        })
+                        }
                 </div >
+        );
+}
+
+
+
+
+
+const Product = (props) => {
+        // cia masyva padaryt kad vienakart kviestu fja o ji pereitu per visus bmp jpg tt. jei rado -break
+        function imageExists(image_url) {
+
+                var http = new XMLHttpRequest();
+
+                http.open('HEAD', image_url, false);
+                http.send();
+
+                console.log(http.status != 404)
+                return http.status != 404;
+
+        }
+        var type = "";
+        return (
+                <div className={props.product.name} style={{ textAlign: 'center' }}>
+                        {/* cant use <picture> because IE support is bad and some customers definitely use IE or opera mini */}
+
+                        {
+
+                                imageExists("/images/products/" + props.product.imagename + ".jpg") ? <img width={400} height={300} src={"/images/products/" + props.product.imagename + '.jpg'} alt="logo" />
+                                        :
+                                        imageExists("/images/products/" + props.product.imagename + ".png") ? <img width={400} height={300} src={"/images/products/" + props.product.imagename + '.png'} alt="logo" />
+                                                :
+                                                imageExists("/images/products/" + props.product.imagename + ".jpeg") ? <img width={400} height={300} src={"/images/products/" + props.product.imagename + '.jpeg'} alt="logo" />
+                                                        :
+                                                        imageExists("/images/products/" + props.product.imagename + ".svg") ? <img width={400} height={300} src={"/images/products/" + props.product.imagename + '.svg'} alt="logo" />
+                                                                :
+                                                                imageExists("/images/products/" + props.product.imagename + ".bmp") ? <img width={400} height={300} src={"/images/products/" + props.product.imagename + '.bmp'} alt="logo" />
+                                                                        :
+
+                                                                        <img width={400} height={300}  src={"/images/products/" + props.product.imagename + '.404'} alt="404-img-logo" />
+                        }
+
+
+
+
+                        <p>{props.product.name}</p>
+                </div>
+
         );
 }

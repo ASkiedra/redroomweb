@@ -1,112 +1,168 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import React, { Component } from "react";
 
-import quintiLogo from '../images/quinti.png';
-import piancaLogo from '../images/pianca.png';
-import sovetLogo from '../images/sovet.png';
-import poradaLogo from '../images/porada.png';
-import natuzziLogo from '../images/natuzzi.png';
-import bontempiLogo from '../images/bontempi.png';
-import dienneLogo from '../images/dienne.png';
+import axios from 'axios';
 
-// taip papt kaip pfe produktus cia daryt
-const Gamintojai = () => {
-    return (
-        <div>
+export default class Gamintojai extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { fetchedProducts: [], loading: true };
+    }
 
-        <div id='gamintoju-grid'>
-                    <div>
+    componentDidMount() {
 
-                        <img alt='quintilogo' src={quintiLogo} />
-                    </div>
+        axios.get("http://localhost:5000/products/")
+            .then(response => {
+                this.setState({ fetchedProducts: response.data, loading: false });
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }
 
-                    <div>
-                        <img alt='piancalogo' src={piancaLogo} />
-                    </div>
+    filter(manufacturers) {
 
-                    <div>
-                        <img alt='sovetLogo' src={sovetLogo} />
-                    </div>
-
-                    <div>
-                        <img alt='dienneLogo' src={dienneLogo} />
-
-                    </div>
-
-                    <div>
-                        <img alt='bontempiLogo' src={bontempiLogo} />
-
-                    </div>
-
-                    <div>
-                        <img alt='natuzziLogo' src={natuzziLogo} />
-
-                    </div>
-
-                    <div>
-                        <img alt='poradaLogo' src={poradaLogo} />
-
-                    </div>
+        this.state.fetchedProducts.map(product => {
+            var found = false;
+            // sitam turi but filtruotas o ne fetched
+            for (let i = 0; i < manufacturers.length; i++)
+                if (manufacturers[i] === product.manufacturer) {
+                    found = true;
+                    break;
+                }
 
 
+            if (!found)
+                manufacturers.push(product.manufacturer)
 
 
+        });
+
+        
+    }
 
 
+    render() {
+        var manufacturers = [];
 
+        if (!this.state.loading) {
+            this.filter(manufacturers);
 
-                    <div>
-                        <img alt='bontempiLogo' src={bontempiLogo} />
+            return <GamintojaiContainer language={this.props.match.params.lang} filteredManufacturers={manufacturers} />
+        }
 
-                    </div>
-
-                    <div>
-                        <img alt='natuzziLogo' src={natuzziLogo} />
-
-                    </div>
-
-                    <div>
-                        <img alt='poradaLogo' src={poradaLogo} />
-
-                    </div>
-
-                    <div>
-                        <img alt='bontempiLogo' src={bontempiLogo} />
-
-                    </div>
-
-                    <div>
-                        <img alt='natuzziLogo' src={natuzziLogo} />
-
-                    </div>
-
-                    <div>
-                        <img alt='poradaLogo' src={poradaLogo} />
-
-                    </div>
-
-                    <div>
-                        <img alt='bontempiLogo' src={bontempiLogo} />
-
-                    </div>
-
-                    <div>
-                        <img alt='natuzziLogo' src={natuzziLogo} />
-
-                    </div>
-
-                    <div>
-                        <img alt='poradaLogo' src={poradaLogo} />
-
-                    </div>
-
-
-
-
-
-
-        </div>
-                </div>
-    );
+        else
+            return <div style={{ height: 'inherit' }
+            }> </div >;
+    }
 }
 
-export default Gamintojai;
+const GamintojaiContainer = (props) => {
+    return (
+        <div style={{ height: 'inherit' }}>
+
+            <div id='gamintoju-grid'>
+                {props.filteredManufacturers.map(manufacturer => {
+                    return (
+                        <div>
+                            <Link to={"/" + props.language + "/" + manufacturer}>
+                                {/* pritaikyt ta komponenta kur tikrina ar jpg ar bmp ar png ir tt */}
+                                <img alt={manufacturer + "-logo"} src={"/images/logos/" + manufacturer + ".png"} />
+                            </Link>
+                        </div>
+                    )
+                })}
+                {/* <div>
+
+                    <img alt='quintilogo' src={quintiLogo} />
+                </div>
+
+                <div>
+                    <img alt='piancalogo' src={piancaLogo} />
+                </div>
+
+                <div>
+                    <img alt='sovetLogo' src={sovetLogo} />
+                </div>
+
+                <div>
+                    <img alt='dienneLogo' src={dienneLogo} />
+
+                </div>
+
+                <div>
+                    <img alt='bontempiLogo' src={bontempiLogo} />
+
+                </div>
+
+                <div>
+                    <img alt='natuzziLogo' src={natuzziLogo} />
+
+                </div>
+
+                <div>
+                    <img alt='poradaLogo' src={poradaLogo} />
+
+                </div>
+
+
+
+
+
+
+
+
+                <div>
+                    <img alt='bontempiLogo' src={bontempiLogo} />
+
+                </div>
+
+                <div>
+                    <img alt='natuzziLogo' src={natuzziLogo} />
+
+                </div>
+
+                <div>
+                    <img alt='poradaLogo' src={poradaLogo} />
+
+                </div>
+
+                <div>
+                    <img alt='bontempiLogo' src={bontempiLogo} />
+
+                </div>
+
+                <div>
+                    <img alt='natuzziLogo' src={natuzziLogo} />
+
+                </div>
+
+                <div>
+                    <img alt='poradaLogo' src={poradaLogo} />
+
+                </div>
+
+                <div>
+                    <img alt='bontempiLogo' src={bontempiLogo} />
+
+                </div>
+
+                <div>
+                    <img alt='natuzziLogo' src={natuzziLogo} />
+
+                </div>
+
+                <div>
+                    <img alt='poradaLogo' src={poradaLogo} />
+
+                </div>
+ */}
+
+
+
+
+
+            </div>
+        </div >
+    );
+}
