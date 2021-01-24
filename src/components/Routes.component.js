@@ -17,12 +17,12 @@ const Routes = () => {
 
     return (
         <Switch>
-            <Route exact path='/:lang' exact component={Main} />
-            <Route exact path="/" exact component={Main}/>
+            <Route exact path='/:lang' component={Main} />
+            <Route exact path="/" component={Main} />
 
-            <Route exact path="/:lang/manufacturers" exact component={Manufacturers} />
-            <Route exact path="/:lang/contacts" exact component={Contacts} />
-            <Route exact path="/:lang/interior" exact component={Interior} />
+            <Route exact path="/:lang/manufacturers" component={Manufacturers} />
+            <Route exact path="/:lang/contacts" component={Contacts} />
+            <Route exact path="/:lang/interior" component={Interior} />
 
             {/* non route pages */}
             <Route path="*">

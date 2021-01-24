@@ -10,12 +10,6 @@ import dienneLogo from '../images/dienne.png';
 
 // taip papt kaip pfe produktus cia daryt
 const Gamintojai = () => {
-    if (document.getElementsByClassName('container')[0] !== undefined)
-    {
-      console.log('1')
-      document.getElementsByClassName('container')[0].scrollTop = 0;
-    }
-
     return (
         <div>
 

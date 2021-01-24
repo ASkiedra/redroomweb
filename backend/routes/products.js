@@ -26,6 +26,7 @@ router.route('/add').post((req, res) => {
   const public = req.body.public;
   const available = req.body.available;
   const description = req.body.description;
+  const extraField = req.body.extraField;
   
   
   const newProduct = new Product({
@@ -45,6 +46,7 @@ router.route('/add').post((req, res) => {
     public,
     available,
     description,
+    extraField
   });
 
   newProduct.save()

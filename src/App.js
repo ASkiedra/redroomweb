@@ -2,10 +2,9 @@ import { BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import './App.css';
 
-import Navbar from './components/Navbar.component';
+import Header from './components/Header.component';
 import BcAndLanguages from './components/BcAndLanguages.component';
 import Footer from './components/Footer.component';
-import GoToTop from './components/GoToTop.component';
 import Routes from './components/Routes.component';
 
 function App() {
@@ -20,7 +19,7 @@ function App() {
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Navbar language={language} />
+      <Header language={language} />
 
 
 
@@ -28,7 +27,6 @@ function App() {
 
 
       <div class='container'>
-        <GoToTop />
         <BcAndLanguages language={language} setLanguage={setLanguage} />
 
         <Routes setPathname={setPathname} />

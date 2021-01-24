@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from './Logo-V4.png';
 
-const Navbar = (props) => {
-    {/* pervadint i Products menu */ }
+const Header = (props) => {
+/* pervadint i Products menu */ 
     const Menu = () => {
         return (
             <div id="produktai" style={{ height: "inherit" }} >
@@ -11,7 +11,7 @@ const Navbar = (props) => {
                 { openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(false) }}>
                         <div style={{ height: "inherit" }}>
-                            <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} class="navbar-item-onhover">
+                            <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} class="header-item-onhover">
                                 {
                                     props.language === "LT" ? "PRODUKTAI" :
                                         props.language === "EN" && "PRODUCTS"
@@ -25,7 +25,7 @@ const Navbar = (props) => {
                 {/* CLOSED */}
                 { !openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(true) }}>
-                        <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} class="navbar-item-onhover">
+                        <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} class="header-item-onhover">
                             {
                                 props.language === "LT" ? "PRODUKTAI" :
                                     props.language === "EN" && "PRODUCTS"
@@ -49,7 +49,7 @@ const Navbar = (props) => {
             // could have used `:` instead of `props.language === "EN"` but this seems more stable
             <ul className="dropdown" >
                 <DropdownItem>
-                    <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                    <li style={{  textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
                         {/* heading text */}
                         <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
                             {
@@ -93,7 +93,7 @@ const Navbar = (props) => {
 
 
                 <DropdownItem>
-                    <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                    <li style={{textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
                         {/* heading text */}
                         <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
                             {
@@ -181,39 +181,39 @@ const Navbar = (props) => {
 
     return (
         <div >
-            <navbar style={{ display: 'block' }}>
-                <ul id="navbar-list">
-                    <Menu id="produktai" class="navbar-item-onhover"></Menu>
+            <header style={{ display: 'block' }}>
+                <ul id="header-list">
+                    <Menu id="produktai" className="header-item-onhover"></Menu>
 
-                    <Link class="navbar-item-onhover" to={"/" + props.language + "/interior"}>
+                    <Link className="header-item-onhover" to={"/" + props.language + "/interior"}>
                         {props.language === "LT" ? "INTERJERUI"
                             : props.language === "EN" && "INTERIOR"}
                     </Link>
 
-                    <div class="navbar-img-onhover" style={{ transition: '0.5s all' }}>
+                    <div className="header-img-onhover" style={{ transition: '0.5s all' }}>
                         <Link to={"/" + props.language}>
-                            <div id="navbar-logo-center">
+                            <div id="header-logo-center">
                                 <div></div>
                                 <div>
-                                    <img id="navbar-logo" style={{ height: "70%", width: "60%", transform: 'scale(0.75)' }} src={logo} />
+                                    <img id="header-logo" alt="header-logo" style={{ height: "70%", width: "60%", transform: 'scale(0.75)' }} src={logo} />
                                 </div>
                                 <div></div>
                             </div>
                         </Link>
                     </div>
 
-                    <Link class="navbar-item-onhover" to={"/" + props.language + "/manufacturers"}>
+                    <Link className="header-item-onhover" to={"/" + props.language + "/manufacturers"}>
                         {props.language === "LT" ? "GAMINTOJAI" :
                             props.language === "EN" && "MANUFACTURERS"}
 
                     </Link>
 
-                    <Link class="navbar-item-onhover" to={"/" + props.language + "/contacts"}>
+                    <Link className="header-item-onhover" to={"/" + props.language + "/contacts"}>
                         {props.language === "LT" ? "KONTAKTAI" :
                             props.language === "EN" && "CONTACTS"}
                     </Link>
                 </ul>
-            </navbar>
+            </header>
             {/* <DropdownMenu /> */}
         </div>
 
@@ -222,4 +222,4 @@ const Navbar = (props) => {
 
 }
 
-export default Navbar;
+export default Header;

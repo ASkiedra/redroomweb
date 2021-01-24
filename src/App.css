@@ -13,9 +13,9 @@ html {
   font-size: 18px;
 }
 
-#navbar-logo-center {
+#header-logo-center {
   display: grid;
-  /* same as #navbar-list height */
+  /* same as #header-list height */
   height: 5rem;
   align-items: center;
   text-align: center;
@@ -23,14 +23,14 @@ html {
   grid-template-rows: 33.333% 33.333% 33.333%;
 }
 
-navbar {
+header {
   position: sticky;
   z-index: 9999;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.411);
   display: block;
 }
 
-#navbar-list {
+#header-list {
   padding: 0;
   margin: 0 6rem;
   height: 5rem;
@@ -39,22 +39,22 @@ navbar {
   grid-template-columns: 20% 20% 20% 20% 20%;
 }
 
-#navbar-list *::selection {
+#header-list *::selection {
   background: none;
 }
 
-#navbar-list ul li {
+#header-list ul li {
   font-family: "Quicksand", sans-serif;
   text-align: left;
   padding-left: 1rem;
 }
 
-#navbar-list p {
+#header-list p {
   cursor: pointer;
 }
 
-navbar a,
-navbar div p {
+header a,
+header div p {
   color: black;
   list-style: none;
   padding-top: 1.8rem;
@@ -78,10 +78,10 @@ navbar div p {
   top: 50%;
 }
 
-navbar ul li {
+header ul li {
   font-size: 1.2rem;
 }
-navbar ul li img {
+header ul li img {
   width: 60%;
 }
 
@@ -258,7 +258,7 @@ a {
 }
 
 .dropdown {
-  /* left = same as #navbar-list margin second  value */
+  /* left = same as #header-list margin second  value */
   left: -6rem;
 
   position: relative;
@@ -311,12 +311,12 @@ a {
   text-decoration: underline white;
 }
 
-.navbar-item-onhover:hover {
+.header-item-onhover:hover {
   transition: 0.4s;
   filter: drop-shadow(1px 0px 10px rgba(255, 0, 0, 0.75));
 }
 
-.navbar-img-onhover:hover {
+.header-img-onhover:hover {
   transition: 0.4s;
   filter: drop-shadow(1px 0px 10px rgba(255, 0, 0, 0.45));
 }

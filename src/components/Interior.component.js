@@ -1,14 +1,12 @@
-import React, { Component } from "react";
+import React  from "react";
 
-import { useLocation } from 'react-router-dom'
 
-    
 
 const Main = () => {
-    return (
-        < div style ={{height: 'inherit'}}>
-asd
-        </div >
+        return (
+                < div style={{ height: 'inherit' }}>
+                        asd
+                </div >
         );
 }
 

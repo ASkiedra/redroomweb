@@ -24,7 +24,7 @@ const BcAndLanguages = (props) => {
         pathnameWO += location.pathname[i];
 
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
-    if (props.language === "LT" && modifiedPathname[0] != undefined)
+    if (props.language === "LT" && modifiedPathname[0] !== undefined)
         switch (modifiedPathname[0].toUpperCase()) {
             case "CONTACTS":
                 modifiedPathname[0] = "KONTAKTAI";
@@ -42,8 +42,6 @@ const BcAndLanguages = (props) => {
                 break;
         }
 
-console.log(untranslatedPathname)
-console.log(modifiedPathname[0])
     return (
         <ul style={{ background: 'rgba(255, 255, 240, 0.651)' }} id="bcnl-container">
             <div>
