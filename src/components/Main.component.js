@@ -2,6 +2,8 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 
 const Main = (props) => {
+// CIA PADARYT KAD LANGUAGE PERMESTU IS APP.JS. ILGAI APRASINET BET TAIP TIKRAI REIKIA
+
         const location = useLocation();
         let language;
 

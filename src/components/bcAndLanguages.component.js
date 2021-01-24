@@ -23,7 +23,7 @@ const BcAndLanguages = (props) => {
     for (let i = 3; i < location.pathname.length; i++)
         pathnameWO += location.pathname[i];
 
-    var untranslatedPathname = modifiedPathname;
+    var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
     if (props.language === "LT" && modifiedPathname[0] != undefined)
         switch (modifiedPathname[0].toUpperCase()) {
             case "CONTACTS":
@@ -42,7 +42,8 @@ const BcAndLanguages = (props) => {
                 break;
         }
 
-
+console.log(untranslatedPathname)
+console.log(modifiedPathname[0])
     return (
         <ul style={{ background: 'rgba(255, 255, 240, 0.651)' }} id="bcnl-container">
             <div>
@@ -79,11 +80,11 @@ const BcAndLanguages = (props) => {
 
                 {props.language === "LT" ?
                     <>
-                        <Link to={"/" + "LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: 'black' }}>
+                        <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: 'black' }}>
                             LT
                         </Link>
 
-                        <Link to={"/" + "EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: 'black' }}>
+                        <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: 'black' }}>
                             EN
                         </Link>
                     </>
