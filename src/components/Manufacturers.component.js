@@ -38,7 +38,7 @@ export default class Gamintojai extends Component {
 
         });
 
-        
+
     }
 
 
@@ -48,20 +48,16 @@ export default class Gamintojai extends Component {
         if (!this.state.loading) {
             this.filter(manufacturers);
 
-            return <GamintojaiContainer language={this.props.match.params.lang} filteredManufacturers={manufacturers} />
         }
+        return <GamintojaiContainer language={this.props.match.params.lang} filteredManufacturers={manufacturers} />
 
-        else
-            return <div style={{ height: 'inherit' }
-            }> </div >;
     }
 }
 
 const GamintojaiContainer = (props) => {
     return (
         <div style={{ height: 'inherit' }}>
-
-            <div id='gamintoju-grid' style={{paddingBottom: '5rem'}}>
+            <div id='gamintoju-grid' style={{ paddingBottom: '5rem' }}>
                 {props.filteredManufacturers.map(manufacturer => {
                     return (
                         <div>
@@ -72,96 +68,6 @@ const GamintojaiContainer = (props) => {
                         </div>
                     )
                 })}
-                {/* <div>
-
-                    <img alt='quintilogo' src={quintiLogo} />
-                </div>
-
-                <div>
-                    <img alt='piancalogo' src={piancaLogo} />
-                </div>
-
-                <div>
-                    <img alt='sovetLogo' src={sovetLogo} />
-                </div>
-
-                <div>
-                    <img alt='dienneLogo' src={dienneLogo} />
-
-                </div>
-
-                <div>
-                    <img alt='bontempiLogo' src={bontempiLogo} />
-
-                </div>
-
-                <div>
-                    <img alt='natuzziLogo' src={natuzziLogo} />
-
-                </div>
-
-                <div>
-                    <img alt='poradaLogo' src={poradaLogo} />
-
-                </div>
-
-
-
-
-
-
-
-
-                <div>
-                    <img alt='bontempiLogo' src={bontempiLogo} />
-
-                </div>
-
-                <div>
-                    <img alt='natuzziLogo' src={natuzziLogo} />
-
-                </div>
-
-                <div>
-                    <img alt='poradaLogo' src={poradaLogo} />
-
-                </div>
-
-                <div>
-                    <img alt='bontempiLogo' src={bontempiLogo} />
-
-                </div>
-
-                <div>
-                    <img alt='natuzziLogo' src={natuzziLogo} />
-
-                </div>
-
-                <div>
-                    <img alt='poradaLogo' src={poradaLogo} />
-
-                </div>
-
-                <div>
-                    <img alt='bontempiLogo' src={bontempiLogo} />
-
-                </div>
-
-                <div>
-                    <img alt='natuzziLogo' src={natuzziLogo} />
-
-                </div>
-
-                <div>
-                    <img alt='poradaLogo' src={poradaLogo} />
-
-                </div>
- */}
-
-
-
-
-
             </div>
         </div >
     );

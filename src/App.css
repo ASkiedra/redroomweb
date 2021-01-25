@@ -270,7 +270,7 @@ a {
 
 .container {
   min-height: 90vh;
-  /* height: calc(100vh - 5rem); */
+  height: calc(100vh - 5rem);
   overflow: auto;
   background: rgba(255, 255, 240, 0.651);
   overflow-x: hidden;
@@ -328,4 +328,22 @@ a {
   padding-bottom: 2px;
   font-size: 0.9rem;
   font-weight: 300;
+}
+
+.product-name {
+  text-decoration: none;
+  color: black;
+}
+
+#products-sidebar {
+  /* same as the area for the grid -10% */
+  width: 15%;
+  top: 30%;
+  font-size: 1.4rem;
+  position: fixed;
+}
+
+.product-type {
+  font-family: "Roboto";
+  text-transform: lowercase;
 }
