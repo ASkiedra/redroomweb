@@ -33,10 +33,10 @@ function App() {
 
 
 
-        <Footer language={language} />
 
 
       </div>
+      <Footer language={language} />
 
 
 

@@ -1,15 +1,35 @@
 {
 	"name":
-	"",
+	"IconaGruppi-CHLOE",
 
 	"imagename":
-	"",
+	"IconaGruppi-CHLOE",
+	
+	"productCode":
+	"IconaGruppi-CHLOE",
 	
 	"type": 
+	"table",
+
+	"maincategory":
 	"",
+	
+	"manufacturer":
+	"",
+
 	
 	"color":
 	[""],
+	
+	"description":
+	"",
+	
+	
+	
+	"info":
+	"",
+	
+
 	
 	"price":
 	[],
@@ -17,20 +37,12 @@
 	"orderBy":
 	[],
 	
-	"manufacturer":
-	"",
-	
-	"productCode":
-	"PFC'20_01-0001",
-	
-	"info":
-	"",
+
 
 	"available":
 	[],
 	
-	"description":
-	"",
+
 	
 	"extraField":
 	[]

@@ -213,7 +213,7 @@ a {
 
 #gamintoju-container {
   overflow: hidden;
-  background-color: #e4e9ed;
+  background-color: rgb(227, 233, 237);
 }
 
 #gamintoju-grid {
@@ -269,7 +269,8 @@ a {
 }
 
 .container {
-  height: calc(100vh - 5rem);
+  min-height: 90vh;
+  /* height: calc(100vh - 5rem); */
   overflow: auto;
   background: rgba(255, 255, 240, 0.651);
   overflow-x: hidden;

@@ -23,12 +23,16 @@ const BcAndLanguages = (props) => {
     for (let i = 3; i < location.pathname.length; i++)
         pathnameWO += location.pathname[i];
 
-    var bgspalva = 'e4e9ed';
 
-    if (modifiedPathname[0] !== undefined && modifiedPathname[0].toUpperCase() === "PRODUCTS")
-        bgspalva = "white";
-    else
-        bgspalva = "e4e9ed"
+
+    // change background color if on /PRODUCTS
+    var backgroundas = "#E4E9ED";
+    if (modifiedPathname[0] !== undefined && modifiedPathname[0].toUpperCase() === 'PRODUCTS') {
+        backgroundas = 'white';
+    }
+    else {
+        backgroundas = 'rgba(255, 255, 240, 0.651)';
+    }
 
 
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
@@ -57,10 +61,9 @@ const BcAndLanguages = (props) => {
         }
 
 
-    console.log(bgspalva);
     return (
 
-        <ul style={{ background: bgspalva }} id="bcnl-container">
+        <ul style={{ background: backgroundas }} id="bcnl-container">
             <div>
                 <Link to={"/" + props.language} style={{ paddingLeft: '1rem', transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'black' }}>
                     {/* kalba == lt? pagrindinis: main */}
@@ -78,7 +81,7 @@ const BcAndLanguages = (props) => {
                 }
 
 
-                {modifiedPathname.length > 1 && modifiedPathname[1] !== "null"&& modifiedPathname[1] !== "undefined" &&
+                {modifiedPathname.length > 1 && modifiedPathname[1] !== "null" && modifiedPathname[1] !== "undefined" &&
                     <>
                         <span style={{ color: 'black' }}>/</span>
                         <Link to={"/" + props.language + "/" + untranslatedPathname[0] + "/" + untranslatedPathname[1]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'black', textTransform: 'uppercase' }}>

@@ -32,7 +32,7 @@ export default class Gamintojai extends Component {
                 }
 
 
-            if (!found)
+            if (!found && product.manufacturer !== "")
                 manufacturers.push(product.manufacturer)
 
 
@@ -61,7 +61,7 @@ const GamintojaiContainer = (props) => {
     return (
         <div style={{ height: 'inherit' }}>
 
-            <div id='gamintoju-grid'>
+            <div id='gamintoju-grid' style={{paddingBottom: '5rem'}}>
                 {props.filteredManufacturers.map(manufacturer => {
                     return (
                         <div>

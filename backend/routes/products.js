@@ -15,6 +15,7 @@ router.route('/add').post((req, res) => {
   const type = req.body.type;
   const color = req.body.color;  
   const price = req.body.price;
+  const maincategory = req.body.maincategory;
   const orderBy = req.body.orderBy;
   const manufacturer = req.body.manufacturer;
   const productCode = req.body.productCode;
@@ -28,6 +29,7 @@ router.route('/add').post((req, res) => {
     name,
     imagename,
     type,
+    maincategory,
     color,
     price,
     orderBy,

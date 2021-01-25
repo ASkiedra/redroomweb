@@ -25,6 +25,8 @@ const Routes = () => {
             {/* maincategory: day systems, type: sofas */}
             <Route exact path="/:lang/products/:maincategory/:type/:manufacturer" component={Products} />
 
+            {/* case no manufacturer */}
+            <Route exact path="/:lang/products/:maincategory/:type//:productcode/:productname/" />
             
             <Route exact path="/:lang/products/:maincategory/:type/:manufacturer/:productcode/:productname/" />
             <Route exact path="/:lang/products/:maincategory/:type/:manufacturer/:productcode/:productname/:productcolor" />

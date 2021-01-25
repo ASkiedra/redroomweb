@@ -56,7 +56,7 @@ const MainContainer = (props) => {
 
         return (
 
-                < div style={{ background: 'white',height: 'inherit', display: 'grid', gridTemplateColumns: '33.33333% 33.33333% 33.33333%' }}>
+                < div style={{ background: 'white',height: 'inherit', display: 'grid', minHeight: 'inherit',paddingBottom: '5rem', gridTemplateColumns: '33.33333% 33.33333% 33.33333%' }}>
                         {/* {language === "LT" ? "Sveiki atvyke" : "Welcome"} */}
                         {props.fetchedProducts.map(curProduct => {
                                 return <Product lang={props.lang} product={curProduct} />;
@@ -72,15 +72,16 @@ const MainContainer = (props) => {
 
 const Product = (props) => {
         // cia masyva padaryt kad vienakart kviestu fja o ji pereitu per visus bmp jpg tt. jei rado -break
-        function imageExists(image_url) {
+        function imageExists(imageurl) {
 
                 var http = new XMLHttpRequest();
 
-                http.open('HEAD', image_url, false);
+                http.open('HEAD', imageurl, false);
                 http.send();
 
-                // c11onsole.log(http.status != 404)
-                return http.status != 404;
+                // dukart alertina kazkodel
+                // alert(http.status + imageurl)
+                return http.status !== 404;
 
         }
         return (
