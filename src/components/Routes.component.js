@@ -9,7 +9,7 @@ import MainContainer from '../components/MainContainer.component.js';
 
 const Routes = () => {
     const location = useLocation();
-
+const asd="123"
     // scroll up on every route change
     useEffect(() => {
         if (document.getElementsByClassName('container')[0] !== undefined)
@@ -31,7 +31,7 @@ const Routes = () => {
             <Route exact path="/:lang/products/:maincategory/:type/:manufacturer/:productcode/:productname/" />
             <Route exact path="/:lang/products/:maincategory/:type/:manufacturer/:productcode/:productname/:productcolor" />
 
-            <Route exact path="/:lang/products" component={Products} />
+            <Route exact path="/:lang/products"  component={Products} />
 
             <Route exact path="/:lang/contacts" component={Contacts} />
             <Route exact path="/:lang/interior" component={Interior} />

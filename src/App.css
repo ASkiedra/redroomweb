@@ -49,7 +49,8 @@ header {
   padding-left: 1rem;
 }
 
-#header-list p {
+#header-list p, #header-list a {
+  font-size: 0.95rem;
   cursor: pointer;
 }
 
@@ -261,7 +262,9 @@ a {
   left: -6rem;
 
   position: relative;
+  transform-origin: top center;
 }
+
 
 .dropdown li {
   padding: 1rem 0;

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import { useLocation } from "react-router-dom";
 
 export default class Main extends Component {
         constructor(props) {
@@ -22,12 +23,36 @@ export default class Main extends Component {
 
         filter(filteredArr) {
                 this.state.fetchedProducts.map(product => {
-                        // sitam turi but filtruotas o ne fetched
                         if (product.manufacturer.toUpperCase() === this.props.match.params.manufacturer.toUpperCase()) {
                                 filteredArr.push(product)
                         }
                 });
         }
+
+
+        findAllManufacturers(manufacturersArr) {
+
+                this.state.fetchedProducts.map(product => {
+                        var found = false;
+                        // sitam turi but filtruotas o ne fetched
+                        for (let i = 0; i < manufacturersArr.length; i++)
+                                if (manufacturersArr[i] === product.manufacturer) {
+                                        found = true;
+                                        break;
+                                }
+
+
+                        if (!found && product.manufacturer !== "")
+                                manufacturersArr.push(product.manufacturer)
+
+
+                });
+
+
+        }
+
+
+
 
         findAllTypes(typesArr) {
                 this.state.fetchedProducts.map(product => {
@@ -49,35 +74,56 @@ export default class Main extends Component {
 
         render() {
 
-                var productsArr = [], typesArr = [];
+                var productsArr = [], manufacturersArr = [], typesArr = [], returnable = <div style={{height:'inherit', background: 'white'}}></div>;
 
                 // only call functions if its loaded (if the data is fetched from the db)
                 if (!this.state.loading) {
+                        // jei konkretaus gamintojo page esu nefiltruoja kitu 
                         this.findAllTypes(typesArr);
+                        this.findAllManufacturers(manufacturersArr);
 
                         if (this.props.match.params.manufacturer) {
                                 this.filter(productsArr)
                         }
-                        else
-                                productsArr = this.state.fetchedProducts;
+                        else {
 
+                                productsArr = this.state.fetchedProducts;
+                        }
+
+                        returnable = <MainContainer manufacturersArr={manufacturersArr} typesArr={typesArr} lang={this.props.match.params.lang} productsArr={productsArr} />;
+                        
                 }
-                return (
-                        <MainContainer typesArr={typesArr} lang={this.props.match.params.lang} productsArr={productsArr} />
-                );
+                
+                return returnable;
         }
 }
 
 const MainContainer = (props) => {
+        const language = useLocation().pathname[1] + useLocation().pathname[2];
         return (
 
                 < div style={{ background: 'white', display: 'grid', minHeight: 'inherit', paddingBottom: '5rem', gridTemplateColumns: '25% 75%' }}>
                         {/* sidebar */}
                         <div >
                                 <ul id={"products-sidebar"}>
-                                        {props.typesArr.map(curType => {
-                                                return <Type type={curType} />
-                                        })}
+                                        <div style ={{textAlign: 'center' }}>
+                                                <p>{language === "LT"? "TIPAS" : language === "EN" && "TYPE"}</p>
+                                                {props.typesArr.map(curType => {
+                                                        return <Type type={curType} />
+                                                })}
+                                        </div>
+
+{/*
+ CIA NE TYPE o manufacturer turetu but arba sidebar-item
+*/}
+                                        <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+                                        <p>{language === "LT"? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p>
+                                                {props.manufacturersArr.map(curManufacturer => {
+                                                        return <Type type={curManufacturer} />
+                                                })}
+                                        </div>
+
+
                                 </ul>
                         </div>
                         {/* products */}
@@ -93,7 +139,7 @@ const MainContainer = (props) => {
 
 const Type = (props) => {
         return (
-                <li style={{ textAlign: 'center' }}>
+                <li onClick={()=>console.log(4)}style={{ textAlign: 'center' }}>
                         <p className={"product-type"}>{props.type}</p>
                 </li>
         );
