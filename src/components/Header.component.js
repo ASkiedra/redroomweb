@@ -51,7 +51,7 @@ const Header = (props) => {
                 <DropdownItem>
                     <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
                         {/* heading text */}
-                        <Link to={"/" + props.language + "/products/day systems/"}
+                        <Link to={"/" + props.language + "/products/day systems"}
                             style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products/day systems"}                        >
                             {
                                 props.language === "LT" ? "DIENOS SISTEMOS" :
@@ -61,7 +61,7 @@ const Header = (props) => {
 
                         <ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
                             <div>
-                                <Link to={"/" + props.language + "/products//salon furniture systems/"}
+                                <Link to={"/" + props.language + "/products//salon furniture systems"}
                                     className="dropdown-subtext">
                                     {
                                         props.language === "LT" ? "SVETAINĖS IR TV BALDŲ SISTEMOS" :
