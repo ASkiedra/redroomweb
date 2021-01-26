@@ -9,6 +9,9 @@ export default class Main extends Component {
                 this.state = { fetchedProducts: [], loading: true };
         }
 
+
+
+
         componentDidMount() {
 
                 axios.get("http://localhost:5000/products/")
@@ -27,11 +30,12 @@ export default class Main extends Component {
                                 filteredArr.push(product)
                         }
                 });
+
+                console.log(this)
         }
 
 
         findAllManufacturers(manufacturersArr) {
-
                 this.state.fetchedProducts.map(product => {
                         var found = false;
                         // sitam turi but filtruotas o ne fetched
@@ -74,8 +78,8 @@ export default class Main extends Component {
 
         render() {
 
-                var productsArr = [], manufacturersArr = [], typesArr = [], returnable = <div style={{height:'inherit', background: 'white'}}></div>;
-
+                var productsArr = [], manufacturersArr = [], typesArr = [], returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
+                console.log('123')
                 // only call functions if its loaded (if the data is fetched from the db)
                 if (!this.state.loading) {
                         // jei konkretaus gamintojo page esu nefiltruoja kitu 
@@ -90,36 +94,40 @@ export default class Main extends Component {
                                 productsArr = this.state.fetchedProducts;
                         }
 
-                        returnable = <MainContainer manufacturersArr={manufacturersArr} typesArr={typesArr} lang={this.props.match.params.lang} productsArr={productsArr} />;
-                        
+                        returnable = <MainContainer this={this} manufacturersArr={manufacturersArr} typesArr={typesArr} lang={this.props.match.params.lang} productsArr={productsArr} />;
+
                 }
-                
+
                 return returnable;
         }
 }
 
 const MainContainer = (props) => {
         const language = useLocation().pathname[1] + useLocation().pathname[2];
+
+
         return (
 
                 < div style={{ background: 'white', display: 'grid', minHeight: 'inherit', paddingBottom: '5rem', gridTemplateColumns: '25% 75%' }}>
                         {/* sidebar */}
                         <div >
                                 <ul id={"products-sidebar"}>
-                                        <div style ={{textAlign: 'center' }}>
-                                                <p>{language === "LT"? "TIPAS" : language === "EN" && "TYPE"}</p>
+                                        <div style={{ textAlign: 'center' }}>
+                                                <p>{language === "LT" ? "TIPAS" : language === "EN" && "TYPE"}</p>
                                                 {props.typesArr.map(curType => {
-                                                        return <Type type={curType} />
+                                                        // jei keiciu sita returna  - keist ir apacioj
+                                                        return <Type this={props.this} type={curType} />
                                                 })}
                                         </div>
 
-{/*
+                                        {/*
  CIA NE TYPE o manufacturer turetu but arba sidebar-item
 */}
                                         <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-                                        <p>{language === "LT"? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p>
+                                                <p>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p>
                                                 {props.manufacturersArr.map(curManufacturer => {
-                                                        return <Type type={curManufacturer} />
+                                                        // jei keiciu sita returna  - keist ir apacioj
+                                                        return <Type this={props.this}  type={curManufacturer} />
                                                 })}
                                         </div>
 
@@ -139,7 +147,10 @@ const MainContainer = (props) => {
 
 const Type = (props) => {
         return (
-                <li onClick={()=>console.log(4)}style={{ textAlign: 'center' }}>
+                <li classname={"type-li"} onClick={(e) => {
+                        e.target.classList.toggle("bold-text");
+                        console.log(props.this.state)
+                }} style={{ textAlign: 'center' }}>
                         <p className={"product-type"}>{props.type}</p>
                 </li>
         );

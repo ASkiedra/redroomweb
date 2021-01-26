@@ -351,9 +351,25 @@ a {
 .product-type {
   font-family: "Roboto";
   text-transform: lowercase;
+  cursor: pointer;
+}
+
+.product-type::selection
+{
+  background: none;
 }
 
 .product-container img {
   width: auto;
   max-width: 21rem;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.type-li p::selection{
+  cursor: default;
+  background: none;
+  color: red;
 }

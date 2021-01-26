@@ -17,24 +17,32 @@ const Routes = () => {
 
     return (
         <Switch>
-            <Route exact path='/:lang' component={MainContainer}/>
-            <Route exact path="/" component={MainContainer}  />
+            <Route exact path='/:lang' component={MainContainer} />
+            <Route exact path="/" component={MainContainer} />
 
             <Route exact path="/:lang/manufacturers" component={Manufacturers} />
             {/* mainCategory: day systems, type: sofas */}
-            <Route exact path="/:lang/products/:mainCategory/:type/:manufacturer" component={Products} />
+            <Route exact path="/:lang/products/:mainCategory/:subCategory/:type/:manufacturer" component={Products} />
 
             {/* case no manufacturer */}
             <Route exact path="/:lang/products/:mainCategory/:type//:productcode/:productname/" />
-            
+
             {/* case only mainCategory(e.g. from the dropdown) */}
-            <Route exact path="/:lang/products/:mainCategory/" component={Products}/>
+            <Route exact path="/:lang/products/:mainCategory/" component={Products} />
+
+            {/* case only subCategory (e.g. from the dropdown) */}
+            <Route exact path="/:lang/products//:subCategory" component={Products} />
 
 
-            <Route exact path="/:lang/products/:mainCategory/:type/:manufacturer/:productcode/:productname/" />
-            <Route exact path="/:lang/products/:mainCategory/:type/:manufacturer/:productcode/:productname/:productcolor" />
+            {/* case only type (e.g. from the dropdown) */}
+            <Route exact path="/:lang/products///:type" component={Products} />
 
-            <Route exact path="/:lang/products"  component={Products} />
+
+            <Route exact path="/:lang/products/:mainCategory/:subCategory/:type/:manufacturer/:productcode/:productname/" />
+            <Route exact path="/:lang/products/:mainCategory/:subCategory/:type/:manufacturer/:productcode/:productname/" />
+            <Route exact path="/:lang/products/:mainCategory/:subCategory/:type/:manufacturer/:productcode/:productname/:productcolor" />
+
+            <Route exact path="/:lang/products" component={Products} />
 
             <Route exact path="/:lang/contacts" component={Contacts} />
             <Route exact path="/:lang/interior" component={Interior} />
