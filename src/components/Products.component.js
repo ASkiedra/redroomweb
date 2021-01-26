@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 export default class Main extends Component {
         constructor(props) {
                 super(props);
-                this.state = { fetchedProducts: [], loading: true };
+                this.state = { curProducts: [],fetchedProducts: [], loading: true };
         }
 
 
@@ -16,7 +16,7 @@ export default class Main extends Component {
 
                 axios.get("http://localhost:5000/products/")
                         .then(response => {
-                                this.setState({ fetchedProducts: response.data, loading: false });
+                                this.setState({ fetchedProducts: response.data, curProducts: response.data,loading: false });
                         })
                         .catch((error) => {
                                 console.log(error);
@@ -34,6 +34,12 @@ export default class Main extends Component {
                 console.log(this)
         }
 
+        asd(manufacturer)
+        {
+                console.log(manufacturer);
+                this.setState({curProducts: this.state.fetchedProducts.filter(product => product.manufacturer === manufacturer)})
+                console.log(this.state.fetchedProducts.filter(el => el==manufacturer))
+        }
 
         findAllManufacturers(manufacturersArr) {
                 this.state.fetchedProducts.map(product => {
@@ -94,7 +100,7 @@ export default class Main extends Component {
                                 productsArr = this.state.fetchedProducts;
                         }
 
-                        returnable = <MainContainer  this={this} manufacturersArr={manufacturersArr} typesArr={typesArr} lang={this.props.match.params.lang} productsArr={productsArr} />;
+                        returnable = <MainContainer  this={this} manufacturersArr={manufacturersArr} typesArr={typesArr} lang={this.props.match.params.lang} productsArr={this.state.curProducts} />;
 
                 }
 
@@ -113,7 +119,7 @@ const MainContainer = (props) => {
                         <div >
                                 <ul id={"products-sidebar"}>
                                         <div style={{ textAlign: 'center' }}>
-                                                <p>{language === "LT" ? "TIPAS" : language === "EN" && "TYPE"}</p>
+                                                <p className={"sidebar-subtext"}>{language === "LT" ? "TIPAS" : language === "EN" && "TYPE"}</p>
                                                 {props.typesArr.map(curType => {
                                                         // jei keiciu sita returna  - keist ir apacioj
                                                         return <Type this={props.this} type={curType} />
@@ -124,7 +130,7 @@ const MainContainer = (props) => {
  CIA NE TYPE o manufacturer turetu but arba sidebar-item
 */}
                                         <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-                                                <p>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p>
+                                                <p className={"sidebar-subtext"}>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p>
                                                 {props.manufacturersArr.map(curManufacturer => {
                                                         // jei keiciu sita returna  - keist ir apacioj
                                                         return <Type this={props.this}  type={curManufacturer} />
@@ -149,9 +155,9 @@ const Type = (props) => {
         return (
                 <li classname={"type-li"} onClick={(e) => {
                         e.target.classList.toggle("bold-text");
-                        console.log(props.this.state)
-                }} style={{ textAlign: 'center' }}>
-                        <p className={"product-type"}>{props.type}</p>
+                        props.this.asd(props.type)
+                }} style={{ textAlign: 'right', listStyle: 'none'}}>
+                        <p style={{fontSize: '1.15rem',}}className={"product-type"}>{props.type}</p>
                 </li>
         );
 }

@@ -6,9 +6,9 @@ import Products from './Products.component';
 import Manufacturers from '../components/Manufacturers.component';
 import Interior from '../components/Interior.component';
 import MainContainer from '../components/MainContainer.component.js';
-
 const Routes = () => {
     const location = useLocation();
+    
     // scroll up on every route change
     useEffect(() => {
         if (document.getElementsByClassName('container')[0] !== undefined)
