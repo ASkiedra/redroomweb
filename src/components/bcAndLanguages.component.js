@@ -24,11 +24,16 @@ const BcAndLanguages = (props) => {
         pathnameWO += location.pathname[i];
 
 
-
+    console.log(modifiedPathname)
+    console.log(location.pathname)
     // change background color if on /PRODUCTS
 
 
+    // remove empty strings 
+    modifiedPathname = modifiedPathname.filter(el => el !== "");
+
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
+
 
     // second word in the breadcrumbs
     if (props.language === "LT" && modifiedPathname[0] !== undefined)
@@ -54,6 +59,31 @@ const BcAndLanguages = (props) => {
         }
 
 
+    // mainCategory in the breadcrumbs
+    if (props.language === "LT" && modifiedPathname[0] !== undefined)
+        switch (modifiedPathname[1].toUpperCase()) {
+            case "SALON FURNITURE SYSTEMS":
+                modifiedPathname[1] = "SVETAINĖS IR TV BALDŲ SISTEMOS";
+                break;
+
+            case "MANUFACTURERS":
+                modifiedPathname[1] = "GAMINTOJAI";
+                break;
+
+            case "INTERIOR":
+                modifiedPathname[1] = "INTERJERAS";
+                break;
+
+            case "PRODUCTS":
+                modifiedPathname[1] = "PRODUKTAI";
+                break;
+
+            default:
+                break;
+        }
+
+    console.log(untranslatedPathname)
+
     return (
 
         <ul style={{ background: "white" }} id="bcnl-container">
@@ -72,6 +102,7 @@ const BcAndLanguages = (props) => {
                         </Link>
                     </>
                 }
+
 
 
                 {modifiedPathname.length > 1 && modifiedPathname[1] !== "null" && modifiedPathname[1] !== "undefined" &&
