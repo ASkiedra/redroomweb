@@ -27,13 +27,10 @@ const BcAndLanguages = (props) => {
     console.log(modifiedPathname)
     console.log(location.pathname)
     // change background color if on /PRODUCTS
-
-
     // remove empty strings 
     modifiedPathname = modifiedPathname.filter(el => el !== "");
 
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
-
 
     // translation of the second word in the breadcrumbs
     if (props.language === "LT" && modifiedPathname[0] !== undefined)
@@ -74,8 +71,8 @@ const BcAndLanguages = (props) => {
                 modifiedPathname[1] = "INTERJERAS";
                 break;
 
-            case "PRODUCTS":
-                modifiedPathname[1] = "PRODUKTAI";
+            case "BOOKSHELVES":
+                modifiedPathname[1] = "KNYGŲ LENTYNOS";
                 break;
 
             default:
@@ -104,7 +101,7 @@ const BcAndLanguages = (props) => {
                 }
 
 
-
+                    
                 {modifiedPathname.length > 1 && modifiedPathname[1] !== "null" && modifiedPathname[1] !== "undefined" &&
                     <>
                         <span style={{ color: 'black' }}>/</span>

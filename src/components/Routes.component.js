@@ -21,11 +21,12 @@ const Routes = () => {
             <Route exact path="/" component={MainContainer} />
 
             <Route exact path="/:lang/manufacturers" component={Manufacturers} />
-            {/* mainCategory: day systems, type: sofas */}
+
+
             <Route exact path="/:lang/products/:mainCategory/:subCategory/:type/:manufacturer" component={Products} />
 
             {/* case no manufacturer */}
-            <Route exact path="/:lang/products/:mainCategory/:type//:productcode/:productname/" />
+            <Route exact path="/:lang/products/:mainCategory/:subCategory/:type//:productcode/:productname/" />
 
             {/* case only mainCategory(e.g. from the dropdown) */}
             <Route exact path="/:lang/products/:mainCategory/" component={Products} />
