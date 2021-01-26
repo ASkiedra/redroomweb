@@ -35,7 +35,7 @@ const BcAndLanguages = (props) => {
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
 
 
-    // second word in the breadcrumbs
+    // translation of the second word in the breadcrumbs
     if (props.language === "LT" && modifiedPathname[0] !== undefined)
         switch (modifiedPathname[0].toUpperCase()) {
             case "CONTACTS":
@@ -59,15 +59,15 @@ const BcAndLanguages = (props) => {
         }
 
 
-    // mainCategory in the breadcrumbs
-    if (props.language === "LT" && modifiedPathname[0] !== undefined)
+    // translation of the mainCategory in the breadcrumbs
+    if (props.language === "LT" && modifiedPathname[1] !== undefined)
         switch (modifiedPathname[1].toUpperCase()) {
             case "SALON FURNITURE SYSTEMS":
                 modifiedPathname[1] = "SVETAINĖS IR TV BALDŲ SISTEMOS";
                 break;
 
-            case "MANUFACTURERS":
-                modifiedPathname[1] = "GAMINTOJAI";
+            case "WORKPLACE FURNITURE":
+                modifiedPathname[1] = "DARBO VIETOS";
                 break;
 
             case "INTERIOR":
