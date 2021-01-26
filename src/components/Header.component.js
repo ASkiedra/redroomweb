@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import logo from './Logo-V4.png';
 
 const Header = (props) => {
-/* pervadint i Products menu */ 
-    const Menu = () => {
+/* pervadint i Products ProductsMenu */ 
+    const ProductsMenu = () => {
         return (
             <div id="produktai" style={{ height: "inherit" }} >
                 {/* OPENED */}
@@ -51,7 +51,7 @@ const Header = (props) => {
                 <DropdownItem>
                     <li style={{  textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
                         {/* heading text */}
-                        <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
+                        <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/"+props.language+"/products/day systems"}>
                             {
                                 props.language === "LT" ? "DIENOS SISTEMOS" :
                                     props.language === "EN" && "DAY SYSTEMS"
@@ -70,7 +70,7 @@ const Header = (props) => {
                             </div>
 
                             <div>
-                                <Link className="dropdown-subtext" >
+                                <Link to={"/"+props.language+"/products/workplace furniture"} className="dropdown-subtext" >
                                     {
                                         props.language === "LT" ? "DARBO VIETOS" :
                                             props.language === "EN" && "WORKPLACE FURNITURE"
@@ -79,7 +79,7 @@ const Header = (props) => {
                             </div>
 
                             <div>
-                                <Link className="dropdown-subtext" >
+                                <Link to={"/"+props.language+"/products/workplace furniture"} className="dropdown-subtext" >
                                     {
                                         props.language === "LT" ? "STALAI IR KĖDĖS" :
                                             props.language === "EN" && "TABLES AND CHAIRS"
@@ -183,7 +183,7 @@ const Header = (props) => {
         <div >
             <header style={{ display: 'block' }}>
                 <ul id="header-list">
-                    <Menu id="produktai" className="header-item-onhover"></Menu>
+                    <ProductsMenu id="produktai" className="header-item-onhover"/>
 
                     <Link className="header-item-onhover" to={"/" + props.language + "/interior"}>
                         {props.language === "LT" ? "INTERJERUI"

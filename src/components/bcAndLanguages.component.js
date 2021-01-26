@@ -26,13 +26,6 @@ const BcAndLanguages = (props) => {
 
 
     // change background color if on /PRODUCTS
-    var backgroundas = "#E4E9ED";
-    if (modifiedPathname[0] !== undefined && modifiedPathname[0].toUpperCase() === 'PRODUCTS') {
-        backgroundas = 'white';
-    }
-    else {
-        backgroundas = 'rgba(255, 255, 240, 0.651)';
-    }
 
 
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
@@ -63,7 +56,7 @@ const BcAndLanguages = (props) => {
 
     return (
 
-        <ul style={{ background: backgroundas }} id="bcnl-container">
+        <ul style={{ background: "white" }} id="bcnl-container">
             <div>
                 <Link to={"/" + props.language} style={{ paddingLeft: '1rem', transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'black' }}>
                     {/* kalba == lt? pagrindinis: main */}

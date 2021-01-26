@@ -214,7 +214,8 @@ a {
 
 #gamintoju-container {
   overflow: hidden;
-  background-color: rgb(227, 233, 237);
+  /* background-color: rgb(227, 233, 237); */
+  background-color: white;
 }
 
 #gamintoju-grid {
@@ -275,7 +276,8 @@ a {
   min-height: 90vh;
   height: calc(100vh - 5rem);
   overflow: auto;
-  background: rgba(255, 255, 240, 0.651);
+  background: white;
+  /* background: rgba(255, 255, 240, 0.651); */
   overflow-x: hidden;
 }
 
@@ -349,4 +351,9 @@ a {
 .product-type {
   font-family: "Roboto";
   text-transform: lowercase;
+}
+
+.product-container img {
+  width: auto;
+  max-width: 21rem;
 }

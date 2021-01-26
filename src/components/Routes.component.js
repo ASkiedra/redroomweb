@@ -9,7 +9,6 @@ import MainContainer from '../components/MainContainer.component.js';
 
 const Routes = () => {
     const location = useLocation();
-const asd="123"
     // scroll up on every route change
     useEffect(() => {
         if (document.getElementsByClassName('container')[0] !== undefined)
@@ -28,6 +27,10 @@ const asd="123"
             {/* case no manufacturer */}
             <Route exact path="/:lang/products/:maincategory/:type//:productcode/:productname/" />
             
+            {/* case only maincategory(e.g. from the dropdown) */}
+            <Route exact path="/:lang/products/:maincategory/" component={Products}/>
+
+
             <Route exact path="/:lang/products/:maincategory/:type/:manufacturer/:productcode/:productname/" />
             <Route exact path="/:lang/products/:maincategory/:type/:manufacturer/:productcode/:productname/:productcolor" />
 

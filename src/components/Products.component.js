@@ -163,7 +163,7 @@ const Product = (props) => {
         }
         return (
                 <Link to={"/" + props.lang + "/products/" + props.product.maincategory + "/" + props.product.type + "/" + props.product.manufacturer + "/" + props.product.productCode + "/" + props.product.name + "/" + props.product.color}>
-                        <div className={props.product.name} style={{ textAlign: 'center' }}>
+                        <div className={"product-container"} style={{ textAlign: 'center' }}>
                                 {/* cant use <picture> because IE support is bad and some customers definitely use IE or opera mini */}
 
                                 {
