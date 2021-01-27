@@ -27,10 +27,11 @@ class ProductPage extends Component {
         imageExists(imageurl) {
                 var http = new XMLHttpRequest();
 
-                // http.open('HEAD', imageurl, false);
-                // http.send();
-
+                http.open('HEAD', imageurl, false);
+                http.send();
+                console.log(imageurl)
                 // dukart alertina kazkodel
+                // alert(imageurl)
                 // alert(http.status + imageurl)
                 return http.status !== 404;
 
@@ -39,33 +40,36 @@ class ProductPage extends Component {
         render() {
                 var linkWithoutSpaces = this.props.match.params.name.replace(/\s/g, ''),
                         path = "/images/products/" + this.props.match.params.name + '/' + this.state.imageName;
-                return (
-                        <div style={{ height: 'inherit' }} >
-                                {/* {!this.state.loading && <img src={"/images/products/" + linkWithoutSpaces + '/' + this.state.imageName + '.png'} alt="nx" />} */}
-                                { this.props.match.params.name}
-                                {console.log(path + ".png")}
-                                { !this.state.loading &&
 
-                                        this.imageExists(path + ".png") ? <img width={400} height={300} src={path + ".png"} alt="logo" />
-                                        // ifo netirkina cia kazkodel
-                                                :
-                                                true ? console.log(123)
-                                                :
-                                                this.imageExists(path + ".png") ? <img width={400} height={300} src={path + '.png'} alt="logo" />
+
+                if (this.state.loading)
+                        return <div style={{ height: 'inherit' }}></div>
+                else
+                        return (
+                                <div style={{ height: 'inherit' }} >
+                                        {/* {!this.state.loading && <img src={"/images/products/" + linkWithoutSpaces + '/' + this.state.imageName + '.png'} alt="nx" />} */}
+                                        { this.props.match.params.name}
+                                        {console.log(path + ".png")}
+
+                                        {
+
+                                                this.imageExists(path + ".jpg") ? <img width={400} height={300} src={path + ".jpg"} alt="logo" />
                                                         :
-                                                        this.imageExists(path + ".jpeg") ? <img width={400} height={300} src={path + '.jpeg'} alt="logo" />
+                                                        this.imageExists(path + ".png") ? <img width={400} height={300} src={path + '.png'} alt="logo" />
                                                                 :
-                                                                this.imageExists(path + ".svg") ? <img width={400} height={300} src={path + '.svg'} alt="logo" />
+                                                                this.imageExists(path + ".jpeg") ? <img width={400} height={300} src={path + '.jpeg'} alt="logo" />
                                                                         :
-                                                                        this.imageExists(path + ".bmp") ? <img width={400} height={300} src={path + '.bmp'} alt="logo" />
+                                                                        this.imageExists(path + ".svg") ? <img width={400} height={300} src={path + '.svg'} alt="logo" />
                                                                                 :
+                                                                                this.imageExists(path + ".bmp") ? <img width={400} height={300} src={path + '.bmp'} alt="logo" />
+                                                                                        :
 
-                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />
-                                }
+                                                                                        <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />
+                                        }
 
 
-                        </div >
-                );
+                                </div >
+                        );
         }
 }
 
