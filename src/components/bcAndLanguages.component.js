@@ -85,7 +85,7 @@ const BcAndLanguages = (props) => {
         slashAmount+= '/';
     return (
 
-        <ul style={{ background: "white" }} id="bcnl-container">
+        <ul style={{ background: "transparent" }} id="bcnl-container">
             <div>
                 <Link to={"/" + props.language} style={{ paddingLeft: '1rem', transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'black' }}>
                     {/* kalba == lt? pagrindinis: main */}

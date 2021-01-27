@@ -8,15 +8,15 @@ import Footer from './components/Footer.component';
 import Routes from './components/Routes.component';
 
 function App() {
-  
+
   // add a history save here
   const [language, setLanguage] = useState("LT");
 
-  
+
   const setPathname = (pathname) => {
     console.log("**", pathname)
   }
-  
+
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header language={language} />
@@ -24,7 +24,7 @@ function App() {
 
       <div className='container'>
         <BcAndLanguages language={language} setLanguage={setLanguage} />
-        <Routes  setPathname={setPathname} />
+        <Routes setPathname={setPathname} />
         <Footer language={language} />
       </div>
 
