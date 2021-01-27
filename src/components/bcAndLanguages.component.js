@@ -24,9 +24,6 @@ const BcAndLanguages = (props) => {
         pathnameWO += location.pathname[i];
 
 
-    console.log(modifiedPathname)
-    console.log(location.pathname)
-    // change background color if on /PRODUCTS
     // remove empty strings 
     modifiedPathname = modifiedPathname.filter(el => el !== "");
     modifiedPathname = modifiedPathname.filter(el => el !== "undefined" && el !== undefined);

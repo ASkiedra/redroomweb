@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import { useLocation } from "react-router-dom";
 
-export default class Main extends Component {
+export default class AllProducts extends Component {
         constructor(props) {
                 super(props);
-                this.state = { curProducts: [],fetchedProducts: [], loading: true };
+                this.state = { curProducts: [], fetchedProducts: [], loading: true };
         }
 
 
@@ -15,7 +15,7 @@ export default class Main extends Component {
         componentDidMount() {
                 axios.get("http://localhost:5000/products/")
                         .then(response => {
-                                this.setState({ fetchedProducts: response.data, curProducts: response.data,loading: false });
+                                this.setState({ fetchedProducts: response.data, curProducts: response.data, loading: false });
                         })
                         .catch((error) => {
                                 console.log(error);
@@ -33,11 +33,10 @@ export default class Main extends Component {
                 console.log(this)
         }
 
-        asd(manufacturer)
-        {
+        asd(manufacturer) {
                 console.log(manufacturer);
-                this.setState({curProducts: this.state.fetchedProducts.filter(product => product.manufacturer === manufacturer)})
-                console.log(this.state.fetchedProducts.filter(el => el==manufacturer))
+                this.setState({ curProducts: this.state.fetchedProducts.filter(product => product.manufacturer === manufacturer) })
+                console.log(this.state.fetchedProducts.filter(el => el == manufacturer))
         }
 
         findAllManufacturers(manufacturersArr) {
@@ -98,7 +97,7 @@ export default class Main extends Component {
                                 productsArr = this.state.fetchedProducts;
                         }
 
-                        returnable = <MainContainer  this={this} manufacturersArr={manufacturersArr} typesArr={typesArr} lang={this.props.match.params.lang} productsArr={this.state.curProducts} />;
+                        returnable = <MainContainer this={this} manufacturersArr={manufacturersArr} typesArr={typesArr} lang={this.props.match.params.lang} productsArr={this.state.curProducts} />;
 
                 }
 
@@ -131,7 +130,7 @@ const MainContainer = (props) => {
                                                 <p className={"sidebar-subtext"}>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p>
                                                 {props.manufacturersArr.map(curManufacturer => {
                                                         // jei keiciu sita returna  - keist ir apacioj
-                                                        return <Type this={props.this}  type={curManufacturer} />
+                                                        return <Type this={props.this} type={curManufacturer} />
                                                 })}
                                         </div>
 
@@ -141,7 +140,7 @@ const MainContainer = (props) => {
                         {/* products */}
                         < div style={{ height: 'inherit', display: 'grid', minHeight: 'inherit', gridTemplateColumns: '33.3333% 33.3333% 33.3333%', marginRight: '5rem' }}>
                                 {props.productsArr.map(curProduct => {
-                                        return <Product lang={props.lang} product={curProduct} />;
+                                        return <Product type lang={props.lang} product={curProduct} />;
                                 })
                                 }
                         </div>
@@ -154,8 +153,8 @@ const Type = (props) => {
                 <li classname={"type-li"} onClick={(e) => {
                         e.target.classList.toggle("bold-text");
                         props.this.asd(props.type)
-                }} style={{ textAlign: 'right', listStyle: 'none'}}>
-                        <p style={{fontSize: '1.15rem',}}className={"product-type"}>{props.type}</p>
+                }} style={{ textAlign: 'right', listStyle: 'none' }}>
+                        <p style={{ fontSize: '1.15rem', }} className={"product-type"}>{props.type}</p>
                 </li>
         );
 }
@@ -177,7 +176,9 @@ const Product = (props) => {
 
         }
         return (
-                <Link key={props.product.productCode+props.product.name} to={"/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.type + "/" + props.product.manufacturer + "/" + props.product.productCode + "/" + props.product.name + "/" + props.product.color}>
+                <Link key={props.product.productCode + props.product.name}
+                        to={"/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.type + "/" + props.product.manufacturer + "/" + props.product.productCode + "/" +props.product._id+"/"+ props.product.name + "/" + props.product.color}
+                >
                         <div className={"product-container"} style={{ textAlign: 'center' }}>
                                 {/* cant use <picture> because browser support is bad and some customers definitely use IE or opera mini */}
                                 {
@@ -193,7 +194,7 @@ const Product = (props) => {
                                                                         imageExists("/images/products/" + props.product.imagename + ".bmp") ? <img width={400} height={300} src={"/images/products/" + props.product.imagename + '.bmp'} alt="logo" />
                                                                                 :
 
-                                                                                <img width={400} height={300} src={"/images/products/" + props.product.imagename + '.404'} alt="404-img-logo" />
+                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />
                                 }
 
 

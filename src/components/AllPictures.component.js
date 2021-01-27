@@ -9,7 +9,8 @@ class AllPictures extends React.Component {
   }
 
   componentDidMount() {
-    listOfImages = this.importAll(require.context('../../public', true, /.jpg$/));
+    listOfImages = this.importAll(require.context('../../public', true,/\.(png|jpe?g|svg)$/));
+    console.log(typeof(listOfImages))
     console.log(listOfImages)
   }
   

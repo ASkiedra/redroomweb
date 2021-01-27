@@ -11,7 +11,7 @@ router.route('/').get((req, res) => {
 // if rows are removed from here, the post request to put items in the database will give an error
 router.route('/add').post((req, res) => {
   const name = req.body.name;
-  const imagename = req.body.imagename;
+  const imageName = req.body.imageName;
   const type = req.body.type;
   const color = req.body.color;  
   const price = req.body.price;
@@ -27,7 +27,7 @@ router.route('/add').post((req, res) => {
   
   const newProduct = new Product({
     name,
-    imagename,
+    imageName,
     type,
     mainCategory,
     color,

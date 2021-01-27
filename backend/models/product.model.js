@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 // if rows are removed from this, POSTING a request to put products in the database will only work for the rows that have remained
 const productSchema = new Schema({
     name: { type: String, required: true },
-    imagename: { type: String, required: true },
+    imageName: { type: String, required: true },
     type: { type: String, required: true },
     color: { type: Array, required: false },
     mainCategory: {type: String, required: false},
