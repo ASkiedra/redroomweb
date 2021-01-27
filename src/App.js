@@ -6,7 +6,7 @@ import Header from './components/Header.component';
 import BcAndLanguages from './components/BcAndLanguages.component';
 import Footer from './components/Footer.component';
 import Routes from './components/Routes.component';
-import Skrr from './components/skrr.js';
+import AllPictures from './components/AllPictures.component.js';
 function App() {
   // add a history save here
   const [language, setLanguage] = useState("LT");
@@ -20,8 +20,7 @@ function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header language={language} />
-    <Skrr/>
-
+{/* <Skrr/> */}
 
 
       <div className='container'>

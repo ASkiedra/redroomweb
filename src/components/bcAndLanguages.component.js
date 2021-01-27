@@ -29,13 +29,12 @@ const BcAndLanguages = (props) => {
     // change background color if on /PRODUCTS
     // remove empty strings 
     modifiedPathname = modifiedPathname.filter(el => el !== "");
-    modifiedPathname = modifiedPathname.filter(el => el !== "undefined");
-
+    modifiedPathname = modifiedPathname.filter(el => el !== "undefined" && el !== undefined);
+    
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
-    console.log(modifiedPathname)
 
     // translation of the second word in the breadcrumbs
-    if (props.language === "LT")
+    if (props.language === "LT" && modifiedPathname[0] !== undefined)
         switch (modifiedPathname[0].toUpperCase()) {
             case "CONTACTS":
                 modifiedPathname[0] = "KONTAKTAI";
@@ -58,7 +57,7 @@ const BcAndLanguages = (props) => {
         }
 
     // translation of the mainCategory in the breadcrumbs
-    if (props.language === "LT")
+    if (props.language === "LT" && modifiedPathname[1] !== undefined)
         switch (modifiedPathname[1].toUpperCase()) {
             case "SALON FURNITURE SYSTEMS":
                 modifiedPathname[1] = "SVETAINĖS IR TV BALDŲ SISTEMOS";
@@ -81,12 +80,12 @@ const BcAndLanguages = (props) => {
         }
 
     // this variable is only used on the third word of the breadcrumbs, so there are already 2 slashes in the link. there may be more therefore we need to calculate the amount
-    var slashAmount = '', inTheLink = location.pathname.split('/').length - 3;
-    if (location.pathname[location.pathname.length - 1] === '/')
+    var slashAmount='', inTheLink = location.pathname.split('/').length-3;
+    if (location.pathname[location.pathname.length-1] === '/')
         inTheLink--;
 
-    for (let i = 0; i < inTheLink; i++)
-        slashAmount += '/';
+    for (let i = 0; i < inTheLink; i++ )
+        slashAmount+= '/';
     return (
 
         <ul style={{ background: "white" }} id="bcnl-container">
@@ -108,7 +107,7 @@ const BcAndLanguages = (props) => {
 
 
 
-                {modifiedPathname.length > 1 && modifiedPathname[1] !== "null" &&
+                {modifiedPathname.length > 1 && modifiedPathname[1] !== "null" && modifiedPathname[1] !== "undefined" &&
                     <>
                         <span style={{ color: 'black' }}>/</span>
                         <Link to={"/" + props.language + "/" + untranslatedPathname[0] + slashAmount + untranslatedPathname[1]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'black', textTransform: 'uppercase' }}>
