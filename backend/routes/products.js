@@ -10,12 +10,13 @@ router.route('/').get((req, res) => {
 
 // if rows are removed from here, the post request to put items in the database will give an error
 router.route('/add').post((req, res) => {
-  const name = req.body.name;
-  const imageName = req.body.imageName;
-  const type = req.body.type;
-  const color = req.body.color;  
+  const name = req.body.name,
+    imageName = req.body.imageName,
+    type = req.body.type;
+  const color = req.body.color;
   const price = req.body.price;
   const mainCategory = req.body.mainCategory;
+  const subCategory = req.body.subCategory;
   const orderBy = req.body.orderBy;
   const manufacturer = req.body.manufacturer;
   const productCode = req.body.productCode;
@@ -23,13 +24,14 @@ router.route('/add').post((req, res) => {
   const available = req.body.available;
   const description = req.body.description;
   const extraField = req.body.extraField;
-  
-  
+
+
   const newProduct = new Product({
     name,
     imageName,
     type,
     mainCategory,
+    subCategory,
     color,
     price,
     orderBy,
@@ -42,9 +44,9 @@ router.route('/add').post((req, res) => {
   });
 
   newProduct.save()
-  .then(() => res.json('Product added!'))
-  .catch(err => res.status(400).json('Error: ' + err));
-}); 
+    .then(() => res.json('Product added!'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 
 
 // ROUTE THAT DISPLAYS PRODUCTS

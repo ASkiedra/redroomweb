@@ -2,8 +2,8 @@
 	"name":
 	"IconaGruppi-CHLOE",
 
-	"imagename":
-	"IconaGruppi-CHLOE",
+	"imageName":
+	[],
 	
 	"productCode":
 	"IconaGruppi-CHLOE",
@@ -14,8 +14,22 @@
 	"mainCategory":
 	"",
 	
+	"subCategory":
+	"",
+	
 	"manufacturer":
 	"",
+
+	
+	"info":
+	"",
+
+
+
+
+
+
+
 
 	
 	"color":
@@ -25,24 +39,14 @@
 	"",
 	
 	
-	
-	"info":
-	"",
-	
-
-	
 	"price":
 	[],
 	
 	"orderBy":
 	[],
 	
-
-
 	"available":
 	[],
-	
-
 	
 	"extraField":
 	[]
