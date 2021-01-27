@@ -5,6 +5,7 @@ import logo from './Logo-V4.png';
 const Header = (props) => {
     /* pervadint i Products ProductsMenu */
     const ProductsMenu = () => {
+        console.log(window.innerHeight)
         return (
             <div id="produktai" style={{ height: "inherit" }} >
                 {/* OPENED */}

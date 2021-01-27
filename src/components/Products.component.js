@@ -13,7 +13,6 @@ export default class Main extends Component {
 
 
         componentDidMount() {
-
                 axios.get("http://localhost:5000/products/")
                         .then(response => {
                                 this.setState({ fetchedProducts: response.data, curProducts: response.data,loading: false });
@@ -83,7 +82,6 @@ export default class Main extends Component {
         }
 
         render() {
-
                 var productsArr = [], manufacturersArr = [], typesArr = [], returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
                 console.log('123')
                 // only call functions if its loaded (if the data is fetched from the db)
@@ -181,8 +179,7 @@ const Product = (props) => {
         return (
                 <Link key={props.product.productCode+props.product.name} to={"/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.type + "/" + props.product.manufacturer + "/" + props.product.productCode + "/" + props.product.name + "/" + props.product.color}>
                         <div className={"product-container"} style={{ textAlign: 'center' }}>
-                                {/* cant use <picture> because IE support is bad and some customers definitely use IE or opera mini */}
-
+                                {/* cant use <picture> because browser support is bad and some customers definitely use IE or opera mini */}
                                 {
 
                                         imageExists("/images/products/" + props.product.imagename + ".jpg") ? <img width={400} height={300} src={"/images/products/" + props.product.imagename + '.jpg'} alt="logo" />
