@@ -10,8 +10,6 @@ export default class AllProducts extends Component {
         }
 
 
-
-
         componentDidMount() {
                 axios.get("http://localhost:5000/products/")
                         .then(response => {
@@ -38,6 +36,7 @@ export default class AllProducts extends Component {
                 this.setState({ curProducts: this.state.fetchedProducts.filter(product => product.manufacturer === manufacturer) })
                 console.log(this.state.fetchedProducts.filter(el => el === manufacturer))
         }
+
 
         findAllManufacturers(manufacturersArr) {
                 this.state.fetchedProducts.map(product => {
@@ -82,14 +81,13 @@ export default class AllProducts extends Component {
 
         render() {
                 var productsArr = [], manufacturersArr = [], typesArr = [], returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
-                console.log('123')
                 // only call functions if its loaded (if the data is fetched from the db)
                 if (!this.state.loading) {
                         // jei konkretaus gamintojo page esu nefiltruoja kitu 
                         this.findAllTypes(typesArr);
                         this.findAllManufacturers(manufacturersArr);
 
-                        if (this.props.match.params.manufacturer) {
+                        if (this.props.match.params.manufacturer !== undefined) {
                                 this.filter(productsArr)
                         }
                         else {
@@ -100,6 +98,7 @@ export default class AllProducts extends Component {
                         returnable = <MainContainer this={this} manufacturersArr={manufacturersArr} typesArr={typesArr} lang={this.props.match.params.lang} productsArr={this.state.curProducts} />;
 
                 }
+                console.log(productsArr)
 
                 return returnable;
         }
@@ -169,6 +168,8 @@ const Product = (props) => {
                 http.open('HEAD', imageurl, false);
                 http.send();
 
+                if (http.status !== 200)
+                        console.log(imageurl)
                 // dukart alertina kazkodel
                 return http.status !== 404;
 
@@ -178,34 +179,34 @@ const Product = (props) => {
 
         return (
                 <Link key={props.product.productCode + props.product.name}
-                        style={{height: '20rem', width: '100%'}}
+                        style={{ height: '20rem', width: '100%' }}
                         to={{
                                 pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.type + "/" + props.product.manufacturer + "/" + props.product.productCode + "/" + props.product._id + "/" + props.product.name + "/" + props.product.color,
                                 product: props.product,
                         }}>
-                                <div className={"product-container"} style={{ height: 'inherit', width: 'inherit',textAlign: 'center' }}>
-                                        {/* cant use <picture> because browser support is bad and some customers definitely use IE or opera mini */}
-                                        {
+                        <div className={"product-container"} style={{ height: 'inherit', width: 'inherit', textAlign: 'center' }}>
+                                {/* cant use <picture> because browser support is bad and some customers definitely use IE or opera mini */}
+                                {
 
-                                                imageExists(path + ".jpg") ? <img className="product-list-photo" src={path + ".jpg"} alt="logo" />
+                                        imageExists(path + ".jpg") ? <img className="product-list-photo" src={path + ".jpg"} alt="logo" />
+                                                :
+                                                imageExists(path + ".png") ? <img className="product-list-photo" src={path + '.png'} alt="logo" />
                                                         :
-                                                        imageExists(path + ".png") ? <img className="product-list-photo" src={path + '.png'} alt="logo" />
+                                                        imageExists(path + ".jpeg") ? <img className="product-list-photo" src={path + '.jpeg'} alt="logo" />
                                                                 :
-                                                                imageExists(path + ".jpeg") ? <img className="product-list-photo" src={path + '.jpeg'} alt="logo" />
+                                                                imageExists(path + ".svg") ? <img className="product-list-photo" src={path + '.svg'} alt="logo" />
                                                                         :
-                                                                        imageExists(path + ".svg") ? <img className="product-list-photo" src={path + '.svg'} alt="logo" />
+                                                                        imageExists(path + ".bmp") ? <img className="product-list-photo" src={path + '.bmp'} alt="logo" />
                                                                                 :
-                                                                                imageExists(path + ".bmp") ? <img className="product-list-photo" src={path + '.bmp'} alt="logo" />
-                                                                                        :
 
-                                                                                        <img className="product-list-photo" src={"/images/no_image.png"} alt="not-found" />
-                                        }
+                                                                                <img className="product-list-photo" src={"/images/no_image.png"} alt="not-found" />
+                                }
 
 
 
 
-                                        <p className={"product-name"}><b>{props.product.manufacturer} </b>{props.product.name}</p>
-                                </div>
-                        </Link>
+                                <p className={"product-name"}><b>{props.product.manufacturer} </b>{props.product.name}</p>
+                        </div>
+                </Link>
         );
 }
