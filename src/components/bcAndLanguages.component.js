@@ -4,7 +4,8 @@ import { useLocation, Link } from "react-router-dom";
 const BcAndLanguages = (props) => {
     const location = useLocation();
     var modifiedPathname = [];
-
+    console.log(props)
+    console.log(location.pathname)
 
     // if any location is present ( [0] is always /, so im checking the 1st element), e.g. /lt or /en
     if (location.pathname[1] !== undefined)
