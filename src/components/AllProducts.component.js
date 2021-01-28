@@ -175,7 +175,7 @@ const Product = (props) => {
 
         }
 
-        var path = "/images/products/" + props.product.name + '/' + props.product.imagename;
+        var path = "/images/products/" + props.product.manufacturer+'/'+props.product.name + '/' + props.product.imageName[0];
 
         return (
                 <Link key={props.product.productCode + props.product.name}

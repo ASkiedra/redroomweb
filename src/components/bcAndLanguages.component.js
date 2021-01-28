@@ -27,7 +27,7 @@ const BcAndLanguages = (props) => {
     // remove empty strings 
     modifiedPathname = modifiedPathname.filter(el => el !== "");
     modifiedPathname = modifiedPathname.filter(el => el !== "undefined" && el !== undefined);
-    
+
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
 
     // translation of the second word in the breadcrumbs
@@ -53,7 +53,7 @@ const BcAndLanguages = (props) => {
                 break;
         }
 
-    // translation of the mainCategory in the breadcrumbs
+    // translation of the third word in the breadcrumbs
     if (props.language === "LT" && modifiedPathname[1] !== undefined)
         switch (modifiedPathname[1].toUpperCase()) {
             case "SALON FURNITURE SYSTEMS":
@@ -72,17 +72,21 @@ const BcAndLanguages = (props) => {
                 modifiedPathname[1] = "KNYGŲ LENTYNOS";
                 break;
 
+            case "BED":
+                modifiedPathname[1] = "LOVOS";
+                break;
+
             default:
                 break;
         }
 
     // this variable is only used on the third word of the breadcrumbs, so there are already 2 slashes in the link. there may be more therefore we need to calculate the amount
-    var slashAmount='', inTheLink = location.pathname.split('/').length-3;
-    if (location.pathname[location.pathname.length-1] === '/')
+    var slashAmount = '', inTheLink = location.pathname.split('/').length - 3;
+    if (location.pathname[location.pathname.length - 1] === '/')
         inTheLink--;
 
-    for (let i = 0; i < inTheLink; i++ )
-        slashAmount+= '/';
+    for (let i = 0; i < inTheLink; i++)
+        slashAmount += '/';
     return (
 
         <ul style={{ background: "transparent" }} id="bcnl-container">

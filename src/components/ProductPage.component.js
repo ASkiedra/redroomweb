@@ -6,8 +6,10 @@ import axios from 'axios';
 class ProductPage extends Component {
         constructor(props) {
                 super(props)
+                
                 this.state = {
-                        imageName: undefined,
+                        info: [],
+                        path: undefined,
                         loading: true
                 }
         }
@@ -17,12 +19,15 @@ class ProductPage extends Component {
                 axios.get('http://localhost:5000/products/' + this.props.match.params.productid)
                         .then(response => {
                                 this.setState({
-                                        imageName: response.data.imagename,
-                                        loading: false
-                                },
-                                        console.log(response.data.imageName))
-                        })
+                                        info: response.data.info,
+                                        path: "/images/products/" + this.props.match.params.manufacturer + '/' + this.props.match.params.name + '/' + response.data.imageName,
+                                        loading: false,
+                                }
+                                )
+                        }
+                        )
         }
+
 
         imageExists(imageurl) {
                 var http = new XMLHttpRequest();
@@ -38,30 +43,27 @@ class ProductPage extends Component {
         }
 
         render() {
-                var linkWithoutSpaces = this.props.match.params.name.replace(/\s/g, ''),
-                        path = "/images/products/" + this.props.match.params.name + '/' + this.state.imageName;
+                var linkWithoutSpaces = this.props.match.params.name.replace(/\s/g, '');
 
-
+                console.log(this.state)
                 if (this.state.loading)
                         return <div style={{ height: 'inherit' }}></div>
                 else
                         return (
                                 <div style={{ height: 'inherit' }} >
-                                        {/* {!this.state.loading && <img src={"/images/products/" + linkWithoutSpaces + '/' + this.state.imageName + '.png'} alt="nx" />} */}
-                                        { this.props.match.params.name}
-                                        {console.log(path + ".png")}
 
+                                        <p>{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
                                         {
 
-                                                this.imageExists(path + ".jpg") ? <img width={400} height={300} src={path + ".jpg"} alt="logo" />
+                                                this.imageExists(this.state.path + ".jpg") ? <img width={400} height={300} src={this.state.path + ".jpg"} alt="logo" />
                                                         :
-                                                        this.imageExists(path + ".png") ? <img width={400} height={300} src={path + '.png'} alt="logo" />
+                                                        this.imageExists(this.state.path + ".png") ? <img width={400} height={300} src={this.state.path + '.png'} alt="logo" />
                                                                 :
-                                                                this.imageExists(path + ".jpeg") ? <img width={400} height={300} src={path + '.jpeg'} alt="logo" />
+                                                                this.imageExists(this.state.path + ".jpeg") ? <img width={400} height={300} src={this.state.path + '.jpeg'} alt="logo" />
                                                                         :
-                                                                        this.imageExists(path + ".svg") ? <img width={400} height={300} src={path + '.svg'} alt="logo" />
+                                                                        this.imageExists(this.state.path + ".svg") ? <img width={400} height={300} src={this.state.path + '.svg'} alt="logo" />
                                                                                 :
-                                                                                this.imageExists(path + ".bmp") ? <img width={400} height={300} src={path + '.bmp'} alt="logo" />
+                                                                                this.imageExists(this.state.path + ".bmp") ? <img width={400} height={300} src={this.state.path + '.bmp'} alt="logo" />
                                                                                         :
 
                                                                                         <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />

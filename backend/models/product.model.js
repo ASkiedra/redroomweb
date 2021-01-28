@@ -18,7 +18,7 @@ const productSchema = new Schema({
     color: { type: Array, required: false },
     price: { type: Array, required: false },
     orderBy: { type: Array, required: false },
-    info: { type: String, required: false },
+    info: { type: Array, required: false },
     description: { type: Array, required: false },
     extraField: { type: Array, required: false }
 },
