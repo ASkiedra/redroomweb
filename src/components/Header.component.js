@@ -1,15 +1,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from './Logo-V4.png';
+import  { Redirect } from 'react-router-dom'
 
 const Header = (props) => {
-    /* pervadint i Products ProductsMenu */
+    // temporary fix
+    const checkIfMobile = () => {
+        // if the screen is larger than from an ordinary phone
+        if (window.innerHeight > 1000 && window.innerWidth > 1000)
+            setOPD(!openedProductsDropdown)
+        else
+        window.location.replace("/"+props.language+'/products')
+    }
+
     const ProductsMenu = () => {
         return (
             <div id="produktai" style={{ height: "inherit" }} >
                 {/* OPENED */}
                 { openedProductsDropdown &&
-                    <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(false) }}>
+                    <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
                         <div style={{ height: "inherit" }}>
                             <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} className="header-item-onhover">
                                 {
@@ -24,7 +33,7 @@ const Header = (props) => {
 
                 {/* CLOSED */}
                 { !openedProductsDropdown &&
-                    <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { setOPD(true) }}>
+                    <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
                         <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} className="header-item-onhover">
                             {
                                 props.language === "LT" ? "PRODUKTAI" :
