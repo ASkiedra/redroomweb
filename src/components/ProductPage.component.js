@@ -62,24 +62,25 @@ class ProductPage extends Component {
         render() {
                 return (
                         <div style={{ height: 'inherit' }} >
-                                <div>
-                                        {console.log(this.props)}
-                                        <p>{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
-
-                                        {this.imageExists(this.state.path + ".jpg") ? <img width={400} height={300} src={this.state.path + ".jpg"} alt="logo" />
-                                                :
-                                                this.imageExists(this.state.path + ".png") ? <img width={400} height={300} src={this.state.path + '.png'} alt="logo" />
+                                {!this.state.loading &&
+                                        <div>
+                                                <p>{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
+<img height={300}width={500}src={this.state.path+'.jpg'}/>
+                                                {this.imageExists(this.state.path + ".jpg") ? <img width={400} height={300} src={this.state.path + ".jpg"} alt="logo" />
                                                         :
-                                                        this.imageExists(this.state.path + ".jpeg") ? <img width={400} height={300} src={this.state.path + '.jpeg'} alt="logo" />
+                                                        this.imageExists(this.state.path + ".png") ? <img width={400} height={300} src={this.state.path + '.png'} alt="logo" />
                                                                 :
-                                                                this.imageExists(this.state.path + ".svg") ? <img width={400} height={300} src={this.state.path + '.svg'} alt="logo" />
+                                                                this.imageExists(this.state.path + ".jpeg") ? <img width={400} height={300} src={this.state.path + '.jpeg'} alt="logo" />
                                                                         :
-                                                                        this.imageExists(this.state.path + ".bmp") ? <img width={400} height={300} src={this.state.path + '.bmp'} alt="logo" />
+                                                                        this.imageExists(this.state.path + ".svg") ? <img width={400} height={300} src={this.state.path + '.svg'} alt="logo" />
                                                                                 :
+                                                                                this.imageExists(this.state.path + ".bmp") ? <img width={400} height={300} src={this.state.path + '.bmp'} alt="logo" />
+                                                                                        :
 
-                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />}
+                                                                                        <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />}
 
-                                </div>
+                                        </div>
+                                }
 
                         </div >
                 );
