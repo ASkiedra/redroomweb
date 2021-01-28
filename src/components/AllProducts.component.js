@@ -36,7 +36,7 @@ export default class AllProducts extends Component {
         asd(manufacturer) {
                 console.log(manufacturer);
                 this.setState({ curProducts: this.state.fetchedProducts.filter(product => product.manufacturer === manufacturer) })
-                console.log(this.state.fetchedProducts.filter(el => el == manufacturer))
+                console.log(this.state.fetchedProducts.filter(el => el === manufacturer))
         }
 
         findAllManufacturers(manufacturersArr) {
@@ -170,7 +170,6 @@ const Product = (props) => {
                 http.send();
 
                 // dukart alertina kazkodel
-                // alert(http.status + imageurl)
                 return http.status !== 404;
 
         }
@@ -179,32 +178,33 @@ const Product = (props) => {
 
         return (
                 <Link key={props.product.productCode + props.product.name}
+                        style={{height: '20rem', width: '100%'}}
                         to={{
                                 pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.type + "/" + props.product.manufacturer + "/" + props.product.productCode + "/" + props.product._id + "/" + props.product.name + "/" + props.product.color,
                                 product: props.product,
                         }}>
-                                <div className={"product-container"} style={{ textAlign: 'center' }}>
+                                <div className={"product-container"} style={{ height: 'inherit', width: 'inherit',textAlign: 'center' }}>
                                         {/* cant use <picture> because browser support is bad and some customers definitely use IE or opera mini */}
                                         {
 
-                                                imageExists(path + ".jpg") ? <img width={400} height={300} src={path + ".jpg"} alt="logo" />
+                                                imageExists(path + ".jpg") ? <img className="product-list-photo" src={path + ".jpg"} alt="logo" />
                                                         :
-                                                        imageExists(path + ".png") ? <img width={400} height={300} src={path + '.png'} alt="logo" />
+                                                        imageExists(path + ".png") ? <img className="product-list-photo" src={path + '.png'} alt="logo" />
                                                                 :
-                                                                imageExists(path + ".jpeg") ? <img width={400} height={300} src={path + '.jpeg'} alt="logo" />
+                                                                imageExists(path + ".jpeg") ? <img className="product-list-photo" src={path + '.jpeg'} alt="logo" />
                                                                         :
-                                                                        imageExists(path + ".svg") ? <img width={400} height={300} src={path + '.svg'} alt="logo" />
+                                                                        imageExists(path + ".svg") ? <img className="product-list-photo" src={path + '.svg'} alt="logo" />
                                                                                 :
-                                                                                imageExists(path + ".bmp") ? <img width={400} height={300} src={path + '.bmp'} alt="logo" />
+                                                                                imageExists(path + ".bmp") ? <img className="product-list-photo" src={path + '.bmp'} alt="logo" />
                                                                                         :
 
-                                                                                        <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />
+                                                                                        <img className="product-list-photo" src={"/images/no_image.png"} alt="not-found" />
                                         }
 
 
 
 
-                                        <p className={"product-name"}>{props.product.name}</p>
+                                        <p className={"product-name"}><b>{props.product.manufacturer} </b>{props.product.name}</p>
                                 </div>
                         </Link>
         );

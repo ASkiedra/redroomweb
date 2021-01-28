@@ -362,9 +362,11 @@ a {
 }
 
 .product-container img {
-  width: auto;
-  transition: 0.2s;
-  max-width: 21rem;
+  width: inherit;
+  transition: 0.15s;
+  max-width: 25rem;
+  height: inherit;
+  max-height: 15rem;;
 }
 
 .product-container {

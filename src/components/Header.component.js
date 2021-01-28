@@ -51,8 +51,8 @@ const Header = (props) => {
                 <DropdownItem>
                     <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
                         {/* heading text */}
-                        <Link to={"/" + props.language + "/products/day systems"}
-                            style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products/day systems"}                        >
+                        <Link
+                            style={{ color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products/day systems"}                        >
                             {
                                 props.language === "LT" ? "DIENOS SISTEMOS" :
                                     props.language === "EN" && "DAY SYSTEMS"
