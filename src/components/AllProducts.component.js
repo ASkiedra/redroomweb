@@ -23,15 +23,17 @@ export default class AllProducts extends Component {
                 if (this.props.match.params.manufacturer !== undefined) {
                         this.setState({ manufFilterArr: [this.props.match.params.manufacturer] })
                 }
+                // console.log('mounted')
+                paramsFiltersApplied = false;
         }
 
 
+
         brr() {
-                console.log(this.state.manufFilterArr)
                 if (this.state.manufFilterArr.length > 0) {
+                        console.log('manufacturer filters have been found')
+                        console.log(this.state.manufFilterArr)
                         var tempArr = this.state.curProducts;
-                        console.log(this.state.fetchedProducts)
-                        console.log(this.state.fetchedProducts.length)
 
                         // for some reason if i use 'len' instead of what it is equal to, the loop doesnt stop
                         var len = this.state.fetchedProducts.length;
@@ -54,6 +56,7 @@ export default class AllProducts extends Component {
                                 }
                         }
 
+                        console.log(tempArr)
                         this.setState({ curProducts: tempArr }, console.log(this.state.curProducts))
 
                 }
@@ -63,7 +66,6 @@ export default class AllProducts extends Component {
 
         // main filtering function. if this gets called - we need to start with a fresh empty array
         asd(manufacturer) {
-
 
 
 
@@ -130,7 +132,6 @@ export default class AllProducts extends Component {
         }
 
         render() {
-
                 // using setState is too slow and for the purposes of this webpage state is not required for these items because they are only initialized and then get their data ONCE.
                 var typesArr = [], manufacturersArr = [], returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
                 if (!this.state.loading) {
@@ -139,7 +140,7 @@ export default class AllProducts extends Component {
                         this.findAllManufacturers(manufacturersArr);
 
                         if (!paramsFiltersApplied && this.state.manufFilterArr.length > 0) {
-                                this.brr();
+                                this.asd();
                                 paramsFiltersApplied = true;
                         }
 
@@ -207,15 +208,17 @@ const MainContainer = (props) => {
 
 const Type = (props) => {
         return (
+
+                // cia galima keist tik p o ne p ir li
                 // if its in the filter array, make it bold to show the filter is selected
                 props.this.state.manufFilterArr.includes(props.type) ?
                         <li className={"type-li"} onClick={(e) => {
                                 e.target.classList.toggle("bold-text");
                                 props.this.asd(props.type)
                         }}
-                                style={{ textAlign: 'right', listStyle: 'none'}}>
-                                <p id={props.type} style={{fontSize: '1.15rem', }} className={"product-type bold-text"}> {props.type}</p>
-                        </li> 
+                                style={{ textAlign: 'right', listStyle: 'none' }}>
+                                <p id={props.type} style={{ fontSize: '1.15rem', }} className={"product-type bold-text"}> {props.type}</p>
+                        </li>
                         : <li classname={"type-li"} onClick={(e) => {
                                 e.target.classList.toggle("bold-text");
                                 props.this.asd(props.type)
@@ -245,7 +248,6 @@ const Product = (props) => {
 
         }
 
-        console.log(props.product)
         var path = "/images/products/" + props.product.manufacturer + '/' + props.product.name + '/' + props.product.imageName[0];
 
         return (
