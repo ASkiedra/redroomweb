@@ -398,3 +398,60 @@ a {
   cursor: default;
   background: none;
 }
+
+#main-page-cont {
+  background: rgba(0, 0, 0, 0.852);
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  padding: 4rem;
+  box-shadow: 0 23px 15px rgba(0, 0, 0, 0.411);
+  /* position: relative;
+  top: 30%; */
+  /* min-height: inherit; */
+}
+
+
+#main-page-cont *::selection {
+  background:none;
+  
+}
+
+#main-page-cont p{
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+#main-logo {
+  filter: invert(1);
+  width: 15rem;
+  text-align:center;
+  margin: 0 auto;
+  height: auto;
+}
+
+#main-page-cont0 {
+  overflow: hidden;
+  height: inherit;
+  display: grid;
+  grid-template-rows: 17% 66% 17%;
+  /* veikia jei sita ant mobiliu tik */
+  /* height: 170%; */
+
+
+}
+
+body {
+  overflow: hidden;
+}
+
+@media (max-width: 720px) and (max-height: 1111px)
+{
+  html {
+    font-size: 14px;
+  }
+#main-page-cont p{
+}
+}
