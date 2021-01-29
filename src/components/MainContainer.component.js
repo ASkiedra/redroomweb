@@ -12,7 +12,7 @@ const MainContainer = () => {
                 <img id="main-logo" src={logo} alt="rr-white-logo" />
                 </div>
 
-                <p>Įsikūrę Europoje, mes specializuojamės itališkų baldų ir interjero dizaino srityje. RedRoom Studio pavers jūsų gyvenamąją erdvę gražia ir prabangia aplinka.įsikūrę Europoje, mes specializuojamės itališkų baldų ir interjero dizaino srityje. RedRoom Studio pavers jūsų gyvenamąją erdvę gražia ir prabangia aplinka.</p>
+                <p>Įsikūrę Europoje, mes specializuojamės itališkų baldų ir interjero dizaino srityje. Red-Room Studio pavers jūsų gyvenamąją erdvę gražia ir prabangia aplinka.įsikūrę Europoje, mes specializuojamės itališkų baldų ir interjero dizaino srityje. Red-Room Studio pavers jūsų gyvenamąją erdvę gražia ir prabangia aplinka.</p>
             </div>
 <div></div>
           

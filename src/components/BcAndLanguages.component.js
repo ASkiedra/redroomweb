@@ -103,7 +103,7 @@ console.log(location.pathname)
                 {/* length is > 0 when at least one item is present. the item starts at index 0, therefore untranslatedPathname[0] is required */}
                 {modifiedPathname.length > 0 &&
                     <>
-                        <span style={{ color: 'black' }}>/</span>
+                        <span style={{ color: 'rgba(0, 0, 0, 0.7501)' }}>/</span>
                         <Link to={"/" + props.language + "/" + untranslatedPathname[0]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
                             {modifiedPathname[0]}
                         </Link>
@@ -114,8 +114,8 @@ console.log(location.pathname)
 
                 {modifiedPathname.length > 1 && modifiedPathname[1] !== "null" && modifiedPathname[1] !== "undefined" &&
                     <>
-                        <span style={{ color: 'black' }}>/</span>
-                        <Link to={"/" + props.language + "/" + untranslatedPathname[0] + slashAmount + untranslatedPathname[1]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'black', textTransform: 'uppercase' }}>
+                        <span style={{ color: 'rgba(0, 0, 0, 0.7501)' }}>/</span>
+                        <Link to={location.pathname.split(untranslatedPathname[1])[0]+untranslatedPathname[1]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
                             {modifiedPathname[1]}
                         </Link>
                     </>
