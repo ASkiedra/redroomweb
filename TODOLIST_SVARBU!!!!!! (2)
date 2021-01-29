@@ -1,0 +1,130 @@
+01.30* IR NE DEMO VERSIJA; O VERSIJA KUR VISKAS VEIKIA BET YRA GLITCHES
+VISKA I GITHUB. ateity visada dienom planuot deadlinus. LAIKA SKAICIUOT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+i serveris clonint visad
+
+KA PADARIAU BET NECOMITTINAU:
+
+kad veiktu npm start ir nodemon server 247 ka daryt
+
+isimt TIPUS
+
+
+filtras, clearfilter (nuimt boldus visus kaip?atrodo tiesiog location i ///// visur ir kadangi state naujinas turetu viekt. jei ne - setstatecurproducts= fetchedproducts)
+sidebarui permest state dalykus 
+
+01 28 23:59
+dropdown linkai 
+https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp
+manufacturers page ir products page stiliai, gal
+
+01 29 23:59
+breadcrumbs netieisngai linkina table (kiti linkai irgi turi but patikrinti kai filtravimas veiks)
+interjeras
+jei yra produktu tai yra ir interjero puslapy nuotrauku
+paspaudus nuotrauka desinej, kairiausia didele nuotrauka tampa ta nuotrauka ir pasiekicai tekstas
+mobile breadcrumbs
+
+01 30 23:59
+ footer linkai, mobile dropdown pagal foto ir kiti mobile, launch weba. 
+prezentacijoj cross device supporta akcentuot (kad tik pridesim nes bandem geresni dizaina sukurti ir greiti optimizuot nesveikai) ir greiti (palyignt su konkurentu webais), keiciant kalbas lieka filtrai
+gerai atrodo hover ant produktu bet privaletumet vien png nuotraukas
+google audit
+VENKIT NUOTRAUKU SU daug WHITESPACE NES DURNAI ATRODO (pvz nicoline gaminiai)
+jei kokie klausimai - email/skambutis, administruot galim nemokamai jei nedideli darbai ir neskubus pokyciai
+
+(viena is triju calendar tasks kasdien)
+// po 01-30
+ docint viska
+ padaryt kad imageexists tikrintu png pirma nes dauguma foto png, po to jpg jpeg ir tt
+produkto uzklausa email
+zoominimai
+einant is /en/products i /  rodo lt teksta ir refreshinus lt kalba buna
+imageExists pritaikyt ir produkto, manufacturer pages
+
+https://stackoverflow.com/questions/56421417/react-app-not-working-in-internet-explorer-11
+ title variable
+testuot tarkim su 23 gamintojais (Kaip bg laikos tt)
+browsers,os testavimas
+gdpr, privacy
+background color fix css/html (su visais browseriais)
+dropdownas uzsidaro kai chrome rodykles spaudineji (lcoation!=location)
+404 page
+mobile devices
+gdpr
+bug: jei pasirenki gamintoja ir per dropdwona eini kitur - nks nevyksta (nors state lyg ir naujinas)
+SEO
+MAIN COMPONENT PRODUCT[0] TURETU BUT PAKEISTA
+visa koda sutvarkyt graziai
+PADARYT KAD VEIKTU REFRESHAI O NE 404
+png/jpg/bmp nustatymasneveikia ant serverio kazkodel (gal ant vpso veiks)
+visur kur filtravimai, sortai daryt su toupper 
+kai kur kodas kartojas. daryt komponentus ir persiust
+ant naujos db permest su kitu .env
+hide .env ir backendo kitas sensitive dalis
+testavimas: ignas nes as nepastebesiu bugu 
+
+gamintoju brandu logo centravimas (gal flexbox tsg)
+react seo
+bugtesting - produktai su keliom spalvom
+konsoles warningai
+encryptint db
+duomenu bazes backupai menesiniai
+antisql injection
+warnings ir errors
+database quality control padaryt (is naujo idealiai visus produktus ivest)
+visa koda perziuert/
+paklaust ka noretu pagerint, pakeist tt
+
+
+
+gototop ir breadcrumbs i pf permest. uzsakyt pf vps weba.
+pasiulyt administravima ir/ar palaikyma (nauji features, naujas dizainas kas kazkiek laiko)
+prie cv: projektas is anksto nustate reikalavima tik dvieju kalbu, tad neverta overengineerint
+KAI BAIGSIS PF WEB - IESKOT DARBO FOR EXTRA CASH
+pfweb koda visa pagrazintir sutvarkyt
+PAGAL TIPUS TRANSLIUOT IR TOUPPER IR FILTER
+https://yoast.com/what-is-multilingual-seo/
+filtras po refresh lieka (/:manufacturer su tarpais ir array daryt is stringo nuo tarpu)
+
+VISUS TIPUS ANGLISKAI VEST? bet breadcrumbsui vis tiek reikes isverst 
+props.location pritaikyt kaip pfe kad blazing fast switchintu uslapiuv
+https://codinhood.com/micro/10-dropdown-menu-animations-css-transform
+nusiust weba nedai for feedback
+
+public/images ir subfolderiuose TIK NUOTRAUKAS, NIEKO KITO
+padaryt kad kaip ir pfe pagal cache produktai eitu
+testuot weba kai db off
+ ar ir su tarpais ir be tarpu folderiai ir nuotraukos veikai
+products ne su location o su link pasispaudzia ant telefonu is headerio
+TAISYKLES:
+name turi but toks pats kaip ir aplankalo pavadinimas
+imageName - nukopijuokit nuotraukos pavadinima ir iklijuokite
+maksimalus greitis - kelkit compressintas png nuotraukas
+
+weba gali mdar labiau pagreitint:
+  jei imagename nurodytu ir .jpeg ar .png ar whatever ten buna
+  jei nuotraukas visas compressintu
+
+neaktualu:
+  filtras
+    jei du tipai: ||
+    jei du manuf: ||
+    jei du maincategories: ||
+    jei du subcategories(pvz workplacefurniture): ||
+
+

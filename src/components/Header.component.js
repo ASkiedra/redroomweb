@@ -7,7 +7,7 @@ const Header = (props) => {
     // temporary fix
     const checkIfMobile = () => {
         // if the screen is larger than from an ordinary phone
-        if (window.innerHeight > 1000 && window.innerWidth > 1000)
+        if (window.innerHeight > 1000 || window.innerWidth > 1000)
             setOPD(!openedProductsDropdown)
         else
         window.location.replace("/"+props.language+'/products')

@@ -4,11 +4,10 @@ import axios from 'axios';
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 var paramsFiltersApplied = false;
-
 export default class AllProducts extends Component {
         constructor(props) {
                 super(props);
-                this.state = { allTypes: [], curProducts: [], fetchedProducts: [], manufFilterArr: [], typeFilterArr: [], loading: true };
+                this.state = { curProducts: [], fetchedProducts: [], manufFilterArr: [], subCatFilterArr: [], url: undefined, loading: true };
 
                 // setstate would be better here but async wouldnt be too good
                 if(this.props.match.params.manufacturer !== undefined)
@@ -31,13 +30,15 @@ export default class AllProducts extends Component {
 
                 console.log('mounted')
                 paramsFiltersApplied = false;
+                console.log(this.props.match.params.mainCategory)
         }
 
-
-
+        componentDidUpdate() {
+                console.log('updated')
+        }
         brr() {
 
-                if (this.state.manufFilterArr.length > 0 || this.state.typeFilterArr.length > 0) {
+                if (this.state.manufFilterArr.length > 0 || this.state.subCatFilterArr.length > 0) {
                         var tempArr = this.state.curProducts;
                         // for some reason if i use 'len' instead of what it is equal to, the loop doesnt stop
                         var len = this.state.fetchedProducts.length;
@@ -54,11 +55,11 @@ export default class AllProducts extends Component {
 
                                 }
 
-                                if (this.state.typeFilterArr.length !== 0 && found || this.state.manufFilterArr.length === 0) {
+                                if (this.state.subCatFilterArr.length !== 0 && found || this.state.manufFilterArr.length === 0) {
                                         found = false;
-                                        for (var j = 0; j < this.state.typeFilterArr.length; j++) {
+                                        for (var j = 0; j < this.state.subCatFilterArr.length; j++) {
 
-                                                if (this.state.typeFilterArr[j].toUpperCase() === curProduct.type.toUpperCase()) {
+                                                if (this.state.subCatFilterArr[j].toUpperCase() === curProduct.type.toUpperCase()) {
                                                         found = true;
                                                         console.log('found ya')
                                                         break;
@@ -122,13 +123,12 @@ export default class AllProducts extends Component {
                                 }
                                 break;
 
-                        case 'TYPE':
-                                console.log('tipas')
+                        case 'SUB':
                                 // remove the value from the filter arr
-                                if (this.state.typeFilterArr.includes(value)) {
+                                if (this.state.subCatFilterArr.includes(value)) {
                                         this.setState({
                                                 curProducts: [],
-                                                typeFilterArr: this.state.typeFilterArr.filter(el => el !== value)
+                                                subCatFilterArr: this.state.subCatFilterArr.filter(el => el !== value)
 
                                         },
 
@@ -150,7 +150,7 @@ export default class AllProducts extends Component {
                                         this.setState(
                                                 {
                                                         curProducts: [],
-                                                        typeFilterArr: [...this.state.typeFilterArr, value]
+                                                        subCatFilterArr: [...this.state.subCatFilterArr, value]
                                                 }
                                                 ,
                                                 this.brr
@@ -216,28 +216,12 @@ export default class AllProducts extends Component {
                                 }
                         if (!found && product.subCategory !== "") {
 
-                                console.log(product.subCategory)
                                 subCategoriesArr.push(product.subCategory)
                         }
                 });
         }
 
-        findAllTypes(typesArr) {
-                this.state.fetchedProducts.map(product => {
-                        var found = false;
-                        // sitam turi but filtruotas o ne fetched
-                        for (let i = 0; i < typesArr.length; i++)
-                                if (typesArr[i].toUpperCase() === product.type.toUpperCase()) {
-                                        found = true;
-                                        break;
-                                }
 
-
-                        if (!found && product.type !== "")
-                                typesArr.push(product.type.toUpperCase());
-
-                });
-        }
 
         render() {
                 // using setState is too slow and for the purposes of this webpage state is not required for these items because they are only initialized and then get their data ONCE.
@@ -245,7 +229,6 @@ export default class AllProducts extends Component {
                         returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
                 if (!this.state.loading) {
                         // if the length is above 0, then the types have been found 
-                        this.findAllTypes(typesArr);
                         this.findAllManufacturers(manufacturersArr);
                         this.findAllMainCategories(mainCategoriesArr);
                         this.findAllSubCategories(subCategoriesArr);
@@ -271,14 +254,17 @@ export default class AllProducts extends Component {
 
 const MainContainer = (props) => {
         const language = useLocation().pathname[1] + useLocation().pathname[2];
+        console.log(useLocation().pathname)
 
         // scroll up on every route change
         useEffect(() => {
+                console.log(document.getElementsByClassName('container')[0])
+
                 if (document.getElementsByClassName('container')[0] !== undefined) {
+                        console.log(1944)
                         // document.getElementsByClassName('container')[0].scrollTop = 0;
                         document.getElementsByClassName('container')[0].scrollTo({
-                                top: 0,
-                                behavior: 'smooth'
+                                top: 0, behavior: 'smooth'
                         });
 
 
@@ -300,7 +286,6 @@ const MainContainer = (props) => {
                                                 })}
                                         </div>
 
-
                                         <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
                                                 <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p>
                                                 {props.subCategoriesArr.map(curSubCat => {
@@ -308,6 +293,13 @@ const MainContainer = (props) => {
                                                         return <Type type={"SUB"} this={props.this} value={curSubCat} />
                                                 })}
                                         </div>
+                                        {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p>
+                                                {props.subCategoriesArr.map(curSubCat => {
+                                                        // jei keiciu sita returna  - keist ir apacioj
+                                                        return <Type type={"SUB"} this={props.this} value={curSubCat} />
+                                                })}
+                                        </div> */}
 
 
                                         {/*
@@ -321,13 +313,7 @@ const MainContainer = (props) => {
                                                 })}
                                         </div>
 
-                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                                <p className={"sidebar-subtext"}>{language === "LT" ? "TIPAS" : language === "EN" && "TYPE"}</p>
-                                                {props.typesArr.map(curType => {
-                                                        // jei keiciu sita returna  - keist ir apacioj
-                                                        return <Type type={"TYPE"} this={props.this} value={curType} />
-                                                })}
-                                        </div>
+                                      
 
                                 </ul>
                         </div>
@@ -390,7 +376,7 @@ const Product = (props) => {
                 <Link key={props.product.productCode + props.product.name}
                         style={{ height: '20rem', width: '100%' }}
                         to={{
-                                pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.type + "/" + props.product.manufacturer + "/" + props.product.productCode + "/" + props.product._id + "/" + props.product.name + "/" + props.product.color,
+                                pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/'  + props.product.manufacturer + "/" + props.product.productCode + "/" + props.product._id + "/" + props.product.name + "/" + props.product.color,
                                 product: props.product,
                         }}>
                         <div className={"product-container"} style={{ height: 'inherit', width: 'inherit', textAlign: 'center' }}>

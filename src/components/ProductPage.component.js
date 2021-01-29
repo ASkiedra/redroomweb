@@ -21,6 +21,8 @@ export default class ProductPage extends Component {
                         // console.log('cache exists, no data from the database is necessary')
                         this.setState(
                                 {
+                                        manufacturer: this.props.location.product.manufacturer,
+                                        name: this.props.location.product.name,
                                         imageName: this.props.location.product.imageName,
                                         info: this.props.location.product.info,
                                         path: "/images/products/" + this.props.location.product.manufacturer + '/' + this.props.location.product.name + '/',
@@ -35,6 +37,8 @@ export default class ProductPage extends Component {
                         axios.get('http://localhost:5000/products/' + this.props.match.params.productid)
                                 .then(response => {
                                         this.setState({
+                                                manufacturer: response.data.manufacturer,
+                                                name: response.data.name,
                                                 imageName: response.data.imageName,
                                                 info: response.data.info,
                                                 path: "/images/products/" + this.props.match.params.manufacturer + '/' + this.props.match.params.name + '/',
@@ -69,37 +73,70 @@ export default class ProductPage extends Component {
         }
 
         render() {
-                var i = -1;
+                var i = 0;
+         
+                console.log(this.state.manufacturer)
                 return (
-                        <div style={{ height: 'inherit' }} >
-                                <p>{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
-                                {!this.state.loading &&
-                                        this.state.imageName.map(product => {
-                                                i++;
+                        <div style={{height: 'inherit'}} >
+                                <div id="product-page-grid">
 
-                                                if (this.state.imageName[i] != undefined)
-                                                        return (
-                                                                <div>
+                                        <p id="product-text">{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
 
+                                        <div>
 
+                                                <div id="prod-photo-container">
 
-                                                                        {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
+                                                        {!this.state.loading &&
+                                                                // BUTINAI PERDARYT KITA SPRENDIMA DEL IMG KAD NESIKARTOTU
+                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img id={"main-product-img"} width={400} height={300} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
+                                                                :
+                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".png") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.png'} alt="logo" />
+                                                                        :
+                                                                        this.imageExists(this.state.path + this.state.imageName[i] + ".jpeg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.jpeg'} alt="logo" />
                                                                                 :
-                                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".png") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.png'} alt="logo" />
+                                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".svg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.svg'} alt="logo" />
                                                                                         :
-                                                                                        this.imageExists(this.state.path + this.state.imageName[i] + ".jpeg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.jpeg'} alt="logo" />
+                                                                                        this.imageExists(this.state.path + this.state.imageName[i] + ".bmp") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.bmp'} alt="logo" />
                                                                                                 :
-                                                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".svg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.svg'} alt="logo" />
+
+                                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />}
+
+                                                                                        <p id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
+
+                                                </div>
+                                        </div>
+
+                                        <div>
+
+                                                {!this.state.loading &&
+                                                        this.state.imageName.map(product => {
+                                                                i++;
+
+                                                                if (this.state.imageName[i] != undefined)
+                                                                        return (
+                                                                                <div id="prod-photo-container">
+
+
+
+                                                                                        {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={350} height={200} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
+                                                                                                :
+                                                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".png") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.png'} alt="logo" />
                                                                                                         :
-                                                                                                        this.imageExists(this.state.path + this.state.imageName[i] + ".bmp") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.bmp'} alt="logo" />
+                                                                                                        this.imageExists(this.state.path + this.state.imageName[i] + ".jpeg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.jpeg'} alt="logo" />
                                                                                                                 :
+                                                                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".svg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.svg'} alt="logo" />
+                                                                                                                        :
+                                                                                                                        this.imageExists(this.state.path + this.state.imageName[i] + ".bmp") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.bmp'} alt="logo" />
+                                                                                                                                :
 
-                                                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />}
+                                                                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />}
 
-                                                                </div>
-                                                        );
-                                        })}
+                                                                                </div>
+                                                                        );
+                                                        })}
 
+                                        </div>
+                                </div>
                         </div >
                 );
 

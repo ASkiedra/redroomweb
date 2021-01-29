@@ -26,9 +26,11 @@ const BcAndLanguages = (props) => {
     // remove empty strings 
     modifiedPathname = modifiedPathname.filter(el => el !== "");
     modifiedPathname = modifiedPathname.filter(el => el !== "undefined" && el !== undefined);
+    modifiedPathname = modifiedPathname.filter(el => el !== "null" && el !== null);
 
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
-
+console.log(modifiedPathname)
+console.log(location.pathname)
     // translation of the second word in the breadcrumbs
     if (props.language === "LT" && modifiedPathname[0] !== undefined)
         switch (modifiedPathname[0].toUpperCase()) {
@@ -75,6 +77,9 @@ const BcAndLanguages = (props) => {
                 modifiedPathname[1] = "LOVOS";
                 break;
 
+            case "DINING ROOM FURNITURE":
+                modifiedPathname[1] = "VALGOMOJO BALDAI";
+
             default:
                 break;
         }
@@ -90,7 +95,7 @@ const BcAndLanguages = (props) => {
 
         <ul style={{ background: "transparent" }} id="bcnl-container">
             <div>
-                <Link to={"/" + props.language} style={{ paddingLeft: '1rem', transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'black' }}>
+                <Link to={"/" + props.language} style={{ paddingLeft: '1rem', transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
                     {/* kalba == lt? pagrindinis: main */}
                     {props.language === "LT" ? "PAGRINDINIS" : "MAIN"}
                 </Link>
@@ -99,7 +104,7 @@ const BcAndLanguages = (props) => {
                 {modifiedPathname.length > 0 &&
                     <>
                         <span style={{ color: 'black' }}>/</span>
-                        <Link to={"/" + props.language + "/" + untranslatedPathname[0]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'black', textTransform: 'uppercase' }}>
+                        <Link to={"/" + props.language + "/" + untranslatedPathname[0]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
                             {modifiedPathname[0]}
                         </Link>
                     </>
@@ -124,23 +129,23 @@ const BcAndLanguages = (props) => {
 
                 {props.language === "LT" ?
                     <>
-                        <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: 'black' }}>
+                        <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: ' rgba(0, 0, 0, 0.7501)' }}>
                             LT
                         </Link>
 
-                        <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: 'black' }}>
+                        <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
                             EN
                         </Link>
                     </>
                     : props.language === "EN" &&
                     <>
 
-                        <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', color: 'black' }}>
+                        <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
                             LT
             </Link>
 
 
-                        <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: 'black', fontWeight: 'bold', }}>
+                        <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: 'black', fontWeight: ' rgba(0, 0, 0, 0.7501)', }}>
                             EN
         </Link>
                     </>
