@@ -359,6 +359,7 @@ a {
 
 .product-type::selection {
   background: none;
+  color: black;
 }
 
 .product-container img {
@@ -384,7 +385,6 @@ a {
 .type-li p::selection {
   cursor: default;
   background: none;
-  color: red;
 }
 
 .sidebar-subtext {

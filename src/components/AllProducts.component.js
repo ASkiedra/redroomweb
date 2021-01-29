@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-
+var paramsFiltersApplied = false;
 export default class AllProducts extends Component {
         constructor(props) {
                 super(props);
@@ -19,38 +19,46 @@ export default class AllProducts extends Component {
                         .catch((error) => {
                                 console.log(error);
                         })
+
+                if (this.props.match.params.manufacturer !== undefined) {
+                        this.setState({ manufFilterArr: [this.props.match.params.manufacturer] })
+                }
         }
 
 
         brr() {
+                console.log(this.state.manufFilterArr)
                 if (this.state.manufFilterArr.length > 0) {
-
                         var tempArr = this.state.curProducts;
-                        for (var i = 0; i < this.state.fetchedProducts.length; i++) {
+                        console.log(this.state.fetchedProducts)
+                        console.log(this.state.fetchedProducts.length)
+
+                        // for some reason if i use 'len' instead of what it is equal to, the loop doesnt stop
+                        var len = this.state.fetchedProducts.length;
+                        for (var i = 0; i < len; i++) {
                                 var found = false;
                                 var curProduct = this.state.fetchedProducts[i];
+
                                 for (var j = 0; j < this.state.manufFilterArr.length; j++) {
                                         if (this.state.manufFilterArr[j] === curProduct.manufacturer) {
-                                                console.log('found' + i)
                                                 found = true;
                                                 break;
                                         }
+
                                 }
+
 
                                 if (found) {
+
                                         tempArr.push(curProduct)
                                 }
-
                         }
 
-                        this.setState({ curProducts: tempArr },
-                                console.log(this.state.curProducts))
+                        this.setState({ curProducts: tempArr }, console.log(this.state.curProducts))
+
                 }
                 else
-                {
-                        this.setState({curProducts: this.state.fetchedProducts})
-                }
-
+                        this.setState({ curProducts: this.state.fetchedProducts }, console.log(this.state.curProducts))
         }
 
         // main filtering function. if this gets called - we need to start with a fresh empty array
@@ -123,21 +131,21 @@ export default class AllProducts extends Component {
 
         render() {
 
-
                 // using setState is too slow and for the purposes of this webpage state is not required for these items because they are only initialized and then get their data ONCE.
                 var typesArr = [], manufacturersArr = [], returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
                 if (!this.state.loading) {
                         // if the length is above 0, then the types have been found 
                         this.findAllTypes(typesArr);
-
                         this.findAllManufacturers(manufacturersArr);
 
-
+                        if (!paramsFiltersApplied && this.state.manufFilterArr.length > 0) {
+                                this.brr();
+                                paramsFiltersApplied = true;
+                        }
 
                         returnable = <MainContainer typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
 
                 }
-
                 return returnable;
         }
 }
@@ -199,12 +207,24 @@ const MainContainer = (props) => {
 
 const Type = (props) => {
         return (
-                <li classname={"type-li"} onClick={(e) => {
-                        e.target.classList.toggle("bold-text");
-                        props.this.asd(props.type)
-                }} style={{ textAlign: 'right', listStyle: 'none' }}>
-                        <p style={{ fontSize: '1.15rem', }} className={"product-type"}>{props.type}</p>
-                </li>
+                // if its in the filter array, make it bold to show the filter is selected
+                props.this.state.manufFilterArr.includes(props.type) ?
+                        <li className={"type-li"} onClick={(e) => {
+                                e.target.classList.toggle("bold-text");
+                                props.this.asd(props.type)
+                        }}
+                                style={{ textAlign: 'right', listStyle: 'none'}}>
+                                <p id={props.type} style={{fontSize: '1.15rem', }} className={"product-type bold-text"}> {props.type}</p>
+                        </li> 
+                        : <li classname={"type-li"} onClick={(e) => {
+                                e.target.classList.toggle("bold-text");
+                                props.this.asd(props.type)
+                        }}
+                                style={{ textAlign: 'right', listStyle: 'none' }}>
+                                <p id={props.type} style={{ fontSize: '1.15rem', }} className={"product-type"}> {props.type}</p>
+                        </li>
+
+
         );
 }
 
