@@ -345,7 +345,7 @@ a {
 
 #products-sidebar {
   /* same as the area for the grid -10% */
-  width: 15%;
+  width: 17%;
   top: 30%;
   font-size: 1.4rem;
   position: fixed;
@@ -389,7 +389,7 @@ a {
 
 .sidebar-subtext {
   text-align: right;
-  font-size: 1.55rem;
+  font-size: 1.2rem;
   cursor: default;
   padding-bottom: 0.1rem;
 }

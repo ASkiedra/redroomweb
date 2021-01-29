@@ -26,10 +26,8 @@ const Routes = () => {
             <Route exact path="/:lang/manufacturers" component={Manufacturers} />
 
 
-            <Route exact path="/:lang/products/:mainCategory/:subCategory/:type/:manufacturer" component={AllProducts} />
-
-            {/* case no manufacturer */}
-            <Route exact path="/:lang/products/:mainCategory/:subCategory/:type//:productCode/:name/" />
+            <Route exact path="/:lang/products/:mainCategory/:subCategory/:manufacturer" component={AllProducts} />
+            <Route exact path="/:lang/products/:mainCategory/:subCategory" component={AllProducts} />
 
             {/* case only mainCategory(e.g. from the dropdown) */}
             <Route exact path="/:lang/products/:mainCategory/" component={AllProducts} />
@@ -37,14 +35,12 @@ const Routes = () => {
             {/* case only subCategory (e.g. from the dropdown) */}
             <Route exact path="/:lang/products//:subCategory" component={AllProducts} />
 
+            {/* case only manufacturer (e.g. from the dropdown) */}
+            <Route exact path="/:lang/products///:manufacturer" component={AllProducts} />
 
-            {/* case only type (e.g. from the dropdown) */}
-            <Route exact path="/:lang/products///:type" component={AllProducts} />
 
 
-            <Route exact path="/:lang/products/:mainCategory/:subCategory/:type/:manufacturer/:productCode/:productid/:name/" component={ProductPage} />
-            <Route exact path="/:lang/products/:mainCategory/:subCategory/:type/:manufacturer/:productCode/:productid/:name/" component={ProductPage} />
-            <Route exact path="/:lang/products/:mainCategory/:subCategory/:type/:manufacturer/:productCode/:productid/:name/:productcolor" component={ProductPage} />
+            <Route exact path="/:lang/products/:mainCategory/:subCategory/:manufacturer/:productCode/:productid/:name/" component={ProductPage} />
 
             <Route exact path="/:lang/products" component={AllProducts} />
 

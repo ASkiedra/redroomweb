@@ -9,6 +9,11 @@ export default class AllProducts extends Component {
         constructor(props) {
                 super(props);
                 this.state = { allTypes: [], curProducts: [], fetchedProducts: [], manufFilterArr: [], typeFilterArr: [], loading: true };
+
+                // setstate would be better here but async wouldnt be too good
+                if(this.props.match.params.manufacturer !== undefined)
+                        this.state.manufFilterArr.push( this.props.match.params.manufacturer)
+                // filter visus filter array nuo
         }
 
 
@@ -23,9 +28,7 @@ export default class AllProducts extends Component {
                 // cia ne vien amnufactuoriui!!!
                 //
                 //
-                if (this.props.match.params.manufacturer !== undefined) {
-                        this.setState({ manufFilterArr: [this.props.match.params.manufacturer] })
-                }
+
                 console.log('mounted')
                 paramsFiltersApplied = false;
         }
@@ -33,7 +36,6 @@ export default class AllProducts extends Component {
 
 
         brr() {
-                console.log(this.state.typeFilterArr.length)
 
                 if (this.state.manufFilterArr.length > 0 || this.state.typeFilterArr.length > 0) {
                         var tempArr = this.state.curProducts;
@@ -55,7 +57,6 @@ export default class AllProducts extends Component {
                                 if (this.state.typeFilterArr.length !== 0 && found || this.state.manufFilterArr.length === 0) {
                                         found = false;
                                         for (var j = 0; j < this.state.typeFilterArr.length; j++) {
-                                                console.log(curProduct.type.toUpperCase() +this.state.typeFilterArr[j].toUpperCase() )
 
                                                 if (this.state.typeFilterArr[j].toUpperCase() === curProduct.type.toUpperCase()) {
                                                         found = true;
@@ -158,6 +159,12 @@ export default class AllProducts extends Component {
                                 }
                                 break;
                         case undefined:
+                                console.log(123)
+                                this.setState({
+                                        curProducts: [],
+                                },
+
+                                        this.brr)
                                 break;
                         default:
                                 break;
@@ -178,18 +185,42 @@ export default class AllProducts extends Component {
                                         break;
                                 }
 
-
                         if (!found && product.manufacturer !== "")
                                 manufacturersArr.push(product.manufacturer)
-
-
                 });
-
-
         }
 
+        findAllMainCategories(mainCategoriesArr) {
+                this.state.fetchedProducts.map(product => {
+                        var found = false;
+                        // sitam turi but filtruotas o ne fetched
+                        for (let i = 0; i < mainCategoriesArr.length; i++)
+                                if (mainCategoriesArr[i] === product.mainCategory) {
+                                        found = true;
+                                        break;
+                                }
 
+                        if (!found && product.mainCategory !== "")
+                                mainCategoriesArr.push(product.mainCategory)
+                });
+        }
 
+        findAllSubCategories(subCategoriesArr) {
+                this.state.fetchedProducts.map(product => {
+                        var found = false;
+                        // sitam turi but filtruotas o ne fetched
+                        for (let i = 0; i < subCategoriesArr.length; i++)
+                                if (subCategoriesArr[i] === product.subCategory) {
+                                        found = true;
+                                        break;
+                                }
+                        if (!found && product.subCategory !== "") {
+
+                                console.log(product.subCategory)
+                                subCategoriesArr.push(product.subCategory)
+                        }
+                });
+        }
 
         findAllTypes(typesArr) {
                 this.state.fetchedProducts.map(product => {
@@ -210,11 +241,14 @@ export default class AllProducts extends Component {
 
         render() {
                 // using setState is too slow and for the purposes of this webpage state is not required for these items because they are only initialized and then get their data ONCE.
-                var typesArr = [], manufacturersArr = [], returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
+                var typesArr = [], manufacturersArr = [], mainCategoriesArr = [], subCategoriesArr = [],
+                        returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
                 if (!this.state.loading) {
                         // if the length is above 0, then the types have been found 
                         this.findAllTypes(typesArr);
                         this.findAllManufacturers(manufacturersArr);
+                        this.findAllMainCategories(mainCategoriesArr);
+                        this.findAllSubCategories(subCategoriesArr);
 
                         console.log(paramsFiltersApplied)
 
@@ -228,8 +262,7 @@ export default class AllProducts extends Component {
                                         this.mainFilter();
                                         paramsFiltersApplied = true;
                                 }
-
-                        returnable = <MainContainer typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
+                        returnable = <MainContainer mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
 
                 }
                 return returnable;
@@ -258,18 +291,29 @@ const MainContainer = (props) => {
                         {/* sidebar */}
                         <div >
                                 <ul id={"products-sidebar"}>
-                                        <div style={{ textAlign: 'center' }}>
-                                                <p className={"sidebar-subtext"}>{language === "LT" ? "TIPAS" : language === "EN" && "TYPE"}</p>
-                                                {props.typesArr.map(curType => {
+
+                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                <p className={"sidebar-subtext"}>{language === "LT" ? "PAGRINDINĖ KATEGORIJA" : language === "EN" && "MAIN CATEGORY"}</p>
+                                                {props.mainCategoriesArr.map(curMainCat => {
                                                         // jei keiciu sita returna  - keist ir apacioj
-                                                        return <Type type={"TYPE"} this={props.this} value={curType} />
+                                                        return <Type type={"MAIN"} this={props.this} value={curMainCat} />
                                                 })}
                                         </div>
+
+
+                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p>
+                                                {props.subCategoriesArr.map(curSubCat => {
+                                                        // jei keiciu sita returna  - keist ir apacioj
+                                                        return <Type type={"SUB"} this={props.this} value={curSubCat} />
+                                                })}
+                                        </div>
+
 
                                         {/*
  CIA NE TYPE o manufacturer turetu but arba sidebar-item
 */}
-                                        <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+                                        <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>
                                                 <p className={"sidebar-subtext"}>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p>
                                                 {props.manufacturersArr.map(curManufacturer => {
                                                         // jei keiciu sita returna  - keist ir apacioj
@@ -277,6 +321,13 @@ const MainContainer = (props) => {
                                                 })}
                                         </div>
 
+                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                <p className={"sidebar-subtext"}>{language === "LT" ? "TIPAS" : language === "EN" && "TYPE"}</p>
+                                                {props.typesArr.map(curType => {
+                                                        // jei keiciu sita returna  - keist ir apacioj
+                                                        return <Type type={"TYPE"} this={props.this} value={curType} />
+                                                })}
+                                        </div>
 
                                 </ul>
                         </div>

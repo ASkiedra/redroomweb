@@ -7,13 +7,13 @@ const productSchema = new Schema({
     name: { type: String, required: true },
     imageName: { type: Array, required: true },
     
-    type: { type: String, required: true },
     manufacturer: { type: String, required: true },
     productCode: { type: String, required: true },
     mainCategory: { type: String, required: false },
     subCategory: {type: String, required: false},
-
-
+    
+    
+    type: { type: String, required: false },
     available: { type: Array, required: false },
     color: { type: Array, required: false },
     price: { type: Array, required: false },

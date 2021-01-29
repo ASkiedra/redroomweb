@@ -61,7 +61,7 @@ const GamintojaiContainer = (props) => {
                 {props.filteredManufacturers.map(manufacturer => {
                     return (
                         <div key={manufacturer}>
-                            <Link to={"/" + props.language + "/products/null/null/null/" + manufacturer}>
+                            <Link to={"/" + props.language + "/products/null/null/" + manufacturer}>
                                 {/* pritaikyt ta komponenta kur tikrina ar jpg ar bmp ar png ir tt */}
                                 <img alt={manufacturer + "-logo"} src={"/images/logos/" + manufacturer + ".png"} />
                             </Link>
