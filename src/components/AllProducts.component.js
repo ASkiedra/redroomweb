@@ -8,7 +8,7 @@ var paramsFiltersApplied = false;
 export default class AllProducts extends Component {
         constructor(props) {
                 super(props);
-                this.state = { allTypes: [], curProducts: [], fetchedProducts: [], manufFilterArr: [], loading: true };
+                this.state = { allTypes: [], curProducts: [], fetchedProducts: [], manufFilterArr: [], typeFilterArr: [], loading: true };
         }
 
 
@@ -20,7 +20,9 @@ export default class AllProducts extends Component {
                         .catch((error) => {
                                 console.log(error);
                         })
-
+                // cia ne vien amnufactuoriui!!!
+                //
+                //
                 if (this.props.match.params.manufacturer !== undefined) {
                         this.setState({ manufFilterArr: [this.props.match.params.manufacturer] })
                 }
@@ -31,11 +33,10 @@ export default class AllProducts extends Component {
 
 
         brr() {
-                if (this.state.manufFilterArr.length > 0) {
-                        console.log('manufacturer filters have been found')
-                        console.log(this.state.manufFilterArr)
-                        var tempArr = this.state.curProducts;
+                console.log(this.state.typeFilterArr.length)
 
+                if (this.state.manufFilterArr.length > 0 || this.state.typeFilterArr.length > 0) {
+                        var tempArr = this.state.curProducts;
                         // for some reason if i use 'len' instead of what it is equal to, the loop doesnt stop
                         var len = this.state.fetchedProducts.length;
                         for (var i = 0; i < len; i++) {
@@ -43,69 +44,126 @@ export default class AllProducts extends Component {
                                 var curProduct = this.state.fetchedProducts[i];
 
                                 for (var j = 0; j < this.state.manufFilterArr.length; j++) {
-                                        if (this.state.manufFilterArr[j] === curProduct.manufacturer) {
+
+                                        if (this.state.manufFilterArr[j].toUpperCase() === curProduct.manufacturer.toUpperCase()) {
                                                 found = true;
                                                 break;
                                         }
 
                                 }
 
+                                if (this.state.typeFilterArr.length !== 0 && found || this.state.manufFilterArr.length === 0) {
+                                        found = false;
+                                        for (var j = 0; j < this.state.typeFilterArr.length; j++) {
+                                                console.log(curProduct.type.toUpperCase() +this.state.typeFilterArr[j].toUpperCase() )
+
+                                                if (this.state.typeFilterArr[j].toUpperCase() === curProduct.type.toUpperCase()) {
+                                                        found = true;
+                                                        console.log('found ya')
+                                                        break;
+                                                }
+
+                                        }
+                                }
+
 
                                 if (found) {
-
                                         tempArr.push(curProduct)
                                 }
                         }
-
-                        console.log(tempArr)
                         this.setState({ curProducts: tempArr }, console.log(this.state.curProducts))
 
                 }
-                else
+                // no filters were present so curProducts are set to the products fetched from the db (all products)
+                else {
+                        console.log('no filters')
                         this.setState({ curProducts: this.state.fetchedProducts }, console.log(this.state.curProducts))
+                }
         }
 
-        // main filtering function. if this gets called - we need to start with a fresh empty array
-        asd(manufacturer) {
-                // remove the value from the filter arr
-                if (this.state.manufFilterArr.includes(manufacturer)) {
-                        console.log('if')
-                        console.log(manufacturer)
+        // main filtering function
+        mainFilter(value, type) {
 
-                        this.setState({
-                                curProducts: [],
-                                manufFilterArr: this.state.manufFilterArr.filter(el => el !== manufacturer)
+                switch (type) {
+                        case 'MANUFACTURER':
+                                // remove the value from the filter arr
+                                if (this.state.manufFilterArr.includes(value)) {
+                                        this.setState({
+                                                curProducts: [],
+                                                manufFilterArr: this.state.manufFilterArr.filter(el => el !== value)
 
-                        },
+                                        },
 
-                                this.brr)
-                }
-                else if (manufacturer === undefined) {
-                        console.log('undefined')
-                        console.log(this.state.manufFilterArr)
-
-                        this.setState(
-                                {
-                                        curProducts: [],
+                                                this.brr)
                                 }
-                                ,
-                                this.brr
-                        );
-                }
 
-                else {
-                        console.log('else')
-                        console.log(manufacturer)
-                        console.log(this.state.manufFilterArr)
+                                else if (value === undefined) {
 
-                        this.setState(
-                                {
-                                        curProducts: [],
-                                        manufFilterArr: [...this.state.manufFilterArr, manufacturer]
+                                        this.setState(
+                                                {
+                                                        curProducts: [],
+                                                }
+                                                ,
+                                                this.brr
+                                        );
                                 }
-                                ,
-                                this.brr
-                        );
+
+                                else {
+                                        this.setState(
+                                                {
+                                                        curProducts: [],
+                                                        manufFilterArr: [...this.state.manufFilterArr, value]
+                                                }
+                                                ,
+                                                this.brr
+                                        );
+
+                                }
+                                break;
+
+                        case 'TYPE':
+                                console.log('tipas')
+                                // remove the value from the filter arr
+                                if (this.state.typeFilterArr.includes(value)) {
+                                        this.setState({
+                                                curProducts: [],
+                                                typeFilterArr: this.state.typeFilterArr.filter(el => el !== value)
+
+                                        },
+
+                                                this.brr)
+                                }
+
+                                else if (value === undefined) {
+
+                                        this.setState(
+                                                {
+                                                        curProducts: [],
+                                                }
+                                                ,
+                                                this.brr
+                                        );
+                                }
+
+                                else {
+                                        this.setState(
+                                                {
+                                                        curProducts: [],
+                                                        typeFilterArr: [...this.state.typeFilterArr, value]
+                                                }
+                                                ,
+                                                this.brr
+                                        );
+
+                                }
+                                break;
+                        case undefined:
+                                break;
+                        default:
+                                break;
+
+                        // case if params are getting set to the arrays and products are filtered
+
                 }
         }
 
@@ -167,7 +225,7 @@ export default class AllProducts extends Component {
                                         console.log(this.state.manufFilterArr)
 
 
-                                        this.asd();
+                                        this.mainFilter();
                                         paramsFiltersApplied = true;
                                 }
 
@@ -204,7 +262,7 @@ const MainContainer = (props) => {
                                                 <p className={"sidebar-subtext"}>{language === "LT" ? "TIPAS" : language === "EN" && "TYPE"}</p>
                                                 {props.typesArr.map(curType => {
                                                         // jei keiciu sita returna  - keist ir apacioj
-                                                        return <Type this={props.this} type={curType} />
+                                                        return <Type type={"TYPE"} this={props.this} value={curType} />
                                                 })}
                                         </div>
 
@@ -215,7 +273,7 @@ const MainContainer = (props) => {
                                                 <p className={"sidebar-subtext"}>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p>
                                                 {props.manufacturersArr.map(curManufacturer => {
                                                         // jei keiciu sita returna  - keist ir apacioj
-                                                        return <Type this={props.this} type={curManufacturer} />
+                                                        return <Type type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
                                                 })}
                                         </div>
 
@@ -238,20 +296,20 @@ const Type = (props) => {
 
                 // cia galima keist tik p o ne p ir li
                 // if its in the filter array, make it bold to show the filter is selected
-                props.this.state.manufFilterArr.includes(props.type) ?
+                props.this.state.manufFilterArr.includes(props.value) ?
                         <li className={"type-li"} onClick={(e) => {
                                 e.target.classList.toggle("bold-text");
-                                props.this.asd(props.type)
+                                props.this.mainFilter(props.value, props.type)
                         }}
                                 style={{ textAlign: 'right', listStyle: 'none' }}>
-                                <p id={props.type} style={{ fontSize: '1.15rem', }} className={"product-type bold-text"}> {props.type}</p>
+                                <p id={props.value} style={{ fontSize: '1.15rem', }} className={"product-type bold-text"}> {props.value}</p>
                         </li>
                         : <li classname={"type-li"} onClick={(e) => {
                                 e.target.classList.toggle("bold-text");
-                                props.this.asd(props.type)
+                                props.this.mainFilter(props.value, props.type)
                         }}
                                 style={{ textAlign: 'right', listStyle: 'none' }}>
-                                <p id={props.type} style={{ fontSize: '1.15rem', }} className={"product-type"}> {props.type}</p>
+                                <p id={props.value} style={{ fontSize: '1.15rem', }} className={"product-type"}> {props.value}</p>
                         </li>
 
 

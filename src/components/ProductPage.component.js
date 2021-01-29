@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 
-class ProductPage extends Component {
+export default class ProductPage extends Component {
         constructor(props) {
                 super(props)
 
@@ -26,7 +26,7 @@ class ProductPage extends Component {
                                         path: "/images/products/" + this.props.location.product.manufacturer + '/' + this.props.location.product.name + '/',
                                 },
                                 this.setState({
-                                        loading:false,
+                                        loading: false,
                                 })
                         );
                 }
@@ -62,54 +62,48 @@ class ProductPage extends Component {
                 // dukart alertina kazkodel
                 // alert(imageurl)
                 if (http.status !== 200)
-                console.log(imageurl)
+                        console.log(imageurl)
                 // alert(http.status + imageurl)
                 return http.status !== 404;
 
         }
 
         render() {
-                var i = 0;
+                var i = -1;
                 return (
                         <div style={{ height: 'inherit' }} >
+                                <p>{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
                                 {!this.state.loading &&
-                                // async causes problems because imageNames array takes too long to load
-                                        this.state.imageName[0] !== 'none' &&
-                                        <div>
-                                                {console.log(this.state.imageName)}
-                                                {console.log(this.state.path + this.state.imageName[0] + ".jpg")}
-                                                <p>{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
-
-                                                {this.imageExists(this.state.path + this.state.imageName[0] + ".jpg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[0] + ".jpg"} style={{fontSize: '0'}}alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
-                                                        :
-                                                        this.imageExists(this.state.path + this.state.imageName[0] + ".png") ? <img width={400} height={300} src={this.state.path + this.state.imageName[0] + '.png'} alt="logo" />
-                                                                :
-                                                                this.imageExists(this.state.path + this.state.imageName[0] + ".jpeg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[0] + '.jpeg'} alt="logo" />
-                                                                        :
-                                                                        this.imageExists(this.state.path + this.state.imageName[0] + ".svg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[0] + '.svg'} alt="logo" />
-                                                                                :
-                                                                                this.imageExists(this.state.path + this.state.imageName[0] + ".bmp") ? <img width={400} height={300} src={this.state.path + this.state.imageName[0] + '.bmp'} alt="logo" />
-                                                                                        :
-
-                                                                                        <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />}
-
-
-                                        </div>
-                                }
-
-                                {
-                                        // at least 2 product images defined in the databse
-                                        this.state.imageName.length > 1 &&
                                         this.state.imageName.map(product => {
                                                 i++;
-                                                if (this.state.imageName[i] != undefined)
-                                                        return <img src={this.state.path + this.state.imageName[i] + '.jpg'} />;
-                                        })
 
-                                }
+                                                if (this.state.imageName[i] != undefined)
+                                                        return (
+                                                                <div>
+
+
+
+                                                                        {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
+                                                                                :
+                                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".png") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.png'} alt="logo" />
+                                                                                        :
+                                                                                        this.imageExists(this.state.path + this.state.imageName[i] + ".jpeg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.jpeg'} alt="logo" />
+                                                                                                :
+                                                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".svg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.svg'} alt="logo" />
+                                                                                                        :
+                                                                                                        this.imageExists(this.state.path + this.state.imageName[i] + ".bmp") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.bmp'} alt="logo" />
+                                                                                                                :
+
+                                                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />}
+
+                                                                </div>
+                                                        );
+                                        })}
+
                         </div >
                 );
-        }
-}
 
-export default ProductPage;
+
+        }
+
+}
