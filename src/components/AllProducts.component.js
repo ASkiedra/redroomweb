@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 var paramsFiltersApplied = false;
+
 export default class AllProducts extends Component {
         constructor(props) {
                 super(props);
@@ -23,7 +24,7 @@ export default class AllProducts extends Component {
                 if (this.props.match.params.manufacturer !== undefined) {
                         this.setState({ manufFilterArr: [this.props.match.params.manufacturer] })
                 }
-                // console.log('mounted')
+                console.log('mounted')
                 paramsFiltersApplied = false;
         }
 
@@ -66,11 +67,11 @@ export default class AllProducts extends Component {
 
         // main filtering function. if this gets called - we need to start with a fresh empty array
         asd(manufacturer) {
-
-
-
                 // remove the value from the filter arr
-                if (this.state.manufFilterArr.includes(manufacturer))
+                if (this.state.manufFilterArr.includes(manufacturer)) {
+                        console.log('if')
+                        console.log(manufacturer)
+
                         this.setState({
                                 curProducts: [],
                                 manufFilterArr: this.state.manufFilterArr.filter(el => el !== manufacturer)
@@ -78,8 +79,25 @@ export default class AllProducts extends Component {
                         },
 
                                 this.brr)
+                }
+                else if (manufacturer === undefined) {
+                        console.log('undefined')
+                        console.log(this.state.manufFilterArr)
 
-                else
+                        this.setState(
+                                {
+                                        curProducts: [],
+                                }
+                                ,
+                                this.brr
+                        );
+                }
+
+                else {
+                        console.log('else')
+                        console.log(manufacturer)
+                        console.log(this.state.manufFilterArr)
+
                         this.setState(
                                 {
                                         curProducts: [],
@@ -88,6 +106,7 @@ export default class AllProducts extends Component {
                                 ,
                                 this.brr
                         );
+                }
         }
 
 
@@ -139,10 +158,18 @@ export default class AllProducts extends Component {
                         this.findAllTypes(typesArr);
                         this.findAllManufacturers(manufacturersArr);
 
-                        if (!paramsFiltersApplied && this.state.manufFilterArr.length > 0) {
-                                this.asd();
-                                paramsFiltersApplied = true;
-                        }
+                        console.log(paramsFiltersApplied)
+
+                        // works only for the params
+                        if (this.props.match.params.manufacturer !== undefined || this.props.match.params.subCategory !== undefined || this.props.match.params.mainCategory !== undefined || this.props.match.params.type1 !== undefined)
+                                if (!paramsFiltersApplied && this.state.manufFilterArr.length > 0) {
+                                        console.log('renderif')
+                                        console.log(this.state.manufFilterArr)
+
+
+                                        this.asd();
+                                        paramsFiltersApplied = true;
+                                }
 
                         returnable = <MainContainer typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
 
