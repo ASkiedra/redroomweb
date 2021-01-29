@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 export default class AllProducts extends Component {
         constructor(props) {
                 super(props);
-                this.state = { curProducts: [], fetchedProducts: [], loading: true };
+                this.state = { allTypes: [], curProducts: [], fetchedProducts: [], manufFilterArr: [], loading: true };
         }
 
 
@@ -21,20 +22,62 @@ export default class AllProducts extends Component {
         }
 
 
-        filter(filteredArr) {
-                this.state.fetchedProducts.map(product => {
-                        if (product.manufacturer.toUpperCase() === this.props.match.params.manufacturer.toUpperCase()) {
-                                filteredArr.push(product)
-                        }
-                });
+        brr() {
+                if (this.state.manufFilterArr.length > 0) {
 
-                console.log(this)
+                        var tempArr = this.state.curProducts;
+                        for (var i = 0; i < this.state.fetchedProducts.length; i++) {
+                                var found = false;
+                                var curProduct = this.state.fetchedProducts[i];
+                                for (var j = 0; j < this.state.manufFilterArr.length; j++) {
+                                        if (this.state.manufFilterArr[j] === curProduct.manufacturer) {
+                                                console.log('found' + i)
+                                                found = true;
+                                                break;
+                                        }
+                                }
+
+                                if (found) {
+                                        tempArr.push(curProduct)
+                                }
+
+                        }
+
+                        this.setState({ curProducts: tempArr },
+                                console.log(this.state.curProducts))
+                }
+                else
+                {
+                        this.setState({curProducts: this.state.fetchedProducts})
+                }
+
         }
 
+        // main filtering function. if this gets called - we need to start with a fresh empty array
         asd(manufacturer) {
-                console.log(manufacturer);
-                this.setState({ curProducts: this.state.fetchedProducts.filter(product => product.manufacturer === manufacturer) })
-                console.log(this.state.fetchedProducts.filter(el => el === manufacturer))
+
+
+
+
+                // remove the value from the filter arr
+                if (this.state.manufFilterArr.includes(manufacturer))
+                        this.setState({
+                                curProducts: [],
+                                manufFilterArr: this.state.manufFilterArr.filter(el => el !== manufacturer)
+
+                        },
+
+                                this.brr)
+
+                else
+                        this.setState(
+                                {
+                                        curProducts: [],
+                                        manufFilterArr: [...this.state.manufFilterArr, manufacturer]
+                                }
+                                ,
+                                this.brr
+                        );
         }
 
 
@@ -75,30 +118,25 @@ export default class AllProducts extends Component {
                         if (!found && product.type !== "")
                                 typesArr.push(product.type.toUpperCase());
 
-
                 });
         }
 
         render() {
-                var productsArr = [], manufacturersArr = [], typesArr = [], returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
-                // only call functions if its loaded (if the data is fetched from the db)
+
+
+                // using setState is too slow and for the purposes of this webpage state is not required for these items because they are only initialized and then get their data ONCE.
+                var typesArr = [], manufacturersArr = [], returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
                 if (!this.state.loading) {
-                        // jei konkretaus gamintojo page esu nefiltruoja kitu 
+                        // if the length is above 0, then the types have been found 
                         this.findAllTypes(typesArr);
+
                         this.findAllManufacturers(manufacturersArr);
 
-                        if (this.props.match.params.manufacturer !== undefined) {
-                                this.filter(productsArr)
-                        }
-                        else {
 
-                                productsArr = this.state.fetchedProducts;
-                        }
 
-                        returnable = <MainContainer this={this} manufacturersArr={manufacturersArr} typesArr={typesArr} lang={this.props.match.params.lang} productsArr={this.state.curProducts} />;
+                        returnable = <MainContainer typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
 
                 }
-                console.log(productsArr)
 
                 return returnable;
         }
@@ -107,6 +145,18 @@ export default class AllProducts extends Component {
 const MainContainer = (props) => {
         const language = useLocation().pathname[1] + useLocation().pathname[2];
 
+        // scroll up on every route change
+        useEffect(() => {
+                if (document.getElementsByClassName('container')[0] !== undefined) {
+                        // document.getElementsByClassName('container')[0].scrollTop = 0;
+                        document.getElementsByClassName('container')[0].scrollTo({
+                                top: 0,
+                                behavior: 'smooth'
+                        });
+
+
+                }
+        }, [props.this.state]);
 
         return (
 
@@ -138,7 +188,7 @@ const MainContainer = (props) => {
                         </div>
                         {/* products */}
                         < div style={{ height: 'inherit', display: 'grid', minHeight: 'inherit', gridTemplateColumns: '33.3333% 33.3333% 33.3333%', marginRight: '5rem' }}>
-                                {props.productsArr.map(curProduct => {
+                                {props.curProducts.map(curProduct => {
                                         return <Product type lang={props.lang} product={curProduct} />;
                                 })
                                 }
@@ -175,6 +225,7 @@ const Product = (props) => {
 
         }
 
+        console.log(props.product)
         var path = "/images/products/" + props.product.manufacturer + '/' + props.product.name + '/' + props.product.imageName[0];
 
         return (
