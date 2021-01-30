@@ -29,8 +29,6 @@ const BcAndLanguages = (props) => {
     modifiedPathname = modifiedPathname.filter(el => el !== "null" && el !== null);
 
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
-console.log(modifiedPathname)
-console.log(location.pathname)
     // translation of the second word in the breadcrumbs
     if (props.language === "LT" && modifiedPathname[0] !== undefined)
         switch (modifiedPathname[0].toUpperCase()) {

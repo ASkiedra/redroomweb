@@ -147,7 +147,7 @@ footer {
 }
 #first-footer ul {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 50% 50%;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -321,7 +321,7 @@ a {
 
 .header-item-onhover:hover {
   transition: 0.4s;
-  filter: drop-shadow(1px 0px 10px rgba(255, 0, 0, 0.801));
+  filter: drop-shadow(1px 0px 10px rgba(255, 0, 0, 0.852));
 }
 
 .header-img-onhover:hover {

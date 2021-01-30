@@ -17,22 +17,8 @@ const Footer = (props) => {
 
                     <li>
                         {
-                            props.language === "LT" ? "Kaip išsirinkti tinkamus baldus savo namams?"
-                                : props.language === "EN" && "How to choose the correct furniture?"
-                        }
-                    </li>
-
-                    <li>
-                        {
                             props.language === "LT" ? "Pristatymo sąlygos ir terminai"
                                 : props.language === "EN" && "Delivery information"
-                        }
-                    </li>
-
-                    <li>
-                        {
-                            props.language === "LT" ? "Medžiagos ir jų pavyzdžiai"
-                                : props.language === "EN" && "Materials and samples"
                         }
                     </li>
                 </ul>

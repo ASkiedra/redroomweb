@@ -4,14 +4,15 @@ import axios from 'axios';
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 var paramsFiltersApplied = false;
+
 export default class AllProducts extends Component {
         constructor(props) {
                 super(props);
-                this.state = { curProducts: [], fetchedProducts: [], manufFilterArr: [], subCatFilterArr: [], url: undefined, loading: true };
+                this.state = { curProducts: [], fetchedProducts: [], manufFilterArr: [], subCatFilterArr: [], mainCatFilterArr: [], loading: true };
 
                 // setstate would be better here but async wouldnt be too good
-                if(this.props.match.params.manufacturer !== undefined)
-                        this.state.manufFilterArr.push( this.props.match.params.manufacturer)
+                if (this.props.match.params.manufacturer !== undefined)
+                        this.state.manufFilterArr.push(this.props.match.params.manufacturer)
                 // filter visus filter array nuo
         }
 
@@ -33,12 +34,9 @@ export default class AllProducts extends Component {
                 console.log(this.props.match.params.mainCategory)
         }
 
-        componentDidUpdate() {
-                console.log('updated')
-        }
         brr() {
 
-                if (this.state.manufFilterArr.length > 0 || this.state.subCatFilterArr.length > 0) {
+                if (this.state.manufFilterArr.length > 0 || this.state.subCatFilterArr.length > 0 || this.state.mainCatFilterArr.length > 0) {
                         var tempArr = this.state.curProducts;
                         // for some reason if i use 'len' instead of what it is equal to, the loop doesnt stop
                         var len = this.state.fetchedProducts.length;
@@ -59,7 +57,20 @@ export default class AllProducts extends Component {
                                         found = false;
                                         for (var j = 0; j < this.state.subCatFilterArr.length; j++) {
 
-                                                if (this.state.subCatFilterArr[j].toUpperCase() === curProduct.type.toUpperCase()) {
+                                                if (this.state.subCatFilterArr[j].toUpperCase() === curProduct.subCategory.toUpperCase()) {
+                                                        found = true;
+                                                        console.log('found ya')
+                                                        break;
+                                                }
+
+                                        }
+                                }
+
+                                if (this.state.mainCatFilterArr.length !== 0 && found || this.state.subCatFilterArr.length === 0) {
+                                        found = false;
+                                        for (var j = 0; j < this.state.mainCatFilterArr.length; j++) {
+
+                                                if (this.state.mainCatFilterArr[j].toUpperCase() === curProduct.mainCategory.toUpperCase()) {
                                                         found = true;
                                                         console.log('found ya')
                                                         break;
@@ -124,11 +135,46 @@ export default class AllProducts extends Component {
                                 break;
 
                         case 'SUB':
-                                // remove the value from the filter arr
                                 if (this.state.subCatFilterArr.includes(value)) {
                                         this.setState({
                                                 curProducts: [],
                                                 subCatFilterArr: this.state.subCatFilterArr.filter(el => el !== value)
+
+                                        },
+                                        
+                                                this.brr)
+                                }
+
+                                else if (value === undefined) {
+
+                                        this.setState(
+                                                {
+                                                        curProducts: [],
+                                                }
+                                                ,
+                                                this.brr
+                                        );
+                                }
+
+                                else {
+                                        this.setState(
+                                                {
+                                                        curProducts: [],
+                                                        subCatFilterArr: [...this.state.subCatFilterArr, value]
+                                                }
+                                                ,
+                                                this.brr
+                                        );
+
+                                }
+                                break;
+
+
+                        case 'MAIN':
+                                if (this.state.mainCatFilterArr.includes(value)) {
+                                        this.setState({
+                                                curProducts: [],
+                                                mainCatFilterArr: this.state.mainCatFilterArr.filter(el => el !== value)
 
                                         },
 
@@ -150,7 +196,7 @@ export default class AllProducts extends Component {
                                         this.setState(
                                                 {
                                                         curProducts: [],
-                                                        subCatFilterArr: [...this.state.subCatFilterArr, value]
+                                                        mainCatFilterArr: [...this.state.mainCatFilterArr, value]
                                                 }
                                                 ,
                                                 this.brr
@@ -227,13 +273,13 @@ export default class AllProducts extends Component {
                 // using setState is too slow and for the purposes of this webpage state is not required for these items because they are only initialized and then get their data ONCE.
                 var typesArr = [], manufacturersArr = [], mainCategoriesArr = [], subCategoriesArr = [],
                         returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
+                        console.log('state update')
                 if (!this.state.loading) {
                         // if the length is above 0, then the types have been found 
                         this.findAllManufacturers(manufacturersArr);
                         this.findAllMainCategories(mainCategoriesArr);
                         this.findAllSubCategories(subCategoriesArr);
 
-                        console.log(paramsFiltersApplied)
 
                         // works only for the params
                         if (this.props.match.params.manufacturer !== undefined || this.props.match.params.subCategory !== undefined || this.props.match.params.mainCategory !== undefined || this.props.match.params.type1 !== undefined)
@@ -258,10 +304,8 @@ const MainContainer = (props) => {
 
         // scroll up on every route change
         useEffect(() => {
-                console.log(document.getElementsByClassName('container')[0])
 
                 if (document.getElementsByClassName('container')[0] !== undefined) {
-                        console.log(1944)
                         // document.getElementsByClassName('container')[0].scrollTop = 0;
                         document.getElementsByClassName('container')[0].scrollTo({
                                 top: 0, behavior: 'smooth'
@@ -313,7 +357,7 @@ const MainContainer = (props) => {
                                                 })}
                                         </div>
 
-                                      
+
 
                                 </ul>
                         </div>
@@ -376,7 +420,7 @@ const Product = (props) => {
                 <Link key={props.product.productCode + props.product.name}
                         style={{ height: '20rem', width: '100%' }}
                         to={{
-                                pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/'  + props.product.manufacturer + "/" + props.product.productCode + "/" + props.product._id + "/" + props.product.name + "/" + props.product.color,
+                                pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.manufacturer + "/" + props.product.productCode + "/" + props.product._id + "/" + props.product.name + "/" + props.product.color,
                                 product: props.product,
                         }}>
                         <div className={"product-container"} style={{ height: 'inherit', width: 'inherit', textAlign: 'center' }}>

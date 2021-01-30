@@ -1,29 +1,7 @@
-01.30* IR NE DEMO VERSIJA; O VERSIJA KUR VISKAS VEIKIA BET YRA GLITCHES
-VISKA I GITHUB. ateity visada dienom planuot deadlinus. LAIKA SKAICIUOT
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-i serveris clonint visad
-
 KA PADARIAU BET NECOMITTINAU:
 
-kad veiktu npm start ir nodemon server 247 ka daryt
 
-isimt TIPUS
-
-
+filtru bugtestinimas
 filtras, clearfilter (nuimt boldus visus kaip?atrodo tiesiog location i ///// visur ir kadangi state naujinas turetu viekt. jei ne - setstatecurproducts= fetchedproducts)
 sidebarui permest state dalykus 
 
