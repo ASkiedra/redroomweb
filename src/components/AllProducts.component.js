@@ -7,35 +7,57 @@ import { useEffect } from "react";
 // these should not be global but they cant be in the state too. maybe set them in render(), pass them to components and functions
 var paramsFiltersApplied = false,
         subCatFilterArr = [], mainCatFilterArr = [], manufFilterArr = [];
+console.log(manufFilterArr)
 
 export default class AllProducts extends Component {
         constructor(props) {
                 super(props);
-                this.state = { curProducts: [], fetchedProducts: [], loading: true };
+                this.state = { curProducts: [], fetchedProducts: [], loading: true, filtered: false };
                 // setstate would be better here but async wouldnt be too good
-                if (this.props.match.params.manufacturer !== undefined)
-                        manufFilterArr.push(this.props.match.params.manufacturer)
 
         }
+
         componentDidUpdate(prevProps, prevState, snapshot) {
+                console.log('cdidupdate')
 
-                // // update the state
-                // if (prevProps.location.key !== this.props.location.key) {
+                console.log(prevProps.location.key)
+                console.log(prevProps.location.pathname)
 
-                //         // ne vien subcategroy. taip pat ir boldint turi
-                //         if (this.props.match.params.subCategory !== undefined) {
-                //                 console.log('asd')
-                //                 subCatFilterArr.push(this.props.match.params.subCategory)
-                //                 this.filter()
-                //         }
-                // }
+                console.log(this.props.location.key)
+                console.log(this.props.location.pathname)
+                console.log(manufFilterArr)
+                // ar ne per daznai filtriuka kviecia mmmm. gal cia funkcija kokia imantresne
+                if (prevProps.location.key !== this.props.location.key || prevProps.location.pathname !== this.props.location.pathname) {
+                        subCatFilterArr = [];
+                        mainCatFilterArr = []; manufFilterArr = [];
+                        console.log('cleared filters')
+
+                        console.log(manufFilterArr)
+                        if (this.props.match.params.manufacturer !== undefined && this.props.match.params.manufacturer !== 'null')
+                                manufFilterArr.push(this.props.match.params.manufacturer)
+                        if (this.props.match.params.subCategory !== undefined && this.props.match.params.subCategory !== 'null')
+                                subCatFilterArr.push(this.props.match.params.subCategory)
+                        if (this.props.match.params.mainCategory !== undefined && this.props.match.params.mainCategory !== 'null')
+                                mainCatFilterArr.push(this.props.match.params.mainCategory)
+
+                        this.setState({ loading: false }, this.filter())
+                }
 
         }
 
         componentDidMount() {
+                subCatFilterArr = [];
+                mainCatFilterArr = []; manufFilterArr = [];
+
+                if (this.props.match.params.manufacturer !== undefined && this.props.match.params.manufacturer !== 'null')
+                        manufFilterArr.push(this.props.match.params.manufacturer)
+                if (this.props.match.params.subCategory !== undefined && this.props.match.params.subCategory !== 'null')
+                        subCatFilterArr.push(this.props.match.params.subCategory)
+                if (this.props.match.params.mainCategory !== undefined && this.props.match.params.mainCategory !== 'null')
+                        mainCatFilterArr.push(this.props.match.params.mainCategory)
                 axios.get("http://localhost:5000/products/")
                         .then(response => {
-                                this.setState({ fetchedProducts: response.data, curProducts: response.data, loading: false });
+                                this.setState({ fetchedProducts: response.data, curProducts: response.data, loading: false }, console.log('PRODUCTS HAVE BEEN FETCHED'));
                         })
                         .catch((error) => {
                                 console.log(error);
@@ -48,17 +70,17 @@ export default class AllProducts extends Component {
 
         filter() {
                 if (manufFilterArr.length > 0 || subCatFilterArr.length > 0 || mainCatFilterArr.length > 0) {
-                        var tempArr = [];
+                        let tempArr = [];
 
                         // for some reason if i use 'len' instead of what it is equal to, the loop doesnt stop
-                        var len = this.state.fetchedProducts.length;
+                        let len = this.state.fetchedProducts.length;
 
                         for (var i = 0; i < len; i++) {
-                                var found = false;
-                                var curProduct = this.state.fetchedProducts[i];
+                                let found = false;
+                                let curProduct = this.state.fetchedProducts[i];
 
+                                // check if the product matches any of the manufacturers in their filter array
                                 for (let j = 0; j < manufFilterArr.length; j++) {
-
                                         if (manufFilterArr[j].toUpperCase() === curProduct.manufacturer.toUpperCase()) {
                                                 found = true;
                                                 break;
@@ -66,55 +88,57 @@ export default class AllProducts extends Component {
 
                                 }
 
+                                // if a manufacturer filter was selected and a product wasnt found, go to the next product
                                 if (!found && manufFilterArr.length > 0)
                                         continue;
 
+                                // console.log('checked manufs')
 
-                                // manufacturer was found OR manufacturer wasnt selected 
-                                if (found || manufFilterArr.length === 0) {
-                                        // if there are sub category filters selected
-                                        if (subCatFilterArr.length > 0)
-                                                found = false;
+                                // check if the product matches any of the subcategory in their filter array
+                                if (subCatFilterArr.length > 0)
+                                        found = false;
 
-                                        for (let j = 0; j < subCatFilterArr.length; j++) {
-
-                                                if (subCatFilterArr[j].toUpperCase() === curProduct.subCategory.toUpperCase()) {
-                                                        found = true;
-                                                        break;
-                                                }
-
+                                for (let j = 0; j < subCatFilterArr.length; j++) {
+                                        if (subCatFilterArr[j].toUpperCase() === curProduct.subCategory.toUpperCase()) {
+                                                found = true;
+                                                break;
                                         }
                                 }
 
+                                // if there are sub category filters selected and a product wasnt found, go to the next product
                                 if (!found && subCatFilterArr.length > 0)
                                         continue;
 
-                                //  subcategory was found or sub category wasnt selected
-                                if (found || subCatFilterArr.length === 0) {
-                                        if (mainCatFilterArr.length > 0)
-                                                found = false;
+                                // console.log('checked subs')
 
-                                        for (let j = 0; j < mainCatFilterArr.length; j++) {
+                                // check if the product matches any of the maincategory in their filter array
+                                if (mainCatFilterArr.length > 0)
+                                        found = false;
 
-                                                if (mainCatFilterArr[j].toUpperCase() === curProduct.mainCategory.toUpperCase()) {
-                                                        found = true;
-                                                        break;
-                                                }
+                                for (let j = 0; j < mainCatFilterArr.length; j++) {
 
+                                        if (mainCatFilterArr[j].toUpperCase() === curProduct.mainCategory.toUpperCase()) {
+                                                console.log(mainCatFilterArr[j].toUpperCase())
+                                                console.log(curProduct.mainCategory.toUpperCase())
+                                                found = true;
+                                                break;
                                         }
+
                                 }
+                                // console.log(found)
 
 
                                 if (found) {
                                         tempArr.push(curProduct)
                                 }
                         }
-                        this.setState({ curProducts: tempArr },)
+                        this.setState({ curProducts: tempArr, filtered: true },)
 
                 }
                 // no filters were present so curProducts are set to the products fetched from the db (all products)
                 else {
-                        this.setState({ curProducts: this.state.fetchedProducts },)
+                        console.log('no filters')
+                        this.setState({ curProducts: this.state.fetchedProducts, filtered: true },)
                 }
         }
 
@@ -242,21 +266,27 @@ export default class AllProducts extends Component {
                         this.findAllManufacturers(manufacturersArr);
                         this.findAllMainCategories(mainCategoriesArr);
                         this.findAllSubCategories(subCategoriesArr);
-                        console.log(manufFilterArr)
+
 
                         // works only for the params
-                        if (this.props.match.params.manufacturer !== undefined || this.props.match.params.subCategory !== undefined || this.props.match.params.mainCategory !== undefined)
-                                if (!paramsFiltersApplied && subCatFilterArr.length > 0) {
+                        if (this.props.match.params.manufacturer !== undefined || this.props.match.params.subCategory !== undefined || this.props.match.params.mainCategory !== undefined) {
+
+                                if ((!paramsFiltersApplied) && (subCatFilterArr.length > 0 || mainCatFilterArr.length > 0 || manufFilterArr.length > 0)) {
                                         console.log('renderif')
-                                        console.log(manufFilterArr)
 
 
-                                        this.addAndRemoveFilters();
+                                        this.filter();
                                         paramsFiltersApplied = true;
                                 }
 
+                                // dont render it if its not filtered
+                                if (this.state.filtered)
+                                        returnable = <MainContainer mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
+                        }
+                        // case no params
+                        else
+                                returnable = <MainContainer mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
 
-                        returnable = <MainContainer mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
 
                 }
                 return returnable;
@@ -265,7 +295,6 @@ export default class AllProducts extends Component {
 
 const MainContainer = (props) => {
         const language = useLocation().pathname[1] + useLocation().pathname[2];
-        console.log(useLocation().pathname)
 
         // scroll up on every route change
         useEffect(() => {
@@ -320,6 +349,7 @@ const MainContainer = (props) => {
                                                         // jei keiciu sita returna  - keist ir apacioj
                                                         return <Type filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
                                                 })}
+
                                         </div>
 
 
@@ -327,13 +357,19 @@ const MainContainer = (props) => {
                                 </ul>
                         </div>
                         {/* products */}
+                        {props.curProducts.length === 0 &&
+                                <p style={{ textAlign: 'center', fontSize: '2rem', fontFamily: 'Roboto' }}>
+                                        {language === "LT" ? "Nėra produktų." :
+                                                language === "EN" && "No products."}</p>}
                         < div style={{ height: 'inherit', display: 'grid', minHeight: 'inherit', gridTemplateColumns: '33.3333% 33.3333% 33.3333%', marginRight: '5rem' }}>
                                 {props.curProducts.map(curProduct => {
                                         return <Product key={curProduct.name + curProduct.imageName[0]} type lang={props.lang} product={curProduct} />;
                                 })
                                 }
-                        </div>
 
+
+
+                        </div>
 
                 </div >
         );
