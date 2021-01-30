@@ -77,18 +77,12 @@ const BcAndLanguages = (props) => {
 
             case "DINING ROOM FURNITURE":
                 modifiedPathname[1] = "VALGOMOJO BALDAI";
+                break;
 
             default:
                 break;
         }
 
-    // this variable is only used on the third word of the breadcrumbs, so there are already 2 slashes in the link. there may be more therefore we need to calculate the amount
-    var slashAmount = '', inTheLink = location.pathname.split('/').length - 3;
-    if (location.pathname[location.pathname.length - 1] === '/')
-        inTheLink--;
-
-    for (let i = 0; i < inTheLink; i++)
-        slashAmount += '/';
     return (
 
         <ul style={{ background: "transparent" }} id="bcnl-container">

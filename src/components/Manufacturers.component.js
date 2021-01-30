@@ -22,7 +22,7 @@ export default class Gamintojai extends Component {
 
     filter(manufacturers) {
 
-        this.state.fetchedProducts.map(product => {
+        this.state.fetchedProducts.forEach(product => {
             var found = false;
             // sitam turi but filtruotas o ne fetched
             for (let i = 0; i < manufacturers.length; i++)

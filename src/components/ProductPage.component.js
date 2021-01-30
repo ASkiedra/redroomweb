@@ -99,7 +99,7 @@ export default class ProductPage extends Component {
                                                                                         this.imageExists(this.state.path + this.state.imageName[i] + ".bmp") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.bmp'} alt="logo" />
                                                                                                 :
 
-                                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />}
+                                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="404img" />}
 
                                                                                         <p id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
 
@@ -109,10 +109,10 @@ export default class ProductPage extends Component {
                                         <div>
 
                                                 {!this.state.loading &&
-                                                        this.state.imageName.map(product => {
+                                                        this.state.imageName.forEach(() => {
                                                                 i++;
 
-                                                                if (this.state.imageName[i] != undefined)
+                                                                if (this.state.imageName[i] !== undefined)
                                                                         return (
                                                                                 <div id="prod-photo-container">
 
@@ -129,7 +129,7 @@ export default class ProductPage extends Component {
                                                                                                                         this.imageExists(this.state.path + this.state.imageName[i] + ".bmp") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.bmp'} alt="logo" />
                                                                                                                                 :
 
-                                                                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="no image" />}
+                                                                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="404img" />}
 
                                                                                 </div>
                                                                         );

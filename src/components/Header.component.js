@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from './Logo-V4.png';
-import  { Redirect } from 'react-router-dom'
 
 const Header = (props) => {
     // temporary fix
@@ -98,6 +97,14 @@ const Header = (props) => {
                                 </Link>
                             </div>
 
+                            <div>
+                                <Link to={"/" + props.language + "/products//sofa beds"} className="dropdown-subtext" >
+                                    {
+                                        props.language === "LT" ? "SOFA LOVOS" :
+                                            props.language === "EN" && "SOFA BEDS"
+                                    }
+                                </Link>
+                            </div>
                         </ul>
                     </li>
                 </DropdownItem>
