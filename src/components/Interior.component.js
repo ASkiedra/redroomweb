@@ -1,13 +1,28 @@
-import React  from "react";
+import React from "react";
+
+
+function importAll(r) {
+        return r.keys().map(r);
+}
+
+const images = importAll(require.context('../../public/images/interior', false, /\.(jpg|bmp|ico|png|jpe?g|svg)$/));
 
 
 
-const Main = () => {
+const Interior = () => {
         return (
                 < div style={{ height: 'inherit' }}>
-                        Interjeras
+                        <div id="interior-container">
+                                {
+                                        images.map(element => {
+                                                return (
+                                                        <img src={element.default} style={{ width: "15rem", height: ' 10rem' }} />
+                                                )
+                                        })
+                                }
+                        </div>
                 </div >
         );
 }
 
-export default Main;
+export default Interior;

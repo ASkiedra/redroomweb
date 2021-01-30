@@ -27,7 +27,7 @@ export default class AllProducts extends Component {
                 console.log(this.props.location.pathname)
                 console.log(manufFilterArr)
                 // ar ne per daznai filtriuka kviecia mmmm. gal cia funkcija kokia imantresne
-                if (prevProps.location.key !== this.props.location.key || prevProps.location.pathname !== this.props.location.pathname) {
+                if ((prevProps.location.key !== this.props.location.key || prevProps.location.pathname !== this.props.location.pathname)) {
                         subCatFilterArr = [];
                         mainCatFilterArr = []; manufFilterArr = [];
                         console.log('cleared filters')
@@ -363,7 +363,7 @@ const MainContainer = (props) => {
                                                 language === "EN" && "No products."}</p>}
                         < div style={{ height: 'inherit', display: 'grid', minHeight: 'inherit', gridTemplateColumns: '33.3333% 33.3333% 33.3333%', marginRight: '5rem' }}>
                                 {props.curProducts.map(curProduct => {
-                                        return <Product key={curProduct.name + curProduct.imageName[0]} type lang={props.lang} product={curProduct} />;
+                                        return <Product key={curProduct.name + curProduct.imageName[0]}  lang={props.lang} product={curProduct} />;
                                 })
                                 }
 
