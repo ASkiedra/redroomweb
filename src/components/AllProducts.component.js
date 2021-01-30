@@ -352,7 +352,7 @@ const MainContainer = (props) => {
 
                                         </div>
 
-
+                                                <p onClick={()=>document.getElementsByClassName("product-type")[4] !== undefined && document.getElementsByClassName("product-type")[4].classList.toggle("bold-text")}>asd</p>
 
                                 </ul>
                         </div>

@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function importAll(r) {
         return r.keys().map(r);
 }
@@ -16,7 +15,7 @@ const Interior = () => {
                                 {
                                         images.map(element => {
                                                 return (
-                                                        <img src={element.default} style={{ width: "15rem", height: ' 10rem' }} />
+                                                        <img src={element.default}  />
                                                 )
                                         })
                                 }

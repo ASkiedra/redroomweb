@@ -371,7 +371,7 @@ a {
   max-width: 25rem;
   height: inherit;
   transform: scale(0.85);
-  max-height: 15rem;;
+  max-height: 15rem;
 }
 
 .product-container {
@@ -415,13 +415,11 @@ a {
   /* min-height: inherit; */
 }
 
-
 #main-page-cont *::selection {
-  background:none;
-  
+  background: none;
 }
 
-#main-page-cont p{
+#main-page-cont p {
   color: white;
   font-size: 1.2rem;
   text-align: center;
@@ -431,7 +429,7 @@ a {
 #main-logo {
   filter: invert(1);
   width: 15rem;
-  text-align:center;
+  text-align: center;
   margin: 0 auto;
   height: auto;
 }
@@ -443,38 +441,36 @@ a {
   grid-template-rows: 17% 66% 17%;
   /* veikia jei sita ant mobiliu tik */
   /* height: 170%; */
-
-
 }
 
 body {
   overflow: hidden;
 }
 
-@media (max-width: 720px) and (max-height: 1111px)
-{
+@media (max-width: 720px) and (max-height: 1111px) {
   html {
     font-size: 14px;
   }
 }
 
-@media (max-height: 800px) and (max-width: 1400px) and (min-height: 721px) and (min-width: 1112px)
-{
+@media (max-height: 800px) and (max-width: 1400px) and (min-height: 721px) and (min-width: 1112px) {
   html {
     font-size: 15px;
   }
 }
 
-#product-page-grid{
-  display: grid;margin-top: 4.5rem;
+#product-page-grid {
+  display: grid;
+  margin-top: 4.5rem;
   grid-template-columns: 28% 44% 28%;
 }
 
 #product-text {
   text-align: center;
-    font-size: 1.7rem;
-    position: relative;
-    top: 50%;font-family: "Roboto";
+  font-size: 1.7rem;
+  position: relative;
+  top: 50%;
+  font-family: "Roboto";
 }
 #main-product-img {
   width: auto;
@@ -491,6 +487,23 @@ body {
 }
 
 #product-name {
-  
-    font-size: 1.4rem;
+  font-size: 1.4rem;
+}
+
+#interior-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#interior-container img {
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-top: 3rem;
+  width: 28rem;
+  height: 15.8rem;
+  max-width: 100%;
+  max-height: 100%;
+  transform: scale(0.85);
 }
