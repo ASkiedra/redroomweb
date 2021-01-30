@@ -3,16 +3,18 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-var paramsFiltersApplied = false;
-var subCatFilterArr = [];
+
+// these should not be global but they cant be in the state too. maybe set them in render(), pass them to components and functions
+var paramsFiltersApplied = false,
+        subCatFilterArr = [], mainCatFilterArr = [], manufFilterArr = [];
 
 export default class AllProducts extends Component {
         constructor(props) {
                 super(props);
-                this.state = { curProducts: [], fetchedProducts: [], manufFilterArr: [], subCatFilterArr: [], mainCatFilterArr: [], loading: true };
+                this.state = { curProducts: [], fetchedProducts: [], loading: true };
                 // setstate would be better here but async wouldnt be too good
                 if (this.props.match.params.manufacturer !== undefined)
-                        this.state.manufFilterArr.push(this.props.match.params.manufacturer)
+                        manufFilterArr.push(this.props.match.params.manufacturer)
 
         }
         componentDidUpdate(prevProps, prevState, snapshot) {
@@ -24,7 +26,7 @@ export default class AllProducts extends Component {
                 //         if (this.props.match.params.subCategory !== undefined) {
                 //                 console.log('asd')
                 //                 subCatFilterArr.push(this.props.match.params.subCategory)
-                //                 this.brr()
+                //                 this.filter()
                 //         }
                 // }
 
@@ -38,16 +40,14 @@ export default class AllProducts extends Component {
                         .catch((error) => {
                                 console.log(error);
                         })
-                // cia ne vien amnufactuoriui!!!
-                //
-                //
+
 
                 console.log('mounted')
                 paramsFiltersApplied = false;
         }
 
-        brr() {
-                if (this.state.manufFilterArr.length > 0 || subCatFilterArr.length > 0 || this.state.mainCatFilterArr.length > 0) {
+        filter() {
+                if (manufFilterArr.length > 0 || subCatFilterArr.length > 0 || mainCatFilterArr.length > 0) {
                         var tempArr = [];
 
                         // for some reason if i use 'len' instead of what it is equal to, the loop doesnt stop
@@ -57,17 +57,25 @@ export default class AllProducts extends Component {
                                 var found = false;
                                 var curProduct = this.state.fetchedProducts[i];
 
-                                for (let j = 0; j < this.state.manufFilterArr.length; j++) {
+                                for (let j = 0; j < manufFilterArr.length; j++) {
 
-                                        if (this.state.manufFilterArr[j].toUpperCase() === curProduct.manufacturer.toUpperCase()) {
+                                        if (manufFilterArr[j].toUpperCase() === curProduct.manufacturer.toUpperCase()) {
                                                 found = true;
                                                 break;
                                         }
 
                                 }
 
-                                if ((subCatFilterArr.length !== 0 && found) || this.state.manufFilterArr.length === 0) {
-                                        found = false;
+                                if (!found && manufFilterArr.length > 0)
+                                        continue;
+
+
+                                // manufacturer was found OR manufacturer wasnt selected 
+                                if (found || manufFilterArr.length === 0) {
+                                        // if there are sub category filters selected
+                                        if (subCatFilterArr.length > 0)
+                                                found = false;
+
                                         for (let j = 0; j < subCatFilterArr.length; j++) {
 
                                                 if (subCatFilterArr[j].toUpperCase() === curProduct.subCategory.toUpperCase()) {
@@ -78,13 +86,18 @@ export default class AllProducts extends Component {
                                         }
                                 }
 
-                                if ((this.state.mainCatFilterArr.length !== 0 && found) || subCatFilterArr.length === 0) {
-                                        found = false;
-                                        for (let j = 0; j < this.state.mainCatFilterArr.length; j++) {
+                                if (!found && subCatFilterArr.length > 0)
+                                        continue;
 
-                                                if (this.state.mainCatFilterArr[j].toUpperCase() === curProduct.mainCategory.toUpperCase()) {
+                                //  subcategory was found or sub category wasnt selected
+                                if (found || subCatFilterArr.length === 0) {
+                                        if (mainCatFilterArr.length > 0)
+                                                found = false;
+
+                                        for (let j = 0; j < mainCatFilterArr.length; j++) {
+
+                                                if (mainCatFilterArr[j].toUpperCase() === curProduct.mainCategory.toUpperCase()) {
                                                         found = true;
-                                                        console.log('found ya')
                                                         break;
                                                 }
 
@@ -106,80 +119,60 @@ export default class AllProducts extends Component {
         }
 
         // main filtering function
-        mainFilter(value, type) {
+        addAndRemoveFilters(value, type) {
 
                 switch (type) {
                         case 'MANUFACTURER':
                                 // remove the value from the filter arr
-                                if (this.state.manufFilterArr.includes(value)) {
-                                        this.setState({
-                                                manufFilterArr: this.state.manufFilterArr.filter(el => el !== value)
-
-                                        },
-
-                                                this.brr)
+                                if (manufFilterArr.includes(value)) {
+                                        manufFilterArr = manufFilterArr.filter(el => el !== value);
+                                        this.filter()
                                 }
 
                                 else if (value === undefined) {
-                                        this.brr()
+                                        this.filter()
                                 }
                                 else {
-                                        this.setState(
-                                                {
-                                                        manufFilterArr: [...this.state.manufFilterArr, value]
-                                                }
-                                                ,
-                                                this.brr
-                                        );
-
+                                        manufFilterArr.push(value);
+                                        this.filter()
                                 }
                                 break;
 
                         case 'SUB':
                                 if (subCatFilterArr.includes(value)) {
                                         subCatFilterArr = subCatFilterArr.filter(el => el !== value)
-                                        this.brr()
+                                        this.filter()
                                 }
 
                                 else if (value === undefined) {
-                                        this.brr()
+                                        this.filter()
                                 }
 
                                 else {
                                         subCatFilterArr.push(value)
-                                        this.brr()
+                                        this.filter()
 
                                 }
                                 break;
 
 
                         case 'MAIN':
-                                if (this.state.mainCatFilterArr.includes(value)) {
-                                        this.setState({
-                                                mainCatFilterArr: this.state.mainCatFilterArr.filter(el => el !== value)
-
-                                        },
-
-                                                this.brr)
+                                if (mainCatFilterArr.includes(value)) {
+                                        mainCatFilterArr = mainCatFilterArr.filter(el => el !== value);
+                                        this.filter();
                                 }
 
                                 else if (value === undefined) {
-                                        this.brr()
+                                        this.filter()
                                 }
 
                                 else {
-                                        this.setState(
-                                                {
-                                                        mainCatFilterArr: [...this.state.mainCatFilterArr, value]
-                                                }
-                                                ,
-                                                this.brr
-                                        );
-
+                                        mainCatFilterArr.push(value);
+                                        this.filter();
                                 }
                                 break;
                         case undefined:
-                                this.brr()
+                                this.filter()
                                 break;
                         default:
                                 break;
@@ -243,21 +236,22 @@ export default class AllProducts extends Component {
                 var typesArr = [], manufacturersArr = [], mainCategoriesArr = [], subCategoriesArr = [],
                         returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
                 console.log('state update')
+
                 if (!this.state.loading) {
                         // if the length is above 0, then the types have been found 
                         this.findAllManufacturers(manufacturersArr);
                         this.findAllMainCategories(mainCategoriesArr);
                         this.findAllSubCategories(subCategoriesArr);
-                        console.log(this.state.manufFilterArr)
+                        console.log(manufFilterArr)
 
                         // works only for the params
-                        if (this.props.match.params.manufacturer !== undefined || this.props.match.params.subCategory !== undefined || this.props.match.params.mainCategory !== undefined || this.props.match.params.type1 !== undefined)
+                        if (this.props.match.params.manufacturer !== undefined || this.props.match.params.subCategory !== undefined || this.props.match.params.mainCategory !== undefined)
                                 if (!paramsFiltersApplied && subCatFilterArr.length > 0) {
                                         console.log('renderif')
-                                        console.log(this.state.manufFilterArr)
+                                        console.log(manufFilterArr)
 
 
-                                        this.mainFilter();
+                                        this.addAndRemoveFilters();
                                         paramsFiltersApplied = true;
                                 }
 
@@ -297,7 +291,7 @@ const MainContainer = (props) => {
                                                 <p className={"sidebar-subtext"}>{language === "LT" ? "PAGRINDINĖ KATEGORIJA" : language === "EN" && "MAIN CATEGORY"}</p>
                                                 {props.mainCategoriesArr.map(curMainCat => {
                                                         // jei keiciu sita returna  - keist ir apacioj
-                                                        return <Type type={"MAIN"} this={props.this} value={curMainCat} />
+                                                        return <Type filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
                                                 })}
                                         </div>
 
@@ -305,7 +299,7 @@ const MainContainer = (props) => {
                                                 <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p>
                                                 {props.subCategoriesArr.map(curSubCat => {
                                                         // jei keiciu sita returna  - keist ir apacioj
-                                                        return <Type type={"SUB"} this={props.this} value={curSubCat} />
+                                                        return <Type filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
                                                 })}
                                         </div>
                                         {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
@@ -324,7 +318,7 @@ const MainContainer = (props) => {
                                                 <p className={"sidebar-subtext"}>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p>
                                                 {props.manufacturersArr.map(curManufacturer => {
                                                         // jei keiciu sita returna  - keist ir apacioj
-                                                        return <Type type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
+                                                        return <Type filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
                                                 })}
                                         </div>
 
@@ -350,17 +344,17 @@ const Type = (props) => {
 
                 // cia galima keist tik p o ne p ir li
                 // if its in the filter array, make it bold to show the filter is selected
-                props.this.state.manufFilterArr.includes(props.value) ?
+                props.filterArr.includes(props.value) ?
                         <li key={props.value} className={"type-li"} onClick={(e) => {
                                 e.target.classList.toggle("bold-text");
-                                props.this.mainFilter(props.value, props.type)
+                                props.this.addAndRemoveFilters(props.value, props.type)
                         }}
                                 style={{ textAlign: 'right', listStyle: 'none' }}>
                                 <p key={props.value + 'p'} id={props.value} style={{ fontSize: '1.15rem', }} className={"product-type bold-text"}> {props.value}</p>
                         </li>
                         : <li key={props.value} className={"type-li"} onClick={(e) => {
                                 e.target.classList.toggle("bold-text");
-                                props.this.mainFilter(props.value, props.type)
+                                props.this.addAndRemoveFilters(props.value, props.type)
                         }}
                                 style={{ textAlign: 'right', listStyle: 'none' }}>
                                 <p key={props.value + 'p'} id={props.value} style={{ fontSize: '1.15rem', }} className={"product-type"}> {props.value}</p>
