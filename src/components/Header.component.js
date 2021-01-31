@@ -9,7 +9,7 @@ const Header = (props) => {
         if (window.innerHeight > 1000 || window.innerWidth > 1000)
             setOPD(!openedProductsDropdown)
         else
-        window.location.replace("/"+props.language+'/products')
+            window.location.replace("/" + props.language + '/products')
     }
 
     const ProductsMenu = () => {
@@ -115,8 +115,8 @@ const Header = (props) => {
                         {/* heading text */}
                         <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
                             {
-                                props.language === "LT" ? "NAKTIES SISTEMOS 25" :
-                                    props.language === "EN" && "NIGHT SYSTEMS 25"
+                                props.language === "LT" ? "SPINTŲ SISTEMOS" :
+                                    props.language === "EN" && "WARDROBE SYSTEMS"
                             }
                         </Link>
 
@@ -124,8 +124,17 @@ const Header = (props) => {
                             <div>
                                 <Link className="dropdown-subtext">
                                     {
-                                        props.language === "LT" ? "SOFOS IR TV BALDŲ SISTEMOS 20" :
-                                            props.language === "EN" && "SOFA AND TV FURNITURE SYSTEMS 20"
+                                        props.language === "LT" ? "individualiai projektuojamos drabužinės " :
+                                            props.language === "EN" && "individually planed wardrobes"
+                                    }
+                                </Link>
+                            </div>
+
+                            <div>
+                                <Link className="dropdown-subtext">
+                                    {
+                                        props.language === "LT" ? "RŪBŲ KABYKLOS " :
+                                            props.language === "EN" && "CLOTHING HANGERS"
                                     }
                                 </Link>
                             </div>
@@ -139,15 +148,142 @@ const Header = (props) => {
                         <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
                             <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
                                 {
-                                    props.language === "LT" ? "LUXURY GAMINTOJAI 30" :
-                                        props.language === "EN" && "LUXURY MANUFACTURERS 30"
+                                    props.language === "LT" ? "svetaines ir valgomojo baldai" :
+                                        props.language === "EN" && "dining room furniture"
+                                }
+                            </Link>
+
+                            <ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
+                                <div>
+                                    <Link className="dropdown-subtext">
+                                        {
+                                            props.language === "LT" ? "sofos " :
+                                                props.language === "EN" && "sofas"
+                                        }
+                                    </Link>
+                                </div>
+
+                                <div>
+                                    <Link className="dropdown-subtext">
+                                        {
+                                            props.language === "LT" ? "sofos lovos" :
+                                                props.language === "EN" && "sofa beds"
+                                        }
+                                    </Link>
+                                </div>
+
+
+                                <div>
+                                    <Link className="dropdown-subtext">
+                                        {
+                                            props.language === "LT" ? "kavos staliukai" :
+                                                props.language === "EN" && "coffee tables"
+                                        }
+                                    </Link>
+                                </div>
+
+
+                                <div>
+                                    <Link className="dropdown-subtext">
+                                        {
+                                            props.language === "LT" ? "foteliai" :
+                                                props.language === "EN" && "armchairs"
+                                        }
+                                    </Link>
+                                </div>
+
+
+
+                                <div>
+                                    <Link className="dropdown-subtext">
+                                        {
+                                            props.language === "LT" ? "sofos lovos" :
+                                                props.language === "EN" && "sofa beds"
+                                        }
+                                    </Link>
+                                </div>
+
+
+
+                                <div>
+                                    <Link className="dropdown-subtext">
+                                        {
+                                            props.language === "LT" ? "suoliukai ir pufai" :
+                                                props.language === "EN" && "poufs"
+                                        }
+                                    </Link>
+                                </div>
+
+                                <div>
+                                    <Link className="dropdown-subtext">
+                                        {
+                                            props.language === "LT" ? "valgomojo stalai" :
+                                                props.language === "EN" && "dining tables"
+                                        }
+                                    </Link>
+                                </div>
+                            </ul>
+                        </li>
+                    </Link>
+                </DropdownItem>
+
+                <DropdownItem>
+                    <Link to="/" >
+                        <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
+                            <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
+                                {
+                                    props.language === "LT" ? "MIEGAMOJO BALDAI" :
+                                        props.language === "EN" && "bedroom furniture"
+                                }
+                            </Link>
+
+                            <ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
+                                <div>
+                                    <Link className="dropdown-subtext">
+                                        {
+                                            props.language === "LT" ? "spintelĖs prie lovos " :
+                                                props.language === "EN" && "bedside cabinets"
+                                        }
+                                    </Link>
+                                </div>
+
+                                <div>
+                                    <Link className="dropdown-subtext">
+                                        {
+                                            props.language === "LT" ? "komodos " :
+                                                props.language === "EN" && "chest of drawers"
+                                        }
+                                    </Link>
+                                </div>
+
+
+                                <div>
+                                    <Link className="dropdown-subtext">
+                                        {
+                                            props.language === "LT" ? "suolai prie lovos" :
+                                                props.language === "EN" && "bedroom benches"
+                                        }
+                                    </Link>
+                                </div>
+
+
+                            </ul>
+                        </li>
+                    </Link>
+                </DropdownItem>
+
+                <DropdownItem>
+                    <Link to={"/" + props.language + "/products"} >
+                        <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
+                            <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products"}>
+                                {
+                                    props.language === "LT" ? "lauko baldai ir aksesuarai" :
+                                        props.language === "EN" && "outdoor furniture and accessories"
                                 }
                             </Link>
                         </li>
                     </Link>
                 </DropdownItem>
-
-
 
                 <DropdownItem>
                     <Link to={"/" + props.language + "/products"} >

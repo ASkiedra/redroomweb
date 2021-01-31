@@ -86,7 +86,7 @@ const BcAndLanguages = (props) => {
     return (
 
         <ul style={{ background: "transparent" }} id="bcnl-container">
-            <div>
+            <div id="breadcrumbs-links">
                 <Link to={"/" + props.language} style={{ paddingLeft: '1rem', transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
                     {/* kalba == lt? pagrindinis: main */}
                     {props.language === "LT" ? "PAGRINDINIS" : "MAIN"}
@@ -107,7 +107,7 @@ const BcAndLanguages = (props) => {
                 {modifiedPathname.length > 1 && modifiedPathname[1] !== "null" && modifiedPathname[1] !== "undefined" &&
                     <>
                         <span style={{ color: 'rgba(0, 0, 0, 0.7501)' }}>/</span>
-                        <Link to={location.pathname.split(untranslatedPathname[1])[0]+untranslatedPathname[1]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
+                        <Link to={location.pathname.split(untranslatedPathname[1])[0] + untranslatedPathname[1]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
                             {modifiedPathname[1]}
                         </Link>
                     </>
@@ -115,7 +115,9 @@ const BcAndLanguages = (props) => {
 
             </div>
 
-            <div style={{ paddingRight: '1rem', right: '1', display: 'grid', gridTemplateColumns: '90% 5% 5%' }}>
+            <div style={{ paddingRight: '1rem', right: '1', display: 'grid', gridTemplateColumns: '80% 10% 10%' }}>
+
+
                 <div>
                 </div>
 

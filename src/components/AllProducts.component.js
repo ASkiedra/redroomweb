@@ -357,10 +357,6 @@ const MainContainer = (props) => {
                                 </ul>
                         </div>
                         {/* products */}
-                        {props.curProducts.length === 0 &&
-                                <p style={{ textAlign: 'center', fontSize: '2rem', fontFamily: 'Roboto' }}>
-                                        {language === "LT" ? "Nėra produktų." :
-                                                language === "EN" && "No products."}</p>}
                         < div style={{ height: 'inherit', display: 'grid', minHeight: 'inherit', gridTemplateColumns: '33.3333% 33.3333% 33.3333%', marginRight: '5rem' }}>
                                 {props.curProducts.map(curProduct => {
                                         return <Product key={curProduct.name + curProduct.imageName[0]}  lang={props.lang} product={curProduct} />;
