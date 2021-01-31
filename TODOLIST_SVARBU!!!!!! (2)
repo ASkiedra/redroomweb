@@ -1,13 +1,15 @@
 KA PADARIAU BET NECOMITTINAU:
 
-andyk is pradziu su raudonu
-[11:01 PM]
-since redroom
-[11:01 PM]
-tai raudona spalva acceptable
-[11:01 PM]
+launch: https://medium.com/@timmykko/deploying-create-react-app-with-nginx-and-ubuntu-e6fe83c5e9e7
+error refreshing / : https://ui.dev/react-router-cannot-get-url-refresh/
+serveryolo gal veiks: https://stackoverflow.com/questions/5009324/node-js-nginx-what-now
+
+
+kodel ant www.pf.net veikia app.js?
+ssl react
+email https://medium.com/@eesh.t/send-email-using-emailjs-and-react-form-9993bb6929d8
+
 jei imanoma pakeisti tai raudonos opacity kokia 751
-filtru bugtestinimas
 clearfilter (nuimt boldus visus kaip?atrodo tiesiog location i ///// visur ir kadangi state naujinas turetu viekt. jei ne - setstatecurproducts= fetchedproducts)
 neveiks db - is jsono tsg 
 
@@ -71,6 +73,7 @@ warnings ir errors
 database quality control padaryt (is naujo idealiai visus produktus ivest)
 visa koda perziuert/
 paklaust ka noretu pagerint, pakeist tt
+                // is state really necessary? perhaps fetchedproducts arent necessary too (allproducts,manufacturers)
 
 
 
@@ -97,6 +100,10 @@ TAISYKLES:
 name turi but toks pats kaip ir aplankalo pavadinimas
 imageName - nukopijuokit nuotraukos pavadinima ir iklijuokite
 maksimalus greitis - kelkit compressintas png nuotraukas
+gerai aprasyt weba - uzsakovas prase paprasto sprendimo, tai interjere tiesiog imeti i folderi prdouktus,
+o vietoj duomenu bazes (kas reikalautu arba db online administravimo arba http requestu siuntimo - abu ne non it user friendly)- tiesiog
+json failas, kuris kaip vietine duomenu baze. sutaupom renderiu nes ne 1 get 2 filter 3 galutinis rezultatas, o 1 filter 2 galutinis rezultatas
+
 
 weba gali mdar labiau pagreitint:
   jei imagename nurodytu ir .jpeg ar .png ar whatever ten buna
@@ -110,3 +117,10 @@ neaktualu:
     jei du subcategories(pvz workplacefurniture): ||
 
 
+
+
+backend prijungimas (pfui):
+https://www.youtube.com/watch?v=71wSzpLyW9k
+https://www.youtube.com/watch?v=LE_b8PiYy-A
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04
+https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-16-04

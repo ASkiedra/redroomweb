@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios';
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Products from '../components/products';
 
 // these should not be global but they cant be in the state too. maybe set them in render(), pass them to components and functions
 var paramsFiltersApplied = false,
@@ -55,14 +55,16 @@ export default class AllProducts extends Component {
                         subCatFilterArr.push(this.props.match.params.subCategory)
                 if (this.props.match.params.mainCategory !== undefined && this.props.match.params.mainCategory !== 'null')
                         mainCatFilterArr.push(this.props.match.params.mainCategory)
-                axios.get("http://localhost:5000/products/")
-                        .then(response => {
-                                this.setState({ fetchedProducts: response.data, curProducts: response.data, loading: false }, console.log('PRODUCTS HAVE BEEN FETCHED'));
-                        })
-                        .catch((error) => {
-                                console.log(error);
-                        })
+                // axios.get("http://localhost:5000/products/")
+                //         .then(response => {
+                //                 this.setState({ fetchedProducts: response.data, curProducts: response.data, loading: false }, console.log('PRODUCTS HAVE BEEN FETCHED'));
+                //         })
+                //         .catch((error) => {
+                //                 console.log(error);
+                //         })
 
+
+                this.setState({fetchedProducts: Products, curProducts: Products, loading:false});
 
                 console.log('mounted')
                 paramsFiltersApplied = false;
