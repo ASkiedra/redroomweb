@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 const Footer = (props) => {
@@ -9,10 +10,12 @@ const Footer = (props) => {
             <div id="first-footer">
                 <ul>
                     <li>
-                        {
-                            props.language === "LT" ? "Siųsti užklausą"
-                                : props.language === "EN" && "Inquire"
-                        }
+                        <Link class="footer-link" to={'/' + props.language + '/contacts'}>
+                            {
+                                props.language === "LT" ? "Siųsti užklausą"
+                                    : props.language === "EN" && "Inquire"
+                            }
+                        </Link>
                     </li>
 
                     <li>

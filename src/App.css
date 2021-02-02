@@ -426,6 +426,13 @@ a {
   font-weight: bold;
 }
 
+.footer-link {
+  color: black;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  height: 100%;
+}
 #main-logo {
   filter: invert(1);
   width: 15rem;

@@ -1,10 +1,7 @@
 git pull. committint po 1 feature.
 
-manufacturers
 dropdown linkai 
-o jei jsona formuoja is direktoriju ir kiekvienas folderis yra produktas. tekstinis failas - info
 jei nesunku tai kaip momentary fix padaryk kad footeri siusti uzklausa nuveda i contact page
-[11:13 PM]
 arba jei irgi nesunku tai isvis kad kazkokia sistema kur siuncia uzklausa or shit
 paspaudus ismeta balta lentele + text box + right bottom send
 [11:14 PM]
@@ -45,7 +42,7 @@ jei kokie klausimai - email/skambutis, administruot galim nemokamai jei nedideli
 produkto uzklausa email
 zoominimai
 einant is /en/products i /  rodo lt teksta ir refreshinus lt kalba buna
-
+footer 100%height width buttonam
 verticallycenter manufacturers
 https://stackoverflow.com/questions/56421417/react-app-not-working-in-internet-explorer-11
  title variable
