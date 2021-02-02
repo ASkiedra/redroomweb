@@ -441,6 +441,30 @@ a {
   height: auto;
 }
 
+/* 
+olor: white;
+text-decoration: none;
+text-align: right;
+background: black;
+padding: 1rem;
+font-weight: bold;
+display: block;
+margin-bottom: 2rem;
+width: 50%;
+position: relative;
+left: 40%; */
+
+#clear-btn {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  background: black;
+  padding: 1rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 2rem;
+}
+
 #main-page-cont0 {
   overflow: hidden;
   height: inherit;
@@ -460,13 +484,11 @@ body {
   }
 }
 
-
 @media (max-width: 720px) and (max-height: 1111px) {
   html {
     font-size: 14px;
   }
 }
-
 
 @media (max-height: 800px) and (max-width: 1400px) and (min-height: 721px) and (min-width: 1112px) {
   html {

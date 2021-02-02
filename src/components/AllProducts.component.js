@@ -319,6 +319,7 @@ const MainContainer = (props) => {
                         {/* sidebar */}
                         <div >
                                 <ul id={"products-sidebar"}>
+                                        <Link id="clear-btn" to={"/" + language + "/products"}>clear filters</Link>
 
                                         <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
                                                 <p className={"sidebar-subtext"}>{language === "LT" ? "PAGRINDINĖ KATEGORIJA" : language === "EN" && "MAIN CATEGORY"}</p>
@@ -356,7 +357,6 @@ const MainContainer = (props) => {
 
                                         </div>
 
-                                        <p onClick={() => document.getElementsByClassName("product-type")[4] !== undefined && document.getElementsByClassName("product-type")[4].classList.toggle("bold-text")}>asd</p>
 
                                 </ul>
                         </div>
