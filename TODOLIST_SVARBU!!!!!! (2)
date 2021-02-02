@@ -120,12 +120,13 @@ produktu nebus daug, tad vartotojas nenukentes del to, kad jam "parsiunciama duo
 
 
 low importance:
+    logov4 is src/componnents i public
     produktu atnaujinimas servery (pabandyt sita skripta automatiskai paleist):
     22 enter
     {password} enter
     cd /var/www/redroomweb && git clone && npm run build && nginx service restart
     https://www.npmjs.com/package/directory-structure-json redroom only
-    https://developer.aliyun.com/mirror/npm/package/node-json-file-tree redroom only
+    https://developer.aliyun.com/mirror/npm/package/node-json-file-tree redroom only. butinai pabandyt surast
 
     weba gali mdar labiau pagreitint:
         jei imagename nurodytu ir .jpeg ar .png ar whatever ten buna
@@ -133,7 +134,7 @@ low importance:
         VENKIT NUOTRAUKU SU daug WHITESPACE NES DURNAI ATRODO (pvz nicoline gaminiai)
 
     loading picture zmones su letais pc ir internetais
-    
+
     po GALUTINIU (jokiu pokyciu daugiau) web failu leist jiems forkint repository ir kad jie patys keistuweb failu kas menesi backupa padaryt.
 
 sita struktura failo issisaugot

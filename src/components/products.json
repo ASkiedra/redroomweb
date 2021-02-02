@@ -1,31 +1,8 @@
 [
   {
-    "name": "ADELE",
-
-    "imageName": ["ADELE-58d91047c32351"],
-
-
-    "type": "armchairs",
-
-    "mainCategory": "dining room furniture",
-
-    "subCategory": "armchairs",
-
-    "manufacturer": "Natuzzi Editions",
-
-    "info": [
-      "Dël daugiau informacijos susisiekite su mumis.",
-      "Contact us for more information."
-    ]
-  },
-
-  {
     "name": "Life",
 
-    "imageName": ["Life4x-2", "Life5"],
-
-
-    "type": "sofa bed",
+    "imageName": ["Life4x-2.jpg", "Life5.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -39,10 +16,7 @@
   {
     "name": "Lisbona",
 
-    "imageName": ["Lisbona4x", "Lisbona5"],
-
-
-    "type": "sofa bed",
+    "imageName": ["Lisbona4x.jpg", "Lisbona5.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -56,10 +30,7 @@
   {
     "name": "Mithos",
 
-    "imageName": ["Mithos4x", "Mithos5"],
-
-
-    "type": "sofa bed",
+    "imageName": ["Mithos4x.jpg", "Mithos5.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -73,10 +44,7 @@
   {
     "name": "More",
 
-    "imageName": ["More3", "More4"],
-
-
-    "type": "sofa bed",
+    "imageName": ["More3.jpg", "More4.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -90,10 +58,7 @@
   {
     "name": "Space",
 
-    "imageName": ["Space2-2", "Space4"],
-
-
-    "type": "sofa bed",
+    "imageName": ["Space2-2.jpg", "Space4.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -107,10 +72,7 @@
   {
     "name": "Valentina",
 
-    "imageName": ["Valentina4-2", "Valentina5"],
-
-
-    "type": "sofa bed",
+    "imageName": ["Valentina4-2.jpg", "Valentina5.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -124,10 +86,7 @@
   {
     "name": "REGINA",
 
-    "imageName": ["VANESSA-58d90f7247c216"],
-
-
-    "type": "armchairs",
+    "imageName": ["VANESSA-58d90f7247c216.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -144,10 +103,7 @@
   {
     "name": "ORBITALE",
 
-    "imageName": ["ORBITALE-5d9c9b7435c451"],
-
-
-    "type": "beds",
+    "imageName": ["ORBITALE-5d9c9b7435c451.jpg"],
 
     "mainCategory": "bedroom furniture",
 
@@ -164,10 +120,7 @@
   {
     "name": "GALATTICO",
 
-    "imageName": ["GALATTICO-5d9ca45d3221a1"],
-
-
-    "type": "beds",
+    "imageName": ["GALATTICO-5d9ca45d3221a1.jpg"],
 
     "mainCategory": "bedroom furniture",
 
@@ -184,10 +137,7 @@
   {
     "name": "Astratto",
 
-    "imageName": ["Astratto"],
-
-
-    "type": "coffee tables",
+    "imageName": ["Astratto.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -204,10 +154,7 @@
   {
     "name": "Circolo",
 
-    "imageName": ["Circolo"],
-
-
-    "type": "coffee tables",
+    "imageName": ["Circolo.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -224,10 +171,7 @@
   {
     "name": "Deco",
 
-    "imageName": ["Deco"],
-
-
-    "type": "coffee tables",
+    "imageName": ["Deco.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -244,10 +188,7 @@
   {
     "name": "Deco Small",
 
-    "imageName": ["Deco-Small"],
-
-
-    "type": "coffee tables",
+    "imageName": ["Deco-Small.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -264,10 +205,7 @@
   {
     "name": "Fly",
 
-    "imageName": ["Fly"],
-
-
-    "type": "coffee tables",
+    "imageName": ["Fly.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -284,10 +222,7 @@
   {
     "name": "Fly Small",
 
-    "imageName": ["Fly-Small"],
-
-
-    "type": "coffee tables",
+    "imageName": ["Fly-Small.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -304,10 +239,7 @@
   {
     "name": "Grancircolo",
 
-    "imageName": ["Grancircolo"],
-
-
-    "type": "coffee tables",
+    "imageName": ["Grancircolo.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -324,10 +256,7 @@
   {
     "name": "Metrico",
 
-    "imageName": ["Metrico"],
-
-
-    "type": "coffee tables",
+    "imageName": ["Metrico.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -344,10 +273,7 @@
   {
     "name": "Metrico Small",
 
-    "imageName": ["Metrico-Small"],
-
-
-    "type": "coffee tables",
+    "imageName": ["Metrico-Small.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -364,10 +290,7 @@
   {
     "name": "Plane",
 
-    "imageName": ["Plane"],
-
-
-    "type": "coffee tables",
+    "imageName": ["Plane.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -384,10 +307,7 @@
   {
     "name": "Round",
 
-    "imageName": ["Round"],
-
-
-    "type": "coffee tables",
+    "imageName": ["Round.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -404,10 +324,7 @@
   {
     "name": "Shiny",
 
-    "imageName": ["Shiny"],
-
-
-    "type": "coffee tables",
+    "imageName": ["Shiny.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -424,10 +341,7 @@
   {
     "name": "Bonola",
 
-    "imageName": ["Bonola_6D2018_2018_09_07_1234-e1551692415228"],
-
-
-    "type": "armchairs",
+    "imageName": ["Bonola_6D2018_2018_09_07_1234-e1551692415228.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -444,10 +358,7 @@
   {
     "name": "Dia",
 
-    "imageName": ["Dia_6D2018_2018_09_07_1171-e1551699233739"],
-
-
-    "type": "armchairs",
+    "imageName": ["Dia_6D2018_2018_09_07_1171-e1551699233739.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -464,10 +375,7 @@
   {
     "name": "Ghirla",
 
-    "imageName": ["ghirla-e1551722865526"],
-
-
-    "type": "armchairs",
+    "imageName": ["ghirla-e1551722865526.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -484,10 +392,7 @@
   {
     "name": "Gioia",
 
-    "imageName": ["Gioia_mod18-e1551700221299"],
-
-
-    "type": "armchairs",
+    "imageName": ["Gioia_mod18-e1551700221299.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -504,10 +409,7 @@
   {
     "name": "Iseo",
 
-    "imageName": ["iseo-e1551723634867"],
-
-
-    "type": "armchairs",
+    "imageName": ["iseo-e1551723634867.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -524,10 +426,7 @@
   {
     "name": "Lima",
 
-    "imageName": ["Lima_mod18-e1551708255785"],
-
-
-    "type": "armchairs",
+    "imageName": ["Lima_mod18-e1551708255785.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -544,10 +443,7 @@
   {
     "name": "Luis",
 
-    "imageName": ["Luis_6D2018_2018_09_07_1273-e1551720580384"],
-
-
-    "type": "armchairs",
+    "imageName": ["Luis_6D2018_2018_09_07_1273-e1551720580384.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -564,10 +460,7 @@
   {
     "name": "Moscova",
 
-    "imageName": ["Moscova_mod18-e1551721041538"],
-
-
-    "type": "armchairs",
+    "imageName": ["Moscova_mod18-e1551721041538.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -584,10 +477,7 @@
   {
     "name": "Rho",
 
-    "imageName": ["Rho_mod18_mod18-e1551721263934"],
-
-
-    "type": "armchairs",
+    "imageName": ["Rho_mod18_mod18-e1551721263934.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -604,10 +494,7 @@
   {
     "name": "Rondo",
 
-    "imageName": ["Rondo_mod18-e1551721468336"],
-
-
-    "type": "armchairs",
+    "imageName": ["Rondo_mod18-e1551721468336.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -624,10 +511,7 @@
   {
     "name": "Stresa",
 
-    "imageName": ["Stresa_6D2018_2018_09_06_0994-e1551724113770"],
-
-
-    "type": "armchairs",
+    "imageName": ["Stresa_6D2018_2018_09_06_0994-e1551724113770.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -644,10 +528,7 @@
   {
     "name": "Archie",
 
-    "imageName": ["Archie", "Archie2"],
-
-
-    "type": "dining tables",
+    "imageName": ["Archie.jpg", "Archie2.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -664,10 +545,7 @@
   {
     "name": "Archie BO",
 
-    "imageName": ["Archie3", "Archie4"],
-
-
-    "type": "dining tables",
+    "imageName": ["Archie3.jpg", "Archie4.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -684,10 +562,7 @@
   {
     "name": "Dorico",
 
-    "imageName": ["Dorico", "Dorico2", "Dorico3"],
-
-
-    "type": "dining tables",
+    "imageName": ["Dorico.jpg", "Dorico2.jpg", "Dorico3.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -704,10 +579,7 @@
   {
     "name": "Carino",
 
-    "imageName": ["CARINO-5f51f2b2048eb5"],
-
-
-    "type": "sofa",
+    "imageName": ["CARINO-5f51f2b2048eb5.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -721,10 +593,7 @@
   {
     "name": "Autentico",
 
-    "imageName": ["AUTENTICO-5cc6be8c9103f4"],
-
-
-    "type": "sofa",
+    "imageName": ["AUTENTICO-5cc6be8c9103f4.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -738,10 +607,7 @@
   {
     "name": "Carisma",
 
-    "imageName": ["CARISMA-5afabd5d081fa3"],
-
-
-    "type": "sofa",
+    "imageName": ["CARISMA-5afabd5d081fa3.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -755,10 +621,7 @@
   {
     "name": "Click",
 
-    "imageName": ["CLICK-5f3d3faedcd464"],
-
-
-    "type": "sofa",
+    "imageName": ["CLICK-5f3d3faedcd464.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -772,10 +635,7 @@
   {
     "name": "Intenso",
 
-    "imageName": ["INTENSO-5d9dd9efd7c274"],
-
-
-    "type": "sofa",
+    "imageName": ["INTENSO-5d9dd9efd7c274.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -789,10 +649,7 @@
   {
     "name": "Ispirazione",
 
-    "imageName": ["Ispirazione-5cadbe3bb69a18"],
-
-
-    "type": "sofa",
+    "imageName": ["Ispirazione-5cadbe3bb69a18.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -806,10 +663,7 @@
   {
     "name": "Kartun",
 
-    "imageName": ["KARTUN-5f3d43d3b3cc23"],
-
-
-    "type": "sofa",
+    "imageName": ["KARTUN-5f3d43d3b3cc23.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -823,10 +677,7 @@
   {
     "name": "Leggerezza",
 
-    "imageName": ["LEGGEREZZA-5acf66854fc3e6"],
-
-
-    "type": "sofa",
+    "imageName": ["LEGGEREZZA-5acf66854fc3e6.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -840,10 +691,7 @@
   {
     "name": "Piacere",
 
-    "imageName": ["PIACERE-58d53f2294d547"],
-
-
-    "type": "sofa",
+    "imageName": ["PIACERE-58d53f2294d547.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -857,10 +705,7 @@
   {
     "name": "Premura",
 
-    "imageName": ["PREMURA-5bbf80228b5474"],
-
-
-    "type": "sofa",
+    "imageName": ["PREMURA-5bbf80228b5474.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -874,10 +719,7 @@
   {
     "name": "Raffinato",
 
-    "imageName": ["RAFFINATO-5cc6bd6108d9b6"],
-
-
-    "type": "sofa",
+    "imageName": ["RAFFINATO-5cc6bd6108d9b6.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -891,10 +733,7 @@
   {
     "name": "Romantico",
 
-    "imageName": ["ROMANTICO 58d56523377fd5"],
-
-
-    "type": "sofa",
+    "imageName": ["ROMANTICO 58d56523377fd5.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -908,10 +747,7 @@
   {
     "name": "Stupore",
 
-    "imageName": ["STUPORE"],
-
-
-    "type": "sofa",
+    "imageName": ["STUPORE.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -925,10 +761,7 @@
   {
     "name": "Amanda",
 
-    "imageName": ["amanda"],
-
-
-    "type": "Chair",
+    "imageName": ["amanda.png"],
 
     "mainCategory": "dining room furniture",
 
@@ -945,10 +778,7 @@
   {
     "name": "Deep",
 
-    "imageName": ["deep"],
-
-
-    "type": "Chair",
+    "imageName": ["deep.png"],
 
     "mainCategory": "dining room furniture",
 
@@ -965,10 +795,7 @@
   {
     "name": "Fourside",
 
-    "imageName": ["fourside"],
-
-
-    "type": "Chair",
+    "imageName": ["fourside.png"],
 
     "mainCategory": "dining room furniture",
 
@@ -985,10 +812,7 @@
   {
     "name": "Gilda",
 
-    "imageName": ["gilda"],
-
-
-    "type": "Chair",
+    "imageName": ["gilda.png"],
 
     "mainCategory": "dining room furniture",
 
@@ -1005,10 +829,7 @@
   {
     "name": "Ginevra",
 
-    "imageName": ["ginevra", "ginevra2", "ginevra3"],
-
-
-    "type": "Chair",
+    "imageName": ["ginevra.png", "ginevra2.jpg", "ginevra3.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -1025,10 +846,7 @@
   {
     "name": "Manta",
 
-    "imageName": ["manta"],
-
-
-    "type": "Chair",
+    "imageName": ["manta.png"],
 
     "mainCategory": "dining room furniture",
 
@@ -1045,10 +863,7 @@
   {
     "name": "Minimax",
 
-    "imageName": ["minimax"],
-
-
-    "type": "Chair",
+    "imageName": ["minimax.png"],
 
     "mainCategory": "dining room furniture",
 
@@ -1065,10 +880,7 @@
   {
     "name": "Olga",
 
-    "imageName": ["olga", "olga2"],
-
-
-    "type": "Chair",
+    "imageName": ["olga.png", "olga2.png"],
 
     "mainCategory": "dining room furniture",
 
@@ -1085,10 +897,7 @@
   {
     "name": "Assago",
 
-    "imageName": ["Assago_B8A7310_mod18-1920x745"],
-
-
-    "type": "sofa",
+    "imageName": ["Assago_B8A7310_mod18-1920x745.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -1102,10 +911,7 @@
   {
     "name": "Cavour",
 
-    "imageName": ["Cavour-2-1400x933"],
-
-
-    "type": "sofa",
+    "imageName": ["Cavour-2-1400x933.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -1119,10 +925,7 @@
   {
     "name": "Ghisolfa",
 
-    "imageName": ["ghisolfa-1400x933"],
-
-
-    "type": "sofa",
+    "imageName": ["ghisolfa-1400x933.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -1136,10 +939,7 @@
   {
     "name": "Isola",
 
-    "imageName": ["Isola_B8A7562_scont_mod18"],
-
-
-    "type": "sofa",
+    "imageName": ["Isola_B8A7562_scont_mod18.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -1153,10 +953,7 @@
   {
     "name": "Manzoni",
 
-    "imageName": ["manzoni-1-1400x933"],
-
-
-    "type": "sofa",
+    "imageName": ["manzoni-1-1400x933.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -1170,10 +967,7 @@
   {
     "name": "Turro",
 
-    "imageName": ["Turro-living-1400x933"],
-
-
-    "type": "sofa",
+    "imageName": ["Turro-living-1400x933.jpg"],
 
     "mainCategory": "dining room furniture",
 
@@ -1188,13 +982,10 @@
     "name": "Zara",
 
     "imageName": [
-      "Zara-1400x933",
-      "zara-deep-1400x933",
-      "Zara-light_6D2018_2018_09_07_1307-copia"
+      "Zara-1400x933.jpg",
+      "zara-deep-1400x933.jpg",
+      "Zara-light_6D2018_2018_09_07_1307-copia.jpg"
     ],
-
-
-    "type": "sofa",
 
     "mainCategory": "dining room furniture",
 
@@ -1203,5 +994,5 @@
     "manufacturer": "Nicoline",
 
     "info": ["Stilinga sofa.", "Stylish sofa."]
-  } 
+  }
 ]

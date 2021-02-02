@@ -404,16 +404,19 @@ const Type = (props) => {
 
 const Product = (props) => {
         // cia masyva padaryt kad vienakart kviestu fja o ji pereitu per visus bmp jpg tt. jei rado -break
-        function imageExists(imageurl) {
-                var http = new XMLHttpRequest();
+        // function imageExists(imageurl) {
+        //         var http = new XMLHttpRequest();
 
-                http.open('HEAD', imageurl, false);
-                http.send();
+        //         http.open('HEAD', imageurl, false);
+        //         http.send();
 
-                // dukart alertina kazkodel
-                return http.status !== 404;
+        //         console.log('123')
+        //         if(http.status !== 200)
+        //                 console.log(imageurl)
+        //         // dukart alertina kazkodel
+        //         return http.status !== 404;
 
-        }
+        // }
 
         var path = "/images/products/" + props.product.manufacturer + '/' + props.product.name + '/' + props.product.imageName[0];
 
@@ -427,19 +430,20 @@ const Product = (props) => {
                         <div className={"product-container"} style={{ height: 'inherit', width: 'inherit', textAlign: 'center' }}>
                                 {/* cant use <picture> because browser support is bad and some customers definitely use IE or opera mini */}
                                 {
+                                        <img className="product-list-photo" src={path} alt="logo" />
 
-                                        imageExists(path + ".jpg") ? <img className="product-list-photo" src={path + ".jpg"} alt="logo" />
-                                                :
-                                                imageExists(path + ".png") ? <img className="product-list-photo" src={path + '.png'} alt="logo" />
-                                                        :
-                                                        imageExists(path + ".jpeg") ? <img className="product-list-photo" src={path + '.jpeg'} alt="logo" />
-                                                                :
-                                                                imageExists(path + ".svg") ? <img className="product-list-photo" src={path + '.svg'} alt="logo" />
-                                                                        :
-                                                                        imageExists(path + ".bmp") ? <img className="product-list-photo" src={path + '.bmp'} alt="logo" />
-                                                                                :
+                                        // imageExists(path + ".jpg") ? <img className="product-list-photo" src={path + ".jpg"} alt="logo" />
+                                        //         :
+                                        //         imageExists(path + ".png") ? <img className="product-list-photo" src={path + '.png'} alt="logo" />
+                                        //                 :
+                                        //                 imageExists(path + ".jpeg") ? <img className="product-list-photo" src={path + '.jpeg'} alt="logo" />
+                                        //                         :
+                                        //                         imageExists(path + ".svg") ? <img className="product-list-photo" src={path + '.svg'} alt="logo" />
+                                        //                                 :
+                                        //                                 imageExists(path + ".bmp") ? <img className="product-list-photo" src={path + '.bmp'} alt="logo" />
+                                        //                                         :
 
-                                                                                <img className="product-list-photo" src={"/images/no_image.png"} alt="not-found" />
+                                        //                                         <img className="product-list-photo" src={"/images/no_image.png"} alt="not-found" />
                                 }
 
 
