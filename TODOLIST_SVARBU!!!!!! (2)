@@ -1,24 +1,33 @@
-KA PADARIAU BET NECOMITTINAU:
+git pull. committint po 1 feature.
+
+produktus idet
+dropdown linkai 
+favicon
+o jei jsona formuoja is direktoriju ir kiekvienas folderis yra produktas. tekstinis failas - info
+jei nesunku tai kaip momentary fix padaryk kad footeri siusti uzklausa nuveda i contact page
+[11:13 PM]
+arba jei irgi nesunku tai isvis kad kazkokia sistema kur siuncia uzklausa or shit
+paspaudus ismeta balta lentele + text box + right bottom send
+[11:14 PM]
+
 
 launch: https://medium.com/@timmykko/deploying-create-react-app-with-nginx-and-ubuntu-e6fe83c5e9e7
 error refreshing / : https://ui.dev/react-router-cannot-get-url-refresh/
-serveryolo gal veiks: https://stackoverflow.com/questions/5009324/node-js-nginx-what-now
 
-
-kodel ant www.pf.net veikia app.js?
+secret key  i json 
+edit json -webe. kitur read only? ar kaip daryt kad kiti negaletu jsono pakeist. lyg ir secret key 
+paziuret ar ant servo veiks remote json. jei ne - lokalu naudot ir patestint ar reikia refreshint nginx ir build
+isimt backenda ir linkus produktu sutvarkyt
 ssl react
 email https://medium.com/@eesh.t/send-email-using-emailjs-and-react-form-9993bb6929d8
-
+velvetstud redirectas - hostinu ant cheapest  plano (ant to pacio nnr kad servo duomenu nesidalintu su redroomweb) ir index html su skriptu
 jei imanoma pakeisti tai raudonos opacity kokia 751
 clearfilter (nuimt boldus visus kaip?atrodo tiesiog location i ///// visur ir kadangi state naujinas turetu viekt. jei ne - setstatecurproducts= fetchedproducts)
 neveiks db - is jsono tsg 
 
-dropdown linkai 
 https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp
 manufacturers page ir products page stiliai, gal
 
-01 29 23:59
-breadcrumbs netieisngai linkina table (kiti linkai irgi turi but patikrinti kai filtravimas veiks)
 interjeras
 paspaudus nuotrauka desinej, kairiausia didele nuotrauka tampa ta nuotrauka ir pasiekicai tekstas
 mobile breadcrumbs
@@ -28,7 +37,6 @@ mobile breadcrumbs
 prezentacijoj cross device supporta akcentuot (kad tik pridesim nes bandem geresni dizaina sukurti ir greiti optimizuot nesveikai) ir greiti (palyignt su konkurentu webais), keiciant kalbas lieka filtrai
 gerai atrodo hover ant produktu bet privaletumet vien png nuotraukas
 google audit
-VENKIT NUOTRAUKU SU daug WHITESPACE NES DURNAI ATRODO (pvz nicoline gaminiai)
 jei kokie klausimai - email/skambutis, administruot galim nemokamai jei nedideli darbai ir neskubus pokyciai
 
 (viena is triju calendar tasks kasdien)
@@ -50,7 +58,6 @@ dropdownas uzsidaro kai chrome rodykles spaudineji (lcoation!=location)
 404 page
 mobile devices
 gdpr
-bug: jei pasirenki gamintoja ir per dropdwona eini kitur - nks nevyksta (nors state lyg ir naujinas)
 SEO
 MAIN COMPONENT PRODUCT[0] TURETU BUT PAKEISTA
 visa koda sutvarkyt graziai
@@ -74,7 +81,8 @@ database quality control padaryt (is naujo idealiai visus produktus ivest)
 visa koda perziuert/
 paklaust ka noretu pagerint, pakeist tt
                 // is state really necessary? perhaps fetchedproducts arent necessary too (allproducts,manufacturers)
-
+webkit etc support
+sidebar atsiranda jei 0 produktu bet kalba pakeiciu
 
 
 gototop ir breadcrumbs i pf permest. uzsakyt pf vps weba.
@@ -90,6 +98,7 @@ VISUS TIPUS ANGLISKAI VEST? bet breadcrumbsui vis tiek reikes isverst
 props.location pritaikyt kaip pfe kad blazing fast switchintu uslapiuv
 https://codinhood.com/micro/10-dropdown-menu-animations-css-transform
 nusiust weba nedai for feedback
+visus komentarus perziuret pries uzdarant ir publikuojant projekta
 
 public/images ir subfolderiuose TIK NUOTRAUKAS, NIEKO KITO
 padaryt kad kaip ir pfe pagal cache produktai eitu
@@ -100,27 +109,39 @@ TAISYKLES:
 name turi but toks pats kaip ir aplankalo pavadinimas
 imageName - nukopijuokit nuotraukos pavadinima ir iklijuokite
 maksimalus greitis - kelkit compressintas png nuotraukas
+
 gerai aprasyt weba - uzsakovas prase paprasto sprendimo, tai interjere tiesiog imeti i folderi prdouktus,
-o vietoj duomenu bazes (kas reikalautu arba db online administravimo arba http requestu siuntimo - abu ne non it user friendly)- tiesiog
-json failas, kuris kaip vietine duomenu baze. sutaupom renderiu nes ne 1 get 2 filter 3 galutinis rezultatas, o 1 filter 2 galutinis rezultatas
-
-
-weba gali mdar labiau pagreitint:
-  jei imagename nurodytu ir .jpeg ar .png ar whatever ten buna
-  jei nuotraukas visas compressintu
-
-neaktualu:
-  filtras
-    jei du tipai: ||
-    jei du manuf: ||
-    jei du maincategories: ||
-    jei du subcategories(pvz workplacefurniture): ||
+o vietoj pridejimo produktu i duomenu baze (kas reikalautu arba db online administravimo arba http requestu siuntimo - abu ne non it user friendly)- tiesiog
+json failas, kuris kaip vietine duomenu baze. be to, editint ZYMIAI paprasciau jsona online nei su http requestais mongodb.
+sutaupom renderiu nes ne 1 get 2 filter 3 galutinis rezultatas, o 1 filter 2 galutinis rezultatas.
+produktu nebus daug, tad vartotojas nenukentes del to, kad jam "parsiunciama duomenu baze", nes su 
 
 
 
+
+low importance:
+    produktu atnaujinimas servery (pabandyt sita skripta automatiskai paleist):
+    22 enter
+    {password} enter
+    cd /var/www/redroomweb && git clone && npm run build && nginx service restart
+    https://www.npmjs.com/package/directory-structure-json redroom only
+    https://developer.aliyun.com/mirror/npm/package/node-json-file-tree redroom only
+
+    weba gali mdar labiau pagreitint:
+        jei imagename nurodytu ir .jpeg ar .png ar whatever ten buna
+        jei nuotraukas visas compressintu
+        VENKIT NUOTRAUKU SU daug WHITESPACE NES DURNAI ATRODO (pvz nicoline gaminiai)
+
+    loading picture zmones su letais pc ir internetais
+    
+    po GALUTINIU (jokiu pokyciu daugiau) web failu leist jiems forkint repository ir kad jie patys keistuweb failu kas menesi backupa padaryt.
+
+sita struktura failo issisaugot
 
 backend prijungimas (pfui):
 https://www.youtube.com/watch?v=71wSzpLyW9k
 https://www.youtube.com/watch?v=LE_b8PiYy-A
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04
 https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-16-04
+
+

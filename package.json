@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^12.6.0",
     "@types/react-router-dom": "^5.1.7",
     "axios": "^0.21.1",
+    "directory-structure-json": "^1.0.0",
+    "fs": "0.0.1-security",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

@@ -144,7 +144,6 @@ const Header = (props) => {
 
 
                 <DropdownItem>
-                    <Link to="/" >
                         <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
                             <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to="/">
                                 {
@@ -154,6 +153,15 @@ const Header = (props) => {
                             </Link>
 
                             <ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
+                            <div>
+                                    <Link className="dropdown-subtext">
+                                        {
+                                            props.language === "LT" ? "kėdės " :
+                                                props.language === "EN" && "chairs"
+                                        }
+                                    </Link>
+                                </div>
+
                                 <div>
                                     <Link className="dropdown-subtext">
                                         {
@@ -224,7 +232,6 @@ const Header = (props) => {
                                 </div>
                             </ul>
                         </li>
-                    </Link>
                 </DropdownItem>
 
                 <DropdownItem>

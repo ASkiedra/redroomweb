@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Products from '../components/products';
 
+
+
 // these should not be global but they cant be in the state too. maybe set them in render(), pass them to components and functions
 var paramsFiltersApplied = false,
         subCatFilterArr = [], mainCatFilterArr = [], manufFilterArr = [];
@@ -18,14 +20,14 @@ export default class AllProducts extends Component {
         }
 
         componentDidUpdate(prevProps, prevState, snapshot) {
-                console.log('cdidupdate')
+                // console.log('cdidupdate')
 
-                console.log(prevProps.location.key)
-                console.log(prevProps.location.pathname)
+                // console.log(prevProps.location.key)
+                // console.log(prevProps.location.pathname)
 
-                console.log(this.props.location.key)
-                console.log(this.props.location.pathname)
-                console.log(manufFilterArr)
+                // console.log(this.props.location.key)
+                // console.log(this.props.location.pathname)
+                // console.log(manufFilterArr)
                 // ar ne per daznai filtriuka kviecia mmmm. gal cia funkcija kokia imantresne
                 if ((prevProps.location.key !== this.props.location.key || prevProps.location.pathname !== this.props.location.pathname)) {
                         subCatFilterArr = [];
@@ -64,7 +66,7 @@ export default class AllProducts extends Component {
                 //         })
 
 
-                this.setState({fetchedProducts: Products, curProducts: Products, loading:false});
+                this.setState({ fetchedProducts: Products, curProducts: Products, loading: false });
 
                 console.log('mounted')
                 paramsFiltersApplied = false;
@@ -354,14 +356,14 @@ const MainContainer = (props) => {
 
                                         </div>
 
-                                                <p onClick={()=>document.getElementsByClassName("product-type")[4] !== undefined && document.getElementsByClassName("product-type")[4].classList.toggle("bold-text")}>asd</p>
+                                        <p onClick={() => document.getElementsByClassName("product-type")[4] !== undefined && document.getElementsByClassName("product-type")[4].classList.toggle("bold-text")}>asd</p>
 
                                 </ul>
                         </div>
                         {/* products */}
                         < div style={{ height: 'inherit', display: 'grid', minHeight: 'inherit', gridTemplateColumns: '33.3333% 33.3333% 33.3333%', marginRight: '5rem' }}>
                                 {props.curProducts.map(curProduct => {
-                                        return <Product key={curProduct.name + curProduct.imageName[0]}  lang={props.lang} product={curProduct} />;
+                                        return <Product key={curProduct.name + curProduct.imageName[0]} lang={props.lang} product={curProduct} />;
                                 })
                                 }
 
@@ -408,8 +410,6 @@ const Product = (props) => {
                 http.open('HEAD', imageurl, false);
                 http.send();
 
-                if (http.status !== 200)
-                        console.log(imageurl)
                 // dukart alertina kazkodel
                 return http.status !== 404;
 

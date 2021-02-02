@@ -1,30 +1,1207 @@
 [
   {
-    "info": ["Stilinga sofa lova.", "Stylish sofa bed."],
+    "name": "ADELE",
 
-    "name": "Amsterdam",
-    "imageName": ["Amsterdam4-3", "Amsterdam5-1"],
+    "imageName": ["ADELE-58d91047c32351"],
 
-    "manufacturer": "Dienne",
+
+    "type": "armchairs",
+
     "mainCategory": "dining room furniture",
-    "subCategory": "sofa beds"
+
+    "subCategory": "armchairs",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
   },
 
   {
-    "info": ["Stilinga sofa lova.", "Stylish sofa bed."],
+    "name": "Life",
 
-    "name": "Amsterdam",
-    "imageName": ["Amsterdam4-3", "Amsterdam5-1"],
+    "imageName": ["Life4x-2", "Life5"],
+
+
+    "type": "sofa bed",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa beds",
 
     "manufacturer": "Dienne",
+
+    "info": ["Stilinga sofa lova.", "Stylish sofa bed."]
+  },
+
+  {
+    "name": "Lisbona",
+
+    "imageName": ["Lisbona4x", "Lisbona5"],
+
+
+    "type": "sofa bed",
+
     "mainCategory": "dining room furniture",
-    "subCategory": "sofa beds"
-  }
+
+    "subCategory": "sofa beds",
+
+    "manufacturer": "Dienne",
+
+    "info": ["Stilinga sofa lova.", "Stylish sofa bed."]
+  },
+
+  {
+    "name": "Mithos",
+
+    "imageName": ["Mithos4x", "Mithos5"],
 
 
+    "type": "sofa bed",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa beds",
+
+    "manufacturer": "Dienne",
+
+    "info": ["Stilinga sofa lova.", "Stylish sofa bed."]
+  },
+
+  {
+    "name": "More",
+
+    "imageName": ["More3", "More4"],
 
 
+    "type": "sofa bed",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa beds",
+
+    "manufacturer": "Dienne",
+
+    "info": ["Stilinga sofa lova.", "Stylish sofa bed."]
+  },
+
+  {
+    "name": "Space",
+
+    "imageName": ["Space2-2", "Space4"],
 
 
-  
+    "type": "sofa bed",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa beds",
+
+    "manufacturer": "Dienne",
+
+    "info": ["Stilinga sofa lova.", "Stylish sofa bed."]
+  },
+
+  {
+    "name": "Valentina",
+
+    "imageName": ["Valentina4-2", "Valentina5"],
+
+
+    "type": "sofa bed",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa beds",
+
+    "manufacturer": "Dienne",
+
+    "info": ["Stilinga sofa lova.", "Stylish sofa bed."]
+  },
+
+  {
+    "name": "REGINA",
+
+    "imageName": ["VANESSA-58d90f7247c216"],
+
+
+    "type": "armchairs",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "armchairs",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "ORBITALE",
+
+    "imageName": ["ORBITALE-5d9c9b7435c451"],
+
+
+    "type": "beds",
+
+    "mainCategory": "bedroom furniture",
+
+    "subCategory": "beds",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "GALATTICO",
+
+    "imageName": ["GALATTICO-5d9ca45d3221a1"],
+
+
+    "type": "beds",
+
+    "mainCategory": "bedroom furniture",
+
+    "subCategory": "beds",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Astratto",
+
+    "imageName": ["Astratto"],
+
+
+    "type": "coffee tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "coffee tables",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Circolo",
+
+    "imageName": ["Circolo"],
+
+
+    "type": "coffee tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "coffee tables",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Deco",
+
+    "imageName": ["Deco"],
+
+
+    "type": "coffee tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "coffee tables",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Deco Small",
+
+    "imageName": ["Deco-Small"],
+
+
+    "type": "coffee tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "coffee tables",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Fly",
+
+    "imageName": ["Fly"],
+
+
+    "type": "coffee tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "coffee tables",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Fly Small",
+
+    "imageName": ["Fly-Small"],
+
+
+    "type": "coffee tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "coffee tables",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Grancircolo",
+
+    "imageName": ["Grancircolo"],
+
+
+    "type": "coffee tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "coffee tables",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Metrico",
+
+    "imageName": ["Metrico"],
+
+
+    "type": "coffee tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "coffee tables",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Metrico Small",
+
+    "imageName": ["Metrico-Small"],
+
+
+    "type": "coffee tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "coffee tables",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Plane",
+
+    "imageName": ["Plane"],
+
+
+    "type": "coffee tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "coffee tables",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Round",
+
+    "imageName": ["Round"],
+
+
+    "type": "coffee tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "coffee tables",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Shiny",
+
+    "imageName": ["Shiny"],
+
+
+    "type": "coffee tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "coffee tables",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Bonola",
+
+    "imageName": ["Bonola_6D2018_2018_09_07_1234-e1551692415228"],
+
+
+    "type": "armchairs",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "armchairs",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Dia",
+
+    "imageName": ["Dia_6D2018_2018_09_07_1171-e1551699233739"],
+
+
+    "type": "armchairs",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "armchairs",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Ghirla",
+
+    "imageName": ["ghirla-e1551722865526"],
+
+
+    "type": "armchairs",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "armchairs",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Gioia",
+
+    "imageName": ["Gioia_mod18-e1551700221299"],
+
+
+    "type": "armchairs",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "armchairs",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Iseo",
+
+    "imageName": ["iseo-e1551723634867"],
+
+
+    "type": "armchairs",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "armchairs",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Lima",
+
+    "imageName": ["Lima_mod18-e1551708255785"],
+
+
+    "type": "armchairs",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "armchairs",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Luis",
+
+    "imageName": ["Luis_6D2018_2018_09_07_1273-e1551720580384"],
+
+
+    "type": "armchairs",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "armchairs",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Moscova",
+
+    "imageName": ["Moscova_mod18-e1551721041538"],
+
+
+    "type": "armchairs",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "armchairs",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Rho",
+
+    "imageName": ["Rho_mod18_mod18-e1551721263934"],
+
+
+    "type": "armchairs",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "armchairs",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Rondo",
+
+    "imageName": ["Rondo_mod18-e1551721468336"],
+
+
+    "type": "armchairs",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "armchairs",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Stresa",
+
+    "imageName": ["Stresa_6D2018_2018_09_06_0994-e1551724113770"],
+
+
+    "type": "armchairs",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "armchairs",
+
+    "manufacturer": "Nicoline",
+
+    "info": [
+      "Dël daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Archie",
+
+    "imageName": ["Archie", "Archie2"],
+
+
+    "type": "dining tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "dining tables",
+
+    "manufacturer": "Domitalia",
+
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Archie BO",
+
+    "imageName": ["Archie3", "Archie4"],
+
+
+    "type": "dining tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "dining tables",
+
+    "manufacturer": "Domitalia",
+
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Dorico",
+
+    "imageName": ["Dorico", "Dorico2", "Dorico3"],
+
+
+    "type": "dining tables",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "dining tables",
+
+    "manufacturer": "Domitalia",
+
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Carino",
+
+    "imageName": ["CARINO-5f51f2b2048eb5"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Autentico",
+
+    "imageName": ["AUTENTICO-5cc6be8c9103f4"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Carisma",
+
+    "imageName": ["CARISMA-5afabd5d081fa3"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Click",
+
+    "imageName": ["CLICK-5f3d3faedcd464"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Intenso",
+
+    "imageName": ["INTENSO-5d9dd9efd7c274"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Ispirazione",
+
+    "imageName": ["Ispirazione-5cadbe3bb69a18"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Kartun",
+
+    "imageName": ["KARTUN-5f3d43d3b3cc23"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Leggerezza",
+
+    "imageName": ["LEGGEREZZA-5acf66854fc3e6"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Piacere",
+
+    "imageName": ["PIACERE-58d53f2294d547"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Premura",
+
+    "imageName": ["PREMURA-5bbf80228b5474"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Raffinato",
+
+    "imageName": ["RAFFINATO-5cc6bd6108d9b6"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Romantico",
+
+    "imageName": ["ROMANTICO 58d56523377fd5"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Stupore",
+
+    "imageName": ["STUPORE"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Natuzzi Editions",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Amanda",
+
+    "imageName": ["amanda"],
+
+
+    "type": "Chair",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "chair",
+
+    "manufacturer": "Quinti",
+
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Deep",
+
+    "imageName": ["deep"],
+
+
+    "type": "Chair",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "chair",
+
+    "manufacturer": "Quinti",
+
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Fourside",
+
+    "imageName": ["fourside"],
+
+
+    "type": "Chair",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "chair",
+
+    "manufacturer": "Quinti",
+
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Gilda",
+
+    "imageName": ["gilda"],
+
+
+    "type": "Chair",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "chair",
+
+    "manufacturer": "Quinti",
+
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Ginevra",
+
+    "imageName": ["ginevra", "ginevra2", "ginevra3"],
+
+
+    "type": "Chair",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "chair",
+
+    "manufacturer": "Quinti",
+
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Manta",
+
+    "imageName": ["manta"],
+
+
+    "type": "Chair",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "chair",
+
+    "manufacturer": "Quinti",
+
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Minimax",
+
+    "imageName": ["minimax"],
+
+
+    "type": "Chair",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "chair",
+
+    "manufacturer": "Quinti",
+
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Olga",
+
+    "imageName": ["olga", "olga2"],
+
+
+    "type": "Chair",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "chair",
+
+    "manufacturer": "Quinti",
+
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
+  {
+    "name": "Assago",
+
+    "imageName": ["Assago_B8A7310_mod18-1920x745"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Nicoline",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Cavour",
+
+    "imageName": ["Cavour-2-1400x933"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Nicoline",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Ghisolfa",
+
+    "imageName": ["ghisolfa-1400x933"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Nicoline",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Isola",
+
+    "imageName": ["Isola_B8A7562_scont_mod18"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Nicoline",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Manzoni",
+
+    "imageName": ["manzoni-1-1400x933"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Nicoline",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Turro",
+
+    "imageName": ["Turro-living-1400x933"],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Nicoline",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  },
+
+  {
+    "name": "Zara",
+
+    "imageName": [
+      "Zara-1400x933",
+      "zara-deep-1400x933",
+      "Zara-light_6D2018_2018_09_07_1307-copia"
+    ],
+
+
+    "type": "sofa",
+
+    "mainCategory": "dining room furniture",
+
+    "subCategory": "sofa",
+
+    "manufacturer": "Nicoline",
+
+    "info": ["Stilinga sofa.", "Stylish sofa."]
+  } 
 ]
