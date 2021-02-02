@@ -2,7 +2,6 @@ git pull. committint po 1 feature.
 
 manufacturers
 dropdown linkai 
-favicon
 o jei jsona formuoja is direktoriju ir kiekvienas folderis yra produktas. tekstinis failas - info
 jei nesunku tai kaip momentary fix padaryk kad footeri siusti uzklausa nuveda i contact page
 [11:13 PM]
@@ -46,8 +45,8 @@ jei kokie klausimai - email/skambutis, administruot galim nemokamai jei nedideli
 produkto uzklausa email
 zoominimai
 einant is /en/products i /  rodo lt teksta ir refreshinus lt kalba buna
-imageExists pritaikyt ir produkto, manufacturer pages
 
+verticallycenter manufacturers
 https://stackoverflow.com/questions/56421417/react-app-not-working-in-internet-explorer-11
  title variable
 testuot tarkim su 23 gamintojais (Kaip bg laikos tt)

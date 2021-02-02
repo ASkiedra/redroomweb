@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
+import Products from '../components/products';
 
-import axios from 'axios';
 
 export default class Gamintojai extends Component {
     constructor(props) {
@@ -11,13 +11,8 @@ export default class Gamintojai extends Component {
 
     componentDidMount() {
 
-        axios.get("http://localhost:5000/products/")
-            .then(response => {
-                this.setState({ fetchedProducts: response.data, loading: false });
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+        this.setState({ fetchedProducts: Products, loading: false });
+
     }
 
     filter(manufacturers) {
@@ -61,7 +56,9 @@ const GamintojaiContainer = (props) => {
                 {props.filteredManufacturers.map(manufacturer => {
                     return (
                         <div key={manufacturer}>
-                            <Link to={"/" + props.language + "/products/null/null/" + manufacturer}>
+                            <Link style={{
+                                width: "100%", height: "100%", display: " block"
+                            }} to={"/" + props.language + "/products/null/null/" + manufacturer}>
                                 {/* pritaikyt ta komponenta kur tikrina ar jpg ar bmp ar png ir tt */}
                                 <img alt={manufacturer + "-logo"} src={"/images/logos/" + manufacturer + ".png"} />
                             </Link>
