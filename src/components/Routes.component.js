@@ -42,7 +42,7 @@ const Routes = () => {
 
 
 
-            <Route exact path="/:lang/products/:mainCategory/:subCategory/:manufacturer/:productCode/:productid/:name/" component={ProductPage} />
+            <Route exact path="/:lang/products/:mainCategory/:subCategory/:manufacturer/:name/" component={ProductPage} />
 
             <Route exact path="/:lang/products" component={AllProducts} />
 

@@ -346,13 +346,37 @@ a {
   color: black;
 }
 
-#products-sidebar {
-  /* same as the area for the grid -10% */
-  width: 17%;
-  top: 30%;
+#sidebar-container {
   font-size: 1.4rem;
   position: fixed;
+  width: 17%;
+  top: 30%;
 }
+#products-sidebar {
+  /* same as the area for the grid -10% */
+  width: 100%;
+  top: 30%;
+  scrollbar-width: thin;
+  overflow: hidden scroll;
+  scrollbar-color: rgba(255, 0, 0, 0.373) rgba(221, 221, 221, 0.159);
+  height: 25rem;
+}
+
+/* chrome sidebar scrollbar */
+#products-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+#products-sidebar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(221, 221, 221, 0.159);
+  border-radius: 10px;
+}
+
+#products-sidebar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 0, 0, 0.373);
+}
+
+/*end of chrome sidebar scrollbar */
 
 .product-type {
   font-family: "Roboto";
@@ -389,6 +413,10 @@ a {
 .type-li p::selection {
   cursor: default;
   background: none;
+}
+
+.type-li {
+  padding-right: 1rem;
 }
 
 .sidebar-subtext {
@@ -441,28 +469,17 @@ a {
   height: auto;
 }
 
-/* 
-olor: white;
-text-decoration: none;
-text-align: right;
-background: black;
-padding: 1rem;
-font-weight: bold;
-display: block;
-margin-bottom: 2rem;
-width: 50%;
-position: relative;
-left: 40%; */
-
 #clear-btn {
-  color: white;
+  color: rgba(0, 0, 0, 0.801);
   text-decoration: none;
+  font-size: 1.2rem;
   text-align: center;
-  background: black;
   padding: 1rem;
   font-weight: bold;
   display: block;
-  margin-bottom: 2rem;
+  position: relative;
+  left: 10%;
+  text-transform: lowercase;
 }
 
 #main-page-cont0 {

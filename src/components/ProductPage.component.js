@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from 'axios';
+import Products from '../components/products';
 
 
 
@@ -33,51 +33,49 @@ export default class ProductPage extends Component {
                         );
                 }
                 else {
-                        // console.log('no cache is present, therefore we get data from the database');
-                        axios.get('http://localhost:5000/products/' + this.props.match.params.productid)
-                                .then(response => {
-                                        this.setState({
-                                                manufacturer: response.data.manufacturer,
-                                                name: response.data.name,
-                                                imageName: response.data.imageName,
-                                                info: response.data.info,
-                                                path: "/images/products/" + this.props.match.params.manufacturer + '/' + this.props.match.params.name + '/',
+                        // maybe state.product = product.find... would be simpler instead of state.manuf, state.name 
+                        var productFromJson = Products.find(el => el.name === this.props.match.params.name);
+                        this.setState({
+                                manufacturer: productFromJson.manufacturer,
+                                name: productFromJson.name,
+                                imageName: productFromJson.imageName,
+                                info: productFromJson.info,
+                                path: "/images/products/" + this.props.match.params.manufacturer + '/' + this.props.match.params.name + '/',
 
-                                        },
-                                                this.setState({
-                                                        loading: false,
-                                                })
-                                        )
-                                }
-                                )
+                        },
+                                this.setState({
+                                        loading: false,
+                                })
+                        )
                 }
 
-
-
-
         }
 
 
-        imageExists(imageurl) {
-                var http = new XMLHttpRequest();
 
-                http.open('HEAD', imageurl, false);
-                http.send();
-                // dukart alertina kazkodel
-                // alert(imageurl)
-                if (http.status !== 200)
-                        console.log(imageurl)
-                // alert(http.status + imageurl)
-                return http.status !== 404;
 
-        }
+
+
+
+        // imageExists(imageurl) {
+        //         var http = new XMLHttpRequest();
+
+        //         http.open('HEAD', imageurl, false);
+        //         http.send();
+        //         // dukart alertina kazkodel
+        //         // alert(imageurl)
+        //         if (http.status !== 200)
+        //                 console.log(imageurl)
+        //         // alert(http.status + imageurl)
+        //         return http.status !== 404;
+
+        // }
 
         render() {
                 var i = 0;
-         
-                console.log(this.state.manufacturer)
+
                 return (
-                        <div style={{height: 'inherit'}} >
+                        <div style={{ height: 'inherit' }} >
                                 <div id="product-page-grid">
 
                                         <p id="product-text">{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
@@ -86,22 +84,25 @@ export default class ProductPage extends Component {
 
                                                 <div id="prod-photo-container">
 
-                                                        {!this.state.loading &&
-                                                                // BUTINAI PERDARYT KITA SPRENDIMA DEL IMG KAD NESIKARTOTU
-                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img id={"main-product-img"} width={400} height={300} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
-                                                                :
-                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".png") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.png'} alt="logo" />
-                                                                        :
-                                                                        this.imageExists(this.state.path + this.state.imageName[i] + ".jpeg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.jpeg'} alt="logo" />
-                                                                                :
-                                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".svg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.svg'} alt="logo" />
-                                                                                        :
-                                                                                        this.imageExists(this.state.path + this.state.imageName[i] + ".bmp") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.bmp'} alt="logo" />
-                                                                                                :
+                                                        {!this.state.loading && <img id="main-product-img" width={350} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} alt="main-product-photo" />}
 
-                                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="404img" />}
 
-                                                                                        <p id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
+                                                        {/* 
+                                                                // // BUTINAI PERDARYT KITA SPRENDIMA DEL IMG KAD NESIKARTOTU
+                                                                // this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img id={"main-product-img"} width={400} height={300} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
+                                                                // :
+                                                                // this.imageExists(this.state.path + this.state.imageName[i] + ".png") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.png'} alt="logo" />
+                                                                //         :
+                                                                //         this.imageExists(this.state.path + this.state.imageName[i] + ".jpeg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.jpeg'} alt="logo" />
+                                                                //                 :
+                                                                //                 this.imageExists(this.state.path + this.state.imageName[i] + ".svg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.svg'} alt="logo" />
+                                                                //                         :
+                                                                //                         this.imageExists(this.state.path + this.state.imageName[i] + ".bmp") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.bmp'} alt="logo" />
+                                                                //                                 :
+
+                                                                //                                 <img width={400} height={300} src={"/images/no_image.png"} alt="404img" /> */}
+
+                                                        <p id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
 
                                                 </div>
                                         </div>
@@ -109,16 +110,16 @@ export default class ProductPage extends Component {
                                         <div>
 
                                                 {!this.state.loading &&
-                                                        this.state.imageName.forEach(() => {
+                                                        this.state.imageName.map(() => {
                                                                 i++;
 
                                                                 if (this.state.imageName[i] !== undefined)
                                                                         return (
                                                                                 <div id="prod-photo-container">
+                                                                                        <img width={350} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} alt="logo" />
+                                                                                        {console.log(this.state.imageName[i])}
 
-
-
-                                                                                        {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={350} height={200} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
+                                                                                        {/* {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={350} height={200} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
                                                                                                 :
                                                                                                 this.imageExists(this.state.path + this.state.imageName[i] + ".png") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.png'} alt="logo" />
                                                                                                         :
@@ -129,7 +130,7 @@ export default class ProductPage extends Component {
                                                                                                                         this.imageExists(this.state.path + this.state.imageName[i] + ".bmp") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.bmp'} alt="logo" />
                                                                                                                                 :
 
-                                                                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="404img" />}
+                                                                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="404img" />} */}
 
                                                                                 </div>
                                                                         );

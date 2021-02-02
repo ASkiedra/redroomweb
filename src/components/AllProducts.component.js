@@ -4,12 +4,9 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Products from '../components/products';
 
-
-
 // these should not be global but they cant be in the state too. maybe set them in render(), pass them to components and functions
 var paramsFiltersApplied = false,
         subCatFilterArr = [], mainCatFilterArr = [], manufFilterArr = [];
-console.log(manufFilterArr)
 
 export default class AllProducts extends Component {
         constructor(props) {
@@ -317,26 +314,28 @@ const MainContainer = (props) => {
 
                 < div style={{ background: 'white', display: 'grid', minHeight: 'inherit', paddingBottom: '5rem', gridTemplateColumns: '25% 75%' }}>
                         {/* sidebar */}
-                        <div >
-                                <ul id={"products-sidebar"}>
+                        <div>
+
+                                <div id="sidebar-container" >
                                         <Link id="clear-btn" to={"/" + language + "/products"}>clear filters</Link>
+                                        <ul id={"products-sidebar"}>
 
-                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                                <p className={"sidebar-subtext"}>{language === "LT" ? "PAGRINDINĖ KATEGORIJA" : language === "EN" && "MAIN CATEGORY"}</p>
-                                                {props.mainCategoriesArr.map(curMainCat => {
-                                                        // jei keiciu sita returna  - keist ir apacioj
-                                                        return <Type filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
-                                                })}
-                                        </div>
+                                                <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                        {/* <p className={"sidebar-subtext"}>{language === "LT" ? "PAGRINDINĖ KATEGORIJA" : language === "EN" && "MAIN CATEGORY"}</p> */}
+                                                        {props.mainCategoriesArr.map(curMainCat => {
+                                                                // jei keiciu sita returna  - keist ir apacioj
+                                                                return <Type filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
+                                                        })}
+                                                </div>
 
-                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                                <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p>
-                                                {props.subCategoriesArr.map(curSubCat => {
-                                                        // jei keiciu sita returna  - keist ir apacioj
-                                                        return <Type filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
-                                                })}
-                                        </div>
-                                        {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                        {/* <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p> */}
+                                                        {props.subCategoriesArr.map(curSubCat => {
+                                                                // jei keiciu sita returna  - keist ir apacioj
+                                                                return <Type filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
+                                                        })}
+                                                </div>
+                                                {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
                                                 <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p>
                                                 {props.subCategoriesArr.map(curSubCat => {
                                                         // jei keiciu sita returna  - keist ir apacioj
@@ -345,21 +344,23 @@ const MainContainer = (props) => {
                                         </div> */}
 
 
-                                        {/*
+                                                {/*
  CIA NE TYPE o manufacturer turetu but arba sidebar-item
 */}
-                                        <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>
-                                                <p className={"sidebar-subtext"}>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p>
-                                                {props.manufacturersArr.map(curManufacturer => {
-                                                        // jei keiciu sita returna  - keist ir apacioj
-                                                        return <Type filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
-                                                })}
+                                                <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>
+                                                        {/* <p className={"sidebar-subtext"}>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p> */}
+                                                        {props.manufacturersArr.map(curManufacturer => {
+                                                                // jei keiciu sita returna  - keist ir apacioj
+                                                                return <Type filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
+                                                        })}
 
-                                        </div>
+                                                </div>
 
 
-                                </ul>
+                                        </ul>
+                                </div>
                         </div>
+
                         {/* products */}
                         < div style={{ height: 'inherit', display: 'grid', minHeight: 'inherit', gridTemplateColumns: '33.3333% 33.3333% 33.3333%', marginRight: '5rem' }}>
                                 {props.curProducts.map(curProduct => {
@@ -424,7 +425,7 @@ const Product = (props) => {
                 <Link key={props.product.productCode + props.product.name}
                         style={{ height: '20rem', width: '100%' }}
                         to={{
-                                pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.manufacturer + "/" + props.product.productCode + "/" + props.product._id + "/" + props.product.name + "/" + props.product.color,
+                                pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.manufacturer +  "/" + props.product.name + "/" ,
                                 product: props.product,
                         }}>
                         <div className={"product-container"} style={{ height: 'inherit', width: 'inherit', textAlign: 'center' }}>

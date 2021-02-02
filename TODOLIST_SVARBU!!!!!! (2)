@@ -1,19 +1,18 @@
 git pull. committint po 1 feature.
 
-dropdown linkai 
+pratest linux 4
 
 launch: https://medium.com/@timmykko/deploying-create-react-app-with-nginx-and-ubuntu-e6fe83c5e9e7
 error refreshing / : https://ui.dev/react-router-cannot-get-url-refresh/
 
-secret key  i json 
-edit json -webe. kitur read only? ar kaip daryt kad kiti negaletu jsono pakeist. lyg ir secret key 
-paziuret ar ant servo veiks remote json. jei ne - lokalu naudot ir patestint ar reikia refreshint nginx ir build
-isimt backenda ir linkus produktu sutvarkyt
-ssl react
+produktu linkai
+produktu puslpais
+dropdown linkai 
+headeris ant mobiliuju
+
 email https://medium.com/@eesh.t/send-email-using-emailjs-and-react-form-9993bb6929d8
 velvetstud redirectas - hostinu ant cheapest  plano (ant to pacio nnr kad servo duomenu nesidalintu su redroomweb) ir index html su skriptu
 jei imanoma pakeisti tai raudonos opacity kokia 751
-clearfilter (nuimt boldus visus kaip?atrodo tiesiog location i ///// visur ir kadangi state naujinas turetu viekt. jei ne - setstatecurproducts= fetchedproducts)
 
 https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp
 manufacturers page ir products page stiliai, gal
@@ -22,17 +21,18 @@ interjeras
 paspaudus nuotrauka desinej, kairiausia didele nuotrauka tampa ta nuotrauka ir pasiekicai tekstas
 mobile breadcrumbs
 
-01 30 23:59
+spaudi ant produkto tada atgal ir turi filtrai likt
  footer linkai, mobile dropdown pagal foto ir kiti mobile, launch weba. 
 prezentacijoj cross device supporta akcentuot (kad tik pridesim nes bandem geresni dizaina sukurti ir greiti optimizuot nesveikai) ir greiti (palyignt su konkurentu webais), keiciant kalbas lieka filtrai
 gerai atrodo hover ant produktu bet privaletumet vien png nuotraukas
 google audit
 jei kokie klausimai - email/skambutis, administruot galim nemokamai jei nedideli darbai ir neskubus pokyciai
 
+productpage: ne .find, o cikla per array ir tikrint ar sutampa match manufacturer su manuf ir ar name su name (ir kiti du matchai jei tokie yra)
 (viena is triju calendar tasks kasdien)
-// po 01-30
+react seo, seo
  docint viska
- padaryt kad imageexists tikrintu png pirma nes dauguma foto png, po to jpg jpeg ir tt
+ scrollbar stiliai? https://css-tricks.com/almanac/properties/s/scrollbar-color/
 produkto uzklausa email
 zoominimai
 einant is /en/products i /  rodo lt teksta ir refreshinus lt kalba buna
@@ -53,6 +53,7 @@ clear ubtton should change the state and not the link
 MAIN COMPONENT PRODUCT[0] TURETU BUT PAKEISTA
 visa koda sutvarkyt graziai
 PADARYT KAD VEIKTU REFRESHAI O NE 404
+ssl react
 png/jpg/bmp nustatymasneveikia ant serverio kazkodel (gal ant vpso veiks)
 visur kur filtravimai, sortai daryt su toupper 
 kai kur kodas kartojas. daryt komponentus ir persiust
