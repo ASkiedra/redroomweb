@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Products from '../components/products';
 
+        
 
 
 export default class ProductPage extends Component {
@@ -15,8 +16,22 @@ export default class ProductPage extends Component {
                 }
         }
 
+         handleMouseClick = (event) => {
+                console.log('clicked')
+                // if the click wasnt on the products button
+                if (event.target.id === "img1" || event.target.id === 'img2' && document.getElementById('main-product-img') !== undefined && document.getElementById('main-product-img') !== null) {
+                        console.log("cur:"+event.target.src)
+                        console.log("main:"+document.getElementById('main-product-img').src)
+
+                        let temp = document.getElementById('main-product-img').src;
+                        document.getElementById('main-product-img').src = event.target.src;
+                        event.target.src = temp;
+                }
+        }
+        ;
 
         componentDidMount() {
+
                 if (this.props.location.product) {
                         // console.log('cache exists, no data from the database is necessary')
                         this.setState(
@@ -52,11 +67,6 @@ export default class ProductPage extends Component {
         }
 
 
-
-
-
-
-
         // imageExists(imageurl) {
         //         var http = new XMLHttpRequest();
 
@@ -70,12 +80,13 @@ export default class ProductPage extends Component {
         //         return http.status !== 404;
 
         // }
-
         render() {
                 var i = 0;
+                document.addEventListener('click', this.handleMouseClick)
 
                 return (
                         <div style={{ height: 'inherit' }} >
+
                                 <div id="product-page-grid">
 
                                         <p id="product-text">{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
@@ -115,8 +126,7 @@ export default class ProductPage extends Component {
                                                                 if (this.state.imageName[i] !== undefined)
                                                                         return (
                                                                                 <div id="prod-photo-container">
-                                                                                        <img width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} alt="logo" />
-                                                                                        {console.log(this.state.imageName[i])}
+                                                                                        <img width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} id={'img' + i} alt="logo" />
 
                                                                                         {/* {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={350} height={200} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
                                                                                                 :
@@ -136,8 +146,8 @@ export default class ProductPage extends Component {
                                                         })}
 
                                         </div>
-                            
-                                                {/* <Footer/> */}
+
+                                        {/* <Footer/> */}
                                 </div>
                         </div >
                 );
@@ -146,3 +156,6 @@ export default class ProductPage extends Component {
         }
 
 }
+
+
+

@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Footer = (props) => {
+const Footer = () => {
 
     return (
 
@@ -21,5 +21,7 @@ const Footer = (props) => {
 
     );
 }
+
+
 
 export default Footer;

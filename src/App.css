@@ -149,7 +149,11 @@ header ul li img {
   padding: 0.1rem 1rem;
   border-radius: 0.25rem;
 }
-
+.enlarged {
+  position: fixed;
+  top: 50%;
+  
+}
 /* /////////////////////// */
 /* start of footer  */
 footer {
@@ -632,5 +636,6 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
+  opacity: 0.7501;
   z-index: 9999;
 }
