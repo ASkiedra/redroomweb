@@ -7,6 +7,7 @@ import Manufacturers from '../components/Manufacturers.component';
 import Interior from '../components/Interior.component';
 import MainContainer from '../components/MainContainer.component.js';
 import ProductPage from '../components/ProductPage.component.js';
+import Inquire from '../components/Inquire.component';
 
 
 const Routes = () => {
