@@ -115,7 +115,7 @@ export default class ProductPage extends Component {
                                                                 if (this.state.imageName[i] !== undefined)
                                                                         return (
                                                                                 <div id="prod-photo-container">
-                                                                                        <img width={350} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} alt="logo" />
+                                                                                        <img width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} alt="logo" />
                                                                                         {console.log(this.state.imageName[i])}
 
                                                                                         {/* {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={350} height={200} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
