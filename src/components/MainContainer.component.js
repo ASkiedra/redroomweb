@@ -16,17 +16,21 @@ const MainContainer = () => {
                 <p>Įsikūrę Europoje, specializuojamės itališkų baldų ir interjero dizaino srityje. Red-Room Studio pavers jūsų gyvenamąją erdvę gražia ir prabangia aplinka.</p>
 
                 <div id="social-media-container">
-                    <a href="https://www.facebook.com">
+                    <div></div>
+                    <a href="https://www.facebook.com/redroom.lt">
                         <img class="social-media-logo" src="/images/facebook.png" />
                     </a>
 
+                    <div></div>
+
+{/* 
                     <a href="https://www.instagram.com">
                         <img class="social-media-logo" src="/images/instagram.png" />
                     </a>
 
                     <a href="https://www.linkedin.com">
                         <img class="social-media-logo" src="/images/linkedin.png" />
-                    </a>
+                    </a> */}
                 </div>
             </div>
             <div></div>

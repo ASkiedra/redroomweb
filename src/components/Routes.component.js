@@ -7,6 +7,7 @@ import Manufacturers from '../components/Manufacturers.component';
 import Interior from '../components/Interior.component';
 import MainContainer from '../components/MainContainer.component.js';
 import ProductPage from '../components/ProductPage.component.js';
+import Inquire from '../components/Inquire.component';
 
 
 const Routes = () => {
@@ -24,6 +25,8 @@ const Routes = () => {
             
             <Route exact path='/:lang' component={MainContainer} />
             <Route exact path="/" component={MainContainer} />
+
+            <Route exact path="/:lang/inquire" component={Inquire} />
 
             <Route exact path="/:lang/manufacturers" component={Manufacturers} />
 

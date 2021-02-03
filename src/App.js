@@ -6,7 +6,6 @@ import Header from './components/Header.component';
 import BcAndLanguages from './components/BcAndLanguages.component';
 import Footer from './components/Footer.component';
 import Routes from './components/Routes.component';
-
 function App() {
 
   // add a history save here
@@ -27,6 +26,7 @@ function App() {
         <Routes setPathname={setPathname} />
         <Footer language={language} />
       </div>
+      <Footer language={language} />
 
 
 

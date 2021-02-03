@@ -7,12 +7,10 @@ pratest linux 4
 launch: https://medium.com/@timmykko/deploying-create-react-app-with-nginx-and-ubuntu-e6fe83c5e9e7
 error refreshing / : https://ui.dev/react-router-cannot-get-url-refresh/
 
-200email limitas kitaip paid- ziuret kas menesi ar neriek praplest
 
 02 03:
-    // jei empty - neleist spaust buttono, ir setinterval padaryt timeri
-    prijungt prie kokio resender123@gmail.com emailjs kad nebutu apvojinga
-    email https://medium.com/@eesh.t/send-email-using-emailjs-and-react-form-9993bb6929d8
+stickyfooter ir normalfooter
+    siusti uzklausa atskiras psl
     ssl react
     https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp
     interjeras
@@ -36,6 +34,7 @@ launch (02 04):
     footer linkai
     https://stackoverflow.com/questions/56421417/react-app-not-working-in-internet-explorer-11
     velvetstud redirectas - hostinu ant cheapest  plano (ant to pacio nnr kad servo duomenu nesidalintu su redroomweb) ir index html su skriptu
+    prijungt prie kokio resender123@gmail.com emailjs kad nebutu apvojinga
 
 
 
@@ -43,6 +42,7 @@ launch (02 04):
 
 
 info uzsakovui:
+    200email limitas kitaip paid- ziuret kas savaite ar neriek praplest
     google audit
     public/images ir subfolderiuose TIK NUOTRAUKAS, NIEKO KITO
     pasiulyt administravima ir/ar palaikyma (nauji features, naujas dizainas kas kazkiek laiko)
@@ -55,8 +55,9 @@ info uzsakovui:
 
 
 low importance:
+    // email: jei empty - neleist spaust buttono, ir setinterval padaryt timeri
     browser test, os test
-    https://yoast.com/what-is-multilingual-seo/, react seo
+    paprastas seo,https://yoast.com/what-is-multilingual-seo/, react seo
     title variable
     gamintoju brandu logo centravimas (gal flexbox tsg)
     dropdownas uzsidaro kai chrome rodykles spaudineji (lcoation!=location)

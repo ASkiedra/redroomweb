@@ -171,14 +171,6 @@ const Header = (props) => {
                                 </Link>
                             </div>
 
-                            <div>
-                                <Link to={"/" + props.language + "/products//sofa beds"} className="dropdown-subtext">
-                                    {
-                                        props.language === "LT" ? "sofos lovos" :
-                                            props.language === "EN" && "sofa beds"
-                                    }
-                                </Link>
-                            </div>
 
 
                             <div>
