@@ -46,7 +46,7 @@ class Inquire extends Component {
               
                 <Form style={{marginTop: '3rem'}} onSubmit={this.handleSubmit.bind(this)}>
                     <FormGroup style={{marginTop: '3rem'}}controlId="formBasicEmail">
-                        <Input style={{width: '26rem',height: '3rem', textAlign: 'center', fontSize: '1.4rem'}}
+                        <Input style={{borderRadius: '5px',width: '26rem',height: '3rem', textAlign: 'center', fontSize: '1.4rem'}}
                             type="email"
                             name="email"
                             value={this.state.email}
@@ -59,7 +59,7 @@ class Inquire extends Component {
 
                     <FormGroup style={{marginTop: '3rem'}} controlId="formBasicMessage">
                         {/* <Label className="text-muted">{this.props.match.params.lang === "LT" ? "Žinutė" : this.props.match.params.lang === "EN" && "Message"}<br/></Label> */}
-                        <Input style={{width: '26rem',height: '9rem', textAlign: 'left', fontSize: '1.4rem'}}
+                        <Input style={{borderRadius: '5px',width: '26rem',height: '9rem', textAlign: 'left', fontSize: '1.4rem'}}
                             type="textarea"
                             name="message"
                             className="text-primary"
@@ -68,7 +68,7 @@ class Inquire extends Component {
                         />
                     </FormGroup>
 
-                    <Button style={{width: '7rem', fontSize: '1.2rem',height: '2.2rem'}}variant="primary" type="submit">
+                    <Button style={{borderRadius: '5px',width: '7rem', fontSize: '1.2rem',height: '2.2rem'}}variant="primary" type="submit">
                     {this.props.match.params.lang === "LT" ? "Siųsti" : this.props.match.params.lang === "EN" && "Send"}
               </Button>
                 </Form>

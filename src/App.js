@@ -25,10 +25,15 @@ function App() {
       <div className='container'>
         <BcAndLanguages language={language} setLanguage={setLanguage} />
         <Routes setPathname={setPathname} />
-        <Footer  />
+
+        {/* remove footer from small screen devices because it is unnecessary */}
+       {(window.innerHeight > 1000 && window.innerWidth > 1000) &&         <Footer  />   }
+
       </div>
       <StickyFooter language={language} />
-``
+
+           
+    
 
 
     </BrowserRouter >

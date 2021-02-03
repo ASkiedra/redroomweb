@@ -13,7 +13,6 @@ rr 1 task daily po to
 dropdown kitaip uzdet
     ssl react
     interjeras
-    productpage: ne .find, o cikla per array ir tikrint ar sutampa match manufacturer su manuf ir ar name su name (ir kiti du matchai jei tokie yra)
 
 mobile (iphones, ipads):
     headeris ant mobiliuju - gal kaip pfe threelines
@@ -30,7 +29,6 @@ mobile (iphones, ipads):
 launch (02 04):
     paskaitos ryte :DDD
     footer linkai
-    https://stackoverflow.com/questions/56421417/react-app-not-working-in-internet-explorer-11
     velvetstud redirectas - hostinu ant cheapest  plano (ant to pacio nnr kad servo duomenu nesidalintu su redroomweb) ir index html su skriptu
     prijungt prie kokio resender123@gmail.com emailjs kad nebutu apvojinga
 
@@ -59,6 +57,7 @@ jei per dropdowna eini i outdoor acessories - ji parenka, bet nerodo sidebare. f
     browser test, os test
     paprastas seo,https://yoast.com/what-is-multilingual-seo/, react seo
     title variable
+    https://stackoverflow.com/questions/56421417/react-app-not-working-in-internet-explorer-11
     gamintoju brandu logo centravimas (gal flexbox tsg)
     dropdownas uzsidaro kai chrome rodykles spaudineji (lcoation!=location)
     404 page
