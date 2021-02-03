@@ -18,22 +18,22 @@ const Header = (props) => {
                 {/* OPENED */}
                 { openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
-                        <div style={{ height: "inherit" }}>
-                            <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} className="header-item-onhover">
+                        <div className="flexbox-container" style={{ height: "inherit" }}>
+                            <p id="produktai" className="header-item-onhover">
                                 {
                                     props.language === "LT" ? "PRODUKTAI" :
                                         props.language === "EN" && "PRODUCTS"
                                 }
                             </p>
-                            <DropdownMenu />
                         </div>
+                        <DropdownMenu />
                     </div>}
 
 
                 {/* CLOSED */}
                 { !openedProductsDropdown &&
-                    <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
-                        <p id="produktai" style={{ height: 'calc(100% - 1.8rem)' }} className="header-item-onhover">
+                    <div className="flexbox-container" style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
+                        <p id="produktai" className="header-item-onhover">
                             {
                                 props.language === "LT" ? "PRODUKTAI" :
                                     props.language === "EN" && "PRODUCTS"
@@ -322,38 +322,49 @@ const Header = (props) => {
         <div >
             <header style={{ display: 'block' }}>
                 <ul id="header-list">
+
+
+
                     <ProductsMenu id="produktai" className="header-item-onhover" />
 
-                    <Link className="header-item-onhover" to={"/" + props.language + "/interior"}>
-                        {props.language === "LT" ? "INTERJERUI"
-                            : props.language === "EN" && "INTERIOR"}
+
+                    <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/interior"}>
+                        <div>
+
+                            {props.language === "LT" ? "INTERJERUI"
+                                : props.language === "EN" && "INTERIOR"}
+                        </div>
+
                     </Link>
 
                     <div className="header-img-onhover" style={{ transition: '0.5s all' }}>
-                        <Link style={{height:' 100%'}} class="flexbox-container" to={"/" + props.language}>
-
+                        <Link style={{ height: ' 100%' }} class="flexbox-container" to={"/" + props.language}>
                             <div>
-
                                 <img id="header-logo" alt="header-logo" style={{ height: "70%", width: "60%", transform: 'scale(0.75)' }} src={logo} />
-
                             </div>
                         </Link>
                     </div>
 
-                    <Link className="header-item-onhover" to={"/" + props.language + "/manufacturers"}>
-                        {props.language === "LT" ? "GAMINTOJAI" :
-                            props.language === "EN" && "MANUFACTURERS"}
+                    <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/manufacturers"}>
+                        <div>
+
+                            {props.language === "LT" ? "GAMINTOJAI" :
+                                props.language === "EN" && "MANUFACTURERS"}
+                        </div>
 
                     </Link>
 
-                    <Link className="header-item-onhover" to={"/" + props.language + "/contacts"}>
-                        {props.language === "LT" ? "KONTAKTAI" :
-                            props.language === "EN" && "CONTACTS"}
+                    <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/contacts"}>
+                        <div>
+                            {props.language === "LT" ? "KONTAKTAI" :
+                                props.language === "EN" && "CONTACTS"}
+                        </div>
+
                     </Link>
                 </ul>
-            </header>
+            </header >
             {/* <DropdownMenu /> */}
-        </div>
+        </div >
 
 
     );

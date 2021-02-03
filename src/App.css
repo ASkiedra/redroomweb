@@ -61,7 +61,8 @@ header {
 }
 
 header a,
-header div p {
+header div p,
+.headerText div {
   color: black;
   list-style: none;
   flex-basis: 20%;
@@ -147,8 +148,7 @@ header ul li img {
 /* start of footer  */
 footer {
   position: relative;
-  bottom: 0;
-  padding-bottom: 5.5rem;
+  bottom: 3.5rem;
   background: black;
   width: 100%;
 }
