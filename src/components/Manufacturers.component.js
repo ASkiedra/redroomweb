@@ -10,6 +10,7 @@ export default class Gamintojai extends Component {
     }
 
     componentDidMount() {
+        console.log('mounted')
 
         this.setState({ fetchedProducts: Products, loading: false });
 

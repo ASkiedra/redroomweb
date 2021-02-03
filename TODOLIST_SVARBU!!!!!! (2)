@@ -1,116 +1,79 @@
 git pull. committint po 1 feature.
 
+2tasks rr daily
+
 pratest linux 4
 
 launch: https://medium.com/@timmykko/deploying-create-react-app-with-nginx-and-ubuntu-e6fe83c5e9e7
 error refreshing / : https://ui.dev/react-router-cannot-get-url-refresh/
 
-produktu linkai
-produktu puslpais
-dropdown linkai 
-headeris ant mobiliuju
-contacts sizing ir email https://medium.com/@eesh.t/send-email-using-emailjs-and-react-form-9993bb6929d8
-https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp
-
-velvetstud redirectas - hostinu ant cheapest  plano (ant to pacio nnr kad servo duomenu nesidalintu su redroomweb) ir index html su skriptu
-
-manufacturers page ir products page stiliai, gal
-visas nuotraukas i public/images perkelt
-interjeras
-paspaudus nuotrauka desinej, kairiausia didele nuotrauka tampa ta nuotrauka ir pasiekicai tekstas
-mobile breadcrumbs
-
-spaudi ant produkto tada atgal ir turi filtrai likt
- footer linkai, mobile dropdown pagal foto ir kiti mobile, launch weba. 
-prezentacijoj cross device supporta akcentuot (kad tik pridesim nes bandem geresni dizaina sukurti ir greiti optimizuot nesveikai) ir greiti (palyignt su konkurentu webais), keiciant kalbas lieka filtrai
-gerai atrodo hover ant produktu bet privaletumet vien png nuotraukas
-google audit
-jei kokie klausimai - email/skambutis, administruot galim nemokamai jei nedideli darbai ir neskubus pokyciai
-
-productpage: ne .find, o cikla per array ir tikrint ar sutampa match manufacturer su manuf ir ar name su name (ir kiti du matchai jei tokie yra)
-(viena is triju calendar tasks kasdien)
-react seo, seo
- docint viska
- scrollbar stiliai? https://css-tricks.com/almanac/properties/s/scrollbar-color/
-produkto uzklausa email
-zoominimai
-einant is /en/products i /  rodo lt teksta ir refreshinus lt kalba buna
-footer 100%height width buttonam
-verticallycenter manufacturers
-https://stackoverflow.com/questions/56421417/react-app-not-working-in-internet-explorer-11
- title variable
-testuot tarkim su 23 gamintojais (Kaip bg laikos tt)
-browsers,os testavimas
-gdpr, privacy
-background color fix css/html (su visais browseriais)
-dropdownas uzsidaro kai chrome rodykles spaudineji (lcoation!=location)
-404 page
-mobile devices
-gdpr
-SEO
-clear ubtton should change the state and not the link
-MAIN COMPONENT PRODUCT[0] TURETU BUT PAKEISTA
-visa koda sutvarkyt graziai
-PADARYT KAD VEIKTU REFRESHAI O NE 404
-ssl react
-png/jpg/bmp nustatymasneveikia ant serverio kazkodel (gal ant vpso veiks)
-visur kur filtravimai, sortai daryt su toupper 
-kai kur kodas kartojas. daryt komponentus ir persiust
-ant naujos db permest su kitu .env
-hide .env ir backendo kitas sensitive dalis
-testavimas: ignas nes as nepastebesiu bugu 
-
-gamintoju brandu logo centravimas (gal flexbox tsg)
-react seo
-bugtesting - produktai su keliom spalvom
-konsoles warningai
-encryptint db
-duomenu bazes backupai menesiniai
-antisql injection
-warnings ir errors
-database quality control padaryt (is naujo idealiai visus produktus ivest)
-visa koda perziuert/
-paklaust ka noretu pagerint, pakeist tt
-                // is state really necessary? perhaps fetchedproducts arent necessary too (allproducts,manufacturers)
-webkit etc support
-sidebar atsiranda jei 0 produktu bet kalba pakeiciu
 
 
-gototop ir breadcrumbs i pf permest. uzsakyt pf vps weba.
-pasiulyt administravima ir/ar palaikyma (nauji features, naujas dizainas kas kazkiek laiko)
-prie cv: projektas is anksto nustate reikalavima tik dvieju kalbu, tad neverta overengineerint
-KAI BAIGSIS PF WEB - IESKOT DARBO FOR EXTRA CASH
-pfweb koda visa pagrazintir sutvarkyt
-PAGAL TIPUS TRANSLIUOT IR TOUPPER IR FILTER
-https://yoast.com/what-is-multilingual-seo/
-filtras po refresh lieka (/:manufacturer su tarpais ir array daryt is stringo nuo tarpu)
+02 03:
+    produktus sutvarkyt ir folderiu pavadinimus, gamintoju logo
+    po maintekstu socialmedia icosn
+    dropdown linkai 
+    contacts sizing ir email https://medium.com/@eesh.t/send-email-using-emailjs-and-react-form-9993bb6929d8
+    ssl react
+    https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp
+    interjeras
+    paspaudus nuotrauka desinej, kairiausia didele nuotrauka tampa ta nuotrauka ir pasiekicai tekstas
+    productpage: ne .find, o cikla per array ir tikrint ar sutampa match manufacturer su manuf ir ar name su name (ir kiti du matchai jei tokie yra)
 
-VISUS TIPUS ANGLISKAI VEST? bet breadcrumbsui vis tiek reikes isverst 
-props.location pritaikyt kaip pfe kad blazing fast switchintu uslapiuv
-https://codinhood.com/micro/10-dropdown-menu-animations-css-transform
-nusiust weba nedai for feedback
-visus komentarus perziuret pries uzdarant ir publikuojant projekta
+mobile (iphones, ipads):
+    headeris ant mobiliuju
+    mobile breadcrumbs - lten virsuj desinej
+    mobile widescreen
+    footeris buginas iphone5se. html height 100? 
+    mobile dropdown pagal foto
+    produkto uzklausa email
+    zoominimai
+    dropdown ipads ar mazo ekrano overflowina
 
-public/images ir subfolderiuose TIK NUOTRAUKAS, NIEKO KITO
-padaryt kad kaip ir pfe pagal cache produktai eitu
-testuot weba kai db off
- ar ir su tarpais ir be tarpu folderiai ir nuotraukos veikai
-products ne su location o su link pasispaudzia ant telefonu is headerio
-TAISYKLES:
-name turi but toks pats kaip ir aplankalo pavadinimas
-imageName - nukopijuokit nuotraukos pavadinima ir iklijuokite
-maksimalus greitis - kelkit compressintas png nuotraukas
 
-gerai aprasyt weba - uzsakovas prase paprasto sprendimo, tai interjere tiesiog imeti i folderi prdouktus,
-o vietoj pridejimo produktu i duomenu baze (kas reikalautu arba db online administravimo arba http requestu siuntimo - abu ne non it user friendly)- tiesiog
-json failas, kuris kaip vietine duomenu baze. be to, editint ZYMIAI paprasciau jsona online nei su http requestais mongodb.
-sutaupom renderiu nes ne 1 get 2 filter 3 galutinis rezultatas, o 1 filter 2 galutinis rezultatas.
-produktu nebus daug, tad vartotojas nenukentes del to, kad jam "parsiunciama duomenu baze", nes su 
+launch (02 04):
+    paskaitos ryte :DDD
+    footer linkai
+    https://stackoverflow.com/questions/56421417/react-app-not-working-in-internet-explorer-11
+    velvetstud redirectas - hostinu ant cheapest  plano (ant to pacio nnr kad servo duomenu nesidalintu su redroomweb) ir index html su skriptu
+
+
+
+
+
+
+info uzsakovui:
+    google audit
+    public/images ir subfolderiuose TIK NUOTRAUKAS, NIEKO KITO
+    pasiulyt administravima ir/ar palaikyma (nauji features, naujas dizainas kas kazkiek laiko)
+    jei kokie klausimai - email/skambutis, administruot galim nemokamai jei nedideli darbai ir neskubus pokyciai
+
+
+
 
 
 
 
 low importance:
+    browser test, os test
+    https://yoast.com/what-is-multilingual-seo/, react seo
+    title variable
+    gamintoju brandu logo centravimas (gal flexbox tsg)
+    dropdownas uzsidaro kai chrome rodykles spaudineji (lcoation!=location)
+    404 page
+    is state really necessary? perhaps fetchedproducts arent necessary too (allproducts,manufacturers)
+    clear ubtton should change the state and not the link
+    gdpr, privacy
+    footer 100%height width buttonam
+    einant is /en/products i /  rodo lt teksta ir refreshinus lt kalba buna
+    konsoles warningai
+    warnings ir errors
+    kai kur kodas kartojas. daryt komponentus ir persiust
+    sidebar atsiranda jei 0 produktu bet kalba pakeiciu
+    visa koda perziuert/
+    visas nuotraukas i public/images perkelt
+    spaudi ant produkto tada atgal ir turi filtrai likt
+    filtras po refresh lieka (/:manufacturer su tarpais ir array daryt is stringo nuo tarpu)
     logov4 is src/componnents i public
     produktu atnaujinimas servery (pabandyt sita skripta automatiskai paleist):
     22 enter
@@ -118,22 +81,38 @@ low importance:
     cd /var/www/redroomweb && git clone && npm run build && nginx service restart
     https://www.npmjs.com/package/directory-structure-json redroom only
     https://developer.aliyun.com/mirror/npm/package/node-json-file-tree redroom only. butinai pabandyt surast
+    https://codinhood.com/micro/10-dropdown-menu-animations-css-transform
 
     weba gali mdar labiau pagreitint:
         jei imagename nurodytu ir .jpeg ar .png ar whatever ten buna
         jei nuotraukas visas compressintu
         VENKIT NUOTRAUKU SU daug WHITESPACE NES DURNAI ATRODO (pvz nicoline gaminiai)
 
+    webkit etc support
     loading picture zmones su letais pc ir internetais
-
+    duomenu bazes backupai menesiniai
+    visus komentarus perziuret pries uzdarant ir publikuojant projekta
+    nusiust weba nedai for feedback
+     docint viska
+    paklaust ka noretu pagerint, pakeist tt
     po GALUTINIU (jokiu pokyciu daugiau) web failu leist jiems forkint repository ir kad jie patys keistuweb failu kas menesi backupa padaryt.
 
+
+gerai aprasyt weba - uzsakovas prase paprasto sprendimo, tai interjere tiesiog imeti i folderi prdouktus,
+o vietoj pridejimo produktu i duomenu baze (kas reikalautu arba db online administravimo arba http requestu siuntimo - abu ne non it user friendly)- tiesiog
+json failas, kuris kaip vietine duomenu baze. be to, editint ZYMIAI paprasciau jsona online nei su http requestais mongodb.
+sutaupom renderiu nes ne 1 get 2 filter 3 galutinis rezultatas, o 1 filter 2 galutinis rezultatas.
+produktu nebus daug, tad vartotojas nenukentes del to, kad jam "parsiunciama duomenu baze", nes su 
+projektas is anksto nustate reikalavima tik dvieju kalbu, tad neverta overengineerint
+
+
+
+
 sita struktura failo issisaugot
+gototop ir breadcrumbs i pf permest. uzsakyt pf vps weba.
 
 backend prijungimas (pfui):
 https://www.youtube.com/watch?v=71wSzpLyW9k
 https://www.youtube.com/watch?v=LE_b8PiYy-A
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04
 https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-16-04
-
-
