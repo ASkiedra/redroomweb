@@ -239,10 +239,17 @@ a {
   background-color: white;
 }
 
+#manufacturer-link {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
 #gamintoju-grid {
   display: grid;
   height: inherit;
   grid-template-columns: 33.33333333% 33.33333333% 33.33333333%;
+  grid-template-rows: 20rem;
 }
 
 #gamintoju-grid div {
@@ -252,7 +259,7 @@ a {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 4rem;
+  padding: 0 4rem;
 }
 
 #gamintoju-grid div img {

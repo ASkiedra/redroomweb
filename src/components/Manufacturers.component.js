@@ -56,9 +56,9 @@ const GamintojaiContainer = (props) => {
             <div id='gamintoju-grid' style={{ paddingBottom: '5rem' }}>
                 {props.filteredManufacturers.map(manufacturer => {
                     return (
-                        <div key={manufacturer}>
-                            <Link style={{
-                                width: "100%", height: "100%", display: " block"
+                        <div  key={manufacturer}>
+                            <Link id="manufacturer-link" style={{
+                                width: "100%", height: "100%"
                             }} to={"/" + props.language + "/products/null/null/" + manufacturer}>
                                 {/* pritaikyt ta komponenta kur tikrina ar jpg ar bmp ar png ir tt */}
                                 <img alt={manufacturer + "-logo"} src={"/images/logos/" + manufacturer + ".png"} />
