@@ -317,14 +317,14 @@ const MainContainer = (props) => {
                         <div>
 
                                 <div id="sidebar-container" >
-                                        <Link id="clear-btn" to={"/" + language + "/products"}>clear filters</Link>
+                                        <Link id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
                                         <ul id={"products-sidebar"}>
 
                                                 <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
                                                         {/* <p className={"sidebar-subtext"}>{language === "LT" ? "PAGRINDINĖ KATEGORIJA" : language === "EN" && "MAIN CATEGORY"}</p> */}
                                                         {props.mainCategoriesArr.map(curMainCat => {
                                                                 // jei keiciu sita returna  - keist ir apacioj
-                                                                return <Type filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
+                                                                return <Type language={language} translatable={"main"} filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
                                                         })}
                                                 </div>
 
@@ -332,7 +332,7 @@ const MainContainer = (props) => {
                                                         {/* <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p> */}
                                                         {props.subCategoriesArr.map(curSubCat => {
                                                                 // jei keiciu sita returna  - keist ir apacioj
-                                                                return <Type filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
+                                                                return <Type language={language} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
                                                         })}
                                                 </div>
                                                 {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
@@ -351,7 +351,7 @@ const MainContainer = (props) => {
                                                         {/* <p className={"sidebar-subtext"}>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p> */}
                                                         {props.manufacturersArr.map(curManufacturer => {
                                                                 // jei keiciu sita returna  - keist ir apacioj
-                                                                return <Type filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
+                                                                return <Type language={language} translatable={false} filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
                                                         })}
 
                                                 </div>
@@ -377,7 +377,110 @@ const MainContainer = (props) => {
 }
 
 const Type = (props) => {
+        var text = props.value;
+
+        if (props.translatable === "main" && props.language === "LT") {
+                switch (props.value.toUpperCase()) {
+                        case "DINING ROOM FURNITURE":
+                                text = "SVETAINĖS IR VALGOMOJO BALDAI";
+                                break;
+
+                        case "DAY SYSTEMS":
+                                text = "DIENOS SISTEMOS";
+                                break;
+
+                        case "BEDROOM FURNITURE":
+                                text = "MIEGAMOJO BALDAI";
+                                break;
+
+                        case "OUTDOOR FURNITURE AND ACCESSORIES":
+                                text = "LAUKO BALDAI IR AKSESUARAI";
+                                break;
+
+
+                        case "WARDROBE SYSTEMS":
+                                text = "SPINTŲ SISTEMOS";
+                                break;
+
+                        default:
+                                break;
+                }
+        }
+        else if (props.translatable === "second" && props.language === "LT") {
+                switch (props.value.toUpperCase()) {
+                        case "INDIVIDUALLY PLANNED WARDROBES":
+                                text = "INDIVIDUALIAI PROJEKTUOJAMOS DRABUŽINĖS";
+                                break;
+
+                        case "SOFA BEDS":
+                                text = "SOFA LOVOS";
+                                break;
+
+                        case "ARMCHAIRS":
+                                text = "FOTELIAI";
+                                break;
+
+                        case "BEDS":
+                                text = "LOVOS";
+                                break;
+
+                        case "BOOKSHELVES":
+                                text = "KNYGŲ LENTYNOS";
+                                break;
+
+
+                        case "COFFEE TABLES":
+                                text = "KAVOS STALIUKAI";
+                                break;
+
+                        case "DINING TABLES":
+                                text = "VALGOMOJO STALAI";
+                                break;
+
+                        case "SOFAS":
+                                text = "SOFOS";
+                                break;
+
+
+                        case "CHAIRS":
+                                text = "KĖDĖS";
+                                break;
+
+                        case "POUFS":
+                                text = "SUOLIUKAI IR PUFAI";
+                                break;
+
+                        case "CLOTHING HANGERS":
+                                text = "RŪBŲ KABYKLOS";
+                                break;
+
+
+                        case "BEDSIDE CABINETS":
+                                text = "SPINTELĖS PRIE LOVOS";
+                                break;
+
+                        case "CHESTS OF DRAWERS":
+                                text = "KOMODOS";
+                                break;
+
+                        case "BEDROOM BENCHES":
+                                text = "SUOLAI PRIE LOVOS";
+                                break;
+
+                        case "SALON FURNITURE SYSTEMS":
+                                text = "SVETAINĖS IR TV BALDŲ SISTEMOS";
+                                break;
+                        case "WORKPLACE FURNITURE":
+                                text = "DARBO VIETOS";
+                                break;
+
+
+                        default:
+                                break;
+                }
+        }
         return (
+
 
                 // cia galima keist tik p o ne p ir li
                 // if its in the filter array, make it bold to show the filter is selected
@@ -387,14 +490,20 @@ const Type = (props) => {
                                 props.this.addAndRemoveFilters(props.value, props.type)
                         }}
                                 style={{ textAlign: 'right', listStyle: 'none' }}>
-                                <p key={props.value + 'p'} id={props.value} style={{ fontSize: '1.15rem', }} className={"product-type bold-text"}> {props.value}</p>
+                                <p key={props.value + 'p'} id={props.value} style={{ fontSize: '1.15rem', }} className={"product-type bold-text"}>
+
+
+                                        {text}
+
+
+                                </p>
                         </li>
                         : <li key={props.value} className={"type-li"} onClick={(e) => {
                                 e.target.classList.toggle("bold-text");
                                 props.this.addAndRemoveFilters(props.value, props.type)
                         }}
                                 style={{ textAlign: 'right', listStyle: 'none' }}>
-                                <p key={props.value + 'p'} id={props.value} style={{ fontSize: '1.15rem', }} className={"product-type"}> {props.value}</p>
+                                <p key={props.value + 'p'} id={props.value} style={{ fontSize: '1.15rem', }} className={"product-type"}> {text}</p>
                         </li>
 
 
@@ -425,7 +534,7 @@ const Product = (props) => {
                 <Link key={props.product.productCode + props.product.name}
                         style={{ height: '20rem', width: '100%' }}
                         to={{
-                                pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.manufacturer +  "/" + props.product.name + "/" ,
+                                pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.manufacturer + "/" + props.product.name + "/",
                                 product: props.product,
                         }}>
                         <div className={"product-container"} style={{ height: 'inherit', width: 'inherit', textAlign: 'center' }}>

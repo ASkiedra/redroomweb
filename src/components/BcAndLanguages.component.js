@@ -79,6 +79,14 @@ const BcAndLanguages = (props) => {
                 modifiedPathname[1] = "VALGOMOJO BALDAI";
                 break;
 
+            case "BEDROOM FURNITURE":
+                modifiedPathname[1] = "MIEGAMOJO BALDAI";
+                break;
+
+            case "OUTDOOR FURNITURE AND ACCESSORIES":
+                modifiedPathname[1] = "LAUKO BALDAI IR AKSESUARAI";
+                break;
+
             default:
                 break;
         }
