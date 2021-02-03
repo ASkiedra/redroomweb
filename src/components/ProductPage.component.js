@@ -84,7 +84,7 @@ export default class ProductPage extends Component {
 
                                                 <div id="prod-photo-container">
 
-                                                        {!this.state.loading && <img id="main-product-img" width={350} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} alt="main-product-photo" />}
+                                                        {!this.state.loading && <img id="main-product-img" width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} alt="main-product-photo" />}
 
 
                                                         {/* 
