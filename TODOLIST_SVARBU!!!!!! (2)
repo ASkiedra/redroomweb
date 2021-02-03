@@ -7,10 +7,12 @@ pratest linux 4
 launch: https://medium.com/@timmykko/deploying-create-react-app-with-nginx-and-ubuntu-e6fe83c5e9e7
 error refreshing / : https://ui.dev/react-router-cannot-get-url-refresh/
 
-
+200email limitas kitaip paid- ziuret kas menesi ar neriek praplest
 
 02 03:
-    contacts sizing ir email https://medium.com/@eesh.t/send-email-using-emailjs-and-react-form-9993bb6929d8
+    // jei empty - neleist spaust buttono, ir setinterval padaryt timeri
+    prijungt prie kokio resender123@gmail.com emailjs kad nebutu apvojinga
+    email https://medium.com/@eesh.t/send-email-using-emailjs-and-react-form-9993bb6929d8
     ssl react
     https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp
     interjeras
@@ -26,6 +28,7 @@ mobile (iphones, ipads):
     produkto uzklausa email
     zoominimai
     dropdown ipads ar mazo ekrano overflowina
+    mobile viskas
 
 
 launch (02 04):
@@ -67,6 +70,7 @@ low importance:
     warnings ir errors
     kai kur kodas kartojas. daryt komponentus ir persiust
     sidebar atsiranda jei 0 produktu bet kalba pakeiciu
+    email solutionas be emailjs
     visa koda perziuert/
     visas nuotraukas i public/images perkelt
     spaudi ant produkto tada atgal ir turi filtrai likt
