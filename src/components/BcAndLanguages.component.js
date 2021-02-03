@@ -47,6 +47,10 @@ const BcAndLanguages = (props) => {
             case "PRODUCTS":
                 modifiedPathname[0] = "PRODUKTAI";
                 break;
+            
+            case "INQUIRE":
+                modifiedPathname[0] = "SIŲSTI UŽKLAUSĄ";
+                break;
 
             default:
                 break;

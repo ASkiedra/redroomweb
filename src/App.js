@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/Header.component';
 import BcAndLanguages from './components/BcAndLanguages.component';
 import Footer from './components/Footer.component';
+import StickyFooter from './components/StickyFooter.component';
 import Routes from './components/Routes.component';
 function App() {
 
@@ -26,8 +27,8 @@ function App() {
         <Routes setPathname={setPathname} />
         <Footer language={language} />
       </div>
-      <Footer language={language} />
-
+      <StickyFooter language={language} />
+``
 
 
     </BrowserRouter >
