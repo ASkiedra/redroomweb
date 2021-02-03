@@ -25,6 +25,7 @@ const Routes = () => {
             <Route exact path='/:lang' component={MainContainer} />
             <Route exact path="/" component={MainContainer} />
 
+            <Route exact path="/:lang/inquire" component={Inquire} />
 
             <Route exact path="/:lang/manufacturers" component={Manufacturers} />
 
