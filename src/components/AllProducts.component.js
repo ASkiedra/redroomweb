@@ -362,12 +362,12 @@ const MainContainer = (props) => {
                         </div>
 
                         {/* products */}
-                        < div style={{ height: 'inherit', display: 'grid', minHeight: 'inherit', gridTemplateColumns: '33.3333% 33.3333% 33.3333%', marginRight: '5rem' }}>
+                        {/* 20rem = hegiht of a product block. if i change it here - that has to change as well */}
+                        < div style={{ gridTemplateRows:'20rem 20rem 20rem 20rem 20rem', height: 'inherit', display: 'grid', minHeight: 'inherit', gridTemplateColumns: '33.3333% 33.3333% 33.3333%', marginRight: '5rem' }}>
                                 {props.curProducts.map(curProduct => {
                                         return <Product key={curProduct.name + curProduct.imageName[0]} lang={props.lang} product={curProduct} />;
                                 })
                                 }
-
 
 
                         </div>
