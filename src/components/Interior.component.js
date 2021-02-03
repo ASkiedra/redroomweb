@@ -19,7 +19,7 @@ const Interior = () => {
                                 {
                                         images.map(element => {
                                                 return (
-                                                        <img id={element.default} onClick={() =>enlargeImage(element.default)} src={element.default} />
+                                                        <img id={element.default}  src={element.default} />
                                                 )
                                         })
                                 }
