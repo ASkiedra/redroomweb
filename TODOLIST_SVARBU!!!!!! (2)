@@ -54,6 +54,7 @@ info uzsakovui:
 
 
 low importance:
+    build gitignorint
     // email: jei empty - neleist spaust buttono, ir setinterval padaryt timeri
     browser test, os test
     paprastas seo,https://yoast.com/what-is-multilingual-seo/, react seo
