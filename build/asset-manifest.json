@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.56494ad9.chunk.css",
+    "main.js": "/static/js/main.562863c7.chunk.js",
+    "main.js.map": "/static/js/main.562863c7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d640e053.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d640e053.js.map",
+    "static/js/2.c47fb534.chunk.js": "/static/js/2.c47fb534.chunk.js",
+    "static/js/2.c47fb534.chunk.js.map": "/static/js/2.c47fb534.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.56494ad9.chunk.css.map": "/static/css/main.56494ad9.chunk.css.map",
+    "static/js/2.c47fb534.chunk.js.LICENSE.txt": "/static/js/2.c47fb534.chunk.js.LICENSE.txt",
+    "static/media/Showroom Pianca (1) (1).jpg": "/static/media/Showroom Pianca (1) (1).c27d58cb.jpg",
+    "static/media/Showroom Pianca (11).jpg": "/static/media/Showroom Pianca (11).dec0d4da.jpg",
+    "static/media/Showroom Pianca (12).jpg": "/static/media/Showroom Pianca (12).bf7d971e.jpg",
+    "static/media/Showroom Pianca (16).jpg": "/static/media/Showroom Pianca (16).c1469f2c.jpg",
+    "static/media/Showroom Pianca (2).jpg": "/static/media/Showroom Pianca (2).b2006d66.jpg",
+    "static/media/Showroom Pianca (20).jpg": "/static/media/Showroom Pianca (20).1907da4a.jpg",
+    "static/media/Showroom Pianca (5).jpg": "/static/media/Showroom Pianca (5).3575f9d2.jpg",
+    "static/media/Showroom Pianca (6) (2).jpg": "/static/media/Showroom Pianca (6) (2).e3d044b8.jpg",
+    "static/media/Showroom Pianca (8).jpg": "/static/media/Showroom Pianca (8).ab7c1733.jpg",
+    "static/media/logo minus black.61ec42d7.png": "/static/media/logo minus black.61ec42d7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d640e053.js",
+    "static/js/2.c47fb534.chunk.js",
+    "static/css/main.56494ad9.chunk.css",
+    "static/js/main.562863c7.chunk.js"
+  ]
+}
