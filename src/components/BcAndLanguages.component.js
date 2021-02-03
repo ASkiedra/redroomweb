@@ -87,6 +87,21 @@ const BcAndLanguages = (props) => {
                 modifiedPathname[1] = "LAUKO BALDAI IR AKSESUARAI";
                 break;
 
+
+            case "DINING ROOM FURNITURE":
+                modifiedPathname[1] = "SVETAINĖS IR VALGOMOJO BALDAI";
+                break;
+
+            case "DAY SYSTEMS":
+                modifiedPathname[1] = "DIENOS SISTEMOS";
+                break;
+
+
+
+            case "WARDROBE SYSTEMS":
+                modifiedPathname[1] = "SPINTŲ SISTEMOS";
+                break;
+
             default:
                 break;
         }
