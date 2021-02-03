@@ -142,7 +142,7 @@ const BcAndLanguages = (props) => {
 
             </div>
 
-            <div style={{ paddingRight: '1rem', right: '1', display: 'grid', gridTemplateColumns: '80% 10% 10%' }}>
+            <div id="lang-container">
 
 
                 <div>

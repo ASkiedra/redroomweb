@@ -65,11 +65,8 @@ export default class ProductPage extends Component {
         // }
 
         swapImages(target) {
-                console.log('clicked')
-                // if the click wasnt on the products button
+                // if the click was on one of the side images and main picture is defined or not null (loaded in general)
                 if (target.id === "img1" || target.id === 'img2' && document.getElementById('main-product-img') !== undefined && document.getElementById('main-product-img') !== null) {
-                        console.log("cur:" + target.src)
-                        console.log("main:" + document.getElementById('main-product-img').src)
 
                         let temp = document.getElementById('main-product-img').src;
                         document.getElementById('main-product-img').src = target.src;
@@ -121,7 +118,7 @@ render() {
                                                         if (this.state.imageName[i] !== undefined)
                                                                 return (
                                                                         <div id="prod-photo-container">
-                                                                                <img onClick={(e) => this.swapImages(e.target, e.target.src)} width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} id={'img' + i} alt="logo" />
+                                                                                <img onClick={(e) => this.swapImages(e.target)} width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} id={'img' + i} alt="logo" />
 
                                                                                 {/* {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={350} height={200} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
                                                                                                 :
