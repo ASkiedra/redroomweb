@@ -4,12 +4,22 @@ import logo from './logo minus black.png';
 
 const Header = (props) => {
     // temporary fix
+    console.log(
+        1
+    )
     const checkIfMobile = () => {
         // if the screen is larger than from an ordinary phone
         if (window.innerHeight > 1000 || window.innerWidth > 1000)
+        {
             setOPD(!openedProductsDropdown)
+
+        }
         else
+        {
             window.location.replace("/" + props.language + '/products')
+            console.log(openedProductsDropdown)
+
+        }
     }
 
     const ProductsMenu = () => {
@@ -18,7 +28,7 @@ const Header = (props) => {
                 {/* OPENED */}
                 { openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
-                        <div className="flexbox-container" style={{ height: "inherit" }}>
+                        <div id="produktai" className="flexbox-container" style={{ height: "inherit" }}>
                             <p id="produktai" className="header-item-onhover">
                                 {
                                     props.language === "LT" ? "PRODUKTAI" :
@@ -32,7 +42,7 @@ const Header = (props) => {
 
                 {/* CLOSED */}
                 { !openedProductsDropdown &&
-                    <div className="flexbox-container" style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
+                    <div id="produktai" className="flexbox-container" style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
                         <p id="produktai" className="header-item-onhover">
                             {
                                 props.language === "LT" ? "PRODUKTAI" :
@@ -322,7 +332,7 @@ const Header = (props) => {
         <div >
             <header style={{ display: 'block' }}>
                 <ul id="header-list">
-
+{console.log('stateupdate')}
 
 
                     <ProductsMenu id="produktai" className="header-item-onhover" />
