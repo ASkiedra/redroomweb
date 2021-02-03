@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Products from '../components/products';
 
-        
-
 
 export default class ProductPage extends Component {
         constructor(props) {
@@ -16,22 +14,7 @@ export default class ProductPage extends Component {
                 }
         }
 
-         handleMouseClick = (event) => {
-                console.log('clicked')
-                // if the click wasnt on the products button
-                if (event.target.id === "img1" || event.target.id === 'img2' && document.getElementById('main-product-img') !== undefined && document.getElementById('main-product-img') !== null) {
-                        console.log("cur:"+event.target.src)
-                        console.log("main:"+document.getElementById('main-product-img').src)
-
-                        let temp = document.getElementById('main-product-img').src;
-                        document.getElementById('main-product-img').src = event.target.src;
-                        event.target.src = temp;
-                }
-        }
-        ;
-
         componentDidMount() {
-
                 if (this.props.location.product) {
                         // console.log('cache exists, no data from the database is necessary')
                         this.setState(
@@ -80,25 +63,37 @@ export default class ProductPage extends Component {
         //         return http.status !== 404;
 
         // }
-        render() {
-                var i = 0;
-                document.addEventListener('click', this.handleMouseClick)
 
-                return (
-                        <div style={{ height: 'inherit' }} >
+        swapImages(target) {
+                console.log('clicked')
+                // if the click wasnt on the products button
+                if (target.id === "img1" || target.id === 'img2' && document.getElementById('main-product-img') !== undefined && document.getElementById('main-product-img') !== null) {
+                        console.log("cur:" + target.src)
+                        console.log("main:" + document.getElementById('main-product-img').src)
 
-                                <div id="product-page-grid">
+                        let temp = document.getElementById('main-product-img').src;
+                        document.getElementById('main-product-img').src = target.src;
+                        target.src = temp;
+                }
+}
+render() {
+        var i = 0;
+        // useeeffect reikia.
 
-                                        <p id="product-text">{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
+        return (
+                <div style={{ height: 'inherit' }} >
+                        <div id="product-page-grid">
 
-                                        <div>
+                                <p id="product-text">{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
 
-                                                <div id="prod-photo-container">
+                                <div>
 
-                                                        {!this.state.loading && <img id="main-product-img" width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} alt="main-product-photo" />}
+                                        <div id="prod-photo-container">
+
+                                                {!this.state.loading && <img id="main-product-img" width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} alt="main-product-photo" />}
 
 
-                                                        {/* 
+                                                {/* 
                                                                 // // BUTINAI PERDARYT KITA SPRENDIMA DEL IMG KAD NESIKARTOTU
                                                                 // this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img id={"main-product-img"} width={400} height={300} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
                                                                 // :
@@ -113,22 +108,22 @@ export default class ProductPage extends Component {
 
                                                                 //                                 <img width={400} height={300} src={"/images/no_image.png"} alt="404img" /> */}
 
-                                                        <p id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
-                                                </div>
+                                                <p id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
                                         </div>
+                                </div>
 
-                                        <div>
+                                <div>
 
-                                                {!this.state.loading &&
-                                                        this.state.imageName.map(() => {
-                                                                i++;
+                                        {!this.state.loading &&
+                                                this.state.imageName.map(() => {
+                                                        i++;
 
-                                                                if (this.state.imageName[i] !== undefined)
-                                                                        return (
-                                                                                <div id="prod-photo-container">
-                                                                                        <img width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} id={'img' + i} alt="logo" />
+                                                        if (this.state.imageName[i] !== undefined)
+                                                                return (
+                                                                        <div id="prod-photo-container">
+                                                                                <img onClick={(e) => this.swapImages(e.target, e.target.src)} width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} id={'img' + i} alt="logo" />
 
-                                                                                        {/* {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={350} height={200} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
+                                                                                {/* {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={350} height={200} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
                                                                                                 :
                                                                                                 this.imageExists(this.state.path + this.state.imageName[i] + ".png") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.png'} alt="logo" />
                                                                                                         :
@@ -141,19 +136,19 @@ export default class ProductPage extends Component {
 
                                                                                                                                 <img width={400} height={300} src={"/images/no_image.png"} alt="404img" />} */}
 
-                                                                                </div>
-                                                                        );
-                                                        })}
+                                                                        </div>
+                                                                );
+                                                })}
 
-                                        </div>
-
-                                        {/* <Footer/> */}
                                 </div>
-                        </div >
-                );
+
+                                {/* <Footer/> */}
+                        </div>
+                </div >
+        );
 
 
-        }
+}
 
 }
 
