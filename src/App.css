@@ -155,7 +155,7 @@ header ul li img {
 footer {
   position: relative;
   bottom: 0;
-  margin-bottom: 4.2rem;
+  margin-bottom: 3.2rem;
   width: 100%;
 }
 #first-footer {
@@ -164,8 +164,8 @@ footer {
 #first-footer ul {
   display: grid;
   grid-template-columns: 50% 50%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 #first-footer li {
   text-align: center;
