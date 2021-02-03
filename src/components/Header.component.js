@@ -24,12 +24,12 @@ const Header = (props) => {
 
     const ProductsMenu = () => {
         return (
-            <div id="produktai" style={{ height: "inherit" }} >
+            <div style={{ height: "inherit" }} >
                 {/* OPENED */}
                 { openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
-                        <div id="produktai" className="flexbox-container" style={{ height: "inherit" }}>
-                            <p id="produktai" className="header-item-onhover">
+                        <div  id="produktai"className="flexbox-container" style={{ height: "inherit" }}>
+                            <p  className="header-item-onhover">
                                 {
                                     props.language === "LT" ? "PRODUKTAI" :
                                         props.language === "EN" && "PRODUCTS"
@@ -42,8 +42,8 @@ const Header = (props) => {
 
                 {/* CLOSED */}
                 { !openedProductsDropdown &&
-                    <div id="produktai" className="flexbox-container" style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
-                        <p id="produktai" className="header-item-onhover">
+                    <div id="produktai" className="flexbox-container" style={{ transition: '0.25s', cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
+                        <p  className="header-item-onhover">
                             {
                                 props.language === "LT" ? "PRODUKTAI" :
                                     props.language === "EN" && "PRODUCTS"

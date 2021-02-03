@@ -365,6 +365,14 @@ a {
   color: black;
 }
 
+#produktai {
+  transition: 0.25s;
+
+}
+#produktai:hover {
+  transition: 0.25s;
+  filter: drop-shadow(1px 0 10px rgba(255,0,0,.852));
+}
 #sidebar-container {
   font-size: 1.4rem;
   position: fixed;
