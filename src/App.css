@@ -27,15 +27,6 @@ html {
   width: 3.5rem;
 }
 
-#header-logo-center {
-  display: grid;
-  /* same as #header-list height */
-  height: 5rem;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-  grid-template-rows: 33.333% 33.333% 33.333%;
-}
 
 header {
   position: sticky;
@@ -73,7 +64,6 @@ header a,
 header div p {
   color: black;
   list-style: none;
-  padding-top: 1.8rem;
   flex-basis: 20%;
   transition: 0.5s;
   text-align: center;
@@ -239,7 +229,9 @@ a {
   background-color: white;
 }
 
-#manufacturer-link {
+
+
+.flexbox-container {
   display: flex;
   align-items: center;
   text-align: center;
@@ -648,6 +640,12 @@ body {
 #prod-photo-container {
   margin: 0 auto;
   text-align: center;
+}
+
+.addit-prod-photo-container img {
+  max-width: 14rem;
+  height: auto;
+  max-height: 12rem;
 }
 
 #product-name {

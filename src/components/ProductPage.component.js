@@ -117,7 +117,7 @@ render() {
 
                                                         if (this.state.imageName[i] !== undefined)
                                                                 return (
-                                                                        <div id="prod-photo-container">
+                                                                        <div id="prod-photo-container" class="addit-prod-photo-container">
                                                                                 <img onClick={(e) => this.swapImages(e.target)} width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} id={'img' + i} alt="logo" />
 
                                                                                 {/* {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={350} height={200} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it

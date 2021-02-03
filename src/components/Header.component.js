@@ -131,7 +131,7 @@ const Header = (props) => {
                             </div>
 
                             <div>
-                                <Link to={"/" + props.language + "/products//clothing hangers"}className="dropdown-subtext">
+                                <Link to={"/" + props.language + "/products//clothing hangers"} className="dropdown-subtext">
                                     {
                                         props.language === "LT" ? "RŪBŲ KABYKLOS " :
                                             props.language === "EN" && "CLOTHING HANGERS"
@@ -215,46 +215,46 @@ const Header = (props) => {
                 </DropdownItem>
 
                 <DropdownItem>
-                        <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
-                            <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products/bedroom furniture"}>
-                                {
-                                    props.language === "LT" ? "MIEGAMOJO BALDAI" :
-                                        props.language === "EN" && "bedroom furniture"
-                                }
-                            </Link>
+                    <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
+                        <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products/bedroom furniture"}>
+                            {
+                                props.language === "LT" ? "MIEGAMOJO BALDAI" :
+                                    props.language === "EN" && "bedroom furniture"
+                            }
+                        </Link>
 
-                            <ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
-                                <div>
-                                    <Link to={"/" + props.language + "/products//bedside cabinets"} className="dropdown-subtext">
-                                        {
-                                            props.language === "LT" ? "spintelĖs prie lovos " :
-                                                props.language === "EN" && "bedside cabinets"
-                                        }
-                                    </Link>
-                                </div>
+                        <ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
+                            <div>
+                                <Link to={"/" + props.language + "/products//bedside cabinets"} className="dropdown-subtext">
+                                    {
+                                        props.language === "LT" ? "spintelĖs prie lovos " :
+                                            props.language === "EN" && "bedside cabinets"
+                                    }
+                                </Link>
+                            </div>
 
-                                <div>
-                                    <Link to={"/" + props.language + "/products//chests of drawers"} className="dropdown-subtext">
-                                        {
-                                            props.language === "LT" ? "komodos" :
-                                                props.language === "EN" && "chests of drawers"
-                                        }
-                                    </Link>
-                                </div>
-
-
-                                <div>
-                                    <Link to={"/" + props.language + "/products//bedroom benches"} className="dropdown-subtext">
-                                        {
-                                            props.language === "LT" ? "suolai prie lovos" :
-                                                props.language === "EN" && "bedroom benches"
-                                        }
-                                    </Link>
-                                </div>
+                            <div>
+                                <Link to={"/" + props.language + "/products//chests of drawers"} className="dropdown-subtext">
+                                    {
+                                        props.language === "LT" ? "komodos" :
+                                            props.language === "EN" && "chests of drawers"
+                                    }
+                                </Link>
+                            </div>
 
 
-                            </ul>
-                        </li>
+                            <div>
+                                <Link to={"/" + props.language + "/products//bedroom benches"} className="dropdown-subtext">
+                                    {
+                                        props.language === "LT" ? "suolai prie lovos" :
+                                            props.language === "EN" && "bedroom benches"
+                                    }
+                                </Link>
+                            </div>
+
+
+                        </ul>
+                    </li>
                 </DropdownItem>
 
                 <DropdownItem>
@@ -330,13 +330,12 @@ const Header = (props) => {
                     </Link>
 
                     <div className="header-img-onhover" style={{ transition: '0.5s all' }}>
-                        <Link to={"/" + props.language}>
-                            <div id="header-logo-center">
-                                <div></div>
-                                <div>
-                                    <img id="header-logo" alt="header-logo" style={{ height: "70%", width: "60%", transform: 'scale(0.75)' }} src={logo} />
-                                </div>
-                                <div></div>
+                        <Link style={{height:' 100%'}} class="flexbox-container" to={"/" + props.language}>
+
+                            <div>
+
+                                <img id="header-logo" alt="header-logo" style={{ height: "70%", width: "60%", transform: 'scale(0.75)' }} src={logo} />
+
                             </div>
                         </Link>
                     </div>

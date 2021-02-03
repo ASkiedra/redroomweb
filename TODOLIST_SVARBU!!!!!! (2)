@@ -1,24 +1,22 @@
 git pull. committint po 1 feature.
 
-2tasks rr daily
 
 pratest linux 4
 
 launch: https://medium.com/@timmykko/deploying-create-react-app-with-nginx-and-ubuntu-e6fe83c5e9e7
 error refreshing / : https://ui.dev/react-router-cannot-get-url-refresh/
 
-deco small rename 
 
-pf 1 task daily po to
+rr 1 task daily po to
+
 02 03:
 dropdown kitaip uzdet
     ssl react
-    https://www.w3schools.com/howto/howto_js_tab_img_gallery.asp
     interjeras
     productpage: ne .find, o cikla per array ir tikrint ar sutampa match manufacturer su manuf ir ar name su name (ir kiti du matchai jei tokie yra)
 
 mobile (iphones, ipads):
-    headeris ant mobiliuju
+    headeris ant mobiliuju - gal kaip pfe threelines
     mobile breadcrumbs - lten virsuj desinej
     mobile widescreen
     footeris buginas iphone5se. html height 100? 
