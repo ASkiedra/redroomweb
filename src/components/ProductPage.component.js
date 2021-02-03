@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Products from '../components/products';
-import { Link } from "react-router-dom";
-import Footer from '../components/Footer.component';
 
 
 
@@ -105,8 +103,6 @@ export default class ProductPage extends Component {
                                                                 //                                 <img width={400} height={300} src={"/images/no_image.png"} alt="404img" /> */}
 
                                                         <p id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
-                                                        <Link to={"/"+this.props.match.params.lang+"/inquire"} id="inquire-link">inquire</Link>
-
                                                 </div>
                                         </div>
 

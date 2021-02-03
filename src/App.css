@@ -607,14 +607,8 @@ body {
 
 #product-name {
   font-size: 1.4rem;
-  margin-bottom: 2rem;
-
 }
 
-#inquire-link {
-  color: rgba(0, 0, 0, 0.801);
-  font-size: 1.4rem;
-}
 #interior-container {
   display: grid;
   grid-template-columns: 33% 33% 33%;
