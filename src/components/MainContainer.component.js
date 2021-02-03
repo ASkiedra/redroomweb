@@ -1,4 +1,5 @@
 import logo from './logo minus black.png';
+import { Link } from "react-router-dom";
 
 const MainContainer = () => {
     return (
@@ -13,6 +14,20 @@ const MainContainer = () => {
                 </div>
 
                 <p>Įsikūrę Europoje, specializuojamės itališkų baldų ir interjero dizaino srityje. Red-Room Studio pavers jūsų gyvenamąją erdvę gražia ir prabangia aplinka.</p>
+
+                <div id="social-media-container">
+                    <a href="https://www.facebook.com">
+                        <img class="social-media-logo" src="/images/facebook.png" />
+                    </a>
+
+                    <a href="https://www.instagram.com">
+                        <img class="social-media-logo" src="/images/instagram.png" />
+                    </a>
+
+                    <a href="https://www.linkedin.com">
+                        <img class="social-media-logo" src="/images/linkedin.png" />
+                    </a>
+                </div>
             </div>
             <div></div>
 

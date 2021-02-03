@@ -12,6 +12,20 @@
 html {
   font-size: 18px;
 }
+#social-media-container {
+  display: grid;
+  grid-template-columns: 33.333% 33.333% 33.333%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+.social-media-logo {
+  filter: invert(1);
+  text-align: center;
+  margin: 0 auto;
+  width: 5.7rem;
+}
 
 #header-logo-center {
   display: grid;
