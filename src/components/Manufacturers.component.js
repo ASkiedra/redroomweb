@@ -66,7 +66,7 @@ const GamintojaiContainer = (props) => {
                         </div>
                     )
                 })}
-                <div></div>
+                <div style={{height: "10rem"}}></div>
             </div>
         </div >
     );

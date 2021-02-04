@@ -541,6 +541,11 @@ body {
   grid-template-columns: 80% 10% 10%;
 }
 
+#redroom-large-text{
+  padding-bottom: 1rem; 
+  padding-right: 0.5rem
+}
+
 #input-box {
   text-align: center;
   font-size: 1.2rem;
@@ -619,7 +624,13 @@ margin-bottom: 10rem;
   #inquire-container {
     margin-top:5rem;
   }
-
+  
+#redroom-large-text{
+  padding-bottom: 3rem; 
+}
+#bcnl-container {
+  padding-top: 2rem;
+}
 #email-box {
   width: 20rem;
 }

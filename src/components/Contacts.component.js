@@ -6,7 +6,7 @@ const Contacts = (props) => {
 
             <div className="fast-fix" >
                 <div id="container-contacts-text-grid">
-                    <div style={{ paddingBottom: '1rem', paddingRight: '0.5rem'}}>
+                    <div id="redroom-large-text">
                         <span>RED-ROOM</span>
                         <span style={{ color: 'red' }}>SHOWROOM</span>
                     </div>
