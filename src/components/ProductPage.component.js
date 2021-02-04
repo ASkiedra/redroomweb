@@ -80,38 +80,37 @@ export default class ProductPage extends Component {
                 // useeeffect reikia.
 
                 return (
-                        <div style={{ height: 'inherit' }} >
+                        <div style={{ paddingBottom: '8rem', minHeight: 'inherit' }} >
                                 <div id="product-page-grid">
 
                                         <p id="product-text">{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
 
-                                        <div>
+                                        {/* <div id='big-container' style={{height: '33rem', width: 'auto'}}>
 
-                                                <div id="prod-photo-container">
+                                                <div style={{maxHeight: 'inherit', width: 'inherit', textAlign: 'center', height: 'inherit'}} id="prod-photo-container">
 
-                                                        {!this.state.loading && <img id="main-product-img" width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} alt="main-product-photo" />}
+                                                        {!this.state.loading && <img id="main-product-img"  width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ width: '100%', height: 'auto', maxHeight: 'inherit', fontSize: '0' }} alt="main-product-photo" />}
 
 
-                                                        {/* 
-                                                                // // BUTINAI PERDARYT KITA SPRENDIMA DEL IMG KAD NESIKARTOTU
-                                                                // this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img id={"main-product-img"} width={400} height={300} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
-                                                                // :
-                                                                // this.imageExists(this.state.path + this.state.imageName[i] + ".png") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.png'} alt="logo" />
-                                                                //         :
-                                                                //         this.imageExists(this.state.path + this.state.imageName[i] + ".jpeg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.jpeg'} alt="logo" />
-                                                                //                 :
-                                                                //                 this.imageExists(this.state.path + this.state.imageName[i] + ".svg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.svg'} alt="logo" />
-                                                                //                         :
-                                                                //                         this.imageExists(this.state.path + this.state.imageName[i] + ".bmp") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.bmp'} alt="logo" />
-                                                                //                                 :
-
-                                                                //                                 <img width={400} height={300} src={"/images/no_image.png"} alt="404img" /> */}
-
-                                                        <p id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
+                                                        <p style={{position: 'relative', zIndex: '9999'}} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
                                                 </div>
+                                        </div> */}
+
+                                        <div style={{ maxWidth: '100%', height: '30rem' }}>
+
+                                        <div style={{height: 'inherit', textAlign: 'center', maxWidth: 'inherit', maxHeight: 'inherit'}} id="container-1">
+
+                                                {!this.state.loading && <img  src={this.state.path + this.state.imageName[i]} style={{ maxWidth: '50rem', maxHeight:'43rem', minWidth: '20rem', width: 'auto', minHeight: '26rem',  fontSize: '0' }}  alt="main-product-photo" />}
+
+
+                                                <p style={{ position: 'relative', zIndex: '9999' }} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
+
+                                        </div>
                                         </div>
 
-                                        <div style={{textAlign: 'center'}}>
+
+
+                                        <div id="addit-photo-container" style={{ textAlign: 'center' }}>
 
                                                 {!this.state.loading &&
                                                         this.state.imageName.map(() => {
@@ -136,18 +135,3 @@ export default class ProductPage extends Component {
 
 }
 
-
-
-
-{/* {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={350} height={200} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
-                                                                                                :
-                                                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".png") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.png'} alt="logo" />
-                                                                                                        :
-                                                                                                        this.imageExists(this.state.path + this.state.imageName[i] + ".jpeg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.jpeg'} alt="logo" />
-                                                                                                                :
-                                                                                                                this.imageExists(this.state.path + this.state.imageName[i] + ".svg") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.svg'} alt="logo" />
-                                                                                                                        :
-                                                                                                                        this.imageExists(this.state.path + this.state.imageName[i] + ".bmp") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.bmp'} alt="logo" />
-                                                                                                                                :
-
-                                                                                                                                <img width={400} height={300} src={"/images/no_image.png"} alt="404img" />} */}

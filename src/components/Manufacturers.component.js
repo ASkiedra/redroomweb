@@ -52,7 +52,7 @@ export default class Gamintojai extends Component {
 
 const GamintojaiContainer = (props) => {
     return (
-        <div style={{ height: 'inherit' }}>
+        <div style={{ paddingBottom: '12rem',height: 'inherit' }}>
             <div id='gamintoju-grid' style={{ paddingBottom: '5rem' }}>
                 {props.filteredManufacturers.map(manufacturer => {
                     return (
