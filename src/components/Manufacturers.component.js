@@ -56,7 +56,7 @@ const GamintojaiContainer = (props) => {
             <div id='gamintoju-grid' style={{ paddingBottom: '5rem' }}>
                 {props.filteredManufacturers.map(manufacturer => {
                     return (
-                        <div  key={manufacturer}>
+                        <div key={manufacturer}>
                             <Link class="flexbox-container" style={{
                                 width: "100%", height: "100%"
                             }} to={"/" + props.language + "/products/null/null/" + manufacturer}>
@@ -66,6 +66,7 @@ const GamintojaiContainer = (props) => {
                         </div>
                     )
                 })}
+                <div></div>
             </div>
         </div >
     );
