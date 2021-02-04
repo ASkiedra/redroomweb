@@ -584,6 +584,16 @@ body {
   padding-right: 0.5rem;
 }
 
+
+#interior-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
 #input-box {
   text-align: center;
   font-size: 1.2rem;
@@ -729,6 +739,27 @@ body {
 @media (max-height: 370px) {
   #input-box {
     height: 6rem;
+  }
+}
+
+@media (max-width: 1000px)
+{
+  #interior-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1600px)
+{
+  #interior-container {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (min-width: 1601px)
+{
+  #interior-container {
+    grid-template-columns: 33.3333% 33.3333% 33.3333%;
   }
 }
 
@@ -1012,13 +1043,6 @@ body {
 
 #product-name {
   font-size: 1.4rem;
-}
-
-#interior-container {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  width: 90%;
-  margin: 0 auto;
 }
 
 #interior-container img {
