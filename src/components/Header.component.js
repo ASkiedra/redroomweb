@@ -329,7 +329,7 @@ const Header = (props) => {
 
 
     return (
-        <div >
+        <div style={{position: 'relative', top: '0'}}>
             <header style={{ display: 'block' }}>
                 <ul id="header-list">
 {console.log('stateupdate')}
