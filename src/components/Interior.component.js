@@ -29,7 +29,7 @@ const Interior = () => {
                                 {
                                         images.map(element => {
                                                 return (
-                                                        <img onClick={(e) => enlargeImage(e.target.src)} src={element.default} />
+                                                        <img style={{cursor: 'pointer'}} onClick={(e) => enlargeImage(e.target.src)} src={element.default} />
                                                 )
                                         })
                                 }
