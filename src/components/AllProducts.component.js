@@ -312,7 +312,7 @@ const MainContainer = (props) => {
 
         return (
 
-                < div style={{ background: 'white', display: 'grid', minHeight: 'inherit', paddingBottom: '5rem', gridTemplateColumns: '25% 75%' }}>
+                < div id='allproducts-container' >
                         {/* sidebar */}
                         <div>
 
@@ -363,7 +363,7 @@ const MainContainer = (props) => {
 
                         {/* products */}
                         {/* 20rem = hegiht of a product block. if i change it here - that has to change as well */}
-                        < div style={{ gridTemplateRows:'20rem 20rem 20rem 20rem 20rem', height: 'inherit', display: 'grid', minHeight: 'inherit', gridTemplateColumns: '33.3333% 33.3333% 33.3333%', marginRight: '5rem' }}>
+                        < div id="products-container">
                                 {props.curProducts.map(curProduct => {
                                         return <Product key={curProduct.name + curProduct.imageName[0]} lang={props.lang} product={curProduct} />;
                                 })
