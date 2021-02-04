@@ -15,7 +15,7 @@ const enlargeImage = (imgSrc) => {
 const Interior = () => {
         return (
                 < div style={{ minHeight: 'inherit' }}>
-                        <div id="interior-container">
+                        <div id="interior-container" style={{paddingBottom: '12rem'}}>
                                 {
                                         images.map(element => {
                                                 return (
