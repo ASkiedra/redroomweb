@@ -503,6 +503,8 @@ a {
   text-align: center;
   margin: 0 auto;
   height: 100%;
+  max-width: 16rem;
+  max-height: 12rem;
 }
 
 #clear-btn {
