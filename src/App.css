@@ -21,7 +21,9 @@ html {
 }
 #header-logo {
   height: 62%;
-  width: 100%;
+  /* width: 100%; */
+  text-align: center;
+  margin: 0 auto;
   /* transform: scale(0.75); */
 }
 .social-media-logo {
