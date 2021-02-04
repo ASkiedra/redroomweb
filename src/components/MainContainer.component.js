@@ -1,10 +1,13 @@
 import logo from './logo minus black.png';
-import {  useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 
 const MainContainer = () => {
 
-    const language = useLocation().pathname[1]+ useLocation().pathname[2];
+    var language = useLocation().pathname[1] + useLocation().pathname[2];
 
+    // if no language is defined in the link, set it to default (LT)
+    if (language !== "LT" && language !== "EN")
+        language = "LT";
     return (
         // marginTop -2rem because the designer asked for a transparent breadcrumbs component on the main page
         <div id="main-page-cont0" style={{ background: 'url(/images/PIANCA_226-227_Otto-Platea-Icaro-Brema_Inari_Orchestra_Venere-0d7df3b2-6180-11eb-85aa-02a8dc75caa2.jpg)', backgroundSize: 'cover', marginTop: '-5rem', paddingBottom: '18rem' }}>
@@ -26,7 +29,7 @@ const MainContainer = () => {
 
                     <div></div>
 
-{/* 
+                    {/* 
                     <a href="https://www.instagram.com">
                         <img class="social-media-logo" src="/images/instagram.png" />
                     </a>
