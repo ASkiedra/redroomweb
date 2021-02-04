@@ -548,7 +548,7 @@ body {
   }
 }
 
-@media (max-width: 1000px) and (min-width: 600px) and (min-height: 300px) and (max-height: 500px) {
+@media (max-width: 1000px) and (min-width: 600px) and (min-height: 200px) and (max-height: 500px) {
   html {
     font-size: 10px;
   }
