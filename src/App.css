@@ -522,6 +522,14 @@ a {
   /* height: 170%; */
 }
 
+#email-box {
+  border-radius: 5px;
+  width: 26rem;
+  height: 3rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
 body {
   overflow: hidden;
 }
@@ -531,6 +539,21 @@ body {
   right: 1;
   display: grid;
   grid-template-columns: 80% 10% 10%;
+}
+
+#input-box {
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  width: 26rem;
+  height: 9rem;
+}
+
+
+#inquire-container {
+  margin-top:9rem;
+  font-size: 2.2rem;
+text-align: center;
 }
 
 @media (max-width: 959px){
@@ -558,11 +581,16 @@ body {
 }
 
 
-
+@media (max-width: 300px){
+  
+  #heading1{
+    font-size: 3rem;
+  }
+}
 
 
 /* widescreen media queries */
-@media (max-width: 400px) and (max-height: 300px) {
+@media (min-width: 301px) and (max-width: 400px) and (max-height: 300px) {
   html {
     font-size: 7px;
   }
@@ -584,17 +612,65 @@ body {
 
 /*  */
 
+
+
+@media  (max-width: 1501px) and (max-height: 1501px) {
+  #inquire-container {
+    margin-top:5rem;
+  }
+
+#email-box {
+  width: 20rem;
+}
+
+#input-box {
+  width: 20rem;
+  height: 6rem;
+  text-align: left;
+}
+
+}
+
+@media (max-height: 450px)
+{
+  #input-box {
+    height: 10rem;
+  }
+}
+
+ 
+@media (min-width: 750px) and (max-height: 450px)
+{
+  #input-box {
+    height: 6rem;
+  }
+}
+
+@media (max-height: 370px)
+{
+  #input-box {
+    height: 6rem;
+  }
+}
+
 @media (max-width: 1000px) and (max-height: 1000px) {
   /* BREADCRUMBS */
   #bcnl-container {
     grid-template-columns: 100%;
   }
+  #inquire-container {
+    margin-top:2rem;
+  }
 
   #breadcrumbs-links {
     display: none;
   }
-}
 
+
+  .p-heading1{
+    font-size: 3rem;
+  }
+}
 
 /* iphone 5s widescreen */
 @media (max-width:630px)  and (max-height:400px)

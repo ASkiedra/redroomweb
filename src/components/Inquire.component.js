@@ -41,12 +41,12 @@ class Inquire extends Component {
     render() {
         return (
             <div style={{height: 'inherit'}}>
-                <div style={{marginTop: '9rem', fontSize: '2.2rem', textAlign: 'center'}}>
-                <h1 className="p-heading1">{this.props.match.params.lang === "LT" ? "Susisiekime" : this.props.match.params.lang === "EN" && "Get in Touch"}</h1>
+                <div id="inquire-container">
+                <h1 id="heading1" className="p-heading1">{this.props.match.params.lang === "LT" ? "Susisiekime" : this.props.match.params.lang === "EN" && "Get in Touch"}</h1>
               
                 <Form style={{marginTop: '3rem'}} onSubmit={this.handleSubmit.bind(this)}>
                     <FormGroup style={{marginTop: '3rem'}}controlId="formBasicEmail">
-                        <Input style={{borderRadius: '5px',width: '26rem',height: '3rem', textAlign: 'center', fontSize: '1.4rem'}}
+                        <Input id="email-box"
                             type="email"
                             name="email"
                             value={this.state.email}
@@ -59,7 +59,7 @@ class Inquire extends Component {
 
                     <FormGroup style={{marginTop: '3rem'}} controlId="formBasicMessage">
                         {/* <Label className="text-muted">{this.props.match.params.lang === "LT" ? "Žinutė" : this.props.match.params.lang === "EN" && "Message"}<br/></Label> */}
-                        <Input style={{borderRadius: '5px',width: '26rem',height: '9rem', textAlign: 'left', fontSize: '1.4rem'}}
+                        <Input id="input-box"
                             type="textarea"
                             name="message"
                             className="text-primary"
