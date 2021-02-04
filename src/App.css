@@ -465,9 +465,10 @@ a {
   margin-bottom: 5rem;
   padding: 4rem;
   box-shadow: 0 23px 15px rgba(0, 0, 0, 0.411);
-  /* position: relative;
-  top: 30%; */
+  position: relative;
+  top: 15%;
   /* min-height: inherit; */
+  /* height: 100%; */
 }
 
 #main-page-cont *::selection {
@@ -498,10 +499,10 @@ a {
 
 #main-logo {
   filter: invert(1);
-  width: 15rem;
+  width: 100%;
   text-align: center;
   margin: 0 auto;
-  height: auto;
+  height: 100%;
 }
 
 #clear-btn {
@@ -520,8 +521,8 @@ a {
 #main-page-cont0 {
   overflow: hidden;
   height: inherit;
-  display: grid;
-  grid-template-rows: 17% 66% 17%;
+  /* display: grid;
+  grid-template-rows: 17% 66% 17%; */
   /* veikia jei sita ant mobiliu tik */
   /* height: 170%; */
 }
@@ -732,7 +733,7 @@ body {
 
 @media (max-width: 1150px) {
 #sidebar-container-2{
-  display: none;
+  display: block;
 }
 #allproducts-container {
   grid-template-columns: 1fr;
