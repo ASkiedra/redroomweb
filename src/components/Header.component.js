@@ -1,21 +1,125 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from './logo minus black.png';
+import threeLinesLogo from './three-lines-logo.png';
 
 const Header = (props) => {
+    // LEFT PART OF THE NAVBAR
+    // renders the threelines image or the dropdown if its clicked.
+    const Menu = () => {
+        return (
+            <div  style={{ width: "inherit", height: 'inherit', margin: "0 auto" }} >
+                    <div style={{ width: "inherit", height: 'inherit' }} >
+                        <ThreeLines />
+                    </div>
+
+                {openedThreeLines &&
+                    <DropdownMenu2 />
+                }
+            </div>
+        );
+    };
+
+
+    const ThreeLines = (props) => {
+        return (
+            <div class="flexbox-container" style={{ width: "inherit", height: 'inherit', margin: "0 auto" }}>
+                <img
+                    style={{ margin: '0 auto', transform: 'scale(0.6)', width: "inherit", height: 'inherit' }}
+                    src={threeLinesLogo}
+                    className="icon-button clickable"
+                    alt="threeLines-logo"
+                    id='three-lines-img'
+                />
+
+                {/* dropdown */}
+                {props.children}
+            </div>
+        );
+    }
+
+
+    // need more dropdown levels? 11:40 https://www.youtube.com/watch?v=IF6k0uZuypA
+    const DropdownMenu2 = () => {
+        function DropdownItem(props) {
+            return props.children;
+        }
+
+        return (
+            <ul className="dropdown2" >
+                <DropdownItem>
+                    <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                        {/* heading text */}
+                        <Link 
+                            style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products"}                        >
+                            {
+                                props.language === "LT" ? "PRODUKTAI" :
+                                    props.language === "EN" && "PRODUCTS"
+                            }
+                        </Link>
+                    </li>
+                </DropdownItem>
+                
+                <DropdownItem>
+                    <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                        {/* heading text */}
+                        <Link
+                            style={{ fontSize: '1.2rem',color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/interior"}                        >
+                            {
+                                props.language === "LT" ? "INTERJERAS" :
+                                    props.language === "EN" && "INTERIOR"
+                            }
+                        </Link>
+                    </li>
+                </DropdownItem>
+
+                <DropdownItem>
+                    <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                        {/* heading text */}
+                        <Link
+                            style={{ fontSize: '1.2rem',color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/manufacturers"}                        >
+                            {
+                                props.language === "LT" ? "GAMINTOJAI" :
+                                    props.language === "EN" && "MANUFACTURERS"
+                            }
+                        </Link>
+                    </li>
+                </DropdownItem>
+                <DropdownItem>
+                    <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                        {/* heading text */}
+                        <Link
+                            style={{ fontSize: '1.2rem',color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/contacts"}                        >
+                            {
+                                props.language === "LT" ? "KONTAKTAI" :
+                                    props.language === "EN" && "CONTACTS"
+                            }
+                        </Link>
+                    </li>
+                </DropdownItem>
+
+            </ul>
+        );
+    }
+    // END OF LEFT PART OF THE NAVBAR
+    ///////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
     // temporary fix
-    console.log(
-        1
-    )
     const checkIfMobile = () => {
         // if the screen is larger than from an ordinary phone
-        if (window.innerHeight > 1000 || window.innerWidth > 1000)
-        {
+        if (window.innerHeight > 1000 || window.innerWidth > 1000) {
             setOPD(!openedProductsDropdown)
 
         }
-        else
-        {
+        else {
             window.location.replace("/" + props.language + '/products')
             console.log(openedProductsDropdown)
 
@@ -28,8 +132,8 @@ const Header = (props) => {
                 {/* OPENED */}
                 { openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
-                        <div  id="produktai"className="flexbox-container" style={{ height: "inherit" }}>
-                            <p  className="header-item-onhover">
+                        <div id="produktai" className="flexbox-container" style={{ height: "inherit" }}>
+                            <p id="produktai" className="header-item-onhover">
                                 {
                                     props.language === "LT" ? "PRODUKTAI" :
                                         props.language === "EN" && "PRODUCTS"
@@ -43,7 +147,7 @@ const Header = (props) => {
                 {/* CLOSED */}
                 { !openedProductsDropdown &&
                     <div id="produktai" className="flexbox-container" style={{ transition: '0.25s', cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
-                        <p  className="header-item-onhover">
+                        <p id="produktai" className="header-item-onhover">
                             {
                                 props.language === "LT" ? "PRODUKTAI" :
                                     props.language === "EN" && "PRODUCTS"
@@ -300,6 +404,7 @@ const Header = (props) => {
 
     // HIDE-SHOW DROPDOWNS
     const [openedProductsDropdown, setOPD] = useState(false);
+    const [openedThreeLines, setOTL] = useState(false);
 
 
 
@@ -309,13 +414,20 @@ const Header = (props) => {
             if (event.key === 'Escape') {
                 console.log('Escape pressed in useEffect')
                 setOPD(false);
+                setOTL(false);
             }
         }
 
+
         const handleMouseClick = (event) => {
+            console.log(event.target.id)
+            console.log(event.target.id === "three-lines-img")
             // if the click wasnt on the products button
-            if (event.target.id !== "produktai") {
+            if (event.target.id !== "produktai" && event.target.id !== "three-lines-img") {
+                console.log('uzdarom')
                 setOPD(false);
+                setOTL(false);
+
             }
         }
         document.addEventListener('click', handleMouseClick);
@@ -329,13 +441,16 @@ const Header = (props) => {
 
 
     return (
-        <div style={{position: 'relative', top: '0'}}>
+        <div style={{ position: 'relative', top: '0' }}>
             <header style={{ display: 'block' }}>
                 <ul id="header-list">
-{console.log('stateupdate')}
+                    {console.log('stateupdate')}
 
-        <div id="threeLines"></div>
-                    <ProductsMenu  id="produktai " className="header-item-onhover" />
+                    <div id="produktai" onClick={() => { setOTL(!openedThreeLines) }}  style={{ height: 'inherit', width: 'inherit' }} id="threeLines">
+                        <Menu   id="produktai"  />
+
+                    </div>
+                    <ProductsMenu id="produktai " className="header-item-onhover" />
 
 
                     <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/interior"}>
@@ -349,8 +464,8 @@ const Header = (props) => {
 
                     <div className="header-img-onhover" style={{ height: 'inherit', transition: '0.5s all' }}>
                         <Link style={{ height: ' 100%' }} class="flexbox-container" to={"/" + props.language}>
-                            <div className="flexbox-container" style={{margin: '0 auto',height: 'inherit'}}>
-                                <img id="header-logo" alt="header-logo"  src={logo} />
+                            <div className="flexbox-container" style={{ margin: '0 auto', height: 'inherit' }}>
+                                <img id="header-logo" alt="header-logo" src={logo} />
                             </div>
                         </Link>
                     </div>
