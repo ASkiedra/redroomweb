@@ -24,7 +24,7 @@ const Header = (props) => {
 
     const ProductsMenu = () => {
         return (
-            <div style={{ height: "inherit" }} >
+            <div id='products-header-container' style={{ height: "inherit" }} >
                 {/* OPENED */}
                 { openedProductsDropdown &&
                     <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
@@ -334,8 +334,8 @@ const Header = (props) => {
                 <ul id="header-list">
 {console.log('stateupdate')}
 
-
-                    <ProductsMenu id="produktai" className="header-item-onhover" />
+        <div id="threeLines"></div>
+                    <ProductsMenu  id="produktai " className="header-item-onhover" />
 
 
                     <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/interior"}>
@@ -347,16 +347,16 @@ const Header = (props) => {
 
                     </Link>
 
-                    <div className="header-img-onhover" style={{ transition: '0.5s all' }}>
+                    <div className="header-img-onhover" style={{ height: 'inherit', transition: '0.5s all' }}>
                         <Link style={{ height: ' 100%' }} class="flexbox-container" to={"/" + props.language}>
-                            <div>
-                                <img id="header-logo" alt="header-logo" style={{ height: "70%", width: "60%", transform: 'scale(0.75)' }} src={logo} />
+                            <div className="flexbox-container" style={{margin: '0 auto',height: 'inherit'}}>
+                                <img id="header-logo" alt="header-logo"  src={logo} />
                             </div>
                         </Link>
                     </div>
 
                     <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/manufacturers"}>
-                        <div>
+                        <div >
 
                             {props.language === "LT" ? "GAMINTOJAI" :
                                 props.language === "EN" && "MANUFACTURERS"}

@@ -314,7 +314,7 @@ const MainContainer = (props) => {
 
                 < div id='allproducts-container' >
                         {/* sidebar */}
-                        <div>
+                        <div id="sidebar-container-2">
 
                                 <div id="sidebar-container" >
                                         <Link id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>

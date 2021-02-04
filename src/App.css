@@ -19,7 +19,11 @@ html {
   margin: 0 auto;
   margin-top: 5rem;
 }
-
+#header-logo {
+  height: 62%;
+  width: 100%;
+  /* transform: scale(0.75); */
+}
 .social-media-logo {
   filter: invert(1);
   text-align: center;
@@ -232,6 +236,7 @@ a {
 .flexbox-container {
   display: flex;
   align-items: center;
+  height: inherit;
   text-align: center;
 }
 
@@ -553,6 +558,10 @@ body {
   height: 9rem;
 }
 
+#threeLines {
+  display: none;
+}
+
 #inquire-container {
   margin-top: 9rem;
   font-size: 2.2rem;
@@ -719,6 +728,52 @@ body {
   html {
     font-size: 7px;
   }
+}
+
+@media (max-width: 1150px) {
+#sidebar-container-2{
+  display: none;
+}
+#allproducts-container {
+  grid-template-columns: 1fr;
+}
+
+#products-container {
+  margin: 0 auto;
+}
+
+  #header-list {
+    grid-template-columns: 30% 40% 30%;
+  }
+
+  #threeLines {
+    display: block;
+  }
+
+  .headerText {
+    display: none;
+  }
+
+  #products-header-container {
+    display: none;
+  }
+
+
+  
+  /* BREADCRUMBS */
+  #bcnl-container {
+    grid-template-columns: 100%;
+  }
+
+  #breadcrumbs-links {
+    display: none;
+  }
+
+
+  #header-list{
+    margin: 0 auto;
+  }
+
 }
 
 /* ////////////////////////////////////////////////////////////////////////// */
