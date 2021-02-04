@@ -533,6 +533,34 @@ body {
   grid-template-columns: 80% 10% 10%;
 }
 
+@media (max-width: 959px){
+  #gamintoju-grid {
+    grid-template-columns: 100%;
+    grid-template-rows:  20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem  20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem  20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem  20rem ;
+  }
+
+  #gamintoju-grid div {
+    padding: 0;
+  }
+}
+
+
+@media (min-width:960px) and (max-width: 1450px){
+  #gamintoju-grid {
+    grid-template-columns: 50% 50%;
+    grid-template-rows:  20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem  20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem  20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem  20rem ;
+  }
+
+  
+  #gamintoju-grid div {
+    padding: 0;
+  }
+}
+
+
+
+
+
 /* widescreen media queries */
 @media (max-width: 400px) and (max-height: 300px) {
   html {
