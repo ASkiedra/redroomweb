@@ -32,7 +32,7 @@ export default class ProductPage extends Component {
                 }
                 else {
                         // maybe state.product = product.find... would be simpler instead of state.manuf, state.name 
-                        var productFromJson = Products.find(el => el.name === this.props.match.params.name && el.manufacturer===this.props.match.params.manufacturer);
+                        var productFromJson = Products.find(el => el.name === this.props.match.params.name && el.manufacturer === this.props.match.params.manufacturer);
 
 
                         this.setState({
@@ -74,25 +74,25 @@ export default class ProductPage extends Component {
                         document.getElementById('main-product-img').src = target.src;
                         target.src = temp;
                 }
-}
-render() {
-        var i = 0;
-        // useeeffect reikia.
+        }
+        render() {
+                var i = 0;
+                // useeeffect reikia.
 
-        return (
-                <div style={{ height: 'inherit' }} >
-                        <div id="product-page-grid">
+                return (
+                        <div style={{ height: 'inherit' }} >
+                                <div id="product-page-grid">
 
-                                <p id="product-text">{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
+                                        <p id="product-text">{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
 
-                                <div>
+                                        <div>
 
-                                        <div id="prod-photo-container">
+                                                <div id="prod-photo-container">
 
-                                                {!this.state.loading && <img id="main-product-img" width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} alt="main-product-photo" />}
+                                                        {!this.state.loading && <img id="main-product-img" width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' }} alt="main-product-photo" />}
 
 
-                                                {/* 
+                                                        {/* 
                                                                 // // BUTINAI PERDARYT KITA SPRENDIMA DEL IMG KAD NESIKARTOTU
                                                                 // this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img id={"main-product-img"} width={400} height={300} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
                                                                 // :
@@ -107,22 +107,39 @@ render() {
 
                                                                 //                                 <img width={400} height={300} src={"/images/no_image.png"} alt="404img" /> */}
 
-                                                <p id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
+                                                        <p id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
+                                                </div>
                                         </div>
+
+                                        <div style={{textAlign: 'center'}}>
+
+                                                {!this.state.loading &&
+                                                        this.state.imageName.map(() => {
+                                                                i++;
+
+                                                                if (this.state.imageName[i] !== undefined)
+                                                                        return (
+                                                                                <img onClick={(e) => this.swapImages(e.target)} width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0', cursor: 'pointer' }} id={'img' + i} alt="logo" />
+
+
+                                                                        );
+                                                        })}
+
+                                        </div>
+
                                 </div>
+                        </div >
+                );
 
-                                <div>
 
-                                        {!this.state.loading &&
-                                                this.state.imageName.map(() => {
-                                                        i++;
+        }
 
-                                                        if (this.state.imageName[i] !== undefined)
-                                                                return (
-                                                                        <div id="prod-photo-container" class="addit-prod-photo-container">
-                                                                                <img  onClick={(e) => this.swapImages(e.target)} width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0' , cursor: 'pointer'}} id={'img' + i} alt="logo" />
+}
 
-                                                                                {/* {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={350} height={200} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
+
+
+
+{/* {this.imageExists(this.state.path + this.state.imageName[i] + ".jpg") ? <img width={350} height={200} src={this.state.path + this.state.imageName[i] + ".jpg"} style={{ fontSize: '0' }} alt="logo" /> // sometimes the alt loads before the image so font size 0 hides it
                                                                                                 :
                                                                                                 this.imageExists(this.state.path + this.state.imageName[i] + ".png") ? <img width={400} height={300} src={this.state.path + this.state.imageName[i] + '.png'} alt="logo" />
                                                                                                         :
@@ -134,22 +151,3 @@ render() {
                                                                                                                                 :
 
                                                                                                                                 <img width={400} height={300} src={"/images/no_image.png"} alt="404img" />} */}
-
-                                                                        </div>
-                                                                );
-                                                })}
-
-                                </div>
-
-                                {/* <Footer/> */}
-                        </div>
-                </div >
-        );
-
-
-}
-
-}
-
-
-
