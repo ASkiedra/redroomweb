@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Products from '../components/products';
 
 // these should not be global but they cant be in the state too. maybe set them in render(), pass them to components and functions
@@ -296,9 +296,15 @@ export default class AllProducts extends Component {
 
 const MainContainer = (props) => {
         const language = useLocation().pathname[1] + useLocation().pathname[2];
+        const [showFilter, setSF] = useState(false);
 
         // scroll up on every route change
         useEffect(() => {
+
+                // if not on a mobile device, show filterb y default
+                if (window.innerWidth > 1149) {
+                        setSF(true);
+                }
 
                 if (document.getElementsByClassName('container')[0] !== undefined) {
                         // document.getElementsByClassName('container')[0].scrollTop = 0;
@@ -315,27 +321,52 @@ const MainContainer = (props) => {
                 < div id='allproducts-container' >
                         {/* sidebar */}
                         <div id="sidebar-container-2">
+                                {!showFilter && window.innerWidth < 1149 &&
+                                        <div className="flexbox-container">
 
-                                <div id="sidebar-container" >
-                                        <Link id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
-                                        <ul id={"products-sidebar"}>
+                                                <p onClick={() => setSF(!showFilter)} id="filter-btn">
+                                                        {language === "LT" ? "filtrai" : language === "EN" && "filters"}
+                                                </p>
+                                        </div>
 
-                                                <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                                        {/* <p className={"sidebar-subtext"}>{language === "LT" ? "PAGRINDINĖ KATEGORIJA" : language === "EN" && "MAIN CATEGORY"}</p> */}
-                                                        {props.mainCategoriesArr.map(curMainCat => {
-                                                                // jei keiciu sita returna  - keist ir apacioj
-                                                                return <Type language={language} translatable={"main"} filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
-                                                        })}
+                                }
+                                {
+                                        showFilter &&
+
+                                        <div id="sidebar-container" >
+
+                                                <div id="sidebar-btn-container">
+                                                        {
+                                                                window.innerWidth < 1149 &&
+
+                                                                <div className="flexbox-container">
+                                                                        <p onClick={() => setSF(!showFilter)} id="filter-btn">
+                                                                                {language === "LT" ? "filtrai" : language === "EN" && "filters"}
+                                                                        </p>
+                                                                </div>
+                                                        }
+                                                        <Link id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
+
                                                 </div>
 
-                                                <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                                        {/* <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p> */}
-                                                        {props.subCategoriesArr.map(curSubCat => {
-                                                                // jei keiciu sita returna  - keist ir apacioj
-                                                                return <Type language={language} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
-                                                        })}
-                                                </div>
-                                                {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                <ul id={"products-sidebar"}>
+
+                                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                                {/* <p className={"sidebar-subtext"}>{language === "LT" ? "PAGRINDINĖ KATEGORIJA" : language === "EN" && "MAIN CATEGORY"}</p> */}
+                                                                {props.mainCategoriesArr.map(curMainCat => {
+                                                                        // jei keiciu sita returna  - keist ir apacioj
+                                                                        return <Type language={language} translatable={"main"} filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
+                                                                })}
+                                                        </div>
+
+                                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                                {/* <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p> */}
+                                                                {props.subCategoriesArr.map(curSubCat => {
+                                                                        // jei keiciu sita returna  - keist ir apacioj
+                                                                        return <Type language={language} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
+                                                                })}
+                                                        </div>
+                                                        {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
                                                 <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p>
                                                 {props.subCategoriesArr.map(curSubCat => {
                                                         // jei keiciu sita returna  - keist ir apacioj
@@ -344,21 +375,22 @@ const MainContainer = (props) => {
                                         </div> */}
 
 
-                                                {/*
+                                                        {/*
  CIA NE TYPE o manufacturer turetu but arba sidebar-item
 */}
-                                                <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>
-                                                        {/* <p className={"sidebar-subtext"}>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p> */}
-                                                        {props.manufacturersArr.map(curManufacturer => {
-                                                                // jei keiciu sita returna  - keist ir apacioj
-                                                                return <Type language={language} translatable={false} filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
-                                                        })}
+                                                        <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>
+                                                                {/* <p className={"sidebar-subtext"}>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p> */}
+                                                                {props.manufacturersArr.map(curManufacturer => {
+                                                                        // jei keiciu sita returna  - keist ir apacioj
+                                                                        return <Type language={language} translatable={false} filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
+                                                                })}
 
-                                                </div>
+                                                        </div>
 
 
-                                        </ul>
-                                </div>
+                                                </ul>
+                                        </div>
+                                }
                         </div>
 
                         {/* products */}
@@ -490,7 +522,7 @@ const Type = (props) => {
                                 props.this.addAndRemoveFilters(props.value, props.type)
                         }}
                                 style={{ textAlign: 'right', listStyle: 'none' }}>
-                                <p key={props.value + 'p'} id={props.value} style={{ fontSize: '1.15rem', }} className={"product-type bold-text"}>
+                                <p key={props.value + 'p'} id={props.value} className={"product-type bold-text"}>
 
 
                                         {text}
@@ -503,7 +535,7 @@ const Type = (props) => {
                                 props.this.addAndRemoveFilters(props.value, props.type)
                         }}
                                 style={{ textAlign: 'right', listStyle: 'none' }}>
-                                <p key={props.value + 'p'} id={props.value} style={{ fontSize: '1.15rem', }} className={"product-type"}> {text}</p>
+                                <p key={props.value + 'p'} id={props.value} className={"product-type"}> {text}</p>
                         </li>
 
 

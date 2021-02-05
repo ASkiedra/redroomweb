@@ -9,6 +9,25 @@
   font-family: "Inria Serif", serif;
 }
 
+#sidebar-btn-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+#filter-btn {
+  background: rgb(223, 223, 223);
+  color: black;
+  border: 1px solid black;
+  width: 7rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+}
+
 html {
   font-size: 18px;
 }
@@ -676,6 +695,9 @@ body {
   display: none;
 }
 
+.product-type {
+  font-size: 1.4rem;
+}
 #inquire-container {
   margin-top: 9rem;
   font-size: 2.2rem;
@@ -913,8 +935,22 @@ body {
 
 @media (max-width: 1150px) {
   #sidebar-container-2 {
-    display: none;
+    order: 1;
+    margin-top: 4rem;
   }
+
+#sidebar-btn-container {
+grid-template-columns: 50% 50%;
+}
+  #clear-btn {
+    left: 0;
+  }
+
+  #sidebar-container {
+    width: 100%;
+    position: static;
+  }
+
   #allproducts-container {
     grid-template-columns: 1fr;
   }
@@ -925,6 +961,10 @@ body {
     right: 0;
     top: 0;
   }
+
+  #products-container {
+    order: 2; 
+   }
 
   #lang-container a {
     font-size: 2.2rem;
@@ -978,6 +1018,10 @@ body {
 @media (min-width: 1150px) {
   .dropdown {
     width: 30rem;
+  }
+
+  .product-type {
+    font-size: 1.15rem;
   }
 }
 /* ////////////////////////////////////////////////////////////////////////// */

@@ -68,10 +68,10 @@ export default class ProductPage extends Component {
 
         swapImages(target) {
                 // if the click was on one of the side images and main picture is defined or not null (loaded in general)
-                if (target.id === "img1" || target.id === 'img2' && document.getElementById('main-product-img') !== undefined && document.getElementById('main-product-img') !== null) {
+                if (target.id === "img1" || target.id === 'img2' && document.getElementById('main-product-image') !== undefined && document.getElementById('main-product-image') !== null) {
 
-                        let temp = document.getElementById('main-product-img').src;
-                        document.getElementById('main-product-img').src = target.src;
+                        let temp = document.getElementById('main-product-image').src;
+                        document.getElementById('main-product-image').src = target.src;
                         target.src = temp;
                 }
         }
@@ -100,7 +100,7 @@ export default class ProductPage extends Component {
 
                                         <div style={{height: 'inherit', textAlign: 'center', maxWidth: 'inherit', maxHeight: 'inherit'}} id="container-1">
 
-                                                {!this.state.loading && <img  src={this.state.path + this.state.imageName[i]} style={{ maxWidth: '50rem', maxHeight:'43rem', minWidth: '20rem', width: 'auto', minHeight: '26rem',  fontSize: '0' }}  alt="main-product-photo" />}
+                                                {!this.state.loading && <img id="main-product-image" src={this.state.path + this.state.imageName[i]} style={{ maxWidth: '50rem', maxHeight:'43rem', minWidth: '20rem', width: 'auto', minHeight: '26rem',  fontSize: '0' }}  alt="main-product-photo" />}
 
 
                                                 <p style={{ position: 'relative', zIndex: '9999' }} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
