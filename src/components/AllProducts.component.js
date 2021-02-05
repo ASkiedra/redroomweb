@@ -306,7 +306,7 @@ const MainContainer = (props) => {
                         setSF(true);
                 }
 
-                if (document.getElementsByClassName('container')[0] !== undefined) {
+                if (document.getElementsByClassName('container')[0] !== undefined && window.innerWidth > 1149) {
                         // document.getElementsByClassName('container')[0].scrollTop = 0;
                         document.getElementsByClassName('container')[0].scrollTo({
                                 top: 0, behavior: 'smooth'
@@ -345,7 +345,7 @@ const MainContainer = (props) => {
                                                                         </p>
                                                                 </div>
                                                         }
-                                                        <Link id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
+                                                        <Link onClick={()=>setSF(false) }id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
 
                                                 </div>
 
