@@ -100,7 +100,7 @@ export default class ProductPage extends Component {
 
                                         <div style={{height: 'inherit', textAlign: 'center', maxWidth: 'inherit', maxHeight: 'inherit'}} id="container-1">
 
-                                                {!this.state.loading && <img id="main-product-image" src={this.state.path + this.state.imageName[i]} style={{ maxHeight:'43rem', minWidth: 'inherit', width: 'auto', minHeight: '23rem',  fontSize: '0' }}  alt="main-product-photo" />}
+                                                {!this.state.loading && <img id="main-product-image" src={this.state.path + this.state.imageName[i]} style={{ maxHeight:'43rem', minWidth: 'inherit', width: 'auto', minHeight: '21rem',  fontSize: '0' }}  alt="main-product-photo" />}
 
 
                                                 <p style={{ position: 'relative', zIndex: '9999' }} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>

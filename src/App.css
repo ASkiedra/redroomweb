@@ -15,7 +15,8 @@
   grid-template-columns: 1fr;
 }
 #filter-btn {
-  background: rgb(223, 223, 223);
+  /* background: rgb(223, 223, 223); */
+  background: white;
   color: black;
   border: 1px solid black;
   width: 7rem;
