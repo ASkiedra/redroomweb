@@ -981,9 +981,6 @@ grid-template-columns: 50% 50%;
     margin: 0 auto;
   }
 
-  #container-1 img {
-    transform: scale(0.5);
-  }
   #product-text {
     margin-top: 4rem;
     font-size: 2rem;
