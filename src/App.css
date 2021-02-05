@@ -370,8 +370,10 @@ a {
 
 .dropdown {
   /* left = same as #header-list margin second  value */
+  background: rgba(0, 0, 0, 0.8301);
   left: -6rem;
-
+display: grid;
+grid-template-columns: 50% 50%;
   position: relative;
   transform-origin: top center;
 }
@@ -1017,7 +1019,7 @@ grid-template-columns: 50% 50%;
 
 @media (min-width: 1150px) {
   .dropdown {
-    width: 30rem;
+    width: 40rem;
   }
 
   .product-type {

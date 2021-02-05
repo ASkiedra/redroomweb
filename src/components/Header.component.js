@@ -8,10 +8,10 @@ const Header = (props) => {
     // renders the threelines image or the dropdown if its clicked.
     const Menu = () => {
         return (
-            <div  style={{ width: "inherit", height: 'inherit', margin: "0 auto" }} >
-                    <div style={{ width: "inherit", height: 'inherit' }} >
-                        <ThreeLines />
-                    </div>
+            <div style={{ width: "inherit", height: 'inherit', margin: "0 auto" }} >
+                <div style={{ width: "inherit", height: 'inherit' }} >
+                    <ThreeLines />
+                </div>
 
                 {openedThreeLines &&
                     <DropdownMenu2 />
@@ -48,9 +48,9 @@ const Header = (props) => {
         return (
             <ul className="dropdown2" >
                 <DropdownItem>
-                    <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                    <li style={{ textTransform: 'uppercase', fontWeight: "550",  color: 'white' }} >
                         {/* heading text */}
-                        <Link 
+                        <Link
                             style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products"}                        >
                             {
                                 props.language === "LT" ? "PRODUKTAI" :
@@ -59,12 +59,12 @@ const Header = (props) => {
                         </Link>
                     </li>
                 </DropdownItem>
-                
+
                 <DropdownItem>
-                    <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                    <li style={{ textTransform: 'uppercase', fontWeight: "550",  color: 'white' }} >
                         {/* heading text */}
                         <Link
-                            style={{ fontSize: '1.2rem',color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/interior"}                        >
+                            style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/interior"}                        >
                             {
                                 props.language === "LT" ? "INTERJERAS" :
                                     props.language === "EN" && "INTERIOR"
@@ -74,10 +74,10 @@ const Header = (props) => {
                 </DropdownItem>
 
                 <DropdownItem>
-                    <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                    <li style={{ textTransform: 'uppercase', fontWeight: "550",  color: 'white' }} >
                         {/* heading text */}
                         <Link
-                            style={{ fontSize: '1.2rem',color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/manufacturers"}                        >
+                            style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/manufacturers"}                        >
                             {
                                 props.language === "LT" ? "GAMINTOJAI" :
                                     props.language === "EN" && "MANUFACTURERS"
@@ -86,10 +86,10 @@ const Header = (props) => {
                     </li>
                 </DropdownItem>
                 <DropdownItem>
-                    <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                    <li style={{ textTransform: 'uppercase', fontWeight: "550",  color: 'white' }} >
                         {/* heading text */}
                         <Link
-                            style={{ fontSize: '1.2rem',color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/contacts"}                        >
+                            style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/contacts"}                        >
                             {
                                 props.language === "LT" ? "KONTAKTAI" :
                                     props.language === "EN" && "CONTACTS"
@@ -171,7 +171,7 @@ const Header = (props) => {
             // could have used `:` instead of `props.language === "EN"` but this seems more stable
             <ul className="dropdown" >
                 <DropdownItem>
-                    <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                    <li style={{ textTransform: 'uppercase', fontWeight: "550",  color: 'white' }} >
                         {/* heading text */}
                         <Link
                             style={{ color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products/day systems"}                        >
@@ -225,7 +225,7 @@ const Header = (props) => {
 
 
                 <DropdownItem>
-                    <li style={{ textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)', color: 'white' }} >
+                    <li style={{ textTransform: 'uppercase', fontWeight: "550",  color: 'white' }} >
                         {/* heading text */}
                         <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products/wardrobe systems"}>
                             {
@@ -258,7 +258,7 @@ const Header = (props) => {
 
 
                 <DropdownItem>
-                    <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
+                    <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550",  }} >
                         <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products/dining room furniture"}  >
                             {
                                 props.language === "LT" ? "svetainės ir valgomojo baldai" :
@@ -329,7 +329,7 @@ const Header = (props) => {
                 </DropdownItem>
 
                 <DropdownItem>
-                    <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
+                    <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550",  }} >
                         <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products/bedroom furniture"}>
                             {
                                 props.language === "LT" ? "MIEGAMOJO BALDAI" :
@@ -372,8 +372,9 @@ const Header = (props) => {
                 </DropdownItem>
 
                 <DropdownItem>
-                    <Link to={"/" + props.language + "/products"} >
-                        <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
+                    <div>
+
+                        <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550",  }} >
                             <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products/outdoor furniture and accessories"}>
                                 {
                                     props.language === "LT" ? "lauko baldai ir aksesuarai" :
@@ -381,19 +382,14 @@ const Header = (props) => {
                                 }
                             </Link>
                         </li>
-                    </Link>
-                </DropdownItem>
-
-                <DropdownItem>
-                    <Link to={"/" + props.language + "/products"} >
-                        <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", backgroundColor: 'rgba(0, 0, 0, 0.83)' }} >
+                        <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550",  }} >
                             <Link style={{ fontWeight: 'bold', color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products"}>
                                 {
                                     props.language === "LT" ? "VISI GAMINTOJAI" :
                                         props.language === "EN" && "ALL MANUFACTURERS"
                                 }                                </Link>
                         </li>
-                    </Link>
+                    </div>
                 </DropdownItem>
 
             </ul>
@@ -441,52 +437,52 @@ const Header = (props) => {
 
 
     return (
-            <header style={{ display: 'block' }}>
-                <ul id="header-list">
-                    {console.log('stateupdate')}
+        <header style={{ display: 'block' }}>
+            <ul id="header-list">
+                {console.log('stateupdate')}
 
-                    <div id="produktai" onClick={() => { setOTL(!openedThreeLines) }}  style={{ height: 'inherit', width: 'inherit' }} id="threeLines">
-                        <Menu   id="produktai"  />
+                <div id="produktai" onClick={() => { setOTL(!openedThreeLines) }} style={{ height: 'inherit', width: 'inherit' }} id="threeLines">
+                    <Menu id="produktai" />
 
-                    </div>
-                    <ProductsMenu id="produktai " className="header-item-onhover" />
+                </div>
+                <ProductsMenu id="produktai " className="header-item-onhover" />
 
 
-                    <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/interior"}>
-                        <div>
+                <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/interior"}>
+                    <div>
 
-                            {props.language === "LT" ? "INTERJERUI"
-                                : props.language === "EN" && "INTERIOR"}
-                        </div>
-
-                    </Link>
-
-                    <div className="header-img-onhover" style={{ height: 'inherit', transition: '0.5s all' }}>
-                        <Link style={{ height: ' 100%' }} class="flexbox-container" to={"/" + props.language}>
-                            <div className="flexbox-container" style={{ margin: '0 auto', height: 'inherit' }}>
-                                <img id="header-logo" alt="header-logo" src={logo} />
-                            </div>
-                        </Link>
+                        {props.language === "LT" ? "INTERJERUI"
+                            : props.language === "EN" && "INTERIOR"}
                     </div>
 
-                    <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/manufacturers"}>
-                        <div >
+                </Link>
 
-                            {props.language === "LT" ? "GAMINTOJAI" :
-                                props.language === "EN" && "MANUFACTURERS"}
+                <div className="header-img-onhover" style={{ height: 'inherit', transition: '0.5s all' }}>
+                    <Link style={{ height: ' 100%' }} class="flexbox-container" to={"/" + props.language}>
+                        <div className="flexbox-container" style={{ margin: '0 auto', height: 'inherit' }}>
+                            <img id="header-logo" alt="header-logo" src={logo} />
                         </div>
-
                     </Link>
+                </div>
 
-                    <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/contacts"}>
-                        <div>
-                            {props.language === "LT" ? "KONTAKTAI" :
-                                props.language === "EN" && "CONTACTS"}
-                        </div>
+                <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/manufacturers"}>
+                    <div >
 
-                    </Link>
-                </ul>
-            </header >
+                        {props.language === "LT" ? "GAMINTOJAI" :
+                            props.language === "EN" && "MANUFACTURERS"}
+                    </div>
+
+                </Link>
+
+                <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/contacts"}>
+                    <div>
+                        {props.language === "LT" ? "KONTAKTAI" :
+                            props.language === "EN" && "CONTACTS"}
+                    </div>
+
+                </Link>
+            </ul>
+        </header >
     );
 
 }
