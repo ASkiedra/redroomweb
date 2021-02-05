@@ -363,7 +363,9 @@ a {
   color: black;
   font-size: 1.3rem;
 }
-
+.dropdown2 {
+  background: rgba(0, 0, 0, 0.8301);
+}
 #container-contacts-text-grid span {
   font-size: 4rem;
 }
