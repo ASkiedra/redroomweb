@@ -9,13 +9,23 @@
   font-family: "Inria Serif", serif;
 }
 
+#asd{
+  /* 1/2 of grid height */
+  height: 11.5rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
 #addit-photo-container {
   grid-template-columns: 1fr;
+  margin-bottom: -10rem;
+  margin-top: 2rem;
+
 }
 
 #addit-photo-container img {
+  /* width: 50%; */
   max-height: 100%;
-  height: inherit;
 }
 #sidebar-btn-container {
   width: 100%;
@@ -837,12 +847,20 @@ body {
 
   #addit-photo-container {
     grid-template-columns: 50% 50%;
-    margin-top: 6.5rem;
+    margin-top: 9.5rem;
   }
 
   #addit-photo-container img {
     max-height: 50%;
   }
+
+
+  #addit-photo-container img {
+    width: unset;
+    max-height: 100%;
+    height: unset;
+    transform: scale(0.8);
+}
 
 
   #main-product-img {
@@ -956,7 +974,6 @@ body {
   }
 
   #addit-photo-container img {
-    max-height: 50%;
     height: unset;
   }
 }
