@@ -9,6 +9,14 @@
   font-family: "Inria Serif", serif;
 }
 
+#addit-photo-container {
+  grid-template-columns: 1fr;
+}
+
+#addit-photo-container img {
+  max-height: 100%;
+  height: inherit;
+}
 #sidebar-btn-container {
   width: 100%;
   display: grid;
@@ -826,6 +834,17 @@ body {
   .addit-prod-photo-container {
     margin-top: "-5rem";
   }
+
+  #addit-photo-container {
+    grid-template-columns: 50% 50%;
+    margin-top: 6.5rem;
+  }
+
+  #addit-photo-container img {
+    max-height: 50%;
+  }
+
+
   #main-product-img {
     order: 1;
   }
@@ -927,7 +946,7 @@ body {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 720px) {
   #big-container {
     padding: 0;
   }
@@ -937,9 +956,8 @@ body {
   }
 
   #addit-photo-container img {
-    width: 100%;
-    height: auto;
-    max-height: inherit;
+    max-height: 50%;
+    height: unset;
   }
 }
 
@@ -1203,7 +1221,7 @@ grid-template-columns: 50% 50%;
     font-size: 3rem;
   }
   #container-1 img {
-    transform: scale(0.8);
+    /* transform: scale(0.8); */
   }
   #product-text {
     margin-top: 4rem;

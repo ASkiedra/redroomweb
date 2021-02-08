@@ -15,14 +15,15 @@ const Routes = () => {
 
     // scroll up on every route change
     useEffect(() => {
+        if (document.getElementsByClassName('container')[0] !== undefined) {
 
-        if (document.getElementsByClassName('container')[0] !== undefined)
             document.getElementsByClassName('container')[0].scrollTop = 0;
+        }
     }, [location]);
 
     return (
         <Switch>
-            
+
             <Route exact path='/:lang' component={MainPage} />
             <Route exact path="/" component={MainPage} />
 

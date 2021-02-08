@@ -80,7 +80,7 @@ export default class ProductPage extends Component {
                 // useeeffect reikia.
 
                 return (
-                        <div style={{ paddingTop: '1rem', paddingBottom: '16rem', minHeight: 'inherit' }} >
+                        <div style={{ paddingTop: '1rem', paddingBottom: '18rem', minHeight: 'inherit' }} >
                                 <div id="product-page-grid">
 
                                         <p id="product-text">{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
@@ -96,21 +96,21 @@ export default class ProductPage extends Component {
                                                 </div>
                                         </div> */}
 
-                                        <div style={{ maxWidth: '100%', height: '30rem' }}>
+                                        {/* used to be30 */}
+                                        <div style={{ maxWidth: '100%', maxHeight: '100%', height: '23rem' }}>
 
-                                        <div style={{height: 'inherit', textAlign: 'center', maxWidth: 'inherit', maxHeight: 'inherit'}} id="container-1">
+                                                <div style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit', maxHeight: 'inherit' }} id="container-1">
 
-                                                {!this.state.loading && <img id="main-product-image" src={this.state.path + this.state.imageName[i]} style={{ maxHeight:'43rem', minWidth: 'inherit', width: 'auto', minHeight: '48%',  fontSize: '0' }}  alt="main-product-photo" />}
+                                                        {!this.state.loading && <img id="main-product-image" src={this.state.path + this.state.imageName[i]} style={{ maxHeight: 'inherit', minWidth: 'inherit', width: 'inherit', minHeight: '48%', fontSize: '0' }} alt="main-product-photo" />}
 
 
-                                                <p style={{ position: 'relative', zIndex: '9999' }} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
+                                                        <p style={{ position: 'relative', marginTop: '2rem', zIndex: '9999' }} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
 
+                                                </div>
                                         </div>
-                                        </div>
 
-
-
-                                        <div id="addit-photo-container" style={{ textAlign: 'center' }}>
+                                        {/* 23 rem because mainproductphoto container has a height of 23rem */}
+                                        <div id="addit-photo-container" style={{ width: '100%', maxWidth: '100%', overflow: 'hidden', display: 'grid', height: '23rem' }}>
 
                                                 {!this.state.loading &&
                                                         this.state.imageName.map(() => {
@@ -118,10 +118,16 @@ export default class ProductPage extends Component {
 
                                                                 if (this.state.imageName[i] !== undefined)
                                                                         return (
-                                                                                <img onClick={(e) => this.swapImages(e.target)} width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ fontSize: '0', cursor: 'pointer' }} id={'img' + i} alt="logo" />
+                                                                                <img
+                                                                                        style={{ maxWidth: '100%',  cursor: 'pointer', fontSize: '0', margin: '0 auto' }}
+                                                                                        onClick={(e) => this.swapImages(e.target)} src={this.state.path + this.state.imageName[i]} id={'img' + i} alt={this.state.imageName[i] + "-additional-photo"} />
 
 
                                                                         );
+                                                                        // if there arent enough additionla photos, the grid would portray them improperly therefore an empty picture seems like a decent solution
+                                                                        // 3 because max 3 photos and it starts from 0
+                                                                else if(i !== 3)
+                                                                        return <img style={{ maxWidth: '100%',  cursor: 'pointer', fontSize: '0',margin: '0 auto' }} ></img>
                                                         })}
 
                                         </div>
