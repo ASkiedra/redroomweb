@@ -1,7 +1,7 @@
 import logo from './logo minus black.png';
 import { useLocation } from "react-router-dom"
 
-const MainContainer = () => {
+const MainPage = () => {
 
     var language = useLocation().pathname[1] + useLocation().pathname[2];
 
@@ -19,7 +19,7 @@ const MainContainer = () => {
                     <img id="main-logo" src={logo} alt="rr-white-logo" />
                 </div>
 
-                <p>{language === "LT" ? "Įsikūrę Europoje, specializuojamės itališkų baldų ir interjero dizaino srityje. Red-Room Studio pavers jūsų gyvenamąją erdvę gražia ir prabangia aplinka." : language === "EN" && "Based in Europe, we specialize in Italian furniture and interior design. RedRoom Studio will make your living space a beautiful and luxurious environment."}</p>
+                <p>{language === "LT" ? "Įsikūrę Europoje, specializuojamės itališkų baldų ir interjero dizaino srityje. Red-Room Studio pavers jūsų gyvenamąją erdvę gražia ir prabangia aplinka." : language === "EN" && "Based in Europe, we specialize in Italian furniture and interior design. Red-Room Studio will make your living space a beautiful and luxurious environment."}</p>
 
                 <div id="social-media-container">
                     <div></div>
@@ -45,4 +45,4 @@ const MainContainer = () => {
     );
 }
 
-export default MainContainer;
+export default MainPage;

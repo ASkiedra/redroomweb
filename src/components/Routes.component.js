@@ -5,7 +5,7 @@ import Contacts from '../components/Contacts.component';
 import AllProducts from './AllProducts.component';
 import Manufacturers from '../components/Manufacturers.component';
 import Interior from '../components/Interior.component';
-import MainContainer from '../components/MainContainer.component.js';
+import MainPage from '../components/MainPage.component.js';
 import ProductPage from '../components/ProductPage.component.js';
 import Inquire from '../components/Inquire.component';
 
@@ -23,8 +23,8 @@ const Routes = () => {
     return (
         <Switch>
             
-            <Route exact path='/:lang' component={MainContainer} />
-            <Route exact path="/" component={MainContainer} />
+            <Route exact path='/:lang' component={MainPage} />
+            <Route exact path="/" component={MainPage} />
 
             <Route exact path="/:lang/inquire" component={Inquire} />
 

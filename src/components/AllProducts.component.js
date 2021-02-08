@@ -345,7 +345,10 @@ const MainContainer = (props) => {
                                                                         </p>
                                                                 </div>
                                                         }
-                                                        <Link onClick={()=>setSF(false) }id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
+                                                        <Link onClick={() => function () {
+                                                                if (window.innerWidth < 1149)
+                                                                        setSF(false)
+                                                        }} id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
 
                                                 </div>
 
