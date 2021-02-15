@@ -385,8 +385,8 @@ const Header = (props) => {
                         <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550",  }} >
                             <Link style={{ fontWeight: 'bold', color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products"}>
                                 {
-                                    props.language === "LT" ? "VISI GAMINTOJAI" :
-                                        props.language === "EN" && "ALL MANUFACTURERS"
+                                    props.language === "LT" ? "VISI PRODUKTAI" :
+                                        props.language === "EN" && "ALL PRODUCTS"
                                 }                                </Link>
                         </li>
                     </div>
