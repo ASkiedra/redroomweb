@@ -25,7 +25,7 @@ const Header = (props) => {
         return (
             <div class="flexbox-container" style={{ width: "inherit", height: 'inherit', margin: "0 auto" }}>
                 <img
-                    style={{ margin: '0 auto', transform: 'scale(0.6)', width: "inherit", height: 'inherit' }}
+                    style={{ margin: '0 auto', cursor: 'pointer', transform: 'scale(0.6)', width: "inherit", height: 'inherit' }}
                     src={threeLinesLogo}
                     className="icon-button clickable"
                     alt="threeLines-logo"
