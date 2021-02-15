@@ -19,7 +19,19 @@ const MainPage = () => {
                     <img id="main-logo" src={logo} alt="rr-white-logo" />
                 </div>
 
-                <p>{language === "LT" ? "Įsikūrę Europoje, specializuojamės itališkų baldų ir interjero dizaino srityje. Red-Room Studio pavers jūsų gyvenamąją erdvę gražia ir prabangia aplinka." : language === "EN" && "Based in Europe, we specialize in Italian furniture and interior design. Red-Room Studio will make your living space a beautiful and luxurious environment."}</p>
+                <span>
+                    {language === "LT" ?
+                        <>
+                            Įsikūrę Europoje, <h1>specializuojamės itališkų baldų ir interjero dizaino srityje. </h1>
+                        Red-Room Studio pavers jūsų gyvenamąją erdvę gražia ir prabangia aplinka.
+                    </>
+                        : language === "EN" &&
+                        <>
+                            Based in Europe, <h1>we specialize in Italian furniture and interior design.</h1>
+                            Red-Room Studio will make your living space a beautiful and luxurious environment.
+                    </>
+                    }
+                </span>
 
                 <div id="social-media-container">
                     <div></div>
