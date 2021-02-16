@@ -106,7 +106,11 @@ export default class ProductPage extends Component {
 
 
                                                 </div>
-                                                <p style={{ textAlign: 'CENTER', position: 'relative', marginTop: '2rem', zIndex: '9999' }} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
+
+                                                <div id="product-text-container">
+                                                        <h3 style={{ display: 'inline', fontWeight: 'normal', textAlign: 'CENTER', position: 'relative', marginTop: '2rem', zIndex: '9999' }} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</h3>
+
+                                                </div>
                                         </div>
 
                                         {/* 23 rem because mainproductphoto container has a height of 23rem */}

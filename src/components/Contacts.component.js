@@ -16,14 +16,12 @@ const Contacts = (props) => {
                 </div>
 
                 <div id="container-contacts-text-grid" className="fast-fix-2">
-                    <p>
-                        {
-                            props.match.params.lang === "LT" ? "SUSISIEKIME:" :
-                                props.match.params.lang === "EN" && "GET IN TOUCH:"
-                        }
-
-
+                    <p> {
+                        props.match.params.lang === "LT" ? "SUSISIEKIME:" :
+                            props.match.params.lang === "EN" && "GET IN TOUCH:"
+                    }
                     </p>
+
                     <p>+370 6 431 0657</p>
                     <p>INFO@RED-ROOM.LT</p>
                 </div>

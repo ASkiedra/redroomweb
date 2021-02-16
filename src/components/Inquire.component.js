@@ -42,7 +42,7 @@ class Inquire extends Component {
         return (
             <div style={{height: 'inherit'}}>
                 <div id="inquire-container">
-                <h1 id="heading1" className="p-heading1">{this.props.match.params.lang === "LT" ? "Susisiekime" : this.props.match.params.lang === "EN" && "Get in Touch"}</h1>
+                <h2 style={{fontSize: '2em'}} id="heading2" className="p-heading2">{this.props.match.params.lang === "LT" ? "Susisiekime" : this.props.match.params.lang === "EN" && "Get in Touch"}</h2  >
               
                 <Form style={{marginTop: '3rem'}} onSubmit={this.handleSubmit.bind(this)}>
                     <FormGroup style={{marginTop: '3rem'}}controlId="formBasicEmail">

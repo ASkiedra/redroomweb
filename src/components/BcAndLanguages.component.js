@@ -47,7 +47,7 @@ const BcAndLanguages = (props) => {
             case "PRODUCTS":
                 modifiedPathname[0] = "PRODUKTAI";
                 break;
-            
+
             case "INQUIRE":
                 modifiedPathname[0] = "SIŲSTI UŽKLAUSĄ";
                 break;
@@ -124,7 +124,9 @@ const BcAndLanguages = (props) => {
                     <>
                         <span style={{ color: 'rgba(0, 0, 0, 0.7501)' }}>/</span>
                         <Link to={"/" + props.language + "/" + untranslatedPathname[0]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
-                            {modifiedPathname[0]}
+                            <h1>
+                                {modifiedPathname[0]}
+                            </h1>
                         </Link>
                     </>
                 }
@@ -135,45 +137,47 @@ const BcAndLanguages = (props) => {
                     <>
                         <span style={{ color: 'rgba(0, 0, 0, 0.7501)' }}>/</span>
                         <Link to={location.pathname.split(untranslatedPathname[1])[0] + untranslatedPathname[1]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
-                            {modifiedPathname[1]}
+                            <h2>
+                                {modifiedPathname[1]}
+                                </h2>
                         </Link>
                     </>
                 }
 
             </div>
 
-            <div id="lang-container">
+                        <div id="lang-container">
 
 
-                <div>
-                </div>
+                            <div>
+                            </div>
 
-                {props.language === "LT" ?
-                    <>
-                        <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: ' rgba(0, 0, 0, 0.7501)' }}>
-                            LT
+                            {props.language === "LT" ?
+                                <>
+                                    <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: ' rgba(0, 0, 0, 0.7501)' }}>
+                                        LT
                         </Link>
 
-                        <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
-                            EN
+                                    <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
+                                        EN
                         </Link>
-                    </>
-                    : props.language === "EN" &&
-                    <>
+                                </>
+                                : props.language === "EN" &&
+                                <>
 
-                        <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
-                            LT
+                                    <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
+                                        LT
             </Link>
 
 
-                        <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: 'black', fontWeight: ' rgba(0, 0, 0, 0.7501)', }}>
-                            EN
+                                    <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: 'black', fontWeight: ' rgba(0, 0, 0, 0.7501)', }}>
+                                        EN
         </Link>
-                    </>
+                                </>
 
-                }
-            </div>
-        </ul >
+                            }
+                        </div>
+                    </ul >
     );
 }
 
