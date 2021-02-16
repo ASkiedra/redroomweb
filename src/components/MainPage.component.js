@@ -31,7 +31,7 @@ const MainPage = () => {
                 <div id="social-media-container">
                     <div></div>
                     <a href="https://www.facebook.com/redroom.lt">
-                        <img class="social-media-logo" src="/images/facebook.png" />
+                        <img alt="facebook-logo" class="social-media-logo" src="/images/facebook.png" />
                     </a>
 
                     <div></div>
