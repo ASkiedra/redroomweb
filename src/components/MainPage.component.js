@@ -31,18 +31,18 @@ const MainPage = () => {
                 <div id="social-media-container">
                     <div></div>
                     <a href="https://www.facebook.com/redroom.lt">
-                        <img alt="facebook-logo" class="social-media-logo" src="/images/facebook.png" />
+                        <img alt="facebook-logo" className="social-media-logo" src="/images/facebook.png" />
                     </a>
 
                     <div></div>
 
                     {/* 
                     <a href="https://www.instagram.com">
-                        <img class="social-media-logo" src="/images/instagram.png" />
+                        <img className="social-media-logo" src="/images/instagram.png" />
                     </a>
 
                     <a href="https://www.linkedin.com">
-                        <img class="social-media-logo" src="/images/linkedin.png" />
+                        <img className="social-media-logo" src="/images/linkedin.png" />
                     </a> */}
                 </div>
             </div>

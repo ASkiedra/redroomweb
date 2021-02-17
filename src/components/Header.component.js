@@ -23,7 +23,7 @@ const Header = (props) => {
 
     const ThreeLines = (props) => {
         return (
-            <div class="flexbox-container" style={{ width: "inherit", height: 'inherit', margin: "0 auto" }}>
+            <div className="flexbox-container" style={{ width: "inherit", height: 'inherit', margin: "0 auto" }}>
                 <img
                     style={{ margin: '0 auto', cursor: 'pointer', transform: 'scale(0.6)', width: "inherit", height: 'inherit' }}
                     src={threeLinesLogo}
@@ -441,7 +441,7 @@ const Header = (props) => {
             <ul id="header-list">
                 {console.log('stateupdate')}
 
-                <div id="produktai" onClick={() => { setOTL(!openedThreeLines) }} style={{ height: 'inherit', width: 'inherit' }} id="threeLines">
+                <div onClick={() => { setOTL(!openedThreeLines) }} style={{ height: 'inherit', width: 'inherit' }} id="threeLines">
                     <Menu id="produktai" />
 
                 </div>
@@ -458,7 +458,7 @@ const Header = (props) => {
                 </Link>
 
                 <div className="header-img-onhover" style={{ height: 'inherit', transition: '0.5s all' }}>
-                    <Link style={{ height: ' 100%' }} class="flexbox-container" to={"/" + props.language}>
+                    <Link style={{ height: ' 100%' }} className="flexbox-container" to={"/" + props.language}>
                         <div className="flexbox-container" style={{ margin: '0 auto', height: 'inherit' }}>
                             <img id="header-logo" alt="header-logo" src={logo} />
                         </div>

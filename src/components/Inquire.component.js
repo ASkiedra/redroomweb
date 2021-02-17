@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as emailjs from 'emailjs-com';
-import { Button, FormFeedback, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button,  Form, FormGroup, Input } from 'reactstrap';
 
 
 class Inquire extends Component {

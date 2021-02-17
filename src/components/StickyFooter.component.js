@@ -9,7 +9,7 @@ const Footer = (props) => {
         <div id="stickyFooter">
             <div id="first-footer">
                 <ul>
-                        <Link class="footer-link" to={'/' + props.language + '/inquire'}>
+                        <Link className="footer-link" to={'/' + props.language + '/inquire'}>
                     <li>
                             {
                                 props.language === "LT" ? "Siųsti užklausą"
