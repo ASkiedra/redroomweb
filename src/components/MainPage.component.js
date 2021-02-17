@@ -35,7 +35,6 @@ const MainPage = () => {
                     </a>
 
                     <div></div>
-
                     {/* 
                     <a href="https://www.instagram.com">
                         <img className="social-media-logo" src="/images/instagram.png" />
