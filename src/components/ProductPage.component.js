@@ -68,7 +68,7 @@ export default class ProductPage extends Component {
 
         swapImages(target) {
                 // if the click was on one of the side images and main picture is defined or not null (loaded in general)
-                if (target.id === "img1" || target.id === 'img2' && document.getElementById('main-product-image') !== undefined && document.getElementById('main-product-image') !== null) {
+                if ((target.id === "img1" || target.id === 'img2') && document.getElementById('main-product-image') !== undefined && document.getElementById('main-product-image') !== null) {
 
                         let temp = document.getElementById('main-product-image').src;
                         document.getElementById('main-product-image').src = target.src;
@@ -101,7 +101,7 @@ export default class ProductPage extends Component {
 
                                                 <div style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit', maxHeight: 'inherit' }} id="container-1">
 
-                                                        {!this.state.loading && <img id="main-product-image" src={this.state.path + this.state.imageName[i]} style={{ maxHeight: 'inherit', minWidth: 'inherit', width: 'inherit', minHeight: '48%', fontSize: '0' }} alt="main-product-photo" />}
+                                                        {!this.state.loading && <img id="main-product-image" src={this.state.path + this.state.imageName[i]} style={{ maxHeight: 'inherit', minWidth: 'inherit', width: 'inherit', minHeight: '48%', fontSize: '0' }} alt="main-product" />}
 
 
 
@@ -117,7 +117,7 @@ export default class ProductPage extends Component {
                                         <div id="addit-photo-container" style={{ width: '100%', maxWidth: '100%', overflow: 'hidden', display: 'grid', height: '23rem' }}>
 
                                                 {!this.state.loading &&
-                                                        this.state.imageName.map(() => {
+                                                        this.state.imageName.forEach(() => {
                                                                 i++;
 
 
@@ -134,9 +134,7 @@ export default class ProductPage extends Component {
                                                                 else if (i !== 3)
                                                                         return (
                                                                                 <div id="asd">
-                                                                                        {console.log('123')}
-
-                                                                                        <img style={{ opacity: '0', height: 'inherit', maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }} ></img>
+                                                                                        <img alt={'additional-photo'+i}style={{ opacity: '0', height: 'inherit', maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }} ></img>
                                                                                 </div>
                                                                         );
 

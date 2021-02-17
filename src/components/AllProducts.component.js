@@ -358,7 +358,7 @@ const MainContainer = (props) => {
                                                                 {/* <p className={"sidebar-subtext"}>{language === "LT" ? "PAGRINDINĖ KATEGORIJA" : language === "EN" && "MAIN CATEGORY"}</p> */}
                                                                 {props.mainCategoriesArr.map(curMainCat => {
                                                                         // jei keiciu sita returna  - keist ir apacioj
-                                                                        return <Type language={language} translatable={"main"} filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
+                                                                        return <Type key={curMainCat} language={language} translatable={"main"} filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
                                                                 })}
                                                         </div>
 
@@ -366,7 +366,7 @@ const MainContainer = (props) => {
                                                                 {/* <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p> */}
                                                                 {props.subCategoriesArr.map(curSubCat => {
                                                                         // jei keiciu sita returna  - keist ir apacioj
-                                                                        return <Type language={language} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
+                                                                        return <Type key={curSubCat} language={language} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
                                                                 })}
                                                         </div>
                                                         {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
@@ -385,7 +385,7 @@ const MainContainer = (props) => {
                                                                 {/* <p className={"sidebar-subtext"}>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p> */}
                                                                 {props.manufacturersArr.map(curManufacturer => {
                                                                         // jei keiciu sita returna  - keist ir apacioj
-                                                                        return <Type language={language} translatable={false} filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
+                                                                        return <Type key={curManufacturer} language={language} translatable={false} filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
                                                                 })}
 
                                                         </div>
