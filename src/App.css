@@ -905,6 +905,7 @@ body {
   }
   #product-text {
     order: 3;
+    margin-top: -10rem;
   }
 }
 
@@ -1060,7 +1061,6 @@ body {
   }
 
   #product-text {
-    margin-top: 2rem;
     font-size: 2rem;
   }
 
