@@ -96,10 +96,9 @@ export default class ProductPage extends Component {
                                                 </div>
                                         </div> */}
 
-                                        {/* used to be30 */}
                                         <div style={{ maxWidth: '100%', maxHeight: '100%', height: '23rem' }}>
 
-                                                <div style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit', maxHeight: 'inherit' }} id="container-1">
+                                                <div style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit',marginBottom: '1rem', maxHeight: 'inherit' }} id="container-1">
 
                                                         {!this.state.loading && <img id="main-product-image" src={this.state.path + this.state.imageName[i]} style={{ maxHeight: 'inherit', minWidth: 'inherit', width: 'inherit', minHeight: '48%', fontSize: '0' }} alt="main-product" />}
 
@@ -108,7 +107,7 @@ export default class ProductPage extends Component {
                                                 </div>
 
                                                 <div id="product-text-container">
-                                                        <h3 style={{ display: 'inline', fontWeight: 'normal', textAlign: 'CENTER', position: 'relative', marginTop: '2rem', zIndex: '9999' }} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</h3>
+                                                        <h3 style={{ display: 'inline', fontWeight: 'normal', textAlign: 'CENTER', position: 'relative', marginTop: '3rem', zIndex: '9999' }} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</h3>
 
                                                 </div>
                                         </div>
