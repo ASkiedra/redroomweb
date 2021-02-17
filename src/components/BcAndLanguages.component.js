@@ -96,7 +96,59 @@ const BcAndLanguages = (props) => {
                 modifiedPathname[1] = "DIENOS SISTEMOS";
                 break;
 
+            case "SOFA BEDS":
+                modifiedPathname[1] = "SOFA LOVOS";
+                break;
 
+
+            case "CHAIRS":
+                modifiedPathname[1] = "KĖDĖS";
+                break;
+
+            case "SOFAS":
+                modifiedPathname[1] = "SOFOS";
+                break;
+
+            case "COFFEE TABLES":
+                modifiedPathname[1] = "KAVOS STALIUKAI";
+                break;
+
+            case "ARMCHAIRS":
+                modifiedPathname[1] = "FOTELIAI";
+                break;
+
+
+            case "POUFS":
+                modifiedPathname[1] = "SUOLIUKAI IR PUFAI";
+                break;
+
+            case "DINING TABLES":
+                modifiedPathname[1] = "VALGOMOJO STALAI";
+                break;
+
+                case "INDIVIDUALLY PLANNED WARDROBES":
+                    modifiedPathname[1] = "INDIVIDUALIAI PROJEKTUOJAMOS DRABUŽINĖS";
+                    break;
+
+                    
+                    case "CLOTHING HANGERS":
+                        modifiedPathname[1] = "RŪBŲ KABYKLOS";
+                        break;
+        
+                    
+                        case "BEDSIDE CABINETS":
+                            modifiedPathname[1] = "SPINTELĖS PRIE LOVOS";
+                            break;
+                            
+
+                            case "CHESTS OF DRAWERS":
+                                modifiedPathname[1] = "KOMODOS";
+                                break;
+                    
+
+                                case "BEDROOM BENCHES":
+                                    modifiedPathname[1] = "SUOLAI PRIE LOVOS";
+                                    break;
 
             case "WARDROBE SYSTEMS":
                 modifiedPathname[1] = "SPINTŲ SISTEMOS";
@@ -135,45 +187,45 @@ const BcAndLanguages = (props) => {
                         <Link to={location.pathname.split(untranslatedPathname[1])[0] + untranslatedPathname[1]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
                             <h2>
                                 {modifiedPathname[1]}
-                                </h2>
+                            </h2>
                         </Link>
                     </>
                 }
 
             </div>
 
-                        <div id="lang-container">
+            <div id="lang-container">
 
 
-                            <div>
-                            </div>
+                <div>
+                </div>
 
-                            {props.language === "LT" ?
-                                <>
-                                    <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: ' rgba(0, 0, 0, 0.7501)' }}>
-                                        LT
+                {props.language === "LT" ?
+                    <>
+                        <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: ' rgba(0, 0, 0, 0.7501)' }}>
+                            LT
                         </Link>
 
-                                    <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
-                                        EN
+                        <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
+                            EN
                         </Link>
-                                </>
-                                : props.language === "EN" &&
-                                <>
+                    </>
+                    : props.language === "EN" &&
+                    <>
 
-                                    <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
-                                        LT
+                        <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
+                            LT
             </Link>
 
 
-                                    <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: 'black', fontWeight: ' rgba(0, 0, 0, 0.7501)', }}>
-                                        EN
+                        <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: 'black', fontWeight: ' rgba(0, 0, 0, 0.7501)', }}>
+                            EN
         </Link>
-                                </>
+                    </>
 
-                            }
-                        </div>
-                    </ul >
+                }
+            </div>
+        </ul >
     );
 }
 
