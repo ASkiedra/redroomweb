@@ -9,11 +9,37 @@
   font-family: "Inria Serif", serif;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
 #asd {
   /* 1/2 of grid height */
   height: 11.5rem;
   margin: 0 auto;
   text-align: center;
+}
+
+.setHeightLimit {
+  max-height: 100vh; 
+  overflow: hidden;
 }
 
 #interior-photo-container {
@@ -726,7 +752,9 @@ a {
 }
 
 body {
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
 }
 
 #lang-container {

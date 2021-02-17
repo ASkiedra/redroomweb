@@ -11,6 +11,7 @@ var paramsFiltersApplied = false,
 export default class AllProducts extends Component {
         constructor(props) {
                 super(props);
+
                 this.state = { curProducts: [], fetchedProducts: [], loading: true, filtered: false };
                 // setstate would be better here but async wouldnt be too good
 
@@ -300,20 +301,14 @@ const MainContainer = (props) => {
 
         // scroll up on every route change
         useEffect(() => {
+            window.scrollTo(0,0)
+            window.scroll(0,0)
 
                 // if not on a mobile device, show filterb y default
                 if (window.innerWidth > 1149) {
                         setSF(true);
                 }
 
-                if (document.getElementsByClassName('container')[0] !== undefined && window.innerWidth > 1149) {
-                        // document.getElementsByClassName('container')[0].scrollTop = 0;
-                        document.getElementsByClassName('container')[0].scrollTo({
-                                top: 0, behavior: 'smooth'
-                        });
-
-
-                }
         }, [props.this.state]);
 
         return (props.curProducts.map(curProduct => {

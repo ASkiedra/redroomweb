@@ -8,18 +8,23 @@ const images = importAll(require.context('../../public/images/interior', false, 
 
 const enlargeImage = (imgSrc) => {
         if (document.getElementById("background-container") !== undefined) {
-                console.log(document.getElementById("background-container"))
+                console.log(window.pageYOffset)
+                document.getElementById("background-container").style.top = window.pageYOffset + 'px';
                 document.getElementById("background-container").classList.toggle("display-none");
+                document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
                 document.getElementById("enlarged-img").src = imgSrc;
 
         }
 }
 
 const Interior = () => {
-        var img;
         return (
                 < div style={{ minHeight: 'inherit' }}>
-                        <div style={{ cursor: 'pointer' }} onClick={() => document.getElementById("background-container").classList.toggle("display-none")} className="display-none" id="background-container">
+                        <div style={{ cursor: 'pointer' }} onClick={() => {
+                                document.getElementById("background-container").classList.toggle("display-none");
+                                document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
+                                console.log('blet')
+                        }} className="display-none" id="background-container">
                                 <div id="background-container-2">
                                         <img id="enlarged-img" alt='enlarged' src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" />
                                 </div>
@@ -31,13 +36,13 @@ const Interior = () => {
                                 {
                                         images.map(element => {
 
-                                                        return (
-                                                                <div key={element.src+'-photo'} id="interior-photo-container">
-                                                                        <img style={{transform: 'scale(2.7)',cursor: 'pointer' }} onClick={(e) => enlargeImage(e.target.src)} src={element.default} alt={element.default + '-photo'} />
-                                                                </div>
-                                                        )
+                                                return (
+                                                        <div key={element.src + '-photo'} id="interior-photo-container">
+                                                                <img style={{ transform: 'scale(2.7)', cursor: 'pointer' }} onClick={(e) => enlargeImage(e.target.src)} src={element.default} alt={element.default + '-photo'} />
+                                                        </div>
+                                                )
                                         })
-                                              
+
                                 }
                         </div>
                 </div >
