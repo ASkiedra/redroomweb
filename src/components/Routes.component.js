@@ -56,7 +56,7 @@ const Routes = () => {
             {/* non route pages */}
             <Route path="*">
                 < div style={{ height: 'inherit' }}>
-                    <h1>404</h1>
+                    <h1 style={{marginTop:'5rem', fontSize: '12rem', fontFamily: 'Roboto', textAlign:'center', margin:'0 auto', width: '100%'}}>404</h1>
                 </div >
             </Route>
         </Switch>
