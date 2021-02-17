@@ -21,7 +21,7 @@ const Interior = () => {
                 < div style={{ minHeight: 'inherit' }}>
                         <div style={{cursor: 'pointer'}} onClick={() => document.getElementById("background-container").classList.toggle("display-none")} class="display-none" id="background-container">
                                 <div id="background-container-2">
-                   
+                                <img id="enlarged-img" src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg"/>
                                 </div>
 
                         </div>
