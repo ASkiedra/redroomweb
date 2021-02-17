@@ -17,7 +17,8 @@
 }
 
 #interior-photo-container {
-  width: 28rem;
+  width: 100%;
+  max-width: 28rem;
   margin: 0 auto;
   height: 15.8rem;
   transform: scale(0.75);
