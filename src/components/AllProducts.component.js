@@ -316,98 +316,10 @@ const MainContainer = (props) => {
                 }
         }, [props.this.state]);
 
-        return (
+        return (props.curProducts.map(curProduct => {
+                return <Product key={curProduct.name + curProduct.imageName[0]} lang={props.lang} product={curProduct} />;
+        })
 
-                < div id='allproducts-container' >
-                        {/* sidebar */}
-                        <div id="sidebar-container-2">
-                                {!showFilter && window.innerWidth < 1149 &&
-                                        <div className="flexbox-container">
-
-                                                <p onClick={() => setSF(!showFilter)} id="filter-btn">
-                                                        {language === "LT" ? "filtrai" : language === "EN" && "filters"}
-                                                </p>
-                                        </div>
-
-                                }
-                                {
-                                        showFilter &&
-
-                                        <div id="sidebar-container" >
-
-                                                <div id="sidebar-btn-container">
-                                                        {
-                                                                window.innerWidth < 1149 &&
-
-                                                                <div className="flexbox-container">
-                                                                        <p onClick={() => setSF(!showFilter)} id="filter-btn">
-                                                                                {language === "LT" ? "filtrai" : language === "EN" && "filters"}
-                                                                        </p>
-                                                                </div>
-                                                        }
-                                                        <Link onClick={() => function () {
-                                                                if (window.innerWidth < 1149)
-                                                                        setSF(false)
-                                                        }} id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
-
-                                                </div>
-
-                                                <ul id={"products-sidebar"}>
-
-                                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                                                {/* <p className={"sidebar-subtext"}>{language === "LT" ? "PAGRINDINĖ KATEGORIJA" : language === "EN" && "MAIN CATEGORY"}</p> */}
-                                                                {props.mainCategoriesArr.map(curMainCat => {
-                                                                        // jei keiciu sita returna  - keist ir apacioj
-                                                                        return <Type key={curMainCat} language={language} translatable={"main"} filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
-                                                                })}
-                                                        </div>
-
-                                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                                                {/* <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p> */}
-                                                                {props.subCategoriesArr.map(curSubCat => {
-                                                                        // jei keiciu sita returna  - keist ir apacioj
-                                                                        return <Type key={curSubCat} language={language} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
-                                                                })}
-                                                        </div>
-                                                        {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                                <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p>
-                                                {props.subCategoriesArr.map(curSubCat => {
-                                                        // jei keiciu sita returna  - keist ir apacioj
-                                                        return <Type type={"SUB"} this={props.this} value={curSubCat} />
-                                                })}
-                                        </div> */}
-
-
-                                                        {/*
- CIA NE TYPE o manufacturer turetu but arba sidebar-item
-*/}
-                                                        <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>
-                                                                {/* <p className={"sidebar-subtext"}>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p> */}
-                                                                {props.manufacturersArr.map(curManufacturer => {
-                                                                        // jei keiciu sita returna  - keist ir apacioj
-                                                                        return <Type key={curManufacturer} language={language} translatable={false} filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
-                                                                })}
-
-                                                        </div>
-
-
-                                                </ul>
-                                        </div>
-                                }
-                        </div>
-
-                        {/* products */}
-                        {/* 20rem = hegiht of a product block. if i change it here - that has to change as well */}
-                        < div id="products-container">
-                                {props.curProducts.map(curProduct => {
-                                        return <Product key={curProduct.name + curProduct.imageName[0]} lang={props.lang} product={curProduct} />;
-                                })
-                                }
-
-
-                        </div>
-
-                </div >
         );
 }
 

@@ -17,23 +17,25 @@ function App() {
     console.log("**", pathname)
   }
 
+ 
+
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header language={language} />
 
+      <div style={{minHeight: '90vh', marginTop: '5rem'}}>
 
-      <div className='container'>
         <BcAndLanguages language={language} setLanguage={setLanguage} />
         <Routes setPathname={setPathname} />
 
-        {/* remove footer from small screen devices because it is unnecessary */}
-       {(window.innerHeight > 1000 && window.innerWidth > 1000) &&         <Footer  />   }
-
       </div>
+      {/* remove footer from small screen devices because it is unnecessary */}
+      {(window.innerHeight > 1000 && window.innerWidth > 1000) && <Footer />}
+
       <StickyFooter language={language} />
 
-           
-    
+
+
 
 
     </BrowserRouter >

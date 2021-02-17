@@ -301,6 +301,7 @@ footer {
 }
 
 #second-footer p,
+#second-footer a,
 #div-for-text {
   padding-bottom: 1rem;
   padding-left: 1rem;
@@ -312,7 +313,9 @@ footer {
 }
 
 footer p,
+footer a,
 footer span {
+  color: white;
   font-family: "Quicksand", sans-serif;
   text-transform: uppercase;
   font-size: 1.05rem;
@@ -402,6 +405,7 @@ a {
 }
 
 #container-contacts-text-grid p,
+#container-contacts-text-grid a,
 #container-contacts-text-grid h1,
 #container-contacts-text-grid span {
   font-family: "Quicksand", sans-serif;
@@ -412,7 +416,7 @@ a {
   background: rgba(0, 0, 0, 0.8301);
 }
 #container-contacts-text-grid span {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .dropdown {
@@ -455,7 +459,7 @@ a {
 }
 
 .container {
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
   min-height: 90vh;
   height: calc(100vh - 5rem);
   overflow: auto;
@@ -722,7 +726,7 @@ a {
 }
 
 body {
-  overflow: hidden;
+  overflow: scroll;
 }
 
 #lang-container {
@@ -822,7 +826,7 @@ body {
 @media (max-width: 959px) {
   #gamintoju-grid {
     grid-template-columns: 100%;
-    grid-template-rows: 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem;
+    grid-auto-rows: 20rem;
   }
 
   #gamintoju-grid div {
@@ -833,7 +837,8 @@ body {
 @media (min-width: 960px) and (max-width: 1450px) {
   #gamintoju-grid {
     grid-template-columns: 50% 50%;
-    grid-template-rows: 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem 20rem;
+    grid-auto-rows: 20rem;
+
   }
 
   #gamintoju-grid div {
@@ -905,7 +910,7 @@ body {
   }
   #product-text {
     order: 3;
-    margin-top: -10rem;
+    /* margin-top: -10rem; */
   }
 }
 
@@ -1061,6 +1066,7 @@ body {
   }
 
   #product-text {
+    margin-top: 5rem;
     font-size: 2rem;
   }
 
