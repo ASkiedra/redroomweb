@@ -30,33 +30,14 @@ const Interior = () => {
                         <div id="interior-container" style={{ paddingBottom: '12rem' }}>
                                 {
                                         images.map(element => {
-                                                img = new Image();
-                                                img.src = element.default;
 
-                                                img.onload = function () {
-                                                        var transAmount = 1;
-                                                        console.log(img.naturalWidth)
-                                                        if (img.naturalWidth / img.naturalHeight < 1.4)
-                                                        {
-                                                                // alert(this.width + 'x' + this.  height + element.default);
-                                                                transAmount=2.7;
-                                                                console.log(img.src+' '+transAmount)
-                                                                
-                                                        }
-                                                        console.log(img.src+' '+transAmount)
-                                                        
                                                         return (
-                                                                <div key={img.src+'-photo'} id="interior-photo-container">
-                                                                        <img style={{ transform: 'scale('+transAmount+')',cursor: 'pointer' }} onClick={(e) => enlargeImage(e.target.src)} src={element.default} alt={element.default + '-photo'} />
+                                                                <div key={element.src+'-photo'} id="interior-photo-container">
+                                                                        <img style={{transform: 'scale(2.7)',cursor: 'pointer' }} onClick={(e) => enlargeImage(e.target.src)} src={element.default} alt={element.default + '-photo'} />
                                                                 </div>
                                                         )
-
-                                                }
-
-                                                return img.onload()
-
-                                              
                                         })
+                                              
                                 }
                         </div>
                 </div >
