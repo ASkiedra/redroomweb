@@ -126,29 +126,29 @@ const BcAndLanguages = (props) => {
                 modifiedPathname[1] = "VALGOMOJO STALAI";
                 break;
 
-                case "INDIVIDUALLY PLANNED WARDROBES":
-                    modifiedPathname[1] = "INDIVIDUALIAI PROJEKTUOJAMOS DRABUŽINĖS";
-                    break;
+            case "INDIVIDUALLY PLANNED WARDROBES":
+                modifiedPathname[1] = "INDIVIDUALIAI PROJEKTUOJAMOS DRABUŽINĖS";
+                break;
 
-                    
-                    case "CLOTHING HANGERS":
-                        modifiedPathname[1] = "RŪBŲ KABYKLOS";
-                        break;
-        
-                    
-                        case "BEDSIDE CABINETS":
-                            modifiedPathname[1] = "SPINTELĖS PRIE LOVOS";
-                            break;
-                            
 
-                            case "CHESTS OF DRAWERS":
-                                modifiedPathname[1] = "KOMODOS";
-                                break;
-                    
+            case "CLOTHING HANGERS":
+                modifiedPathname[1] = "RŪBŲ KABYKLOS";
+                break;
 
-                                case "BEDROOM BENCHES":
-                                    modifiedPathname[1] = "SUOLAI PRIE LOVOS";
-                                    break;
+
+            case "BEDSIDE CABINETS":
+                modifiedPathname[1] = "SPINTELĖS PRIE LOVOS";
+                break;
+
+
+            case "CHESTS OF DRAWERS":
+                modifiedPathname[1] = "KOMODOS";
+                break;
+
+
+            case "BEDROOM BENCHES":
+                modifiedPathname[1] = "SUOLAI PRIE LOVOS";
+                break;
 
             case "WARDROBE SYSTEMS":
                 modifiedPathname[1] = "SPINTŲ SISTEMOS";

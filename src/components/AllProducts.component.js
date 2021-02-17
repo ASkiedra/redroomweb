@@ -26,7 +26,7 @@ export default class AllProducts extends Component {
                 // console.log(this.props.location.key)
                 // console.log(this.props.location.pathname)
                 // console.log(manufFilterArr)
-                // ar ne per daznai filtriuka kviecia mmmm. gal cia funkcija kokia imantresne
+                // ar ne per daznai filtra kviecia
                 if ((prevProps.location.key !== this.props.location.key || prevProps.location.pathname !== this.props.location.pathname)) {
                         subCatFilterArr = [];
                         mainCatFilterArr = []; manufFilterArr = [];
@@ -55,13 +55,7 @@ export default class AllProducts extends Component {
                         subCatFilterArr.push(this.props.match.params.subCategory)
                 if (this.props.match.params.mainCategory !== undefined && this.props.match.params.mainCategory !== 'null')
                         mainCatFilterArr.push(this.props.match.params.mainCategory)
-                // axios.get("http://localhost:5000/products/")
-                //         .then(response => {
-                //                 this.setState({ fetchedProducts: response.data, curProducts: response.data, loading: false }, console.log('PRODUCTS HAVE BEEN FETCHED'));
-                //         })
-                //         .catch((error) => {
-                //                 console.log(error);
-                //         })
+
 
 
                 this.setState({ fetchedProducts: Products, curProducts: Products, loading: false });
@@ -504,8 +498,6 @@ const Type = (props) => {
                 }
         }
         return (
-
-
                 // cia galima keist tik p o ne p ir li
                 // if its in the filter array, make it bold to show the filter is selected
                 props.filterArr.includes(props.value) ?
@@ -537,21 +529,6 @@ const Type = (props) => {
 
 
 const Product = (props) => {
-        // cia masyva padaryt kad vienakart kviestu fja o ji pereitu per visus bmp jpg tt. jei rado -break
-        // function imageExists(imageurl) {
-        //         var http = new XMLHttpRequest();
-
-        //         http.open('HEAD', imageurl, false);
-        //         http.send();
-
-        //         console.log('123')
-        //         if(http.status !== 200)
-        //                 console.log(imageurl)
-        //         // dukart alertina kazkodel
-        //         return http.status !== 404;
-
-        // }
-
         var path = "/images/products/" + props.product.manufacturer + '/' + props.product.name + '/' + props.product.imageName[0];
 
         return (
