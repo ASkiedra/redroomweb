@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Products from '../components/products';
 
-// these should not be global but they cant be in the state too. maybe set them in render(), pass them to components and functions
+// cant store these in the state because it would update too often
 var paramsFiltersApplied = false,
         subCatFilterArr = [], mainCatFilterArr = [], manufFilterArr = [];
 
@@ -13,26 +13,14 @@ export default class AllProducts extends Component {
                 super(props);
 
                 this.state = { curProducts: [], fetchedProducts: [], loading: true, filtered: false };
-                // setstate would be better here but async wouldnt be too good
-
         }
 
-        componentDidUpdate(prevProps, prevState, snapshot) {
-                // console.log('cdidupdate')
-
-                // console.log(prevProps.location.key)
-                // console.log(prevProps.location.pathname)
-
-                // console.log(this.props.location.key)
-                // console.log(this.props.location.pathname)
-                // console.log(manufFilterArr)
-                // ar ne per daznai filtra kviecia
+        componentDidUpdate(prevProps) {
                 if ((prevProps.location.key !== this.props.location.key || prevProps.location.pathname !== this.props.location.pathname)) {
-                        subCatFilterArr = [];
-                        mainCatFilterArr = []; manufFilterArr = [];
-                        console.log('cleared filters')
+                        subCatFilterArr = []; 
+                        mainCatFilterArr = []; 
+                        manufFilterArr = [];
 
-                        console.log(manufFilterArr)
                         if (this.props.match.params.manufacturer !== undefined && this.props.match.params.manufacturer !== 'null')
                                 manufFilterArr.push(this.props.match.params.manufacturer)
                         if (this.props.match.params.subCategory !== undefined && this.props.match.params.subCategory !== 'null')
@@ -47,7 +35,8 @@ export default class AllProducts extends Component {
 
         componentDidMount() {
                 subCatFilterArr = [];
-                mainCatFilterArr = []; manufFilterArr = [];
+                mainCatFilterArr = [];
+                manufFilterArr = [];
 
                 if (this.props.match.params.manufacturer !== undefined && this.props.match.params.manufacturer !== 'null')
                         manufFilterArr.push(this.props.match.params.manufacturer)
@@ -56,11 +45,8 @@ export default class AllProducts extends Component {
                 if (this.props.match.params.mainCategory !== undefined && this.props.match.params.mainCategory !== 'null')
                         mainCatFilterArr.push(this.props.match.params.mainCategory)
 
-
-
                 this.setState({ fetchedProducts: Products, curProducts: Products, loading: false });
 
-                console.log('mounted')
                 paramsFiltersApplied = false;
         }
 
@@ -88,7 +74,6 @@ export default class AllProducts extends Component {
                                 if (!found && manufFilterArr.length > 0)
                                         continue;
 
-                                // console.log('checked manufs')
 
                                 // check if the product matches any of the subcategory in their filter array
                                 if (subCatFilterArr.length > 0)
@@ -121,7 +106,6 @@ export default class AllProducts extends Component {
                                         }
 
                                 }
-                                // console.log(found)
 
 
                                 if (found) {
@@ -133,14 +117,12 @@ export default class AllProducts extends Component {
                 }
                 // no filters were present so curProducts are set to the products fetched from the db (all products)
                 else {
-                        console.log('no filters')
                         this.setState({ curProducts: this.state.fetchedProducts, filtered: true },)
                 }
         }
 
         // main filtering function
         addAndRemoveFilters(value, type) {
-
                 switch (type) {
                         case 'MANUFACTURER':
                                 // remove the value from the filter arr
@@ -159,6 +141,7 @@ export default class AllProducts extends Component {
                                 break;
 
                         case 'SUB':
+                                // remove the value from the filter arr
                                 if (subCatFilterArr.includes(value)) {
                                         subCatFilterArr = subCatFilterArr.filter(el => el !== value)
                                         this.filter()
@@ -177,6 +160,7 @@ export default class AllProducts extends Component {
 
 
                         case 'MAIN':
+                                // remove the value from the filter arr
                                 if (mainCatFilterArr.includes(value)) {
                                         mainCatFilterArr = mainCatFilterArr.filter(el => el !== value);
                                         this.filter();
@@ -191,13 +175,12 @@ export default class AllProducts extends Component {
                                         this.filter();
                                 }
                                 break;
+                        // case if params are getting set to the arrays and products are filtered
                         case undefined:
                                 this.filter()
                                 break;
                         default:
                                 break;
-
-                        // case if params are getting set to the arrays and products are filtered
 
                 }
         }
@@ -206,7 +189,7 @@ export default class AllProducts extends Component {
         findAllManufacturers(manufacturersArr) {
                 this.state.fetchedProducts.forEach(product => {
                         var found = false;
-                        // sitam turi but filtruotas o ne fetched
+
                         for (let i = 0; i < manufacturersArr.length; i++)
                                 if (manufacturersArr[i] === product.manufacturer) {
                                         found = true;
@@ -221,7 +204,7 @@ export default class AllProducts extends Component {
         findAllMainCategories(mainCategoriesArr) {
                 this.state.fetchedProducts.forEach(product => {
                         var found = false;
-                        // sitam turi but filtruotas o ne fetched
+
                         for (let i = 0; i < mainCategoriesArr.length; i++)
                                 if (mainCategoriesArr[i] === product.mainCategory) {
                                         found = true;
@@ -236,7 +219,6 @@ export default class AllProducts extends Component {
         findAllSubCategories(subCategoriesArr) {
                 this.state.fetchedProducts.forEach(product => {
                         var found = false;
-                        // sitam turi but filtruotas o ne fetched
                         for (let i = 0; i < subCategoriesArr.length; i++)
                                 if (subCategoriesArr[i] === product.subCategory) {
                                         found = true;
@@ -255,7 +237,6 @@ export default class AllProducts extends Component {
                 // using setState is too slow and for the purposes of this webpage state is not required for these items because they are only initialized and then get their data ONCE.
                 var typesArr = [], manufacturersArr = [], mainCategoriesArr = [], subCategoriesArr = [],
                         returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
-                console.log('state update')
 
                 if (!this.state.loading) {
                         // if the length is above 0, then the types have been found 
@@ -264,12 +245,9 @@ export default class AllProducts extends Component {
                         this.findAllSubCategories(subCategoriesArr);
 
 
-                        // works only for the params
+                        // works only for the params of the url
                         if (this.props.match.params.manufacturer !== undefined || this.props.match.params.subCategory !== undefined || this.props.match.params.mainCategory !== undefined) {
-
                                 if ((!paramsFiltersApplied) && (subCatFilterArr.length > 0 || mainCatFilterArr.length > 0 || manufFilterArr.length > 0)) {
-                                        console.log('renderif')
-
 
                                         this.filter();
                                         paramsFiltersApplied = true;
@@ -279,7 +257,7 @@ export default class AllProducts extends Component {
                                 if (this.state.filtered)
                                         returnable = <MainContainer mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
                         }
-                        // case no params
+                        // case no params in the url
                         else
                                 returnable = <MainContainer mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
 
@@ -298,7 +276,7 @@ const MainContainer = (props) => {
                 window.scrollTo(0, 0)
                 window.scroll(0, 0)
 
-                // if not on a mobile device, show filterb y default
+                // if not on a mobile device, show filter by default
                 if (window.innerWidth > 1149) {
                         setSF(true);
                 }
@@ -306,95 +284,79 @@ const MainContainer = (props) => {
         }, [props.this.state]);
 
         return (
-        <div id='allproducts-container' >
-                {/* sidebar */}
-                <div id="sidebar-container-2">
-                        {!showFilter && window.innerWidth < 1149 &&
-                                <div className="flexbox-container">
+                <div id='allproducts-container' >
+                        {/* sidebar */}
+                        <div id="sidebar-container-2">
+                                {!showFilter && window.innerWidth < 1149 &&
+                                        <div className="flexbox-container">
 
-                                        <p onClick={() => setSF(!showFilter)} id="filter-btn">
-                                                {language === "LT" ? "filtrai" : language === "EN" && "filters"}
-                                        </p>
-                                </div>
-
-                        }
-                        {
-                                showFilter &&
-
-                                <div id="sidebar-container" >
-
-                                        <div id="sidebar-btn-container">
-                                                {
-                                                        window.innerWidth < 1149 &&
-
-                                                        <div className="flexbox-container">
-                                                                <p onClick={() => setSF(!showFilter)} id="filter-btn">
-                                                                        {language === "LT" ? "filtrai" : language === "EN" && "filters"}
-                                                                </p>
-                                                        </div>
-                                                }
-                                                <Link onClick={() => function () {
-                                                        if (window.innerWidth < 1149)
-                                                                setSF(false)
-                                                }} id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
-
+                                                <p onClick={() => setSF(!showFilter)} id="filter-btn">
+                                                        {language === "LT" ? "filtrai" : language === "EN" && "filters"}
+                                                </p>
                                         </div>
 
-                                        <ul id={"products-sidebar"}>
+                                }
+                                {
+                                        showFilter &&
 
-                                                <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                                        {/* <p className={"sidebar-subtext"}>{language === "LT" ? "PAGRINDINĖ KATEGORIJA" : language === "EN" && "MAIN CATEGORY"}</p> */}
-                                                        {props.mainCategoriesArr.map(curMainCat => {
-                                                                // jei keiciu sita returna  - keist ir apacioj
-                                                                return <Type key={curMainCat} language={language} translatable={"main"} filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
-                                                        })}
-                                                </div>
+                                        <div id="sidebar-container" >
 
-                                                <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                                        {/* <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p> */}
-                                                        {props.subCategoriesArr.map(curSubCat => {
-                                                                // jei keiciu sita returna  - keist ir apacioj
-                                                                return <Type key={curSubCat} language={language} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
-                                                        })}
-                                                </div>
-                                                {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                        <p className={"sidebar-subtext"}>{language === "LT" ? "ANTRINĖ KATEGORIJA" : language === "EN" && "SUB CATEGORY"}</p>
-                                        {props.subCategoriesArr.map(curSubCat => {
-                                                // jei keiciu sita returna  - keist ir apacioj
-                                                return <Type type={"SUB"} this={props.this} value={curSubCat} />
-                                        })}
-                                </div> */}
+                                                <div id="sidebar-btn-container">
+                                                        {
+                                                                window.innerWidth < 1149 &&
 
-
-                                                {/*
-CIA NE TYPE o manufacturer turetu but arba sidebar-item
-*/}
-                                                <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>
-                                                        {/* <p className={"sidebar-subtext"}>{language === "LT" ? "GAMINTOJAI" : language === "EN" && "MANUFACTURERS"}</p> */}
-                                                        {props.manufacturersArr.map(curManufacturer => {
-                                                                // jei keiciu sita returna  - keist ir apacioj
-                                                                return <Type key={curManufacturer} language={language} translatable={false} filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
-                                                        })}
+                                                                <div className="flexbox-container">
+                                                                        <p onClick={() => setSF(!showFilter)} id="filter-btn">
+                                                                                {language === "LT" ? "filtrai" : language === "EN" && "filters"}
+                                                                        </p>
+                                                                </div>
+                                                        }
+                                                        <Link onClick={() => function () {
+                                                                if (window.innerWidth < 1149)
+                                                                        setSF(false)
+                                                        }} id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
 
                                                 </div>
 
+                                                <ul id={"products-sidebar"}>
 
-                                        </ul>
-                                </div>
-                        }
-                </div>
-                <div id='products-container'>
+                                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                                {props.mainCategoriesArr.map(curMainCat => {
+                                                                        return <SidebarItem key={curMainCat} language={language} translatable={"main"} filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
+                                                                })}
+                                                        </div>
 
-                        {props.curProducts.map(curProduct => {
-                                return <Product key={curProduct.name + curProduct.imageName[0]} lang={props.lang} product={curProduct} />
+                                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                                {props.subCategoriesArr.map(curSubCat => {
+                                                                        return <SidebarItem key={curSubCat} language={language} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
+                                                                })}
+                                                        </div>
 
-                        })}
-                </div>
+
+                                                        <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>
+                                                                {props.manufacturersArr.map(curManufacturer => {
+                                                                        return <SidebarItem key={curManufacturer} language={language} translatable={false} filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
+                                                                })}
+
+                                                        </div>
+
+
+                                                </ul>
+                                        </div>
+                                }
                         </div>
+
+                        <div id='products-container'>
+                                {props.curProducts.map(curProduct => {
+                                        return <Product key={curProduct.name + curProduct.imageName[0]} lang={props.lang} product={curProduct} />
+
+                                })}
+                        </div>
+                </div>
         );
 }
 
-const Type = (props) => {
+const SidebarItem = (props) => {
         var text = props.value;
 
         if (props.translatable === "main" && props.language === "LT") {
@@ -488,6 +450,7 @@ const Type = (props) => {
                         case "SALON FURNITURE SYSTEMS":
                                 text = "SVETAINĖS IR TV BALDŲ SISTEMOS";
                                 break;
+
                         case "WORKPLACE FURNITURE":
                                 text = "DARBO VIETOS";
                                 break;
@@ -498,29 +461,28 @@ const Type = (props) => {
                 }
         }
         return (
-                // cia galima keist tik p o ne p ir li
                 // if its in the filter array, make it bold to show the filter is selected
                 props.filterArr.includes(props.value) ?
-                <li key={props.value} className={"type-li"} onClick={(e) => {
-                        e.target.classList.toggle("bold-text");
-                        props.this.addAndRemoveFilters(props.value, props.type)
-                }}
-                        style={{ textAlign: 'right', listStyle: 'none' }}>
-                        <p key={props.value + 'p'} id={props.value} className={"product-type bold-text"}>
+                        <li key={props.value} className={"type-li"} onClick={(e) => {
+                                e.target.classList.toggle("bold-text");
+                                props.this.addAndRemoveFilters(props.value, props.type)
+                        }}
+                                style={{ textAlign: 'right', listStyle: 'none' }}>
+                                <p key={props.value + 'p'} id={props.value} className={"product-type bold-text"}>
 
 
-                                {text}
+                                        {text}
 
 
-                        </p>
-                </li>
+                                </p>
+                        </li>
                         : <li key={props.value} className={"type-li"} onClick={(e) => {
-                        e.target.classList.toggle("bold-text");
-                        props.this.addAndRemoveFilters(props.value, props.type)
-                }}
-                        style={{ textAlign: 'right', listStyle: 'none' }}>
-                        <p key={props.value + 'p'} id={props.value} className={"product-type"}> {text}</p>
-                </li>
+                                e.target.classList.toggle("bold-text");
+                                props.this.addAndRemoveFilters(props.value, props.type)
+                        }}
+                                style={{ textAlign: 'right', listStyle: 'none' }}>
+                                <p key={props.value + 'p'} id={props.value} className={"product-type"}> {text}</p>
+                        </li>
 
 
         );
@@ -539,26 +501,9 @@ const Product = (props) => {
                                 product: props.product,
                         }}>
                         <div className={"product-container"} style={{ height: 'inherit', width: 'inherit', textAlign: 'center' }}>
-                                {/* cant use <picture> because browser support is bad and some customers definitely use IE or opera mini */}
                                 {
                                         <img className="product-list-photo" src={path} alt="logo" />
-
-                                        // imageExists(path + ".jpg") ? <img className="product-list-photo" src={path + ".jpg"} alt="logo" />
-                                        //         :
-                                        //         imageExists(path + ".png") ? <img className="product-list-photo" src={path + '.png'} alt="logo" />
-                                        //                 :
-                                        //                 imageExists(path + ".jpeg") ? <img className="product-list-photo" src={path + '.jpeg'} alt="logo" />
-                                        //                         :
-                                        //                         imageExists(path + ".svg") ? <img className="product-list-photo" src={path + '.svg'} alt="logo" />
-                                        //                                 :
-                                        //                                 imageExists(path + ".bmp") ? <img className="product-list-photo" src={path + '.bmp'} alt="logo" />
-                                        //                                         :
-
-                                        //                                         <img className="product-list-photo" src={"/images/no_image.png"} alt="not-found" />
                                 }
-
-
-
 
                                 <p className={"product-name"}><b>{props.product.manufacturer} </b>{props.product.name}</p>
                         </div>

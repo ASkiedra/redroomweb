@@ -39,7 +39,6 @@ const Header = (props) => {
     }
 
 
-    // need more dropdown levels? 11:40 https://www.youtube.com/watch?v=IF6k0uZuypA
     const DropdownMenu2 = () => {
         function DropdownItem(props) {
             return props.children;
@@ -85,6 +84,7 @@ const Header = (props) => {
                         </Link>
                     </li>
                 </DropdownItem>
+               
                 <DropdownItem>
                     <li style={{ textTransform: 'uppercase', fontWeight: "550",  color: 'white' }} >
                         {/* heading text */}
@@ -112,26 +112,13 @@ const Header = (props) => {
 
 
 
-    // temporary fix
-    const checkIfMobile = () => {
-        // if the screen is larger than from an ordinary phone
-        if (window.innerHeight > 1000 || window.innerWidth > 1000) {
-            setOPD(!openedProductsDropdown)
-
-        }
-        else {
-            window.location.replace("/" + props.language + '/products')
-            console.log(openedProductsDropdown)
-
-        }
-    }
 
     const ProductsMenu = () => {
         return (
             <div id='products-header-container' style={{ height: "inherit" }} >
                 {/* OPENED */}
                 { openedProductsDropdown &&
-                    <div style={{ cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
+                    <div style={{ cursor: 'pointer', height: "inherit" }} onClick={()=>setOPD(!openedProductsDropdown)}>
                         <div id="produktai" className="flexbox-container" style={{ height: "inherit" }}>
                             <p id="produktai" className="header-item-onhover">
                                 {
@@ -146,7 +133,7 @@ const Header = (props) => {
 
                 {/* CLOSED */}
                 { !openedProductsDropdown &&
-                    <div id="produktai" className="flexbox-container" style={{ transition: '0.25s', cursor: 'pointer', height: "inherit" }} onClick={() => { checkIfMobile() }}>
+                    <div id="produktai" className="flexbox-container" style={{ transition: '0.25s', cursor: 'pointer', height: "inherit" }} onClick={()=>setOPD(!openedProductsDropdown)}>
                         <p id="produktai" className="header-item-onhover">
                             {
                                 props.language === "LT" ? "PRODUKTAI" :
@@ -398,17 +385,15 @@ const Header = (props) => {
 
 
 
-    // HIDE-SHOW DROPDOWNS
+    // HIDE/SHOW DROPDOWNS
     const [openedProductsDropdown, setOPD] = useState(false);
     const [openedThreeLines, setOTL] = useState(false);
-
 
 
 
     React.useEffect(() => {
         function handleKeyPress(event) {
             if (event.key === 'Escape') {
-                console.log('Escape pressed in useEffect')
                 setOPD(false);
                 setOTL(false);
             }
@@ -416,18 +401,15 @@ const Header = (props) => {
 
 
         const handleMouseClick = (event) => {
-            console.log(event.target.id)
-            console.log(event.target.id === "three-lines-img")
             // if the click wasnt on the products button
             if (event.target.id !== "produktai" && event.target.id !== "three-lines-img") {
-                console.log('uzdarom')
                 setOPD(false);
                 setOTL(false);
 
             }
         }
-        document.addEventListener('click', handleMouseClick);
 
+        document.addEventListener('click', handleMouseClick);
         document.addEventListener('keydown', handleKeyPress);
     }, []); // end of React.useEffect()
     // END OF HIDE-SHOW DROPDOWNS
