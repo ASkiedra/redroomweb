@@ -1055,6 +1055,12 @@ body {
     margin-top: 4rem;
   }
 
+  #products-sidebar {
+    width: 60%;
+    left: 40%;
+    position: relative;
+  }
+
   #sidebar-btn-container {
     grid-template-columns: 50% 50%;
   }
