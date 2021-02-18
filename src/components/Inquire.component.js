@@ -14,7 +14,7 @@ class Inquire extends Component {
 
         let templateParams = {
             from_name: this.state.email,
-            to_name: 'jonas.girdzijauskas@gmail.com',
+            to_name: 'info@red-room.lt',
             message: this.state.message,
         }
 
