@@ -10,7 +10,7 @@ const MainPage = () => {
         language = "LT";
     return (
         // marginTop -2rem because the designer asked for a transparent breadcrumbs component on the main page
-        <div id="main-page-cont0" style={{ background: 'url(/images/PIANCA_226-227_Otto-Platea-Icaro-Brema_Inari_Orchestra_Venere-0d7df3b2-6180-11eb-85aa-02a8dc75caa2.jpg)', backgroundSize: 'cover', marginTop: '-5rem', paddingBottom: '18rem', height: '100vh' }}>
+        <div id="main-page-cont0" style={{ background: 'url(/images/bg-50percent-min.jpg)', backgroundSize: 'cover', marginTop: '-5rem', paddingBottom: '18rem', height: '100vh' }}>
             <div></div>
 
             <div id="main-page-cont">
