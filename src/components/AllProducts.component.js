@@ -90,7 +90,6 @@ export default class AllProducts extends Component {
                                 if (!found && subCatFilterArr.length > 0)
                                         continue;
 
-                                // console.log('checked subs')
 
                                 // check if the product matches any of the maincategory in their filter array
                                 if (mainCatFilterArr.length > 0)

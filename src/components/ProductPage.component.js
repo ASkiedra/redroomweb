@@ -52,19 +52,6 @@ export default class ProductPage extends Component {
         }
 
 
-        // imageExists(imageurl) {
-        //         var http = new XMLHttpRequest();
-
-        //         http.open('HEAD', imageurl, false);
-        //         http.send();
-        //         // dukart alertina kazkodel
-        //         // alert(imageurl)
-        //         if (http.status !== 200)
-        //                 console.log(imageurl)
-        //         // alert(http.status + imageurl)
-        //         return http.status !== 404;
-
-        // }
 
         swapImages(target) {
                 // if the click was on one of the side images and main picture is defined or not null (loaded in general)
@@ -75,9 +62,9 @@ export default class ProductPage extends Component {
                         target.src = temp;
                 }
         }
+
         render() {
                 var i = 0;
-                // useeeffect reikia.
 
                 return (
                         <div style={{ paddingTop: '1rem', paddingBottom: '18rem', minHeight: 'inherit' }} >
@@ -85,20 +72,9 @@ export default class ProductPage extends Component {
 
                                         <p id="product-text">{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
 
-                                        {/* <div id='big-container' style={{height: '33rem', width: 'auto'}}>
-
-                                                <div style={{maxHeight: 'inherit', width: 'inherit', textAlign: 'center', height: 'inherit'}} id="prod-photo-container">
-
-                                                        {!this.state.loading && <img id="main-product-img"  width={300} height={200} src={this.state.path + this.state.imageName[i]} style={{ width: '100%', height: 'auto', maxHeight: 'inherit', fontSize: '0' }} alt="main-product-photo" />}
-
-
-                                                        <p style={{position: 'relative', zIndex: '9999'}} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</p>
-                                                </div>
-                                        </div> */}
-
                                         <div style={{ maxWidth: '100%', maxHeight: '100%', height: '23rem' }}>
 
-                                                <div style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit',marginBottom: '1rem', maxHeight: 'inherit' }} id="container-1">
+                                                <div style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit', marginBottom: '1rem', maxHeight: 'inherit' }} id="container-1">
 
                                                         {!this.state.loading && <img id="main-product-image" src={this.state.path + this.state.imageName[i]} style={{ maxHeight: 'inherit', minWidth: 'inherit', width: 'inherit', minHeight: '48%', fontSize: '0' }} alt="main-product" />}
 
@@ -113,35 +89,36 @@ export default class ProductPage extends Component {
                                         </div>
 
                                         {/* 23 rem because mainproductphoto container has a height of 23rem */}
-                                        <div id="addit-photo-container" style={{ width: '100%', maxWidth: '100%', overflow: 'hidden', display: 'grid', height: '23rem' }}>
-                                                {!this.state.loading &&
-                                                        this.state.imageName.map(() => {
-                                                                i++;
+                                        {this.state.imageName.length > 1 &&
+                                                <div id="addit-photo-container" style={{ width: '100%', maxWidth: '100%', overflow: 'hidden', display: 'grid', height: '23rem' }}>
+                                                        {!this.state.loading &&
+                                                                this.state.imageName.map(() => {
+                                                                        i++;
 
-                                                                if (this.state.imageName[i] !== undefined)
-                                                                        return (
-                                                                                <div id="asd">
-                                                                                        <img style={{ maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }}
-                                                                                                onClick={(e) => this.swapImages(e.target)} src={this.state.path + this.state.imageName[i]} id={'img' + i} alt={this.state.imageName[i] + "-additional-photo"} />
-                                                                                </div>
-                                                                        );
-                                                                // if there arent enough additionla photos, the grid would portray them improperly therefore an empty picture seems like a decent solution
-                                                                // 3 because max 3 photos and it starts from 0
-                                                                if (i !== 3)
-                                                                {
-                                                                        {console.log(i)}
+                                                                        if (this.state.imageName[i] !== undefined)
+                                                                                return (
+                                                                                        <div id="asd">
+                                                                                                <img style={{ maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }}
+                                                                                                        onClick={(e) => this.swapImages(e.target)} src={this.state.path + this.state.imageName[i]} id={'img' + i} alt={this.state.imageName[i] + "-additional-photo"} />
+                                                                                        </div>
+                                                                                );
+                                                                        // if there arent enough additionla photos, the grid would portray them improperly therefore an empty picture seems like a decent solution
+                                                                        // 3 because max 3 photos and it starts from 0
+                                                                        if (i !== 3) {
+                                                                                { console.log(i) }
 
-                                                                        return (
-                                                                                <div id="asd">
-                                                                                        <img alt='additional-photo' style={{ opacity: '0', height: 'inherit', maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }} ></img>
-                                                                                </div>
-                                                                        );
-                                                                }
+                                                                                return (
+                                                                                        <div id="asd">
+                                                                                                <img alt='additional-photo' style={{ opacity: '0', height: 'inherit', maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }} ></img>
+                                                                                        </div>
+                                                                                );
+                                                                        }
 
-                                                        })}
+                                                                })}
 
-                                        </div>
+                                                </div>
 
+                                        }
                                 </div>
                         </div >
                 );
