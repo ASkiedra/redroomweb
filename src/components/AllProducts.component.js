@@ -123,7 +123,6 @@ export default class AllProducts extends Component {
 
         // main filtering function
         addAndRemoveFilters(value, type) {
-                console.log('switch')
                 switch (type) {
                         case 'MANUFACTURER':
                                 // remove the value from the filter arr
@@ -155,6 +154,7 @@ export default class AllProducts extends Component {
                                 else {
                                         subCatFilterArr.push(value)
                                         this.filter()
+
                                 }
                                 break;
 
