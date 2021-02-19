@@ -23,7 +23,7 @@ const Contacts = (props) => {
                     </p>
 
                     <a href="tel:+37064310657">+370 6 431 0657</a> 
-                    <p>INFO@RED-ROOM.LT</p>
+                    <a href="mailto:info@red-room.lt">INFO@RED-ROOM.LT</a>
                 </div>
             </div>
         </div >

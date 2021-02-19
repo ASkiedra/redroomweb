@@ -887,7 +887,9 @@ body {
   right: 1;
   display: grid;
   display: -ms-grid;
+  
   -ms-grid-column: 2;
+
   grid-template-columns: 80% 10% 10%;
   -ms-grid-columns: 80% 10% 10%;
 }
