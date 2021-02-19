@@ -963,11 +963,59 @@ body {
   padding-bottom: 10rem;
 }
 
+/* ~2k support */
+@media (min-height: 1300px) and (min-width: 2300px) {
+  html {
+    font-size: 22px;
+  }
+
+
+
+  #container-contacts-text-grid p, #container-contacts-text-grid a, #container-contacts-text-grid h1, #container-contacts-text-grid span {
+    font-size: 1.62rem;
+  }
+
+  #container-contacts-text-grid span
+  {
+    font-size: 4.5rem;
+  }
+}
+
+/* ~4k support */
+@media (min-height: 2000px) and (min-width: 3700px) {
+  html {
+    font-size: 34px;
+  }
+
+}
+
+/* ~8k support */
+@media (min-height: 4000px) and (min-width: 7000px) {
+  html {
+    font-size: 75px;
+  }
+
+  #container-contacts-text-grid p, #container-contacts-text-grid a, #container-contacts-text-grid h1, #container-contacts-text-grid span {
+    font-size: 1.32rem;
+  }
+
+  #container-contacts-text-grid span
+  {
+    font-size: 3.5rem;
+  }
+}
+
+
+
 @media (max-height: 800px) and (max-width: 800px) {
   html {
     font-size: 12px;
   }
 }
+
+
+
+
 
 @media (max-width: 1100px) {
   #products-container {
