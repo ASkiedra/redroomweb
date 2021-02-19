@@ -439,7 +439,7 @@ const Header = (props) => {
 
                 </Link>
 
-                <div className="header-img-onhover" style={{ height: 'inherit', transition: '0.5s all' }}>
+                <div id="header-logo-container" className="header-img-onhover" style={{ height: 'inherit', transition: '0.5s all' }}>
                     <Link style={{ height: ' 100%' }} className="flexbox-container" to={"/" + props.language}>
                         <div className="flexbox-container" style={{ margin: '0 auto', height: 'inherit' }}>
                             <img id="header-logo" alt="header-logo" src={logo} />

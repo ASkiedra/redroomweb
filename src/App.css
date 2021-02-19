@@ -1237,6 +1237,15 @@ body {
 
   #threeLines {
     display: block;
+    -ms-grid-column: 1;
+  }
+
+  #header-logo-container {
+    -ms-grid-column: 2;
+  }
+
+  #header-list :nth-child(4) {
+    -ms-grid-column: 2;
   }
 
   .headerText {
