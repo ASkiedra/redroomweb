@@ -421,7 +421,6 @@ const Header = (props) => {
     return (
         <header style={{ display: 'block' }}>
             <ul id="header-list">
-                {console.log('stateupdate')}
 
                 <div onClick={() => { setOTL(!openedThreeLines) }} style={{ height: 'inherit', width: 'inherit' }} id="threeLines">
                     <Menu id="produktai" />

@@ -348,6 +348,39 @@ footer {
   background: black;
   width: 100%;
 }
+
+footer :nth-child(1) {
+  display: block;
+  -ms-grid-column: 1;
+  -ms-grid-row: 1;
+}
+
+footer :nth-child(1) span {
+  display: inline;
+  -ms-grid-column: 1;
+  -ms-grid-row: 1;
+}
+
+footer :nth-child(2) {
+  display: block;
+  -ms-grid-column: 2;
+  -ms-grid-row: 1;
+}
+
+footer :nth-child(3) {
+  -ms-grid-column: 1;
+  display: block;
+  -ms-grid-row: 2;
+}
+
+footer :nth-child(4) {
+  display: block;
+  -ms-grid-column: 2;
+  -ms-grid-row: 2;
+}
+
+
+
 #first-footer {
   background-color: #f5f3f4;
 }
@@ -516,7 +549,6 @@ a {
 #container-contacts-text-grid {
   padding-left: 4rem;
   display: grid;
-  display: -ms-grid;
   grid-template-rows: 50% 25% 25%;
   -ms-grid-rows: 50% 25% 25%;
 }
@@ -855,6 +887,7 @@ body {
   right: 1;
   display: grid;
   display: -ms-grid;
+  -ms-grid-column: 2;
   grid-template-columns: 80% 10% 10%;
   -ms-grid-columns: 80% 10% 10%;
 }

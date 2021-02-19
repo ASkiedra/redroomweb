@@ -4,23 +4,16 @@ import Products from '../components/products';
 
 
 export default class Gamintojai extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { fetchedProducts: [], loading: true };
-    }
-
-    componentDidMount() {
-        console.log('mounted')
-
-        this.setState({ fetchedProducts: Products, loading: false });
-
+    constructor() {
+        // 'super' initialises 'this' in the constructor
+        super();
+        this.state = { fetchedProducts: Products };
     }
 
     filter(manufacturers) {
-
         this.state.fetchedProducts.forEach(product => {
             var found = false;
-            // sitam turi but filtruotas o ne fetched
+
             for (let i = 0; i < manufacturers.length; i++)
                 if (manufacturers[i] === product.manufacturer) {
                     found = true;
@@ -30,33 +23,29 @@ export default class Gamintojai extends Component {
 
             if (!found && product.manufacturer !== "")
                 manufacturers.push(product.manufacturer)
-
-
         });
-
-
     }
 
 
     render() {
         var manufacturers = [];
 
-        if (!this.state.loading) {
-            this.filter(manufacturers);
+        this.filter(manufacturers);
 
-        }
-        return <GamintojaiContainer language={this.props.match.params.lang} filteredManufacturers={manufacturers} />
+        return <ManufacturersContainer IEfix={this.IEfix} language={this.props.match.params.lang} filteredManufacturers={manufacturers} />
 
     }
 }
 
-const GamintojaiContainer = (props) => {
+const ManufacturersContainer = (props) => {
+    var i = -1;
     return (
-        <div style={{ paddingBottom: '12rem',height: 'inherit' }}>
+        <div style={{ paddingBottom: '12rem', height: 'inherit' }}>
             <div id='gamintoju-grid' style={{ paddingBottom: '5rem' }}>
                 {props.filteredManufacturers.map(manufacturer => {
+                    i++;
                     return (
-                        <div key={manufacturer}>
+                        <div class="manufacturer-div" key={manufacturer}>
                             <Link className="flexbox-container" style={{
                                 width: "100%", height: "100%"
                             }} to={"/" + props.language + "/products/null/null/" + manufacturer}>
@@ -66,8 +55,9 @@ const GamintojaiContainer = (props) => {
                         </div>
                     )
                 })}
-                <div style={{height: "10rem"}}></div>
+                <div style={{ height: "10rem" }}></div>
             </div>
+
         </div >
     );
 }
