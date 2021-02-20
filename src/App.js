@@ -7,15 +7,14 @@ import BcAndLanguages from './components/BcAndLanguages.component';
 import Footer from './components/Footer.component';
 import StickyFooter from './components/StickyFooter.component';
 import Routes from './components/Routes.component';
-function App() {
 
-  // add a history save here
+
+function App() {
+  console.log("https://github.com/jonwow 2020-2021")
+
   const [language, setLanguage] = useState("LT");
 
 
-  const setPathname = (pathname) => {
-    console.log("**", pathname)
-  }
 
  
 
@@ -26,7 +25,7 @@ function App() {
       <div style={{minHeight: '90vh', marginTop: '5rem'}}>
 
         <BcAndLanguages language={language} setLanguage={setLanguage} />
-        <Routes setPathname={setPathname} />
+        <Routes/>
 
       </div>
       {/* remove footer from small screen devices because it is unnecessary */}
