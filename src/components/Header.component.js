@@ -326,6 +326,15 @@ const Header = (props) => {
 
                         <ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
                             <div>
+                                <Link to={"/" + props.language + "/products//beds"} className="dropdown-subtext">
+                                    {
+                                        props.language === "LT" ? "lovos" :
+                                            props.language === "EN" && "beds"
+                                    }
+                                </Link>
+                            </div>
+                            
+                            <div>
                                 <Link to={"/" + props.language + "/products//bedside cabinets"} className="dropdown-subtext">
                                     {
                                         props.language === "LT" ? "spintelĖs prie lovos " :
@@ -333,6 +342,8 @@ const Header = (props) => {
                                     }
                                 </Link>
                             </div>
+
+
 
                             <div>
                                 <Link to={"/" + props.language + "/products//chests of drawers"} className="dropdown-subtext">

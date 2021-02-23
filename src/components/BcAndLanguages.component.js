@@ -71,6 +71,10 @@ const BcAndLanguages = (props) => {
                 modifiedPathname[1] = "DARBO VIETOS";
                 break;
 
+                case "BEDS":
+                    modifiedPathname[1] = "LOVOS";
+                    break;
+
             case "INTERIOR":
                 modifiedPathname[1] = "INTERJERAS";
                 break;

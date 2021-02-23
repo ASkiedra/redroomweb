@@ -111,6 +111,8 @@ export default class AllProducts extends Component {
                                         tempArr.push(curProduct)
                                 }
                         }
+                        console.log(tempArr)
+                        
                         this.setState({ curProducts: tempArr, filtered: true },)
 
                 }
@@ -237,6 +239,7 @@ export default class AllProducts extends Component {
                 var typesArr = [], manufacturersArr = [], mainCategoriesArr = [], subCategoriesArr = [],
                         returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
 
+                        console.log(this.props.match.params.manufacturer)
                 if (!this.state.loading) {
                         // if the length is above 0, then the types have been found 
                         this.findAllManufacturers(manufacturersArr);
@@ -269,7 +272,6 @@ export default class AllProducts extends Component {
 const MainContainer = (props) => {
         const language = useLocation().pathname[1] + useLocation().pathname[2];
         const [showFilter, setSF] = useState(false);
-
         // scroll up on every route change
         useEffect(() => {
                 window.scrollTo(0, 0)
@@ -319,11 +321,11 @@ const MainContainer = (props) => {
 
                                                 <ul id={"products-sidebar"}>
 
-                                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                        {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
                                                                 {props.mainCategoriesArr.map(curMainCat => {
                                                                         return <SidebarItem key={curMainCat} language={language} translatable={"main"} filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
                                                                 })}
-                                                        </div>
+                                                        </div> */}
 
                                                         <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
                                                                 {props.subCategoriesArr.map(curSubCat => {
@@ -332,12 +334,12 @@ const MainContainer = (props) => {
                                                         </div>
 
 
-                                                        <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>
+                                                        {/* <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>
                                                                 {props.manufacturersArr.map(curManufacturer => {
                                                                         return <SidebarItem key={curManufacturer} language={language} translatable={false} filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
                                                                 })}
 
-                                                        </div>
+                                                        </div> */}
 
 
                                                 </ul>

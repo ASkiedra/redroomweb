@@ -117,7 +117,7 @@
   max-width: 28rem;
   margin: 0 auto;
   height: 15.8rem;
-  transform: scale(0.75);
+  transform: scale(0.7);
   overflow: hidden;
 }
 
@@ -734,7 +734,7 @@ a {
   width: 100%;
   top: 30%;
   scrollbar-width: thin;
-  overflow: hidden scroll;
+  overflow: hidden auto;
   scrollbar-color: rgba(255, 0, 0, 0.373) rgba(221, 221, 221, 0.159);
   height: 25rem;
 }
@@ -759,6 +759,7 @@ a {
 
 .product-type {
   font-family: "Roboto";
+  line-height: 1.5;
   text-transform: lowercase;
   cursor: pointer;
 }
@@ -947,7 +948,7 @@ body {
 }
 
 .product-type {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 #inquire-container {
   margin-top: 9rem;
@@ -969,6 +970,7 @@ body {
   grid-template-rows: auto;
   -ms-grid-rows: auto;
   height: inherit;
+  margin-top: 7rem;
   display: grid;
   display: -ms-grid;
   min-height: inherit;
@@ -1376,7 +1378,7 @@ body {
   }
 
   .product-type {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
 }
 /* ////////////////////////////////////////////////////////////////////////// */
