@@ -9,6 +9,9 @@
   font-family: "Inria Serif", serif;
 }
 
+#stickyFooter ul li {
+  font-family: "Quicksand", sans-serif;
+}
 /* internet explorer fixes */
 /* 1st child is 'threelines' which is visible on mobile, therefore we start with the 2nd child and give the 1st column position */
 #header-list :nth-child(2) {
@@ -261,7 +264,7 @@ header div p,
   color: black;
   list-style: none;
   flex-basis: 20%;
-  transition: 0.5s;
+  transition: filter 0.5s;
   text-align: center;
   font-weight: 400;
   margin: 0 auto;
@@ -658,7 +661,7 @@ a {
 #bcnl-container h2,
 #bcnl-container h3,
 #bcnl-container span {
-  font-size: 1.55rem;
+  font-size: 1.25rem;
   font-family: "Roboto";
 }
 

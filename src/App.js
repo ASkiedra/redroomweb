@@ -15,17 +15,14 @@ function App() {
   const [language, setLanguage] = useState("LT");
 
 
-
- 
-
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header language={language} />
 
-      <div style={{minHeight: '90vh', marginTop: '5rem'}}>
+      <div style={{ minHeight: '90vh', marginTop: '5rem' }}>
 
         <BcAndLanguages language={language} setLanguage={setLanguage} />
-        <Routes/>
+        <Routes />
 
       </div>
       {/* remove footer from small screen devices because it is unnecessary */}

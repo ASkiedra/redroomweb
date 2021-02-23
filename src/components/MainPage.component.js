@@ -10,10 +10,10 @@ const MainPage = () => {
         language = "LT";
     return (
         // marginTop -2rem because the designer asked for a transparent breadcrumbs component on the main page
-        <div id="main-page-cont0" style={{ background: 'url(/images/bg-50percent-min.jpg)', backgroundSize: 'cover', marginTop: '-5rem', paddingBottom: '18rem', height: '100vh' }}>
+        <div id="main-page-cont0" style={{ background: 'url(/images/bg-50percent-min-top.jpg)', backgroundSize: 'cover', marginTop: '-5rem', paddingBottom: '18rem', height: '100vh' }}>
             <div></div>
 
-            <div id="main-page-cont">
+            {/* <div id="main-page-cont">
                 <div style={{ width: '100%', textAlign: 'center', margin: '0 auto', paddingBottom: '3rem' }}>
 
                     <img id="main-logo" src={logo} alt="rr-white-logo" />
@@ -35,20 +35,14 @@ const MainPage = () => {
                     </a>
 
                     <div></div>
-                    {/* 
-                    <a href="https://www.instagram.com">
-                        <img className="social-media-logo" src="/images/instagram.png" />
-                    </a>
-
-                    <a href="https://www.linkedin.com">
-                        <img className="social-media-logo" src="/images/linkedin.png" />
-                    </a> */}
+                  
                 </div>
-            </div>
-            <div></div>
+            </div> */}
 
         </div >
-    );
+  
+  
+  );
 }
 
 export default MainPage;
