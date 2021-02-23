@@ -52,6 +52,10 @@ const BcAndLanguages = (props) => {
                 modifiedPathname[0] = "SIŲSTI UŽKLAUSĄ";
                 break;
 
+            case "DELIVERY":
+                modifiedPathname[0] = "PRISTATYMO SĄLYGOS IR TERMINAI";
+                break;
+
             default:
                 break;
         }

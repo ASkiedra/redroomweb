@@ -9,9 +9,20 @@
   font-family: "Inria Serif", serif;
 }
 
-#stickyFooter ul li {
+#first-footer ul li {
+  background-color: #f5f3f4;
+  padding: 1rem 0;
+  transition: filter 0.2s;
   font-family: "Quicksand", sans-serif;
 }
+
+#first-footer ul a :hover
+{
+    filter: invert(1);
+}
+
+
+
 /* internet explorer fixes */
 /* 1st child is 'threelines' which is visible on mobile, therefore we start with the 2nd child and give the 1st column position */
 #header-list :nth-child(2) {
@@ -384,26 +395,28 @@ footer :nth-child(4) {
 
 
 
-#first-footer {
-  background-color: #f5f3f4;
-}
+
 #first-footer ul {
   display: grid;
   display: -ms-grid;
   grid-template-columns: 50% 50%;
   -ms-grid-columns: 50% 50%;
 
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 #first-footer ul li {
   -ms-grid-column: 2;
   grid-column: 2;
 }
 
-#first-footer ul a {
+#first-footer ul :nth-child(1) {
   -ms-grid-column: 1;
   grid-column: 1;
+}
+
+
+#first-footer ul :nth-child(2) {
+  -ms-grid-column: 2;
+  grid-column: 2;
 }
 
 #first-footer li {
