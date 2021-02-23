@@ -11,6 +11,12 @@ export default class Gamintojai extends Component {
     }
 
     filter(manufacturers) {
+        // client requested manufacturers to be displayed even if they have no products
+        var otherManufs = [
+            'PIANCA', 'ROBERTI RATTAN', 'SOVET', 'LE COMFORT',
+            'Gaber', 'Saba', 'Accento', 'Porada'];
+
+
         this.state.fetchedProducts.forEach(product => {
             var found = false;
 
@@ -24,15 +30,30 @@ export default class Gamintojai extends Component {
             if (!found && product.manufacturer !== "")
                 manufacturers.push(product.manufacturer)
         });
+
+
+        otherManufs.forEach(manuf => {
+            var found = false;
+
+            for (let i = 0; i < manufacturers.length; i++)
+                if (manufacturers[i] === manuf) {
+                    found = true;
+                    break;
+                }
+
+
+            if (!found && manuf !== "")
+                manufacturers.push(manuf)
+        });
+
     }
 
 
     render() {
-        var manufacturers = [
-            'PIANCA', 'ROBERTI RATTAN', 'SOVET', 'LE COMFORT', 
-            'Gaber', 'Saba',  'Accento',  'Porada'];
-            // 'Novamobili', 'Chairs&More','Longhi', 'Frigerio',  'Desalto', 'Potocco','Montbell',
-            // blogos kokybes 'Connubia','Frei frau', 
+        var manufacturers = [];
+
+        // 'Novamobili', 'Chairs&More','Longhi', 'Frigerio',  'Desalto', 'Potocco','Montbell',
+        // blogos kokybes 'Connubia','Frei frau', 
         this.filter(manufacturers);
 
         return <ManufacturersContainer language={this.props.match.params.lang} filteredManufacturers={manufacturers} />
