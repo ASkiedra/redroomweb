@@ -21,6 +21,10 @@
     filter: invert(1);
 }
 
+#first-footer ul a {
+  background: #f5f3f4;
+}
+
 
 
 /* internet explorer fixes */
