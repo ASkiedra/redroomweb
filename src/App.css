@@ -16,7 +16,8 @@
   font-family: "Quicksand", sans-serif;
 }
 
-#first-footer ul a :hover
+#first-footer ul a:hover
+
 {
     filter: invert(1);
 }
