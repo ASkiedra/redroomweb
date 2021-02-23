@@ -28,11 +28,12 @@ export default class Gamintojai extends Component {
 
 
     render() {
-        var manufacturers = [];
-
+        var manufacturers = [
+            'PIANCA', 'ROBERTI', 'SOVET', 'LE COMFORT', 'Connubia',
+            'Gaber', 'Frei frau', 'Novamobili', 'Chairs&More', 'Frigerio', 'Potocco', 'Desalto', 'Saba', 'Longhi', 'Accento', 'Montbell', 'Porada'];
         this.filter(manufacturers);
 
-        return <ManufacturersContainer IEfix={this.IEfix} language={this.props.match.params.lang} filteredManufacturers={manufacturers} />
+        return <ManufacturersContainer language={this.props.match.params.lang} filteredManufacturers={manufacturers} />
 
     }
 }
