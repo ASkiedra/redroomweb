@@ -8,6 +8,7 @@ import Interior from '../components/Interior.component';
 import MainPage from '../components/MainPage.component.js';
 import ProductPage from '../components/ProductPage.component.js';
 import Inquire from '../components/Inquire.component';
+import Delivery from '../components/Delivery.component';
 
 
 const Routes = () => {
@@ -50,6 +51,7 @@ const Routes = () => {
 
             <Route exact path="/:lang/contacts" component={Contacts} />
             <Route exact path="/:lang/interior" component={Interior} />
+            <Route exact path="/:lang/delivery" component={Delivery} />
 
             {/* non route pages */}
             <Route path="*">
