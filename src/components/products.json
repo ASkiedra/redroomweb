@@ -834,7 +834,7 @@
   {
     "name": "Brema",
     "imageName": [
-      "Brema"
+      "Brema.jpg"
     ],
     "mainCategory": "day systems",
     "subCategory": "sideboards",
@@ -847,7 +847,7 @@
   {
     "name": "Cartagena Seida",
     "imageName": [
-      "Cartagena Seida"
+      "Cartagena Seida.jpg"
     ],
     "mainCategory": "dining room furniture",
     "subCategory": "dining tables",
@@ -860,7 +860,7 @@
   {
     "name": "Confluence Orchestra",
     "imageName": [
-      "Confluence Orchestra"
+      "Confluence Orchestra.jpg"
     ],
     "mainCategory": "dining room furniture",
     "subCategory": "dining tables",
@@ -873,7 +873,7 @@
   {
     "name": "Maestro Emi",
     "imageName": [
-      "Maestro Emi"
+      "Maestro Emi.jpg"
     ],
     "mainCategory": "dining room furniture",
     "subCategory": "dining tables",
@@ -886,7 +886,7 @@
   {
     "name": "Delta",
     "imageName": [
-      "Delta"
+      "Delta.jpg"
     ],
     "mainCategory": "dining room furniture",
     "subCategory": "dining tables",
@@ -899,7 +899,7 @@
   {
     "name": "Key West Caribe",
     "imageName": [
-      "Caribe"
+      "Caribe.jpg"
     ],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "lounge chairs",
@@ -912,7 +912,7 @@
   {
     "name": "Key West Sunbed",
     "imageName": [
-      "Key West gultas"
+      "Key West gultas.jpg"
     ],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "sunbeds",
@@ -925,8 +925,8 @@
   {
     "name": "Key West Chair",
     "imageName": [
-      "Key West Kede",
-      "Key West Kede2"
+      "Key West Kede.jpg",
+      "Key West Kede2.jpg"
     ],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "chairs",
@@ -939,8 +939,8 @@
   {
     "name": "Key West Basket",
     "imageName": [
-      "Key West Krepsys",
-      "Key West Krepsys2"
+      "Key West Krepsys.jpg",
+      "Key West Krepsys2.jpg"
     ],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "baskets",
@@ -953,7 +953,7 @@
   {
     "name": "Key West Pouf",
     "imageName": [
-      "Key West pufas"
+      "Key West pufas.jpg"
     ],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "poufs",
@@ -966,7 +966,7 @@
   {
     "name": "Key West Chaise Lounge",
     "imageName": [
-      "key west sezlongas"
+      "key west sezlongas.jpg"
     ],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "lounge chairs",
@@ -979,8 +979,8 @@
   {
     "name": "Key West Sofa",
     "imageName": [
-      "Key West Sofa",
-      "Key West Sofa2"
+      "Key West Sofa".jpg,
+      "Key West Sofa2.jpg"
     ],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "sofas",
@@ -993,8 +993,8 @@
   {
     "name": "Key West Sofas",
     "imageName": [
-      "Key West Sofa3",
-      "Key West Sofa4"
+      "Key West Sofa3.jpg",
+      "Key West Sofa4.jpg"
     ],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "sofas",
@@ -1007,8 +1007,8 @@
   {
     "name": "Key West Table",
     "imageName": [
-      "Key West stalas",
-      "Key West stalas2"
+      "Key West stalas.jpg",
+      "Key West stalas2.jpg"
     ],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "tables",
