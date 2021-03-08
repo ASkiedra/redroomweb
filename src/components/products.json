@@ -1,1444 +1,1021 @@
 [
   {
     "name": "Life",
-
-    "imageName": ["Life4x-2.jpg", "Life5.jpg"],
-
+    "imageName": [
+      "Life4x-2.jpg",
+      "Life5.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofa beds",
-
     "manufacturer": "Dienne",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Lisbona",
-
-    "imageName": ["Lisbona4x.jpg", "Lisbona5.jpg"],
-
+    "imageName": [
+      "Lisbona4x.jpg",
+      "Lisbona5.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofa beds",
-
     "manufacturer": "Dienne",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Mithos",
-
-    "imageName": ["Mithos4x.jpg", "Mithos5.jpg"],
-
+    "imageName": [
+      "Mithos4x.jpg",
+      "Mithos5.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofa beds",
-
     "manufacturer": "Dienne",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "More",
-
-    "imageName": ["More3.jpg", "More4.jpg"],
-
+    "imageName": [
+      "More3.jpg",
+      "More4.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofa beds",
-
     "manufacturer": "Dienne",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Space",
-
-    "imageName": ["Space2-2.jpg", "Space4.jpg"],
-
+    "imageName": [
+      "Space2-2.jpg",
+      "Space4.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofa beds",
-
     "manufacturer": "Dienne",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Valentina",
-
-    "imageName": ["Valentina4-2.jpg", "Valentina5.jpg"],
-
+    "imageName": [
+      "Valentina4-2.jpg",
+      "Valentina5.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofa beds",
-
     "manufacturer": "Dienne",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "REGINA",
-
-    "imageName": ["VANESSA-58d90f7247c216.jpg"],
-
+    "imageName": [
+      "VANESSA-58d90f7247c216.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "armchairs",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "ORBITALE",
-
-    "imageName": ["ORBITALE-5d9c9b7435c451.jpg"],
-
+    "imageName": [
+      "ORBITALE-5d9c9b7435c451.jpg"
+    ],
     "mainCategory": "bedroom furniture",
-
     "subCategory": "beds",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "GALATTICO",
-
-    "imageName": ["GALATTICO-5d9ca45d3221a1.jpg"],
-
+    "imageName": [
+      "GALATTICO-5d9ca45d3221a1.jpg"
+    ],
     "mainCategory": "bedroom furniture",
-
     "subCategory": "beds",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Astratto",
-
-    "imageName": ["Astratto.jpg"],
-
+    "imageName": [
+      "Astratto.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "coffee tables",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Circolo",
-
-    "imageName": ["Circolo.jpg"],
-
+    "imageName": [
+      "Circolo.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "coffee tables",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Deco",
-
-    "imageName": ["Deco.jpg"],
-
+    "imageName": [
+      "Deco.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "coffee tables",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Deco Small",
-
-    "imageName": ["Deco-Small.jpg"],
-
+    "imageName": [
+      "Deco-Small.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "coffee tables",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Fly",
-
-    "imageName": ["Fly.jpg"],
-
+    "imageName": [
+      "Fly.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "coffee tables",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Fly Small",
-
-    "imageName": ["Fly-Small.jpg"],
-
+    "imageName": [
+      "Fly-Small.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "coffee tables",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Grancircolo",
-
-    "imageName": ["Grancircolo.jpg"],
-
+    "imageName": [
+      "Grancircolo.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "coffee tables",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Metrico",
-
-    "imageName": ["Metrico.jpg"],
-
+    "imageName": [
+      "Metrico.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "coffee tables",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Metrico Small",
-
-    "imageName": ["Metrico-Small.jpg"],
-
+    "imageName": [
+      "Metrico-Small.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "coffee tables",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Plane",
-
-    "imageName": ["Plane.jpg"],
-
+    "imageName": [
+      "Plane.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "coffee tables",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Round",
-
-    "imageName": ["Round.jpg"],
-
+    "imageName": [
+      "Round.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "coffee tables",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Shiny",
-
-    "imageName": ["Shiny.jpg"],
-
+    "imageName": [
+      "Shiny.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "coffee tables",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Bonola",
-
-    "imageName": ["Bonola_6D2018_2018_09_07_1234-e1551692415228.jpg"],
-
+    "imageName": [
+      "Bonola_6D2018_2018_09_07_1234-e1551692415228.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "armchairs",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Dia",
-
-    "imageName": ["Dia_6D2018_2018_09_07_1171-e1551699233739.jpg"],
-
+    "imageName": [
+      "Dia_6D2018_2018_09_07_1171-e1551699233739.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "armchairs",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Ghirla",
-
-    "imageName": ["ghirla-e1551722865526.jpg"],
-
+    "imageName": [
+      "ghirla-e1551722865526.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "armchairs",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Gioia",
-
-    "imageName": ["Gioia_mod18-e1551700221299.jpg"],
-
+    "imageName": [
+      "Gioia_mod18-e1551700221299.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "armchairs",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Iseo",
-
-    "imageName": ["iseo-e1551723634867.jpg"],
-
+    "imageName": [
+      "iseo-e1551723634867.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "armchairs",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Lima",
-
-    "imageName": ["Lima_mod18-e1551708255785.jpg"],
-
+    "imageName": [
+      "Lima_mod18-e1551708255785.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "armchairs",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Luis",
-
-    "imageName": ["Luis_6D2018_2018_09_07_1273-e1551720580384.jpg"],
-
+    "imageName": [
+      "Luis_6D2018_2018_09_07_1273-e1551720580384.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "armchairs",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Moscova",
-
-    "imageName": ["Moscova_mod18-e1551721041538.jpg"],
-
+    "imageName": [
+      "Moscova_mod18-e1551721041538.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "armchairs",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Rho",
-
-    "imageName": ["Rho_mod18_mod18-e1551721263934.jpg"],
-
+    "imageName": [
+      "Rho_mod18_mod18-e1551721263934.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "armchairs",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Rondo",
-
-    "imageName": ["Rondo_mod18-e1551721468336.jpg"],
-
+    "imageName": [
+      "Rondo_mod18-e1551721468336.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "armchairs",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Stresa",
-
-    "imageName": ["Stresa_6D2018_2018_09_06_0994-e1551724113770.jpg"],
-
+    "imageName": [
+      "Stresa_6D2018_2018_09_06_0994-e1551724113770.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "armchairs",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Archie",
-
-    "imageName": ["Archie.jpg", "Archie2.jpg"],
-
+    "imageName": [
+      "Archie.jpg",
+      "Archie2.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "dining tables",
-
     "manufacturer": "Domitalia",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Archie BO",
-
-    "imageName": ["Archie3.jpg", "Archie4.jpg"],
-
+    "imageName": [
+      "Archie3.jpg",
+      "Archie4.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "dining tables",
-
     "manufacturer": "Domitalia",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Dorico",
-
-    "imageName": ["Dorico.jpg", "Dorico2.jpg", "Dorico3.jpg"],
-
+    "imageName": [
+      "Dorico.jpg",
+      "Dorico2.jpg",
+      "Dorico3.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "dining tables",
-
     "manufacturer": "Domitalia",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Carino",
-
-    "imageName": ["CARINO-5f51f2b2048eb5.jpg"],
-
+    "imageName": [
+      "CARINO-5f51f2b2048eb5.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Autentico",
-
-    "imageName": ["AUTENTICO-5cc6be8c9103f4.jpg"],
-
+    "imageName": [
+      "AUTENTICO-5cc6be8c9103f4.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Carisma",
-
-    "imageName": ["CARISMA-5afabd5d081fa3.jpg"],
-
+    "imageName": [
+      "CARISMA-5afabd5d081fa3.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Click",
-
-    "imageName": ["CLICK-5f3d3faedcd464.jpg"],
-
+    "imageName": [
+      "CLICK-5f3d3faedcd464.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Intenso",
-
-    "imageName": ["INTENSO-5d9dd9efd7c274.jpg"],
-
+    "imageName": [
+      "INTENSO-5d9dd9efd7c274.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Ispirazione",
-
-    "imageName": ["Ispirazione-5cadbe3bb69a18.jpg"],
-
+    "imageName": [
+      "Ispirazione-5cadbe3bb69a18.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Kartun",
-
-    "imageName": ["KARTUN-5f3d43d3b3cc23.jpg"],
-
+    "imageName": [
+      "KARTUN-5f3d43d3b3cc23.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Leggerezza",
-
-    "imageName": ["LEGGEREZZA-5acf66854fc3e6.jpg"],
-
+    "imageName": [
+      "LEGGEREZZA-5acf66854fc3e6.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Piacere",
-
-    "imageName": ["PIACERE-58d53f2294d547.jpg"],
-
+    "imageName": [
+      "PIACERE-58d53f2294d547.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Premura",
-
-    "imageName": ["PREMURA-5bbf80228b5474.jpg"],
-
+    "imageName": [
+      "PREMURA-5bbf80228b5474.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Raffinato",
-
-    "imageName": ["RAFFINATO-5cc6bd6108d9b6.jpg"],
-
+    "imageName": [
+      "RAFFINATO-5cc6bd6108d9b6.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Romantico",
-
-    "imageName": ["ROMANTICO 58d56523377fd5.jpg"],
-
+    "imageName": [
+      "ROMANTICO 58d56523377fd5.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Stupore",
-
-    "imageName": ["STUPORE.jpg"],
-
+    "imageName": [
+      "STUPORE.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Natuzzi Editions",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Amanda",
-
-    "imageName": ["amanda.png"],
-
+    "imageName": [
+      "amanda.png"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "chairs",
-
     "manufacturer": "Quinti",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Deep",
-
-    "imageName": ["deep.png"],
-
+    "imageName": [
+      "deep.png"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "chairs",
-
     "manufacturer": "Quinti",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Fourside",
-
-    "imageName": ["fourside.png"],
-
+    "imageName": [
+      "fourside.png"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "chairs",
-
     "manufacturer": "Quinti",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Gilda",
-
-    "imageName": ["gilda.png"],
-
+    "imageName": [
+      "gilda.png"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "chairs",
-
     "manufacturer": "Quinti",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Ginevra",
-
-    "imageName": ["ginevra.png"],
-
+    "imageName": [
+      "ginevra.png"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "chairs",
-
     "manufacturer": "Quinti",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Manta",
-
-    "imageName": ["manta.png"],
-
+    "imageName": [
+      "manta.png"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "chairs",
-
     "manufacturer": "Quinti",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Minimax",
-
-    "imageName": ["minimax.png"],
-
+    "imageName": [
+      "minimax.png"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "chairs",
-
     "manufacturer": "Quinti",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Olga",
-
-    "imageName": ["olga.png", "olga2.png"],
-
+    "imageName": [
+      "olga.png",
+      "olga2.png"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "chairs",
-
     "manufacturer": "Quinti",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
     ]
   },
-
   {
     "name": "Assago",
-
-    "imageName": ["Assago_B8A7310_mod18-1920x745.jpg"],
-
+    "imageName": [
+      "Assago_B8A7310_mod18-1920x745.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Cavour",
-
-    "imageName": ["Cavour-2-1400x933.jpg"],
-
+    "imageName": [
+      "Cavour-2-1400x933.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Ghisolfa",
-
-    "imageName": ["ghisolfa-1400x933.jpg"],
-
+    "imageName": [
+      "ghisolfa-1400x933.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Isola",
-
-    "imageName": ["Isola_B8A7562_scont_mod18.jpg"],
-
+    "imageName": [
+      "Isola_B8A7562_scont_mod18.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Manzoni",
-
-    "imageName": ["manzoni-1-1400x933.jpg"],
-
+    "imageName": [
+      "manzoni-1-1400x933.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Turro",
-
-    "imageName": ["Turro-living-1400x933.jpg"],
-
+    "imageName": [
+      "Turro-living-1400x933.jpg"
+    ],
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-
+    ]
+  },
   {
     "name": "Zara",
-
     "imageName": [
       "Zara-1400x933.jpg",
       "zara-deep-1400x933.jpg",
       "Zara-light_6D2018_2018_09_07_1307-copia.jpg"
     ],
-
     "mainCategory": "dining room furniture",
-
     "subCategory": "sofas",
-
     "manufacturer": "Nicoline",
-
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  },
-  
-  
-  {
-	"name":
-	"Brema",
-
-	"imageName":
-	["Brema"],
-	
-	"productCode":
-	"Brema shelf",
-	
-	"type": 
-	"salon furniture systems",
-
-	"mainCategory":
-	"day systems",
-	
-	"subCategory":
-	"salon furniture systems",
-	
-	"manufacturer":
-	"Pianca",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+    ]
   },
-  
-  
-
-{
-	"name":
-	"Cartagena Seida",
-
-	"imageName":
-	["Cartagena Seida"],
-	
-	"productCode":
-	"Cartagena Seida table",
-	
-	"type": 
-	"dining room furniture",
-
-	"mainCategory":
-	"dining room furniture",
-	
-	"subCategory":
-	"dining tables",
-	
-	"manufacturer":
-	"Pianca",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
-},
-  
-  
   {
-	"name":
-	"Confluence Orchestra",
-
-	"imageName":
-	["Confluence Orchestra"],
-	
-	"productCode":
-	"Confluence Orchestra table",
-	
-	"type": 
-	"dining room furniture",
-
-	"mainCategory":
-	"dining room furniture",
-	
-	"subCategory":
-	"dining tables",
-	
-	"manufacturer":
-	"Pianca",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+    "name": "Brema",
+    "imageName": [
+      "Brema"
+    ],
+    "mainCategory": "day systems",
+    "subCategory": "",
+    "manufacturer": "Pianca",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
   },
-  
   {
-	"name":
-	"Maestro Emi",
-
-	"imageName":
-	["Maestro Emi"],
-	
-	"productCode":
-	"Maestro Emi table",
-	
-	"type": 
-	"dining room furniture",
-
-	"mainCategory":
-	"dining room furniture",
-	
-	"subCategory":
-	"dining tables",
-	
-	"manufacturer":
-	"Pianca",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+    "name": "Cartagena Seida",
+    "imageName": [
+      "Cartagena Seida"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "dining tables",
+    "manufacturer": "Pianca",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
   },
-  
-  
-{
-	"name":
-	"Delta",
-
-	"imageName":
-	["Delta"],
-	
-	"productCode":
-	"Delta table",
-	
-	"type": 
-	"dining room furniture",
-
-	"mainCategory":
-	"dining room furniture",
-	
-	"subCategory":
-	"dining tables",
-	
-	"manufacturer":
-	"Pianca",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
-},
-
-{
-	"name":
-	"Key West Caribe",
-
-	"imageName":
-	["Caribe"],
-	
-	"productCode":
-	"Roberti Rattan lounger",
-	
-	"type": 
-	"outdoor furniture and accessories",
-
-	"mainCategory":
-	"outdoor furniture and accessories",
-	
-	"subCategory":
-	"",
-	
-	"manufacturer":
-	"Roberti Rattan",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
-},
-
-{
-"name":
-	"Key West Sunbed",
-
-	"imageName":
-	["Key West gultas"],
-	
-	"productCode":
-	"Roberti Rattan sunbed",
-	
-	"type": 
-	"outdoor furniture and accessories",
-
-	"mainCategory":
-	"outdoor furniture and accessories",
-	
-	"subCategory":
-	"",
-	
-	"manufacturer":
-	"Roberti Rattan",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
-},
-
-
-
-{
-	"name":
-	"Key West Chair",
-
-	"imageName":
-	["Key West Kede", "Key West Kede2"],
-	
-	"productCode":
-	"Roberti Rattan chair",
-	
-	"type": 
-	"outdoor furniture and accessories",
-
-	"mainCategory":
-	"outdoor furniture and accessories",
-	
-	"subCategory":
-	"",
-	
-	"manufacturer":
-	"Roberti Rattan",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
-},
-
-
-
-{
-	"name":
-	"Key West Basket",
-
-	"imageName":
-	["Key West Krepsys", "Key West Krepsys2"],
-	
-	"productCode":
-	"Roberti Rattan basket",
-	
-	"type": 
-	"outdoor furniture and accessories",
-
-	"mainCategory":
-	"outdoor furniture and accessories",
-	
-	"subCategory":
-	"",
-	
-	"manufacturer":
-	"Roberti Rattan",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
-},
-
-
-
-{
-	"name":
-	"Key West Pouf",
-
-	"imageName":
-	["Key West pufas"],
-	
-	"productCode":
-	"Roberti Rattan pouf",
-	
-	"type": 
-	"outdoor furniture and accessories",
-
-	"mainCategory":
-	"outdoor furniture and accessories",
-	
-	"subCategory":
-	"",
-	
-	"manufacturer":
-	"Roberti Rattan",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
-},
-
-
-{
-	"name":
-	"Key West Chaise Lounge",
-
-	"imageName":
-	["key west sezlongas"],
-	
-	"productCode":
-	"Roberti Rattan Chaise Lounge",
-	
-	"type": 
-	"outdoor furniture and accessories",
-
-	"mainCategory":
-	"outdoor furniture and accessories",
-	
-	"subCategory":
-	"",
-	
-	"manufacturer":
-	"Roberti Rattan",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
-},
-
-{
-	"name":
-	"Key West Sofa",
-
-	"imageName":
-	["Key West Sofa","Key West Sofa2"],
-	
-	"productCode":
-	"Roberti Rattan Sofa",
-	
-	"type": 
-	"outdoor furniture and accessories",
-
-	"mainCategory":
-	"outdoor furniture and accessories",
-	
-	"subCategory":
-	"",
-	
-	"manufacturer":
-	"Roberti Rattan",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
-},
-
-
-{
-	"name":
-	"Key West Sofas",
-
-	"imageName":
-	["Key West Sofa3","Key West Sofa4"],
-	
-	"productCode":
-	"Roberti Rattan Sofas",
-	
-	"type": 
-	"outdoor furniture and accessories",
-
-	"mainCategory":
-	"outdoor furniture and accessories",
-	
-	"subCategory":
-	"",
-	
-	"manufacturer":
-	"Roberti Rattan",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
-},
-
-
-
-{
-	"name":
-	"Key West Table",
-
-	"imageName":
-	["Key West stalas","Key West stalas2"],
-	
-	"productCode":
-	"Roberti Rattan Table",
-	
-	"type": 
-	"outdoor furniture and accessories",
-
-	"mainCategory":
-	"outdoor furniture and accessories",
-	
-	"subCategory":
-	"",
-	
-	"manufacturer":
-	"Roberti Rattan",
-
-	
-	"info":
-	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
-}  
-  
+  {
+    "name": "Confluence Orchestra",
+    "imageName": [
+      "Confluence Orchestra"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "dining tables",
+    "manufacturer": "Pianca",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Maestro Emi",
+    "imageName": [
+      "Maestro Emi"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "dining tables",
+    "manufacturer": "Pianca",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Delta",
+    "imageName": [
+      "Delta"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "dining tables",
+    "manufacturer": "Pianca",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Key West Caribe",
+    "imageName": [
+      "Caribe"
+    ],
+    "mainCategory": "outdoor furniture and accessories",
+    "subCategory": "",
+    "manufacturer": "Roberti Rattan",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Key West Sunbed",
+    "imageName": [
+      "Key West gultas"
+    ],
+    "mainCategory": "outdoor furniture and accessories",
+    "subCategory": "sunbed",
+    "manufacturer": "Roberti Rattan",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Key West Chair",
+    "imageName": [
+      "Key West Kede",
+      "Key West Kede2"
+    ],
+    "mainCategory": "outdoor furniture and accessories",
+    "subCategory": "chair",
+    "manufacturer": "Roberti Rattan",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Key West Basket",
+    "imageName": [
+      "Key West Krepsys",
+      "Key West Krepsys2"
+    ],
+    "mainCategory": "outdoor furniture and accessories",
+    "subCategory": "basket",
+    "manufacturer": "Roberti Rattan",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Key West Pouf",
+    "imageName": [
+      "Key West pufas"
+    ],
+    "mainCategory": "outdoor furniture and accessories",
+    "subCategory": "pouf",
+    "manufacturer": "Roberti Rattan",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Key West Chaise Lounge",
+    "imageName": [
+      "key west sezlongas"
+    ],
+    "mainCategory": "outdoor furniture and accessories",
+    "subCategory": "lounge",
+    "manufacturer": "Roberti Rattan",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Key West Sofa",
+    "imageName": [
+      "Key West Sofa",
+      "Key West Sofa2"
+    ],
+    "mainCategory": "outdoor furniture and accessories",
+    "subCategory": "sofa",
+    "manufacturer": "Roberti Rattan",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Key West Sofas",
+    "imageName": [
+      "Key West Sofa3",
+      "Key West Sofa4"
+    ],
+    "mainCategory": "outdoor furniture and accessories",
+    "subCategory": "sofa",
+    "manufacturer": "Roberti Rattan",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Key West Table",
+    "imageName": [
+      "Key West stalas",
+      "Key West stalas2"
+    ],
+    "mainCategory": "outdoor furniture and accessories",
+    "subCategory": "table",
+    "manufacturer": "Roberti Rattan",
+    "info": [
+      "Dėl tikslesnės informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  }
 ]
