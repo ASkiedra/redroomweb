@@ -1046,5 +1046,399 @@
     "info": [
       "Dėl daugiau informacijos susisiekite su mumis.",
       "Contact us for more information."
-    ]  }
+    ]  },
+  
+  
+  {
+	"name":
+	"Brema",
+
+	"imageName":
+	["Brema"],
+	
+	"productCode":
+	"Brema shelf",
+	
+	"type": 
+	"salon furniture systems",
+
+	"mainCategory":
+	"day systems",
+	
+	"subCategory":
+	"salon furniture systems",
+	
+	"manufacturer":
+	"Pianca",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+  },
+  
+  
+
+{
+	"name":
+	"Cartagena Seida",
+
+	"imageName":
+	["Cartagena Seida"],
+	
+	"productCode":
+	"Cartagena Seida table",
+	
+	"type": 
+	"dining room furniture",
+
+	"mainCategory":
+	"dining room furniture",
+	
+	"subCategory":
+	"dining tables",
+	
+	"manufacturer":
+	"Pianca",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+},
+  
+  
+  {
+	"name":
+	"Confluence Orchestra",
+
+	"imageName":
+	["Confluence Orchestra"],
+	
+	"productCode":
+	"Confluence Orchestra table",
+	
+	"type": 
+	"dining room furniture",
+
+	"mainCategory":
+	"dining room furniture",
+	
+	"subCategory":
+	"dining tables",
+	
+	"manufacturer":
+	"Pianca",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+  },
+  
+  {
+	"name":
+	"Maestro Emi",
+
+	"imageName":
+	["Maestro Emi"],
+	
+	"productCode":
+	"Maestro Emi table",
+	
+	"type": 
+	"dining room furniture",
+
+	"mainCategory":
+	"dining room furniture",
+	
+	"subCategory":
+	"dining tables",
+	
+	"manufacturer":
+	"Pianca",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+  },
+  
+  
+{
+	"name":
+	"Delta",
+
+	"imageName":
+	["Delta"],
+	
+	"productCode":
+	"Delta table",
+	
+	"type": 
+	"dining room furniture",
+
+	"mainCategory":
+	"dining room furniture",
+	
+	"subCategory":
+	"dining tables",
+	
+	"manufacturer":
+	"Pianca",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+},
+
+{
+	"name":
+	"Key West Caribe",
+
+	"imageName":
+	["Caribe"],
+	
+	"productCode":
+	"Roberti Rattan lounger",
+	
+	"type": 
+	"outdoor furniture and accessories",
+
+	"mainCategory":
+	"outdoor furniture and accessories",
+	
+	"subCategory":
+	"",
+	
+	"manufacturer":
+	"Roberti Rattan",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+},
+
+{
+"name":
+	"Key West Sunbed",
+
+	"imageName":
+	["Key West gultas"],
+	
+	"productCode":
+	"Roberti Rattan sunbed",
+	
+	"type": 
+	"outdoor furniture and accessories",
+
+	"mainCategory":
+	"outdoor furniture and accessories",
+	
+	"subCategory":
+	"",
+	
+	"manufacturer":
+	"Roberti Rattan",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+},
+
+
+
+{
+	"name":
+	"Key West Chair",
+
+	"imageName":
+	["Key West Kede", "Key West Kede2"],
+	
+	"productCode":
+	"Roberti Rattan chair",
+	
+	"type": 
+	"outdoor furniture and accessories",
+
+	"mainCategory":
+	"outdoor furniture and accessories",
+	
+	"subCategory":
+	"",
+	
+	"manufacturer":
+	"Roberti Rattan",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+},
+
+
+
+{
+	"name":
+	"Key West Basket",
+
+	"imageName":
+	["Key West Krepsys", "Key West Krepsys2"],
+	
+	"productCode":
+	"Roberti Rattan basket",
+	
+	"type": 
+	"outdoor furniture and accessories",
+
+	"mainCategory":
+	"outdoor furniture and accessories",
+	
+	"subCategory":
+	"",
+	
+	"manufacturer":
+	"Roberti Rattan",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+},
+
+
+
+{
+	"name":
+	"Key West Pouf",
+
+	"imageName":
+	["Key West pufas"],
+	
+	"productCode":
+	"Roberti Rattan pouf",
+	
+	"type": 
+	"outdoor furniture and accessories",
+
+	"mainCategory":
+	"outdoor furniture and accessories",
+	
+	"subCategory":
+	"",
+	
+	"manufacturer":
+	"Roberti Rattan",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+},
+
+
+{
+	"name":
+	"Key West Chaise Lounge",
+
+	"imageName":
+	["key west sezlongas"],
+	
+	"productCode":
+	"Roberti Rattan Chaise Lounge",
+	
+	"type": 
+	"outdoor furniture and accessories",
+
+	"mainCategory":
+	"outdoor furniture and accessories",
+	
+	"subCategory":
+	"",
+	
+	"manufacturer":
+	"Roberti Rattan",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+},
+
+{
+	"name":
+	"Key West Sofa",
+
+	"imageName":
+	["Key West Sofa","Key West Sofa2"],
+	
+	"productCode":
+	"Roberti Rattan Sofa",
+	
+	"type": 
+	"outdoor furniture and accessories",
+
+	"mainCategory":
+	"outdoor furniture and accessories",
+	
+	"subCategory":
+	"",
+	
+	"manufacturer":
+	"Roberti Rattan",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+},
+
+
+{
+	"name":
+	"Key West Sofas",
+
+	"imageName":
+	["Key West Sofa3","Key West Sofa4"],
+	
+	"productCode":
+	"Roberti Rattan Sofas",
+	
+	"type": 
+	"outdoor furniture and accessories",
+
+	"mainCategory":
+	"outdoor furniture and accessories",
+	
+	"subCategory":
+	"",
+	
+	"manufacturer":
+	"Roberti Rattan",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+},
+
+
+
+{
+	"name":
+	"Key West Table",
+
+	"imageName":
+	["Key West stalas","Key West stalas2"],
+	
+	"productCode":
+	"Roberti Rattan Table",
+	
+	"type": 
+	"outdoor furniture and accessories",
+
+	"mainCategory":
+	"outdoor furniture and accessories",
+	
+	"subCategory":
+	"",
+	
+	"manufacturer":
+	"Roberti Rattan",
+
+	
+	"info":
+	["Dėl tikslesnės informacijos susisiekite su mumis.", "Contact us for more information."]
+}  
+  
 ]
