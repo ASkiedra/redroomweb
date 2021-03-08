@@ -21,7 +21,7 @@ export default class Gamintojai extends Component {
             var found = false;
 
             for (let i = 0; i < manufacturers.length; i++)
-                if (manufacturers[i] === product.manufacturer) {
+                if (manufacturers[i].toLowerCase() === product.manufacturer.toLowerCase()) {
                     found = true;
                     break;
                 }
@@ -36,7 +36,7 @@ export default class Gamintojai extends Component {
             var found = false;
 
             for (let i = 0; i < manufacturers.length; i++)
-                if (manufacturers[i] === manuf) {
+                if (manufacturers[i].toLowerCase() === manuf.toLowerCase()) {
                     found = true;
                     break;
                 }
