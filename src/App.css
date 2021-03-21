@@ -26,7 +26,9 @@
   background: #f5f3f4;
 }
 
-
+.p-heading2 {
+  font-size: 2em;
+}
 
 /* internet explorer fixes */
 /* 1st child is 'threelines' which is visible on mobile, therefore we start with the 2nd child and give the 1st column position */
@@ -1447,6 +1449,9 @@ body {
     font-size: 12px;
   }
 
+  .p-heading2 {
+    font-size: 1.5em;
+  }
   #main-page-cont {
     top: 20%;
   }
