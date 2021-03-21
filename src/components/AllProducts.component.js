@@ -409,6 +409,29 @@ const SidebarItem = (props) => {
                                 text = "KNYGŲ LENTYNOS";
                                 break;
 
+                        case "SIDEBOARDS":
+                                text = "INDAUJOS";
+                                break;
+                        
+                                
+                        case "LOUNGE CHAIRS":
+                                text = "POILSIO KĖDĖS";
+                                break;
+                                
+                        
+                        case "SUNBEDS":
+                                text = "GULTAI";
+                                break;
+                                
+                        
+                        case "BASKETS":
+                                text = "KREPŠIAI";
+                                break;
+                                      
+                        
+                        case "TABLES":
+                                text = "STALAI";
+                                break;                          
 
                         case "COFFEE TABLES":
                                 text = "KAVOS STALIUKAI";
@@ -455,6 +478,8 @@ const SidebarItem = (props) => {
                         case "WORKPLACE FURNITURE":
                                 text = "DARBO VIETOS";
                                 break;
+                                
+                        
 
 
                         default:
