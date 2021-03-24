@@ -119,7 +119,7 @@
   overflow: hidden;
 }
 
-.interior-photo-container {
+#interior-photo-container {
   width: 100%;
   max-width: 28rem;
   margin: 0 auto;
@@ -528,7 +528,7 @@ a {
   background: none;
 }
 
-.interior-photo-container {
+#interior-photo-container {
   transition: 0.25s;
 }
 .manufacturer-div,
@@ -542,7 +542,7 @@ a {
   transform: scale(1.1);
   
 }
-.interior-photo-container:hover {
+#interior-photo-container:hover {
   filter: drop-shadow(0 0.25rem 0.75rem black);
   transform: scale(0.725);
 }
@@ -1671,7 +1671,7 @@ body {
   display: none;
 }
 
-.interior-photo-container img {
+#interior-photo-container img {
   /* transform: scale(2.7); */
   width: unset;
   height: unset;
