@@ -11,7 +11,7 @@ import Inquire from '../components/Inquire.component';
 import Delivery from '../components/Delivery.component';
 
 
-const Routes = () => {
+const Routes = (props) => {
     const location = useLocation();
 
     // scroll up on every route change
@@ -56,7 +56,11 @@ const Routes = () => {
             {/* non route pages */}
             <Route path="*">
                 < div style={{ height: 'inherit' }}>
-                    <h1 style={{ marginTop: '5rem', fontSize: '12rem', fontFamily: 'Roboto', textAlign: 'center', margin: '0 auto', width: '100%' }}>404</h1>
+                    <h1 style={{ marginTop: '10%', fontSize: '6rem', fontWeight: 'lighter', fontFamily: 'Roboto', textAlign: 'center', margin: '0 auto', width: '95%' }}>
+                        {
+                            props.language === "LT" ? "Nėra tokio puslapio." : "This page doesn't exist."
+                        }
+                    </h1>
                 </div >
             </Route>
         </Switch>

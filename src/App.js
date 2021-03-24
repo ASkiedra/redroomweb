@@ -23,7 +23,7 @@ function App() {
       <div style={{ minHeight: '90vh', marginTop: '5rem' }}>
 
         <BcAndLanguages language={language} setLanguage={setLanguage} />
-        <Routes />
+        <Routes language={language} />
 
       </div>
       {/* remove footer from small screen devices because it is unnecessary */}
