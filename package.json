@@ -17,6 +17,7 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "ignore-styles": "^5.0.1",
+    "level-filesystem": "^1.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

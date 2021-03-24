@@ -10,6 +10,7 @@ import Routes from './components/Routes.component';
 
 
 function App() {
+  // no automatic year function because im not sure how long i will work on this website 
   console.log("https://github.com/jonwow 2020-2021")
 
   const [language, setLanguage] = useState("LT");

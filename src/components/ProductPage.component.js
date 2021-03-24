@@ -8,7 +8,9 @@ export default class ProductPage extends Component {
 
                 this.state = {
                         imageName: ['none'],
+                        manufacturer: undefined,
                         info: [],
+                        name: undefined,
                         path: undefined,
                         loading: true
                 }
@@ -49,6 +51,7 @@ export default class ProductPage extends Component {
                         )
                 }
 
+
         }
 
 
@@ -65,6 +68,9 @@ export default class ProductPage extends Component {
 
         render() {
                 var i = 0;
+                function importAll(r) {
+                        return r.keys().map(r);
+                }
 
                 return (
                         <div style={{ paddingTop: '1rem', paddingBottom: '18rem', minHeight: 'inherit' }} >
