@@ -17,8 +17,8 @@ export default class AllProducts extends Component {
 
         componentDidUpdate(prevProps) {
                 if ((prevProps.location.key !== this.props.location.key || prevProps.location.pathname !== this.props.location.pathname)) {
-                        subCatFilterArr = []; 
-                        mainCatFilterArr = []; 
+                        subCatFilterArr = [];
+                        mainCatFilterArr = [];
                         manufFilterArr = [];
 
                         if (this.props.match.params.manufacturer !== undefined && this.props.match.params.manufacturer !== 'null')
@@ -111,8 +111,7 @@ export default class AllProducts extends Component {
                                         tempArr.push(curProduct)
                                 }
                         }
-                        console.log(tempArr)
-                        
+
                         this.setState({ curProducts: tempArr, filtered: true },)
 
                 }
@@ -239,7 +238,6 @@ export default class AllProducts extends Component {
                 var typesArr = [], manufacturersArr = [], mainCategoriesArr = [], subCategoriesArr = [],
                         returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
 
-                        console.log(this.props.match.params.manufacturer)
                 if (!this.state.loading) {
                         // if the length is above 0, then the types have been found 
                         this.findAllManufacturers(manufacturersArr);
@@ -312,10 +310,8 @@ const MainContainer = (props) => {
                                                                         </p>
                                                                 </div>
                                                         }
-                                                        <Link onClick={() => function () {
-                                                                if (window.innerWidth < 1149)
-                                                                        setSF(false)
-                                                        }} id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
+                                                        <Link onClick={() => window.innerWidth < 1149 && setSF(false)}
+                                                                id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
 
                                                 </div>
 
@@ -412,26 +408,26 @@ const SidebarItem = (props) => {
                         case "SIDEBOARDS":
                                 text = "INDAUJOS";
                                 break;
-                        
-                                
+
+
                         case "LOUNGE CHAIRS":
                                 text = "POILSIO KĖDĖS";
                                 break;
-                                
-                        
+
+
                         case "SUNBEDS":
                                 text = "GULTAI";
                                 break;
-                                
-                        
+
+
                         case "BASKETS":
                                 text = "KREPŠIAI";
                                 break;
-                                      
-                        
+
+
                         case "TABLES":
                                 text = "STALAI";
-                                break;                          
+                                break;
 
                         case "COFFEE TABLES":
                                 text = "KAVOS STALIUKAI";
@@ -478,8 +474,8 @@ const SidebarItem = (props) => {
                         case "WORKPLACE FURNITURE":
                                 text = "DARBO VIETOS";
                                 break;
-                                
-                        
+
+
 
 
                         default:
