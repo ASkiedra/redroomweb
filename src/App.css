@@ -528,6 +528,15 @@ a {
   background: none;
 }
 
+#interior-photo-container {
+  transition: 0.25s;
+}
+#interior-photo-container:hover{
+  filter: drop-shadow(0 0.25rem 0.75rem black);
+  transform: scale(0.725);
+}
+
+
 #background-container-2 {
   width: inherit;
   margin: 0 auto;
