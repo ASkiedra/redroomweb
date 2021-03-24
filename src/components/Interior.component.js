@@ -35,7 +35,7 @@ const Interior = () => {
                                         images.map(element => {
 
                                                 return (
-                                                        <div key={element.src + '-photo'} id="interior-photo-container">
+                                                        <div key={element.src + '-photo'} class="interior-photo-container">
                                                                 <img style={{ transform: 'scale(2.7)', cursor: 'pointer' }} onClick={(e) => enlargeImage(e.target.src)} src={element.default} alt={element.default + '-photo'} />
                                                         </div>
                                                 )
