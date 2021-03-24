@@ -531,9 +531,18 @@ a {
 #interior-photo-container {
   transition: 0.25s;
 }
+.manufacturer-div,
+.manufacturer-div a,
+.manufacturer-div a img {
+  transition: all 0.25s;
+}
 
+.manufacturer-div a:hover{
 
-#interior-photo-container:hover{
+  transform: scale(1.1);
+  
+}
+#interior-photo-container:hover {
   filter: drop-shadow(0 0.25rem 0.75rem black);
   transform: scale(0.725);
 }
