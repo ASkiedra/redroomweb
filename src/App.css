@@ -197,6 +197,10 @@ html {
   text-align: center;
 }
 
+.product-name {
+  text-align: center;
+}
+
 #product-name {
   font-size: 1.4rem;
 }
@@ -744,6 +748,7 @@ a {
   font-weight: 300;
 }
 
+
 .product-name {
   text-decoration: none;
   z-index: 100;
@@ -1006,7 +1011,7 @@ body {
   grid-template-rows: auto;
   -ms-grid-rows: auto;
   height: inherit;
-  margin-top: 7rem;
+  margin-top: 3rem;
   display: grid;
   display: -ms-grid;
   min-height: inherit;

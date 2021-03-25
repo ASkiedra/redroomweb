@@ -5,6 +5,7 @@ import threeLinesLogo from './three-lines-logo.png';
 import Products from '../components/products';
 
 const Header = (props) => {
+
     // LEFT PART OF THE NAVBAR
     // renders the threelines image or the dropdown if its clicked.
     const Menu = () => {
@@ -433,6 +434,11 @@ const Header = (props) => {
     // HIDE/SHOW DROPDOWNS
     const [openedProductsDropdown, setOPD] = useState(false);
     const [openedThreeLines, setOTL] = useState(false);
+   
+    // esu /lt (curLoc) 
+    // keiciu page i /en , pradzioj newLoc = uselocation
+    // tada curLoc ?== newLoc
+    // ir tik tada curLoc == newLoc
 
 
 
@@ -450,7 +456,6 @@ const Header = (props) => {
             if (event.target.id !== "produktai" && event.target.id !== "three-lines-img") {
                 setOPD(false);
                 setOTL(false);
-
             }
         }
 

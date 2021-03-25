@@ -517,18 +517,19 @@ const Product = (props) => {
 
         return (
                 <Link key={props.product.productCode + props.product.name}
-                        style={{ height: '20rem', width: '100%' }}
+                        // height used to be 20rem if any sizing problem occurs
+                        style={{ padding: '0.2rem 0', height: '22rem', width: '100%' }}
                         to={{
                                 pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.manufacturer + "/" + props.product.name + "/",
                                 product: props.product,
                         }}>
-                        <div className={"product-container"} style={{ height: 'inherit', width: 'inherit', textAlign: 'center' }}>
+                        <div className={"flexbox-container product-container"} style={{ height: '94%', width: 'inherit', textAlign: 'center' }}>
                                 {
-                                        <img className="product-list-photo" src={path} alt="logo" />
+                                        <img style={{margin: '0 auto'}} className="product-list-photo" src={path} alt="logo" />
                                 }
 
-                                <p className={"product-name"}><b>{props.product.manufacturer} </b>{props.product.name}</p>
                         </div>
+                        <p className={"product-name"}><b>{props.product.manufacturer} </b>{props.product.name}</p>
                 </Link>
         );
 }
