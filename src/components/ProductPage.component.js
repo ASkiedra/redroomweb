@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Products from '../components/products';
+import { Link } from "react-router-dom";
 
 
 export default class ProductPage extends Component {
@@ -73,10 +74,16 @@ export default class ProductPage extends Component {
                         <div style={{ paddingTop: '1rem', paddingBottom: '18rem', minHeight: 'inherit' }} >
                                 <div id="product-page-grid">
 
-                                        <p id="product-text">
-                                                {this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}
-                                        </p>
+                                        {this.state.info[0] === "Dėl daugiau informacijos susisiekite su mumis." ?
+                                                <Link id="product-text" to={'/' + this.props.match.params.lang + '/inquire'}>
+                                                        {this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}
+                                                </Link>
+                                                :
 
+                                                <p id="product-text">
+                                                        {this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}
+                                                </p>
+                                        }
                                         <div style={{ maxWidth: '100%', maxHeight: '100%', height: '23rem' }}>
 
                                                 <div style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit', marginBottom: '1rem', maxHeight: 'inherit' }} id="container-1">
