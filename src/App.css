@@ -1007,6 +1007,7 @@ body {
   grid-template-columns: 25% 75%;
   -ms-grid-columns: 25% 75%;
 }
+
 #products-container {
   grid-template-rows: auto;
   -ms-grid-rows: auto;

@@ -68,15 +68,14 @@ export default class ProductPage extends Component {
 
         render() {
                 var i = 0;
-                function importAll(r) {
-                        return r.keys().map(r);
-                }
 
                 return (
                         <div style={{ paddingTop: '1rem', paddingBottom: '18rem', minHeight: 'inherit' }} >
                                 <div id="product-page-grid">
 
-                                        <p id="product-text">{this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}</p>
+                                        <p id="product-text">
+                                                {this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}
+                                        </p>
 
                                         <div style={{ maxWidth: '100%', maxHeight: '100%', height: '23rem' }}>
 
@@ -108,14 +107,13 @@ export default class ProductPage extends Component {
                                                                                                         onClick={(e) => this.swapImages(e.target)} src={this.state.path + this.state.imageName[i]} id={'img' + i} alt={this.state.imageName[i] + "-additional-photo"} />
                                                                                         </div>
                                                                                 );
-                                                                        // if there arent enough additionla photos, the grid would portray them improperly therefore an empty picture seems like a decent solution
+                                                                        // if there arent enough additional photos, the grid would portray them improperly therefore an empty picture seems like a decent solution
                                                                         // 3 because max 3 photos and it starts from 0
                                                                         if (i !== 3) {
-                                                                                { console.log(i) }
 
                                                                                 return (
                                                                                         <div id="asd">
-                                                                                                <img alt='additional-photo' style={{ opacity: '0', height: 'inherit', maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }} ></img>
+                                                                                                <img alt='additional-empty-pic' style={{ opacity: '0', height: 'inherit', maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }} ></img>
                                                                                         </div>
                                                                                 );
                                                                         }

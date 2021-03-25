@@ -1,4 +1,4 @@
-import logo from './logo minus.png';
+// import logo from './logo minus.png';
 import { useLocation } from "react-router-dom"
 
 const MainPage = () => {
