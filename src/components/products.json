@@ -279,149 +279,6 @@
     ]
   },
   {
-    "name": "Bonola",
-    "imageName": [
-      "Bonola_6D2018_2018_09_07_1234-e1551692415228.jpg"
-    ],
-    "mainCategory": "dining room furniture",
-    "subCategory": "armchairs",
-    "manufacturer": "Nicoline",
-    "info": [
-      "Dėl daugiau informacijos susisiekite su mumis.",
-      "Contact us for more information."
-    ]
-  },
-  {
-    "name": "Dia",
-    "imageName": [
-      "Dia_6D2018_2018_09_07_1171-e1551699233739.jpg"
-    ],
-    "mainCategory": "dining room furniture",
-    "subCategory": "armchairs",
-    "manufacturer": "Nicoline",
-    "info": [
-      "Dėl daugiau informacijos susisiekite su mumis.",
-      "Contact us for more information."
-    ]
-  },
-  {
-    "name": "Ghirla",
-    "imageName": [
-      "ghirla-e1551722865526.jpg"
-    ],
-    "mainCategory": "dining room furniture",
-    "subCategory": "armchairs",
-    "manufacturer": "Nicoline",
-    "info": [
-      "Dėl daugiau informacijos susisiekite su mumis.",
-      "Contact us for more information."
-    ]
-  },
-  {
-    "name": "Gioia",
-    "imageName": [
-      "Gioia_mod18-e1551700221299.jpg"
-    ],
-    "mainCategory": "dining room furniture",
-    "subCategory": "armchairs",
-    "manufacturer": "Nicoline",
-    "info": [
-      "Dėl daugiau informacijos susisiekite su mumis.",
-      "Contact us for more information."
-    ]
-  },
-  {
-    "name": "Iseo",
-    "imageName": [
-      "iseo-e1551723634867.jpg"
-    ],
-    "mainCategory": "dining room furniture",
-    "subCategory": "armchairs",
-    "manufacturer": "Nicoline",
-    "info": [
-      "Dėl daugiau informacijos susisiekite su mumis.",
-      "Contact us for more information."
-    ]
-  },
-  {
-    "name": "Lima",
-    "imageName": [
-      "Lima_mod18-e1551708255785.jpg"
-    ],
-    "mainCategory": "dining room furniture",
-    "subCategory": "armchairs",
-    "manufacturer": "Nicoline",
-    "info": [
-      "Dėl daugiau informacijos susisiekite su mumis.",
-      "Contact us for more information."
-    ]
-  },
-  {
-    "name": "Luis",
-    "imageName": [
-      "Luis_6D2018_2018_09_07_1273-e1551720580384.jpg"
-    ],
-    "mainCategory": "dining room furniture",
-    "subCategory": "armchairs",
-    "manufacturer": "Nicoline",
-    "info": [
-      "Dėl daugiau informacijos susisiekite su mumis.",
-      "Contact us for more information."
-    ]
-  },
-  {
-    "name": "Moscova",
-    "imageName": [
-      "Moscova_mod18-e1551721041538.jpg"
-    ],
-    "mainCategory": "dining room furniture",
-    "subCategory": "armchairs",
-    "manufacturer": "Nicoline",
-    "info": [
-      "Dėl daugiau informacijos susisiekite su mumis.",
-      "Contact us for more information."
-    ]
-  },
-  {
-    "name": "Rho",
-    "imageName": [
-      "Rho_mod18_mod18-e1551721263934.jpg"
-    ],
-    "mainCategory": "dining room furniture",
-    "subCategory": "armchairs",
-    "manufacturer": "Nicoline",
-    "info": [
-      "Dėl daugiau informacijos susisiekite su mumis.",
-      "Contact us for more information."
-    ]
-  },
-  {
-    "name": "Rondo",
-    "imageName": [
-      "Rondo_mod18-e1551721468336.jpg"
-    ],
-    "mainCategory": "dining room furniture",
-    "subCategory": "armchairs",
-    "manufacturer": "Nicoline",
-    "info": [
-      "Dėl daugiau informacijos susisiekite su mumis.",
-      "Contact us for more information."
-    ]
-  },
-  {
-    "name": "Stresa",
-    "imageName": [
-      "Stresa_6D2018_2018_09_06_0994-e1551724113770.jpg"
-    ],
-    "mainCategory": "dining room furniture",
-    "subCategory": "armchairs",
-    "manufacturer": "Nicoline",
-    "info": [
-      "Dėl daugiau informacijos susisiekite su mumis.",
-      "Contact us for more information."
-    ]
-  },
-  {
     "name": "Archie",
     "imageName": [
       "Archie.jpg",
@@ -896,6 +753,193 @@
       "Contact us for more information."
     ]
   },
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "name": "Bonola",
+    "imageName": [
+      "Bonola_6D2018_2018_09_07_1234-e1551692415228.jpg"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "armchairs",
+    "manufacturer": "Nicoline",
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Dia",
+    "imageName": [
+      "Dia_6D2018_2018_09_07_1171-e1551699233739.jpg"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "armchairs",
+    "manufacturer": "Nicoline",
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Ghirla",
+    "imageName": [
+      "ghirla-e1551722865526.jpg"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "armchairs",
+    "manufacturer": "Nicoline",
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Gioia",
+    "imageName": [
+      "Gioia_mod18-e1551700221299.jpg"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "armchairs",
+    "manufacturer": "Nicoline",
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Iseo",
+    "imageName": [
+      "iseo-e1551723634867.jpg"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "armchairs",
+    "manufacturer": "Nicoline",
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Lima",
+    "imageName": [
+      "Lima_mod18-e1551708255785.jpg"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "armchairs",
+    "manufacturer": "Nicoline",
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Luis",
+    "imageName": [
+      "Luis_6D2018_2018_09_07_1273-e1551720580384.jpg"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "armchairs",
+    "manufacturer": "Nicoline",
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Moscova",
+    "imageName": [
+      "Moscova_mod18-e1551721041538.jpg"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "armchairs",
+    "manufacturer": "Nicoline",
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Rho",
+    "imageName": [
+      "Rho_mod18_mod18-e1551721263934.jpg"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "armchairs",
+    "manufacturer": "Nicoline",
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Rondo",
+    "imageName": [
+      "Rondo_mod18-e1551721468336.jpg"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "armchairs",
+    "manufacturer": "Nicoline",
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+  {
+    "name": "Stresa",
+    "imageName": [
+      "Stresa_6D2018_2018_09_06_0994-e1551724113770.jpg"
+    ],
+    "mainCategory": "dining room furniture",
+    "subCategory": "armchairs",
+    "manufacturer": "Nicoline",
+    "info": [
+      "Dėl daugiau informacijos susisiekite su mumis.",
+      "Contact us for more information."
+    ]
+  },
+
   {
     "name": "Key West Caribe",
     "imageName": [

@@ -34,7 +34,6 @@ export default class ProductPage extends Component {
                         );
                 }
                 else {
-                        // maybe state.product = product.find... would be simpler instead of state.manuf, state.name 
                         var productFromJson = Products.find(el => el.name === this.props.match.params.name && el.manufacturer === this.props.match.params.manufacturer);
 
 
