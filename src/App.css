@@ -1684,6 +1684,7 @@ body {
   width: unset;
   height: unset;
   margin: 0 auto;
+  display: block;
 }
 
 
