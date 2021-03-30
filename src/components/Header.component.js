@@ -11,7 +11,7 @@ const Header = (props) => {
     const Menu = () => {
         return (
             <div style={{ width: "inherit", height: 'inherit', margin: "0 auto" }} >
-                <div style={{ width: "inherit", height: 'inherit' }} >
+                <div  style={{ width: "inherit", height: 'inherit' }} >
                     <ThreeLines />
                 </div>
 
@@ -25,7 +25,7 @@ const Header = (props) => {
 
     const ThreeLines = (props) => {
         return (
-            <div className="flexbox-container" style={{ width: "inherit", height: 'inherit', margin: "0 auto" }}>
+            <div id="threeLinesDiv" className="flexbox-container" style={{ width: "inherit", height: 'inherit', margin: "0 auto" }}>
                 <img
                     style={{ margin: '0 auto', cursor: 'pointer', transform: 'scale(0.6)', width: "inherit", height: 'inherit' }}
                     src={threeLinesLogo}
@@ -453,8 +453,9 @@ const Header = (props) => {
 
         const handleMouseClick = (event) => {
             // if the click wasnt on the products button
-            if (event.target.id !== "produktai" && event.target.id !== "three-lines-img") {
+            if (event.target.id !== "produktai" && event.target.id !== "three-lines-img" && event.target.id !== "threeLinesDiv") {
                 setOPD(false);
+                alert(event.target.id)
                 setOTL(false);
             }
         }
@@ -472,7 +473,7 @@ const Header = (props) => {
         <header style={{ display: 'block' }}>
             <ul id="header-list">
 
-                <div onClick={() => { setOTL(!openedThreeLines) }} style={{ height: 'inherit', width: 'inherit' }} id="threeLines">
+                <div onClick={() => { setOTL(!openedThreeLines) }} style={{ color: 'red',height: 'inherit', width: 'inherit' }} id="threeLines">
                     <Menu id="produktai" />
 
                 </div>

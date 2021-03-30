@@ -13,7 +13,6 @@ const BcAndLanguages = (props) => {
     // if breadcrumbs are longer than PAGRINDINIS/*PAGE*
     // example: PAGRINDINIS/*PAGE*/*CRITERIA*
     // 0th element is nonexistent because the string starts with /
-
     for (let i = location.pathname.split("/").length - 1; i > 0; i--)
         modifiedPathname[i - 2] = (location.pathname.split("/")[i]);
 
@@ -71,9 +70,9 @@ const BcAndLanguages = (props) => {
                 modifiedPathname[1] = "DARBO VIETOS";
                 break;
 
-                case "BEDS":
-                    modifiedPathname[1] = "LOVOS";
-                    break;
+            case "BEDS":
+                modifiedPathname[1] = "LOVOS";
+                break;
 
             case "INTERIOR":
                 modifiedPathname[1] = "INTERJERAS";

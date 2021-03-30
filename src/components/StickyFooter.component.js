@@ -7,11 +7,10 @@ const Footer = (props) => {
     const url = useLocation().pathname;
 
     // if there are at least 6 '/' characters, it means the user is on a product page
-    if (url.split('/')[2] === 'products' && url.split('/').length >=6)
-        productName = url.split('/')[5] + ' ' + url.split('/')[6]+'. ';
+    if (url.split('/')[2] === 'products' && url.split('/').length >= 6)
+        productName = url.split('/')[5] + ' ' + url.split('/')[6] + '. ';
 
     return (
-
         <div id="stickyFooter">
             <div id="first-footer">
                 <ul>

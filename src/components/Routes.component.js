@@ -3,12 +3,12 @@ import { Route, Switch, useLocation } from "react-router-dom"
 
 import Contacts from '../components/Contacts.component';
 import AllProducts from './AllProducts.component';
-import Manufacturers from '../components/Manufacturers.component';
-import Interior from '../components/Interior.component';
+import Manufacturers from '../components/Manufacturers.component.js';
+import Interior from '../components/Interior.component.js';
 import MainPage from '../components/MainPage.component.js';
 import ProductPage from '../components/ProductPage.component.js';
-import Inquire from '../components/Inquire.component';
-import Delivery from '../components/Delivery.component';
+import Inquire from '../components/Inquire.component.js';
+import Delivery from '../components/Delivery.component.js';
 
 
 const Routes = (props) => {
@@ -16,21 +16,17 @@ const Routes = (props) => {
 
     // scroll up on every route change
     useEffect(() => {
-            window.scrollTo(0,0)
-            
+        window.scrollTo(0, 0)
     }, [location]);
 
     return (
         <Switch>
-
+            {/* MainPage routes */}
             <Route exact path='/:lang' component={MainPage} />
             <Route exact path="/" component={MainPage} />
 
-            <Route exact path="/:lang/inquire" component={Inquire} />
 
-            <Route exact path="/:lang/manufacturers" component={Manufacturers} />
-
-
+            {/* AllProductsRoutes */}
             <Route exact path="/:lang/products/:mainCategory/:subCategory/:manufacturer" component={AllProducts} />
             <Route exact path="/:lang/products/:mainCategory/:subCategory" component={AllProducts} />
 
@@ -43,17 +39,19 @@ const Routes = (props) => {
             {/* case only manufacturer (e.g. from the dropdown) */}
             <Route exact path="/:lang/products///:manufacturer" component={AllProducts} />
 
-
-
-            <Route exact path="/:lang/products/:mainCategory/:subCategory/:manufacturer/:name/" component={ProductPage} />
-
             <Route exact path="/:lang/products" component={AllProducts} />
 
+            {/* Other routes */}
+            <Route exact path="/:lang/products/:mainCategory/:subCategory/:manufacturer/:name/" component={ProductPage} />
             <Route exact path="/:lang/contacts" component={Contacts} />
             <Route exact path="/:lang/interior" component={Interior} />
             <Route exact path="/:lang/delivery" component={Delivery} />
+            <Route exact path="/:lang/inquire" component={Inquire} />
+            <Route exact path="/:lang/manufacturers" component={Manufacturers} />
 
-            {/* non route pages */}
+
+
+            {/* non route pages / 404 */}
             <Route path="*">
                 < div style={{ height: 'inherit' }}>
                     <h1 style={{ marginTop: '10%', fontSize: '6rem', fontWeight: 'lighter', fontFamily: 'Roboto', textAlign: 'center', margin: '0 auto', width: '95%' }}>
