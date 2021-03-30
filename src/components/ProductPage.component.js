@@ -74,7 +74,10 @@ export default class ProductPage extends Component {
                                 <div id="product-page-grid">
 
                                         {this.state.info[0] === "Dėl daugiau informacijos susisiekite su mumis." ?
-                                                <Link id="product-text" to={'/' + this.props.match.params.lang + '/inquire'}>
+                                                <Link id="product-text" to={{
+                                                        pathname: '/' + this.props.match.params.lang + '/inquire',
+                                                        productName: this.state.manufacturer+' '+this.state.name+'. '
+                                                }}>
                                                         {this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}
                                                 </Link>
                                                 :
