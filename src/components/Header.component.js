@@ -455,7 +455,6 @@ const Header = (props) => {
             // if the click wasnt on the products button
             if (event.target.id !== "produktai" && event.target.id !== "three-lines-img" && event.target.id !== "threeLinesDiv") {
                 setOPD(false);
-                alert(event.target.id)
                 setOTL(false);
             }
         }
