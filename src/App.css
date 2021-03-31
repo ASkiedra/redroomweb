@@ -29,6 +29,24 @@
   font-size: 2em;
 }
 
+
+footer p, footer a, footer span {
+  transition: 0.1s;
+}
+footer a:hover,
+footer p:hover
+{
+  font-weight: 550;
+}
+
+footer #div-for-text:hover {
+  font-weight: 450;
+}
+
+
+
+
+
 /* internet explorer fixes */
 /* 1st child is 'threelines' which is visible on mobile, therefore we start with the 2nd child and give the 1st column position */
 #header-list :nth-child(2) {
