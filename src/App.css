@@ -1097,6 +1097,7 @@ body {
     -ms-grid-columns: 22% 78%;
   }
 
+
   #products-container {
     grid-template-columns: 50% 50%;
     -ms-grid-columns: 50% 50%;
@@ -1168,6 +1169,8 @@ body {
     grid-template-columns: 1fr;
     -ms-grid-columns: 1fr;
   }
+
+
   #prod-photo-container {
     height: 100%;
     padding: 0;
@@ -1180,6 +1183,7 @@ body {
   #addit-photo-container {
     grid-template-columns: 50% 50%;
     -ms-grid-columns: 50% 50%;
+    height: auto;
 
     margin-top: 9.5rem;
   }
@@ -1359,7 +1363,7 @@ body {
   }
 
   #lang-container a {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     padding: 0 1rem;
     top: 1rem;
     position: relative;
@@ -1511,7 +1515,7 @@ body {
   }
 
   #bcnl-container a {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   #lang-container {
@@ -1554,7 +1558,7 @@ body {
   }
 
   #bcnl-container a {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   #lang-container {

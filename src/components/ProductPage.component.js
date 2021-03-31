@@ -66,6 +66,26 @@ export default class ProductPage extends Component {
                 }
         }
 
+        separateWords(text) {
+                var char = text[0],
+                        index = 0;
+
+                // find the index where the text needs to be cut
+                while (char !== ' ') {
+                        console.log(char);
+                        index++;
+                        char = text[index]
+
+                        // if text is over
+                        if (index === text.length) {
+                                index = -1;
+                                break;
+                        }
+                }
+
+                return [text.substr(0, index), text.substr(index)]
+        }
+
         render() {
                 var i = 0;
 
@@ -73,17 +93,21 @@ export default class ProductPage extends Component {
                         <div style={{ paddingTop: '1rem', paddingBottom: '18rem', minHeight: 'inherit' }} >
                                 <div id="product-page-grid">
 
-                                        {this.state.info[0] === "Dėl daugiau informacijos susisiekite su mumis." ?
+                                        {this.state.info[0] === "Susisiekite su mumis dėl daugiau informacijos." ?
                                                 <Link id="product-text" to={{
                                                         pathname: '/' + this.props.match.params.lang + '/inquire',
-                                                        productName: this.state.manufacturer+' '+this.state.name+'. '
+                                                        productName: this.state.manufacturer + ' ' + this.state.name + '. '
                                                 }}>
-                                                        {this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}
+                                                        {this.props.match.params.lang === "LT" ?
+                                                                <span><b>{this.separateWords(this.state.info[0])[0]}</b>{this.separateWords(this.state.info[0])[1]}</span>
+                                                                : this.props.match.params.lang === "EN" && <span><b>{this.separateWords(this.state.info[1])[0]}</b>{this.separateWords(this.state.info[1])[1]}</span>}
                                                 </Link>
                                                 :
 
                                                 <p id="product-text">
-                                                        {this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]}
+                                                        {!this.state.loading &&
+                                                                this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]
+                                                        }
                                                 </p>
                                         }
                                         <div style={{ maxWidth: '100%', maxHeight: '100%', height: '23rem' }}>
