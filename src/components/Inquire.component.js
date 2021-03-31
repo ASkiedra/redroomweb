@@ -110,7 +110,7 @@ class Inquire extends Component {
 
                         <FormGroup style={{ marginTop: '3rem' }} controlId="formBasicMessage">
                             {/* <Label className="text-muted">{this.props.match.params.lang === "LT" ? "Žinutė" : this.props.match.params.lang === "EN" && "Message"}<br/></Label> */}
-                            <Input style={{paddingLeft: '1rem', paddingTop: '0.35rem'}} id="input-box"
+                            <Input style={{paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0.35rem'}} id="input-box"
                                 type="textarea"
                                 name="message"
                                 className="text-primary"

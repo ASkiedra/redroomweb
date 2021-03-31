@@ -70,7 +70,7 @@ footer #div-for-text:hover {
   -ms-grid-column: 5;
 }
 
-.dropdown li {
+#dropdown-grid li {
   -ms-grid-column: unset;
 }
 
@@ -645,13 +645,17 @@ a {
   /* left = same as #header-list margin second  value */
   background: rgba(0, 0, 0, 0.8301);
   left: -6rem;
+
+  position: relative;
+  transform-origin: top center;
+}
+
+#dropdown-grid {
+  
   display: grid;
   display: -ms-grid;
   grid-template-columns: 50% 50%;
   -ms-grid-columns: 50% 50%;
-
-  position: relative;
-  transform-origin: top center;
 }
 
 .dropdown li {

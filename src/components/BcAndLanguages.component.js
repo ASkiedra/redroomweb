@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
+import translateMainCats, { translateSubCats, translateMainItems } from "./Translate.component";
 
 const BcAndLanguages = (props) => {
     const location = useLocation();
@@ -22,7 +23,7 @@ const BcAndLanguages = (props) => {
         pathnameWO += location.pathname[i];
 
 
-    // remove empty strings 
+    // remove empty strings. possible to make into 1 line?
     modifiedPathname = modifiedPathname.filter(el => el !== "");
     modifiedPathname = modifiedPathname.filter(el => el !== "undefined" && el !== undefined);
     modifiedPathname = modifiedPathname.filter(el => el !== "null" && el !== null);
@@ -30,140 +31,15 @@ const BcAndLanguages = (props) => {
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
     // translation of the second word in the breadcrumbs
     if (props.language === "LT" && modifiedPathname[0] !== undefined)
-        switch (modifiedPathname[0].toUpperCase()) {
-            case "CONTACTS":
-                modifiedPathname[0] = "KONTAKTAI";
-                break;
+        modifiedPathname[0] = translateMainItems(modifiedPathname[0]);
 
-            case "MANUFACTURERS":
-                modifiedPathname[0] = "GAMINTOJAI";
-                break;
 
-            case "INTERIOR":
-                modifiedPathname[0] = "INTERJERAS";
-                break;
-
-            case "PRODUCTS":
-                modifiedPathname[0] = "PRODUKTAI";
-                break;
-
-            case "INQUIRE":
-                modifiedPathname[0] = "SIŲSTI UŽKLAUSĄ";
-                break;
-
-            case "DELIVERY":
-                modifiedPathname[0] = "PRISTATYMO SĄLYGOS IR TERMINAI";
-                break;
-
-            default:
-                break;
-        }
-
-    // translation of the third word in the breadcrumbs
+    // translation of the third word in the breadcrumbs. can be maincat, subcat, ...
     if (props.language === "LT" && modifiedPathname[1] !== undefined)
-        switch (modifiedPathname[1].toUpperCase()) {
-            case "SALON FURNITURE SYSTEMS":
-                modifiedPathname[1] = "SVETAINĖS IR TV BALDŲ SISTEMOS";
-                break;
-
-            case "WORKPLACE FURNITURE":
-                modifiedPathname[1] = "DARBO VIETOS";
-                break;
-
-            case "BEDS":
-                modifiedPathname[1] = "LOVOS";
-                break;
-
-            case "INTERIOR":
-                modifiedPathname[1] = "INTERJERAS";
-                break;
-
-            case "BOOKSHELVES":
-                modifiedPathname[1] = "KNYGŲ LENTYNOS";
-                break;
-
-            case "BED":
-                modifiedPathname[1] = "LOVOS";
-                break;
-
-            case "BEDROOM FURNITURE":
-                modifiedPathname[1] = "MIEGAMOJO BALDAI";
-                break;
-
-            case "OUTDOOR FURNITURE AND ACCESSORIES":
-                modifiedPathname[1] = "LAUKO BALDAI IR AKSESUARAI";
-                break;
-
-
-            case "DINING ROOM FURNITURE":
-                modifiedPathname[1] = "SVETAINĖS IR VALGOMOJO BALDAI";
-                break;
-
-            case "DAY SYSTEMS":
-                modifiedPathname[1] = "DIENOS SISTEMOS";
-                break;
-
-            case "SOFA BEDS":
-                modifiedPathname[1] = "SOFA LOVOS";
-                break;
-
-
-            case "CHAIRS":
-                modifiedPathname[1] = "KĖDĖS";
-                break;
-
-            case "SOFAS":
-                modifiedPathname[1] = "SOFOS";
-                break;
-
-            case "COFFEE TABLES":
-                modifiedPathname[1] = "KAVOS STALIUKAI";
-                break;
-
-            case "ARMCHAIRS":
-                modifiedPathname[1] = "FOTELIAI";
-                break;
-
-
-            case "POUFS":
-                modifiedPathname[1] = "SUOLIUKAI IR PUFAI";
-                break;
-
-            case "DINING TABLES":
-                modifiedPathname[1] = "VALGOMOJO STALAI";
-                break;
-
-            case "INDIVIDUALLY PLANNED WARDROBES":
-                modifiedPathname[1] = "INDIVIDUALIAI PROJEKTUOJAMOS DRABUŽINĖS";
-                break;
-
-
-            case "CLOTHING HANGERS":
-                modifiedPathname[1] = "RŪBŲ KABYKLOS";
-                break;
-
-
-            case "BEDSIDE CABINETS":
-                modifiedPathname[1] = "SPINTELĖS PRIE LOVOS";
-                break;
-
-
-            case "CHESTS OF DRAWERS":
-                modifiedPathname[1] = "KOMODOS";
-                break;
-
-
-            case "BEDROOM BENCHES":
-                modifiedPathname[1] = "SUOLAI PRIE LOVOS";
-                break;
-
-            case "WARDROBE SYSTEMS":
-                modifiedPathname[1] = "SPINTŲ SISTEMOS";
-                break;
-
-            default:
-                break;
-        }
+        if (translateMainCats(modifiedPathname[1]) !== null)
+            modifiedPathname[1] = translateMainCats(modifiedPathname[1]);
+        else
+            modifiedPathname[1] = translateSubCats(modifiedPathname[1]);
 
     return (
 

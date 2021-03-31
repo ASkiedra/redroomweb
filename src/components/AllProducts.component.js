@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Products from '../components/products';
+import { translateSubCats } from "../components/Translate.component";
 
 // cant store these in the state because it would update too often
 var paramsFiltersApplied = false,
@@ -98,8 +99,6 @@ export default class AllProducts extends Component {
                                 for (let j = 0; j < mainCatFilterArr.length; j++) {
 
                                         if (mainCatFilterArr[j].toUpperCase() === curProduct.mainCategory.toUpperCase()) {
-                                                console.log(mainCatFilterArr[j].toUpperCase())
-                                                console.log(curProduct.mainCategory.toUpperCase())
                                                 found = true;
                                                 break;
                                         }
@@ -270,6 +269,7 @@ export default class AllProducts extends Component {
 const MainContainer = (props) => {
         const language = useLocation().pathname[1] + useLocation().pathname[2];
         const [showFilter, setSF] = useState(false);
+
         // scroll up on every route change
         useEffect(() => {
                 window.scrollTo(0, 0)
@@ -356,132 +356,12 @@ const MainContainer = (props) => {
 const SidebarItem = (props) => {
         var text = props.value;
 
-        if (props.translatable === "main" && props.language === "LT") {
-                switch (props.value.toUpperCase()) {
-                        case "DINING ROOM FURNITURE":
-                                text = "SVETAINĖS IR VALGOMOJO BALDAI";
-                                break;
+        //if (props.translatable === "main" && props.language === "LT")
+        //        text = translateMainCats(text);
+        //else
+        if (props.translatable === "second" && props.language === "LT")
+                text = translateSubCats(text);
 
-                        case "DAY SYSTEMS":
-                                text = "DIENOS SISTEMOS";
-                                break;
-
-                        case "BEDROOM FURNITURE":
-                                text = "MIEGAMOJO BALDAI";
-                                break;
-
-                        case "OUTDOOR FURNITURE AND ACCESSORIES":
-                                text = "LAUKO BALDAI IR AKSESUARAI";
-                                break;
-
-
-                        case "WARDROBE SYSTEMS":
-                                text = "SPINTŲ SISTEMOS";
-                                break;
-
-                        default:
-                                break;
-                }
-        }
-        else if (props.translatable === "second" && props.language === "LT") {
-                switch (props.value.toUpperCase()) {
-                        case "INDIVIDUALLY PLANNED WARDROBES":
-                                text = "INDIVIDUALIAI PROJEKTUOJAMOS DRABUŽINĖS";
-                                break;
-
-                        case "SOFA BEDS":
-                                text = "SOFA LOVOS";
-                                break;
-
-                        case "ARMCHAIRS":
-                                text = "FOTELIAI";
-                                break;
-
-                        case "BEDS":
-                                text = "LOVOS";
-                                break;
-
-                        case "BOOKSHELVES":
-                                text = "KNYGŲ LENTYNOS";
-                                break;
-
-                        case "SIDEBOARDS":
-                                text = "INDAUJOS";
-                                break;
-
-
-                        case "LOUNGE CHAIRS":
-                                text = "POILSIO KĖDĖS";
-                                break;
-
-
-                        case "SUNBEDS":
-                                text = "GULTAI";
-                                break;
-
-
-                        case "BASKETS":
-                                text = "KREPŠIAI";
-                                break;
-
-
-                        case "TABLES":
-                                text = "STALAI";
-                                break;
-
-                        case "COFFEE TABLES":
-                                text = "KAVOS STALIUKAI";
-                                break;
-
-                        case "DINING TABLES":
-                                text = "VALGOMOJO STALAI";
-                                break;
-
-                        case "SOFAS":
-                                text = "SOFOS";
-                                break;
-
-
-                        case "CHAIRS":
-                                text = "KĖDĖS";
-                                break;
-
-                        case "POUFS":
-                                text = "SUOLIUKAI IR PUFAI";
-                                break;
-
-                        case "CLOTHING HANGERS":
-                                text = "RŪBŲ KABYKLOS";
-                                break;
-
-
-                        case "BEDSIDE CABINETS":
-                                text = "SPINTELĖS PRIE LOVOS";
-                                break;
-
-                        case "CHESTS OF DRAWERS":
-                                text = "KOMODOS";
-                                break;
-
-                        case "BEDROOM BENCHES":
-                                text = "SUOLAI PRIE LOVOS";
-                                break;
-
-                        case "SALON FURNITURE SYSTEMS":
-                                text = "SVETAINĖS IR TV BALDŲ SISTEMOS";
-                                break;
-
-                        case "WORKPLACE FURNITURE":
-                                text = "DARBO VIETOS";
-                                break;
-
-
-
-
-                        default:
-                                break;
-                }
-        }
         return (
                 // if its in the filter array, make it bold to show the filter is selected
                 props.filterArr.includes(props.value) ?
@@ -490,12 +370,9 @@ const SidebarItem = (props) => {
                                 props.this.addAndRemoveFilters(props.value, props.type)
                         }}
                                 style={{ textAlign: 'right', listStyle: 'none' }}>
+
                                 <p key={props.value + 'p'} id={props.value} className={"product-type bold-text"}>
-
-
                                         {text}
-
-
                                 </p>
                         </li>
                         : <li key={props.value} className={"type-li"} onClick={(e) => {
@@ -525,10 +402,11 @@ const Product = (props) => {
                         }}>
                         <div className={"flexbox-container product-container"} style={{ height: '94%', width: 'inherit', textAlign: 'center' }}>
                                 {
-                                        <img style={{margin: '0 auto'}} className="product-list-photo" src={path} alt="logo" />
+                                        <img style={{ margin: '0 auto' }} className="product-list-photo" src={path} alt="logo" />
                                 }
 
                         </div>
+
                         <p className={"product-name"}><b>{props.product.manufacturer} </b>{props.product.name}</p>
                 </Link>
         );
