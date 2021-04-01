@@ -20,8 +20,6 @@ function App() {
       (window.location.pathname[1].toUpperCase() === 'E' && window.location.pathname[2].toUpperCase() === 'N')) ? "EN"
       : "LT");
 
-  console.log(window.location.pathname[1] !== undefined);
-  console.log(language)
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header language={language} />

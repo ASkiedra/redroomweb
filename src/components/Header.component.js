@@ -169,15 +169,14 @@ const Header = (props) => {
         return (
             <ul className="dropdown" >
                 <div id="dropdown-grid">
-
                     {
                         // collectionPart = 1, 2
                         //                  3, 4
                         headerCollection.map(collectionPart => {
                             if (mainCategoriesArr.indexOf(collectionPart[0].toLowerCase()) !== -1)
-                                return <DropdownItem>
+                                return <DropdownItem key={collectionPart[0]+'-parent'} >
                                     {/* // if the big text category in in stock and also the first element in the collection  */}
-                                    <li style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
+                                    <li key={collectionPart[0]} style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
                                         {mainCategoriesArr.indexOf(collectionPart[0].toLowerCase()) !== -1 &&
                                             <Link style={{ color: 'white', paddingBottom: '0.5rem' }}
                                                 to={"/" + props.language + "/products/" + collectionPart[0].toLowerCase()}>
@@ -195,7 +194,7 @@ const Header = (props) => {
                                             {collectionPart.map(item => {
                                                 // if its not the first item in the collection (not the big text) AND it exists in subCategoriesArr
                                                 if (collectionPart.indexOf(item) !== 0 && subCategoriesArr.indexOf(item.toLowerCase()) !== -1)
-                                                    return <div>
+                                                    return <div key={item}>
                                                         <Link to={"/" + props.language + "/products//" + item.toLowerCase()} className="dropdown-subtext" >
                                                             {
                                                                 props.language === "LT" ? translateSubCats(item) :
@@ -203,11 +202,15 @@ const Header = (props) => {
                                                             }
                                                         </Link>
                                                     </div>
+                                                else
+                                                    return null;
                                             })}
                                         </ul>
 
                                     </li>
                                 </DropdownItem>
+                            else
+                                return null;
                         })
                     }
                 </div>

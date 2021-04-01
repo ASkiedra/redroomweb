@@ -3,24 +3,17 @@ import React, { Component } from "react";
 import filterLowercase, { manufacturersArr } from './filteredData';
 
 export default class Gamintojai extends Component {
-    filter(manufacturers) {
+    render() {
         // the client requested manufacturers to be displayed even if they have no products
+        // 'Novamobili', 'Chairs&More','Longhi', 'Frigerio',  'Desalto', 'Potocco','Montbell',
+        //  'Connubia','Frei frau', 
         var otherManufs = [
             'PIANCA', 'ROBERTI RATTAN', 'SOVET', 'LE COMFORT',
             'Gaber', 'Saba', 'Accento', 'Porada'
         ];
-        // 'Novamobili', 'Chairs&More','Longhi', 'Frigerio',  'Desalto', 'Potocco','Montbell',
-        //  'Connubia','Frei frau', 
 
         // pass an array that has all of the the manufacturers. NO DUPLICATES, but some problems with case sensitivity are possible 
-        manufacturers = filterLowercase([...new Set(manufacturersArr.concat(otherManufs))]);
-
-        return manufacturers;
-    }
-
-
-    render() {
-        var manufacturers = this.filter(manufacturers);
+        var manufacturers = filterLowercase([...new Set(manufacturersArr.concat(otherManufs))]);
 
         return <ManufacturersContainer language={this.props.match.params.lang} filteredManufacturers={manufacturers} />
     }
@@ -34,7 +27,7 @@ const ManufacturersContainer = (props) => {
 
                 {props.filteredManufacturers.map(manufacturer => {
                     return (
-                        <div class="manufacturer-div" key={manufacturer}>
+                        <div className="manufacturer-div" key={manufacturer}>
 
                             <Link className="flexbox-container" style={{
                                 width: "100%", height: "100%"

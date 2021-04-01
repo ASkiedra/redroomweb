@@ -68,8 +68,8 @@ const BcAndLanguages = (props) => {
                 {modifiedPathname.length > 1 && modifiedPathname[1] !== "null" && modifiedPathname[1] !== "undefined" &&
                     <>
                         <span style={{ color: 'rgba(0, 0, 0, 0.7501)' }}>/</span>
-                        <Link to={location.pathname.split(untranslatedPathname[1])[0] + untranslatedPathname[1]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
-                            <h2>
+                        <Link to={location.pathname.split(untranslatedPathname[1])[0] + untranslatedPathname[1]} style={{  transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
+                            <h2 style={{fontWeight: 'bold'}}>
                                 {modifiedPathname[1]}
                             </h2>
                         </Link>

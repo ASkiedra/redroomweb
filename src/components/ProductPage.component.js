@@ -150,6 +150,7 @@ export default class ProductPage extends Component {
                                                                                 );
                                                                         }
 
+                                                                        return null;
                                                                 })}
 
                                                 </div>
