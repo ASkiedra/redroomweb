@@ -1,17 +1,10 @@
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
-import Products from '../components/products';
-import findAllManufacturers from './findSomething';
+import filterLowercase, { manufacturersArr } from './filteredData';
 
 export default class Gamintojai extends Component {
-    constructor() {
-        // 'super' initialises 'this' in the constructor
-        super();
-        this.state = { fetchedProducts: Products };
-    }
-
     filter(manufacturers) {
-        // client requested manufacturers to be displayed even if they have no products
+        // the client requested manufacturers to be displayed even if they have no products
         var otherManufs = [
             'PIANCA', 'ROBERTI RATTAN', 'SOVET', 'LE COMFORT',
             'Gaber', 'Saba', 'Accento', 'Porada'
@@ -19,27 +12,17 @@ export default class Gamintojai extends Component {
         // 'Novamobili', 'Chairs&More','Longhi', 'Frigerio',  'Desalto', 'Potocco','Montbell',
         //  'Connubia','Frei frau', 
 
-
-        // check for lowercase here
-        // add unique manufacturers from the products to the manufacturers that the client wants (typically they will have no available products)
-        var allManufs = [...new Set(this.state.fetchedProducts.map(product => product.manufacturer))].concat(otherManufs);
-        console.log(allManufs)
-        // pass an array that has the manufacturers. NO DUPLICATES 
-        manufacturers = findAllManufacturers([...new Set(allManufs)]);
+        // pass an array that has all of the the manufacturers. NO DUPLICATES, but some problems with case sensitivity are possible 
+        manufacturers = filterLowercase([...new Set(manufacturersArr.concat(otherManufs))]);
 
         return manufacturers;
     }
 
 
     render() {
-        var manufacturers = [];
-
-
-
-        manufacturers = this.filter(manufacturers);
+        var manufacturers = this.filter(manufacturers);
 
         return <ManufacturersContainer language={this.props.match.params.lang} filteredManufacturers={manufacturers} />
-
     }
 }
 

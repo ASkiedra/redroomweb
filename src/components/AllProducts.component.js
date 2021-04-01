@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Products from '../components/products';
 import { translateSubCats } from "../components/Translate.component";
+import filterLowercase, { mainCategoriesArr, subCategoriesArr, manufacturersArr } from './filteredData';
 
 // cant store these in the state because it would update too often
 var paramsFiltersApplied = false,
@@ -185,65 +186,13 @@ export default class AllProducts extends Component {
         }
 
 
-        findAllManufacturers(manufacturersArr) {
-                this.state.fetchedProducts.forEach(product => {
-                        var found = false;
-
-                        for (let i = 0; i < manufacturersArr.length; i++)
-                                if (manufacturersArr[i] === product.manufacturer) {
-                                        found = true;
-                                        break;
-                                }
-
-                        if (!found && product.manufacturer !== "")
-                                manufacturersArr.push(product.manufacturer)
-                });
-        }
-
-        findAllMainCategories(mainCategoriesArr) {
-                this.state.fetchedProducts.forEach(product => {
-                        var found = false;
-
-                        for (let i = 0; i < mainCategoriesArr.length; i++)
-                                if (mainCategoriesArr[i] === product.mainCategory) {
-                                        found = true;
-                                        break;
-                                }
-
-                        if (!found && product.mainCategory !== "")
-                                mainCategoriesArr.push(product.mainCategory)
-                });
-        }
-
-        findAllSubCategories(subCategoriesArr) {
-                this.state.fetchedProducts.forEach(product => {
-                        var found = false;
-                        for (let i = 0; i < subCategoriesArr.length; i++)
-                                if (subCategoriesArr[i] === product.subCategory) {
-                                        found = true;
-                                        break;
-                                }
-                        if (!found && product.subCategory !== "") {
-
-                                subCategoriesArr.push(product.subCategory)
-                        }
-                });
-        }
-
 
 
         render() {
                 // using setState is too slow and for the purposes of this webpage state is not required for these items because they are only initialized and then get their data ONCE.
-                var typesArr = [], manufacturersArr = [], mainCategoriesArr = [], subCategoriesArr = [],
-                        returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
+                var typesArr = [], returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
 
                 if (!this.state.loading) {
-                        // if the length is above 0, then the types have been found 
-                        this.findAllManufacturers(manufacturersArr);
-                        this.findAllMainCategories(mainCategoriesArr);
-                        this.findAllSubCategories(subCategoriesArr);
-
-
                         // works only for the params of the url
                         if (this.props.match.params.manufacturer !== undefined || this.props.match.params.subCategory !== undefined || this.props.match.params.mainCategory !== undefined) {
                                 if ((!paramsFiltersApplied) && (subCatFilterArr.length > 0 || mainCatFilterArr.length > 0 || manufFilterArr.length > 0)) {

@@ -2,54 +2,19 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from './logo minus black.png';
 import threeLinesLogo from './three-lines-logo.png';
-import Products from '../components/products';
 import translateMainCats, { translateSubCats } from './Translate.component';
-
+import { mainCategoriesArr, subCategoriesArr } from './filteredData'
 
 
 
 
 const Header = (props) => {
-    var subCategoriesArr = [], mainCategoriesArr = [],
-        headerCollection = [
-            ['DAY SYSTEMS', 'SALON FURNITURE SYSTEMS', 'WORKPLACE FURNITURE', 'BOOKSHELVES', 'SOFA BEDS'],
-            ['WARDROBE SYSTEMS', 'INDIVIDUALLY PLANNED WARDROBES', 'CLOTHING HANGERS'],
-            ['DINING ROOM FURNITURE', 'CHAIRS', 'SOFAS', 'COFFEE TABLES', 'ARMCHAIRS', 'POUFS', 'DINING TABLES'],
-            ['BEDROOM FURNITURE', 'BEDS', 'BEDSIDE CABINETS', 'CHESTS OF DRAWERS', 'BEDROOM BENCHES'],
-        ];
-
-    function findAllMainCategories(mainCategoriesArr) {
-        Products.forEach(product => {
-            var found = false;
-
-            for (let i = 0; i < mainCategoriesArr.length; i++)
-                if (mainCategoriesArr[i] === product.mainCategory) {
-                    found = true;
-                    break;
-                }
-
-            if (!found && product.mainCategory !== "")
-                mainCategoriesArr.push(product.mainCategory)
-        });
-    }
-
-    function findAllSubCategories(subCategoriesArr) {
-        Products.forEach(product => {
-            var found = false;
-            for (let i = 0; i < subCategoriesArr.length; i++)
-                if (subCategoriesArr[i] === product.subCategory) {
-                    found = true;
-                    break;
-                }
-            if (!found && product.subCategory !== "") {
-
-                subCategoriesArr.push(product.subCategory)
-            }
-        });
-    }
-
-    findAllMainCategories(mainCategoriesArr);
-    findAllSubCategories(subCategoriesArr);
+    var headerCollection = [
+        ['DAY SYSTEMS', 'SALON FURNITURE SYSTEMS', 'WORKPLACE FURNITURE', 'BOOKSHELVES', 'SOFA BEDS'],
+        ['WARDROBE SYSTEMS', 'INDIVIDUALLY PLANNED WARDROBES', 'CLOTHING HANGERS'],
+        ['DINING ROOM FURNITURE', 'CHAIRS', 'SOFAS', 'COFFEE TABLES', 'ARMCHAIRS', 'POUFS', 'DINING TABLES'],
+        ['BEDROOM FURNITURE', 'BEDS', 'BEDSIDE CABINETS', 'CHESTS OF DRAWERS', 'BEDROOM BENCHES'],
+    ];
 
 
 
