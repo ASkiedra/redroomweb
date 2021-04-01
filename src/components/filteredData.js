@@ -26,3 +26,4 @@ export default function filterLowercase(givenArr) {
 export const mainCategoriesArr = filterLowercase([...new Set(Products.map(product => product.mainCategory))]);
 export const subCategoriesArr = filterLowercase([...new Set(Products.map(product => product.subCategory))]);
 export const manufacturersArr = filterLowercase([...new Set(Products.map(product => product.manufacturer))]);
+console.log(manufacturersArr)

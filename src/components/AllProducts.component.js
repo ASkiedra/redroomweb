@@ -6,6 +6,9 @@ import Products from '../components/products';
 import { translateSubCats } from "../components/Translate.component";
 import filterLowercase, { mainCategoriesArr, subCategoriesArr, manufacturersArr } from './filteredData';
 
+
+
+
 // cant store these in the state because it would update too often
 var paramsFiltersApplied = false,
         subCatFilterArr = [], mainCatFilterArr = [], manufFilterArr = [];
@@ -190,7 +193,13 @@ export default class AllProducts extends Component {
 
         render() {
                 // using setState is too slow and for the purposes of this webpage state is not required for these items because they are only initialized and then get their data ONCE.
-                var typesArr = [], returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
+                var typesArr = [], availSubCats = [],
+                        returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
+
+                if (this.props.match.params.manufacturer) {
+                        const filteredByManuf = Products.filter(x => x.manufacturer.toLowerCase() === this.props.match.params.manufacturer.toLowerCase() && x.manufacturer);
+                        availSubCats = (filterLowercase([...new Set(filteredByManuf.map(product => product.subCategory))]));
+                }
 
                 if (!this.state.loading) {
                         // works only for the params of the url
@@ -203,11 +212,11 @@ export default class AllProducts extends Component {
 
                                 // dont render it if its not filtered
                                 if (this.state.filtered)
-                                        returnable = <MainContainer mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
+                                        returnable = <MainContainer availSubCats={availSubCats} mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
                         }
                         // case no params in the url
                         else
-                                returnable = <MainContainer mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
+                                returnable = <MainContainer availSubCats={availSubCats} mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
 
 
                 }
@@ -273,9 +282,15 @@ const MainContainer = (props) => {
                                                         </div> */}
 
                                                         <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                                                {props.subCategoriesArr.map(curSubCat => {
-                                                                        return <SidebarItem key={curSubCat} language={language} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
-                                                                })}
+                                                                {props.availSubCats.length === 0 ?
+                                                                        props.subCategoriesArr.map(curSubCat => {
+                                                                                return <SidebarItem key={curSubCat} language={language} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
+                                                                        })
+                                                                        :
+                                                                        props.availSubCats.map(curSubCat => {
+                                                                                return <SidebarItem key={curSubCat} language={language} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
+                                                                        })
+                                                                }
                                                         </div>
 
 
