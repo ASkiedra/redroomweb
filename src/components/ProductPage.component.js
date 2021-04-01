@@ -72,7 +72,6 @@ export default class ProductPage extends Component {
 
                 // find the index where the text needs to be cut
                 while (char !== ' ') {
-                        console.log(char);
                         index++;
                         char = text[index]
 

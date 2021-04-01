@@ -17,10 +17,16 @@ const BcAndLanguages = (props) => {
     for (let i = location.pathname.split("/").length - 1; i > 0; i--)
         modifiedPathname[i - 2] = (location.pathname.split("/")[i]);
 
+    // if the 3rd element of modifiedPathname is 'null' (a string because its a string in the url), a manufacturer exists and there is no need to translate it. 
+    // it has to be !undefined and !null, because manufExists would be true even when modifiedPathname has <3 elements
+    //if modifiedPathname[2] is undefined or 'null'', it means that a word before manufacturer exists therefore manufacturer wont be in the breadcrumbs
+    var manufExists = modifiedPathname[3] !== 'null' && modifiedPathname[3] !== undefined && modifiedPathname[3] !== null && (modifiedPathname[2] === undefined || modifiedPathname[2] === 'null');
+
 
     var pathnameWO = "";
     for (let i = 3; i < location.pathname.length; i++)
         pathnameWO += location.pathname[i];
+
 
 
     // remove empty strings. possible to make into 1 line?
@@ -34,8 +40,8 @@ const BcAndLanguages = (props) => {
         modifiedPathname[0] = translateMainItems(modifiedPathname[0]);
 
 
-    // translation of the third word in the breadcrumbs. can be maincat, subcat, ...
-    if (props.language === "LT" && modifiedPathname[1] !== undefined)
+    // translation of the third word in the breadcrumbs. can be maincat, subcat, manuf ...
+    if (props.language === "LT" && modifiedPathname[1] !== undefined && !manufExists)
         if (translateMainCats(modifiedPathname[1]) !== null)
             modifiedPathname[1] = translateMainCats(modifiedPathname[1]);
         else
