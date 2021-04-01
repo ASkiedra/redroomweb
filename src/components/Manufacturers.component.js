@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import Products from '../components/products';
-
+import findAllManufacturers from './findSomething';
 
 export default class Gamintojai extends Component {
     constructor() {
@@ -16,46 +16,27 @@ export default class Gamintojai extends Component {
             'PIANCA', 'ROBERTI RATTAN', 'SOVET', 'LE COMFORT',
             'Gaber', 'Saba', 'Accento', 'Porada'
         ];
+        // 'Novamobili', 'Chairs&More','Longhi', 'Frigerio',  'Desalto', 'Potocco','Montbell',
+        //  'Connubia','Frei frau', 
 
 
-        this.state.fetchedProducts.forEach(product => {
-            var found = false;
+        // check for lowercase here
+        // add unique manufacturers from the products to the manufacturers that the client wants (typically they will have no available products)
+        var allManufs = [...new Set(this.state.fetchedProducts.map(product => product.manufacturer))].concat(otherManufs);
+        console.log(allManufs)
+        // pass an array that has the manufacturers. NO DUPLICATES 
+        manufacturers = findAllManufacturers([...new Set(allManufs)]);
 
-            for (let i = 0; i < manufacturers.length; i++)
-                if (manufacturers[i].toLowerCase() === product.manufacturer.toLowerCase()) {
-                    found = true;
-                    break;
-                }
-
-
-            if (!found && product.manufacturer !== "")
-                manufacturers.push(product.manufacturer)
-        });
-
-
-        otherManufs.forEach(manuf => {
-            var found = false;
-
-            for (let i = 0; i < manufacturers.length; i++)
-                if (manufacturers[i].toLowerCase() === manuf.toLowerCase()) {
-                    found = true;
-                    break;
-                }
-
-
-            if (!found && manuf !== "")
-                manufacturers.push(manuf)
-        });
-
+        return manufacturers;
     }
 
 
     render() {
         var manufacturers = [];
 
-        // 'Novamobili', 'Chairs&More','Longhi', 'Frigerio',  'Desalto', 'Potocco','Montbell',
-        // blogos kokybes 'Connubia','Frei frau', 
-        this.filter(manufacturers);
+
+
+        manufacturers = this.filter(manufacturers);
 
         return <ManufacturersContainer language={this.props.match.params.lang} filteredManufacturers={manufacturers} />
 

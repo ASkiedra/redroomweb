@@ -13,9 +13,15 @@ function App() {
   // no automatic year function because im not sure how long i will work on this website 
   console.log("https://github.com/jonwow 2020-2021")
 
-  const [language, setLanguage] = useState("LT");
 
+  // if the page is in english (red-room.lt/en), make the default language english.
+  const [language, setLanguage] = useState(
+    ((window.location.pathname[1] !== undefined && window.location.pathname[2] !== undefined) &&
+      (window.location.pathname[1].toUpperCase() === 'E' && window.location.pathname[2].toUpperCase() === 'N')) ? "EN"
+      : "LT");
 
+  console.log(window.location.pathname[1] !== undefined);
+  console.log(language)
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header language={language} />
@@ -26,6 +32,7 @@ function App() {
         <Routes language={language} />
 
       </div>
+
       {/* remove footer from small screen devices because it is unnecessary */}
       {(window.innerHeight > 1000 && window.innerWidth > 1000) && <Footer />}
 

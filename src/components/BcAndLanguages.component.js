@@ -6,11 +6,6 @@ const BcAndLanguages = (props) => {
     const location = useLocation();
     var modifiedPathname = [];
 
-    // if any location is present ( [0] is always /, so im checking the 1st element), e.g. /lt or /en
-    if (location.pathname[1] !== undefined)
-        if (location.pathname[1].toUpperCase() + location.pathname[2].toUpperCase() === "LT" || location.pathname[1].toUpperCase() + location.pathname[2].toUpperCase() === "EN")
-            props.setLanguage(location.pathname[1].toUpperCase() + location.pathname[2].toUpperCase())
-
     // if breadcrumbs are longer than PAGRINDINIS/*PAGE*
     // example: PAGRINDINIS/*PAGE*/*CRITERIA*
     // 0th element is nonexistent because the string starts with /
