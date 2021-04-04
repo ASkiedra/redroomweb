@@ -109,7 +109,7 @@ export default class ProductPage extends Component {
                                                         }
                                                 </p>
                                         }
-                                        <div style={{ maxWidth: '100%', maxHeight: '100%', height: '23rem' }}>
+                                        <div style={{ maxWidth: '100%', maxHeight: '23rem', height: 'auto'}}>
 
                                                 <div style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit', marginBottom: '1rem', maxHeight: 'inherit' }} id="container-1">
 
@@ -127,7 +127,7 @@ export default class ProductPage extends Component {
 
                                         {/* 23 rem because mainproductphoto container has a height of 23rem */}
                                         {this.state.imageName.length > 1 &&
-                                                <div id="addit-photo-container" style={{ width: '100%', maxWidth: '100%', overflow: 'hidden', display: 'grid', height: '23rem' }}>
+                                                <div id="addit-photo-container" style={{marginBottom: '-8rem',width: '100%', maxWidth: '100%', overflow: 'hidden', display: 'grid', height: 'auto', maxHeight: '23rem' }}>
                                                         {!this.state.loading &&
                                                                 this.state.imageName.map(() => {
                                                                         i++;
