@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from './logo minus black.png';
 import threeLinesLogo from './three-lines-logo.png';
-import translateMainCats, { translateSubCats } from './Translate.component';
+import translateMainCats, { translateMainItems, translateSubCats } from "../components/translate";
 import { mainCategoriesArr, subCategoriesArr } from './filteredData'
 
 
@@ -66,7 +66,7 @@ const Header = (props) => {
                         <Link
                             style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products"}                        >
                             {
-                                props.language === "LT" ? "PRODUKTAI" :
+                                props.language === "LT" ? translateMainItems("PRODUCTS") :
                                     props.language === "EN" && "PRODUCTS"
                             }
                         </Link>
@@ -174,7 +174,7 @@ const Header = (props) => {
                         //                  3, 4
                         headerCollection.map(collectionPart => {
                             if (mainCategoriesArr.indexOf(collectionPart[0].toLowerCase()) !== -1)
-                                return <DropdownItem key={collectionPart[0]+'-parent'} >
+                                return <DropdownItem key={collectionPart[0] + '-parent'} >
                                     {/* // if the big text category in in stock and also the first element in the collection  */}
                                     <li key={collectionPart[0]} style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
                                         {mainCategoriesArr.indexOf(collectionPart[0].toLowerCase()) !== -1 &&
@@ -292,9 +292,8 @@ const Header = (props) => {
 
                 <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/interior"}>
                     <div>
-
-                        {props.language === "LT" ? "INTERJERUI"
-                            : props.language === "EN" && "INTERIOR"}
+                        {props.language === "LT" ? translateMainItems("INTERIOR") :
+                            props.language === "EN" && "INTERIOR"}
                     </div>
 
                 </Link>
@@ -310,7 +309,7 @@ const Header = (props) => {
                 <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/manufacturers"}>
                     <div >
 
-                        {props.language === "LT" ? "GAMINTOJAI" :
+                        {props.language === "LT" ? translateMainItems("MANUFACTURERS") :
                             props.language === "EN" && "MANUFACTURERS"}
                     </div>
 
@@ -318,7 +317,7 @@ const Header = (props) => {
 
                 <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/contacts"}>
                     <div>
-                        {props.language === "LT" ? "KONTAKTAI" :
+                        {props.language === "LT" ? translateMainItems("CONTACTS") :
                             props.language === "EN" && "CONTACTS"}
                     </div>
 

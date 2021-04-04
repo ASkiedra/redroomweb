@@ -16,9 +16,8 @@
   font-family: "Quicksand", sans-serif;
 }
 
-#first-footer ul a:hover
-{
-    filter: invert(1);
+#first-footer ul a:hover {
+  filter: invert(1);
 }
 
 #first-footer ul a {
@@ -29,23 +28,19 @@
   font-size: 2em;
 }
 
-
-footer p, footer a, footer span {
+footer p,
+footer a,
+footer span {
   transition: 0.1s;
 }
 footer a:hover,
-footer p:hover
-{
+footer p:hover {
   font-weight: 550;
 }
 
 footer #div-for-text:hover {
   font-weight: 450;
 }
-
-
-
-
 
 /* internet explorer fixes */
 /* 1st child is 'threelines' which is visible on mobile, therefore we start with the 2nd child and give the 1st column position */
@@ -74,34 +69,25 @@ footer #div-for-text:hover {
   -ms-grid-column: unset;
 }
 
-#social-media-container :nth-child(1){
+#social-media-container :nth-child(1) {
   -ms-grid-column: 1;
   grid-column: 1;
   display: block;
 }
 
-#social-media-container :nth-child(2){
+#social-media-container :nth-child(2) {
   -ms-grid-column: 2;
   grid-column: 2;
   display: block;
 }
 
-#social-media-container :nth-child(3){
+#social-media-container :nth-child(3) {
   -ms-grid-column: 3;
   grid-column: 3;
   display: block;
 }
 
-
-
 /* end of internet explorer fixes */
-
-
-
-
-
-
-
 
 ::-webkit-scrollbar {
   width: 7px;
@@ -118,11 +104,6 @@ footer #div-for-text:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
-
-
-
-
 
 #asd {
   /* 1/2 of grid height */
@@ -201,12 +182,10 @@ html {
 
 /* small laptops */
 @media (min-height: 600px) and (max-height: 770px) and (min-width: 1250px) and (max-width: 1400px) {
-html {
-  font-size: 15px;
+  html {
+    font-size: 15px;
   }
 }
-
-
 
 #container-1 {
   height: inherit;
@@ -430,15 +409,11 @@ footer :nth-child(4) {
   -ms-grid-row: 2;
 }
 
-
-
-
 #first-footer ul {
   display: grid;
   display: -ms-grid;
   grid-template-columns: 50% 50%;
   -ms-grid-columns: 50% 50%;
-
 }
 #first-footer ul li {
   -ms-grid-column: 2;
@@ -449,7 +424,6 @@ footer :nth-child(4) {
   -ms-grid-column: 1;
   grid-column: 1;
 }
-
 
 #first-footer ul :nth-child(2) {
   -ms-grid-column: 2;
@@ -558,16 +532,16 @@ a {
   transition: all 0.25s;
 }
 
-.manufacturer-div a:hover{
-
+.manufacturer-div a:hover {
   transform: scale(1.1);
-  
-}
-#interior-photo-container:hover {
-  filter: drop-shadow(0 0.25rem 0.75rem black);
-  transform: scale(0.725);
 }
 
+@media (min-height:700px) and (min-width: 700px) {
+  #interior-photo-container:hover {
+    filter: drop-shadow(0 0.25rem 0.75rem black);
+    transform: scale(0.725);
+  }
+}
 
 #background-container-2 {
   width: inherit;
@@ -651,7 +625,6 @@ a {
 }
 
 #dropdown-grid {
-  
   display: grid;
   display: -ms-grid;
   grid-template-columns: 50% 50%;
@@ -768,7 +741,6 @@ a {
   font-size: 0.9rem;
   font-weight: 300;
 }
-
 
 .product-name {
   text-decoration: none;
@@ -966,7 +938,7 @@ body {
   right: 1;
   display: grid;
   display: -ms-grid;
-  
+
   -ms-grid-column: 2;
 
   grid-template-columns: 80% 10% 10%;
@@ -1052,14 +1024,14 @@ body {
     font-size: 22px;
   }
 
-
-
-  #container-contacts-text-grid p, #container-contacts-text-grid a, #container-contacts-text-grid h1, #container-contacts-text-grid span {
+  #container-contacts-text-grid p,
+  #container-contacts-text-grid a,
+  #container-contacts-text-grid h1,
+  #container-contacts-text-grid span {
     font-size: 1.32rem;
   }
 
-  #container-contacts-text-grid span
-  {
+  #container-contacts-text-grid span {
     font-size: 4rem;
   }
 }
@@ -1069,7 +1041,6 @@ body {
   html {
     font-size: 34px;
   }
-
 }
 
 /* ~8k support */
@@ -1078,27 +1049,23 @@ body {
     font-size: 75px;
   }
 
-  #container-contacts-text-grid p, #container-contacts-text-grid a, #container-contacts-text-grid h1, #container-contacts-text-grid span {
+  #container-contacts-text-grid p,
+  #container-contacts-text-grid a,
+  #container-contacts-text-grid h1,
+  #container-contacts-text-grid span {
     font-size: 1.12rem;
   }
 
-  #container-contacts-text-grid span
-  {
+  #container-contacts-text-grid span {
     font-size: 3rem;
   }
 }
-
-
 
 @media (max-height: 800px) and (max-width: 800px) {
   html {
     font-size: 12px;
   }
 }
-
-
-
-
 
 @media (max-width: 1100px) {
   #products-container {
@@ -1118,7 +1085,6 @@ body {
     grid-template-columns: 22% 78%;
     -ms-grid-columns: 22% 78%;
   }
-
 
   #products-container {
     grid-template-columns: 50% 50%;
@@ -1191,7 +1157,6 @@ body {
     grid-template-columns: 1fr;
     -ms-grid-columns: 1fr;
   }
-
 
   #prod-photo-container {
     height: 100%;
@@ -1712,29 +1677,24 @@ body {
   display: block;
 }
 
-
 @media (min-height: 606px) and (min-width: 1275px) and (max-width: 1600px) and (max-height: 800px) {
   #interior-container {
     grid-template-columns: 33.333% 33.333% 33.333%;
   }
-  
 }
-
 
 /* small laptops */
 @media (min-height: 600px) and (max-height: 770px) and (min-width: 1250px) and (max-width: 1400px) {
-  
-#container-contacts-text-grid span {
-  font-size: 3.3rem;
+  #container-contacts-text-grid span {
+    font-size: 3.3rem;
+  }
+
+  #container-contacts-text-grid a,
+  #container-contacts-text-grid h1,
+  #container-contacts-text-grid p {
+    font-size: 1.35rem;
+  }
 }
-
-#container-contacts-text-grid a, #container-contacts-text-grid h1, #container-contacts-text-grid p {
- font-size: 1.35rem; 
-}
-
-}
-
-
 
 #products-sidebar {
   height: 17rem;

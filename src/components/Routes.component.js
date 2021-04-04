@@ -17,6 +17,11 @@ const Routes = (props) => {
     // scroll up on every route change
     useEffect(() => {
         window.scrollTo(0, 0)
+
+        // if the user clicks on an itnerior image and then switches to another route
+        if (location.pathname.indexOf('interior') === -1 && document.getElementsByTagName("body")[0].classList.contains('setHeightLimit'))
+            document.getElementsByTagName("body")[0].classList.remove('setHeightLimit')
+
     }, [location]);
 
     return (

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Products from '../components/products';
-import { translateSubCats } from "../components/Translate.component";
+import { translateSubCats } from "../components/translate";
 import filterLowercase, { mainCategoriesArr, subCategoriesArr, manufacturersArr } from './filteredData';
 
 

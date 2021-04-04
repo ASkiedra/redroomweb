@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
-import translateMainCats, { translateSubCats, translateMainItems } from "./Translate.component";
+import translateMainCats, { translateSubCats, translateMainItems } from "../components/translate";
 
 const BcAndLanguages = (props) => {
     const location = useLocation();
