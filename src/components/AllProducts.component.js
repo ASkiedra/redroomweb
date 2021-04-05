@@ -201,6 +201,11 @@ export default class AllProducts extends Component {
                         availSubCats = (filterLowercase([...new Set(filteredByManuf.map(product => product.subCategory))]));
                 }
 
+                if (this.props.match.params.mainCategory) {
+                        const filteredByMainCat = Products.filter(x => x.mainCategory.toLowerCase() === this.props.match.params.mainCategory.toLowerCase() && x.mainCategory);
+                        availSubCats = (filterLowercase([...new Set(filteredByMainCat.map(product => product.subCategory))]));
+                }
+
                 if (!this.state.loading) {
                         // works only for the params of the url
                         if (this.props.match.params.manufacturer !== undefined || this.props.match.params.subCategory !== undefined || this.props.match.params.mainCategory !== undefined) {
