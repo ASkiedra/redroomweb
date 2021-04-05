@@ -24,7 +24,7 @@ const Routes = (props) => {
 
 
         var language = location.pathname[1] + location.pathname[2];
-        if (location.pathname.length >= 3)
+        if (location.pathname.length >= 3 && language !== props.language)
             props.setLanguage(language);
 
     }, [location]);
@@ -32,8 +32,8 @@ const Routes = (props) => {
     return (
         <Switch>
             {/* MainPage routes */}
-            <Route exact path='/:lang' component={MainPage} />
-            <Route exact path="/" component={MainPage} />
+            <Route exact path='/:lang' language={props.language}component={MainPage} />
+            <Route exact path="/" language={props.language} component={MainPage} />
 
 
             {/* AllProductsRoutes */}

@@ -107,7 +107,7 @@ export default class ProductPage extends Component {
                                 }} className="display-none" id="background-container">
 
                                         <div id="background-container-2">
-                                                <img class="big-img-container" style={{ borderRadius: '5px', zIndex: '111' }} id="enlarged-img" alt='enlarged' src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" />
+                                                <img className="big-img-container" style={{ borderRadius: '5px', zIndex: '111' }} id="enlarged-img" alt='enlarged' src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" />
 
                                         </div>
 
@@ -158,7 +158,7 @@ export default class ProductPage extends Component {
 
                                                                         if (this.state.imageName[i] !== undefined)
                                                                                 return (
-                                                                                        <div id="asd">
+                                                                                        <div key={i+'-item'} id="asd">
                                                                                                 <img style={{ maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }}
                                                                                                         onClick={(e) => this.swapImages(e.target)} src={this.state.path + this.state.imageName[i]} id={'img' + i} alt={this.state.imageName[i] + "-additional-photo"} />
                                                                                         </div>
@@ -168,7 +168,7 @@ export default class ProductPage extends Component {
                                                                         if (i !== 3) {
 
                                                                                 return (
-                                                                                        <div id="asd">
+                                                                                        <div key={i+'-item'}  id="asd">
                                                                                                 <img alt='additional-empty-pic' style={{ opacity: '0', height: 'inherit', maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }} ></img>
                                                                                         </div>
                                                                                 );

@@ -7,11 +7,8 @@ import { translateSubCats } from "../components/translate";
 import filterLowercase, { mainCategoriesArr, subCategoriesArr, manufacturersArr } from './filteredData';
 
 
-
-
 // cant store these in the state because it would update too often
-var paramsFiltersApplied = false,
-        subCatFilterArr = [], mainCatFilterArr = [], manufFilterArr = [];
+var paramsFiltersApplied = false, subCatFilterArr = [], mainCatFilterArr = [], manufFilterArr = [];
 
 export default class AllProducts extends Component {
         constructor(props) {
@@ -21,6 +18,7 @@ export default class AllProducts extends Component {
         }
 
         componentDidUpdate(prevProps) {
+                // prevent infinite state update. if prev location is not the current location
                 if ((prevProps.location.key !== this.props.location.key || prevProps.location.pathname !== this.props.location.pathname)) {
                         subCatFilterArr = [];
                         mainCatFilterArr = [];
@@ -43,6 +41,7 @@ export default class AllProducts extends Component {
                 mainCatFilterArr = [];
                 manufFilterArr = [];
 
+                // if any props match params are in the url, push them to appropriate arrays
                 if (this.props.match.params.manufacturer !== undefined && this.props.match.params.manufacturer !== 'null')
                         manufFilterArr.push(this.props.match.params.manufacturer)
                 if (this.props.match.params.subCategory !== undefined && this.props.match.params.subCategory !== 'null')
@@ -232,6 +231,8 @@ export default class AllProducts extends Component {
 const MainContainer = (props) => {
         const language = useLocation().pathname[1] + useLocation().pathname[2];
         const [showFilter, setSF] = useState(false);
+
+        // if user is on a manufacturer page, set the link to the manufacturer link. otherwise - make it /products.
         var clearBtnLink = props.this.props.match.params.manufacturer !== undefined && props.this.props.match.params.manufacturer !== 'null' ? "/" + language + "/products/null/null/" + props.this.props.match.params.manufacturer : "/" + language + "/products";
 
         // scroll up on every route change
@@ -367,7 +368,6 @@ const Product = (props) => {
 
         return (
                 <Link key={props.product.productCode + props.product.name}
-                        // height used to be 20rem if any sizing problem occurs
                         style={{ padding: '0.2rem 0', height: '22rem', width: '100%' }}
                         to={{
                                 pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.manufacturer + "/" + props.product.name + "/",

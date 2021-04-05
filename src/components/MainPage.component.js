@@ -1,15 +1,5 @@
-// import logo from './logo minus.png';
-import { useLocation } from "react-router-dom"
-
 const MainPage = () => {
-
-    var language = useLocation().pathname[1] + useLocation().pathname[2];
-
-    // if no language is defined in the link, set it to default (LT)
-    if (language !== "LT" && language !== "EN")
-        language = "LT";
     return (
-        // marginTop -2rem because the designer asked for a transparent breadcrumbs component on the main page
         <div id="main-page-cont0" style={{ background: 'url(/images/bg-50percent-min.jpg)', backgroundSize: 'cover', marginTop: '-32rem', paddingBottom: '28rem', height: '100vh' }}>
             <div></div>
 

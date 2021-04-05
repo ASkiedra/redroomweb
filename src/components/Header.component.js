@@ -9,17 +9,15 @@ import { mainCategoriesArr, subCategoriesArr } from './filteredData'
 
 
 const Header = (props) => {
-    var headerCollection = [
+    const dropdownCollection = [
         ['DAY SYSTEMS', 'SALON FURNITURE SYSTEMS', 'WORKPLACE FURNITURE', 'BOOKSHELVES', 'SOFA BEDS'],
         ['WARDROBE SYSTEMS', 'INDIVIDUALLY PLANNED WARDROBES', 'CLOTHING HANGERS'],
         ['DINING ROOM FURNITURE', 'CHAIRS', 'SOFAS', 'COFFEE TABLES', 'ARMCHAIRS', 'POUFS', 'DINING TABLES'],
         ['BEDROOM FURNITURE', 'BEDS', 'BEDSIDE CABINETS', 'CHESTS OF DRAWERS', 'BEDROOM BENCHES'],
     ];
 
+    const dropdown2Collection = ['PRODUCTS', 'INTERIOR', 'MANUFACTURERS', 'CONTACTS'];
 
-
-    // LEFT PART OF THE NAVBAR
-    // renders the threelines image or the dropdown if its clicked.
     const Menu = () => {
         return (
             <div style={{ width: "inherit", height: 'inherit', margin: "0 auto" }} >
@@ -60,69 +58,24 @@ const Header = (props) => {
 
         return (
             <ul className="dropdown2" >
-                <DropdownItem>
-                    <li style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
-                        {/* heading text */}
-                        <Link
-                            style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products"}                        >
-                            {
-                                props.language === "LT" ? translateMainItems("PRODUCTS") :
-                                    props.language === "EN" && "PRODUCTS"
-                            }
-                        </Link>
-                    </li>
-                </DropdownItem>
+                {dropdown2Collection.map(collectionPart => {
+                    return (
+                        <DropdownItem>
+                            <li  style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
+                                <Link
+                                    style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/"+collectionPart.toLowerCase()}                        >
+                                    {
+                                        props.language === "LT" ? translateMainItems(collectionPart) :
+                                            props.language === "EN" && collectionPart
+                                    }
+                                </Link>
+                            </li>
+                        </DropdownItem>)
 
-                <DropdownItem>
-                    <li style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
-                        {/* heading text */}
-                        <Link
-                            style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/interior"}                        >
-                            {
-                                props.language === "LT" ? "INTERJERAS" :
-                                    props.language === "EN" && "INTERIOR"
-                            }
-                        </Link>
-                    </li>
-                </DropdownItem>
-
-                <DropdownItem>
-                    <li style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
-                        {/* heading text */}
-                        <Link
-                            style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/manufacturers"}                        >
-                            {
-                                props.language === "LT" ? "GAMINTOJAI" :
-                                    props.language === "EN" && "MANUFACTURERS"
-                            }
-                        </Link>
-                    </li>
-                </DropdownItem>
-
-                <DropdownItem>
-                    <li style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
-                        {/* heading text */}
-                        <Link
-                            style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/contacts"}                        >
-                            {
-                                props.language === "LT" ? "KONTAKTAI" :
-                                    props.language === "EN" && "CONTACTS"
-                            }
-                        </Link>
-                    </li>
-                </DropdownItem>
-
+                })}
             </ul>
         );
     }
-    // END OF LEFT PART OF THE NAVBAR
-    ///////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
 
 
 
@@ -172,7 +125,7 @@ const Header = (props) => {
                     {
                         // collectionPart = 1, 2
                         //                  3, 4
-                        headerCollection.map(collectionPart => {
+                        dropdownCollection.map(collectionPart => {
                             if (mainCategoriesArr.indexOf(collectionPart[0].toLowerCase()) !== -1)
                                 return <DropdownItem key={collectionPart[0] + '-parent'} >
                                     {/* // if the big text category in in stock and also the first element in the collection  */}
@@ -242,14 +195,13 @@ const Header = (props) => {
 
 
 
+
+
+
+
     // HIDE/SHOW DROPDOWNS
     const [openedProductsDropdown, setOPD] = useState(false);
     const [openedThreeLines, setOTL] = useState(false);
-
-    // esu /lt (curLoc) 
-    // keiciu page i /en , pradzioj newLoc = uselocation
-    // tada curLoc ?== newLoc
-    // ir tik tada curLoc == newLoc
 
 
 

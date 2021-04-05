@@ -40,10 +40,8 @@ const BcAndLanguages = (props) => {
 
 
 
-    // remove empty strings. possible to make into 1 line?
-    modifiedPathname = modifiedPathname.filter(el => el !== "");
-    modifiedPathname = modifiedPathname.filter(el => el !== "undefined" && el !== undefined);
-    modifiedPathname = modifiedPathname.filter(el => el !== "null" && el !== null);
+    // remove empty strings.
+    modifiedPathname = modifiedPathname.filter(el => el !== "" && el !== "undefined" && el !== undefined && el !== "null" && el !== null);
 
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
     // translation of the second word in the breadcrumbs
@@ -63,7 +61,6 @@ const BcAndLanguages = (props) => {
         <ul style={{ background: "transparent" }} id="bcnl-container">
             <div id="breadcrumbs-links">
                 <Link to={"/" + props.language} style={{ paddingLeft: '1rem', transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
-                    {/* kalba == lt? pagrindinis: main */}
                     {props.language === "LT" ? "PAGRINDINIS" : "MAIN"}
                 </Link>
 
@@ -100,7 +97,8 @@ const BcAndLanguages = (props) => {
                 <div>
                 </div>
 
-                <Link id="bc-lt" to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
+                {/* bold by default in case of no language (e.g. red.room.lt has no lang pathname) */}
+                <Link className="bold-text" id="bc-lt" to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
                     LT
                 </Link>
 
