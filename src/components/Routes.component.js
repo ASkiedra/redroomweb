@@ -22,6 +22,11 @@ const Routes = (props) => {
         if (location.pathname.indexOf('interior') === -1 && document.getElementsByTagName("body")[0].classList.contains('setHeightLimit'))
             document.getElementsByTagName("body")[0].classList.remove('setHeightLimit')
 
+
+        var language = location.pathname[1] + location.pathname[2];
+        if (location.pathname.length >= 3)
+            props.setLanguage(language);
+
     }, [location]);
 
     return (
