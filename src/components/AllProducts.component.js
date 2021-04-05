@@ -227,6 +227,7 @@ export default class AllProducts extends Component {
 const MainContainer = (props) => {
         const language = useLocation().pathname[1] + useLocation().pathname[2];
         const [showFilter, setSF] = useState(false);
+        var clearBtnLink = props.this.props.match.params.manufacturer !== undefined && props.this.props.match.params.manufacturer !== 'null' ? "/" + language + "/products/null/null/" + props.this.props.match.params.manufacturer : "/" + language + "/products";
 
         // scroll up on every route change
         useEffect(() => {
@@ -239,6 +240,7 @@ const MainContainer = (props) => {
                 }
 
         }, [props.this.state]);
+
 
         return (
                 <div id='allproducts-container' >
@@ -269,7 +271,9 @@ const MainContainer = (props) => {
                                                                 </div>
                                                         }
                                                         <Link onClick={() => window.innerWidth < 1149 && setSF(false)}
-                                                                id="clear-btn" to={"/" + language + "/products"}>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
+                                                                id="clear-btn" to={clearBtnLink
+
+                                                                }>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
 
                                                 </div>
 

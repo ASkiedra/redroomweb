@@ -85,11 +85,34 @@ export default class ProductPage extends Component {
                 return [text.substr(0, index), text.substr(index)]
         }
 
+
+        enlargeImage = (imgSrc) => {
+                        if (document.getElementById("background-container") !== undefined) {
+                                document.getElementById("background-container").style.top = window.pageYOffset + 'px';
+                                document.getElementById("background-container").classList.toggle("display-none");
+                                document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
+                                document.getElementById("enlarged-img").src = imgSrc;
+
+                        }
+        }
+
         render() {
                 var i = 0;
 
                 return (
                         <div style={{ paddingTop: '1rem', paddingBottom: '18rem', minHeight: 'inherit' }} >
+                                <div style={{ cursor: 'pointer', background: 'rgb(0 0 0 / 85%)' }} onClick={() => {
+                                        document.getElementById("background-container").classList.toggle("display-none");
+                                        document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
+                                }} className="display-none" id="background-container">
+
+                                        <div id="background-container-2">
+                                                <img class="big-img-container" style={{ borderRadius: '5px', zIndex: '111' }} id="enlarged-img" alt='enlarged' src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" />
+
+                                        </div>
+
+                                </div>
+
                                 <div id="product-page-grid">
 
                                         {this.state.info[0] === "Susisiekite su mumis dėl daugiau informacijos." ?
@@ -109,25 +132,26 @@ export default class ProductPage extends Component {
                                                         }
                                                 </p>
                                         }
-                                        <div style={{ maxWidth: '100%', maxHeight: '23rem', height: 'auto'}}>
 
-                                                <div style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit', marginBottom: '1rem', maxHeight: 'inherit' }} id="container-1">
+                                        <div style={{ maxWidth: '100%', maxHeight: '23rem', height: 'auto' }}>
 
-                                                        {!this.state.loading && <img id="main-product-image" src={this.state.path + this.state.imageName[i]} style={{ maxHeight: 'inherit', minWidth: 'inherit', width: 'inherit', minHeight: '48%', fontSize: '0' }} alt="main-product" />}
+                                                <div style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit', minHeight: '20rem', marginBottom: '1rem', maxHeight: 'inherit' }} id="container-1">
+
+                                                        {!this.state.loading && <img onClick={(e) => this.enlargeImage(e.target.src)} id="main-product-image" src={this.state.path + this.state.imageName[i]} style={{ cursor: 'pointer', maxHeight: 'inherit', minWidth: 'inherit', width: 'inherit', minHeight: '48%', fontSize: '0' }} alt="main-product" />}
 
 
 
                                                 </div>
 
                                                 <div id="product-text-container">
-                                                        <h3 style={{ display: 'inline', fontWeight: 'normal', textAlign: 'CENTER', position: 'relative', marginTop: '3rem', zIndex: '9999' }} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</h3>
+                                                        <h3 style={{ display: 'inline', fontWeight: 'normal', textAlign: 'CENTER', position: 'relative', marginTop: '3rem', zIndex: '0' }} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</h3>
 
                                                 </div>
                                         </div>
 
                                         {/* 23 rem because mainproductphoto container has a height of 23rem */}
                                         {this.state.imageName.length > 1 &&
-                                                <div id="addit-photo-container" style={{marginBottom: '-8rem',width: '100%', maxWidth: '100%', overflow: 'hidden', display: 'grid', height: 'auto', maxHeight: '23rem' }}>
+                                                <div id="addit-photo-container" style={{paddingTop: '1.5rem', marginBottom: '-8rem', width: '100%', maxWidth: '100%', overflow: 'hidden', display: 'grid', height: 'auto', maxHeight: '23rem' }}>
                                                         {!this.state.loading &&
                                                                 this.state.imageName.map(() => {
                                                                         i++;

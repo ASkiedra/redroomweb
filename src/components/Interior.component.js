@@ -23,8 +23,10 @@ const Interior = () => {
                                 document.getElementById("background-container").classList.toggle("display-none");
                                 document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
                         }} className="display-none" id="background-container">
+
                                 <div id="background-container-2">
                                         <img id="enlarged-img" alt='enlarged' src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" />
+
                                 </div>
 
                         </div>
@@ -35,7 +37,7 @@ const Interior = () => {
                                         images.map(element => {
 
                                                 return (
-                                                        <div key={images.indexOf(element)+ 'interior-photo'} id="interior-photo-container">
+                                                        <div key={images.indexOf(element) + 'interior-photo'} id="interior-photo-container">
                                                                 <img style={{ transform: 'scale(2.3)', cursor: 'pointer' }} onClick={(e) => enlargeImage(e.target.src)} src={element.default} alt={element.default + '-photo'} />
                                                         </div>
                                                 )
