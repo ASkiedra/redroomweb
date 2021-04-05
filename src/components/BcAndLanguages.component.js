@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import translateMainCats, { translateSubCats, translateMainItems } from "../components/translate";
 
 const BcAndLanguages = (props) => {
     const location = useLocation();
+
+    // if you go back, the boldness doesnt change without this, e.g. you can be on /lt/products after being in /en/products and only EN will be bold
+    useEffect(() => {
+        var language = location.pathname[1] + location.pathname[2];
+
+        if (language === "LT") {
+            document.getElementById('bc-en').classList.remove('bold-text');
+            document.getElementById('bc-lt').classList.add('bold-text');
+        }
+        else if (language === "EN") {
+            document.getElementById('bc-en').classList.add('bold-text');
+            document.getElementById('bc-lt').classList.remove('bold-text');
+        }
+    }, [location]);
+
+
     var modifiedPathname = [];
 
     // if breadcrumbs are longer than PAGRINDINIS/*PAGE*
@@ -68,8 +84,8 @@ const BcAndLanguages = (props) => {
                 {modifiedPathname.length > 1 && modifiedPathname[1] !== "null" && modifiedPathname[1] !== "undefined" &&
                     <>
                         <span style={{ color: 'rgba(0, 0, 0, 0.7501)' }}>/</span>
-                        <Link to={location.pathname.split(untranslatedPathname[1])[0] + untranslatedPathname[1]} style={{  transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
-                            <h2 style={{fontWeight: 'bold'}}>
+                        <Link to={location.pathname.split(untranslatedPathname[1])[0] + untranslatedPathname[1]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
+                            <h2 style={{ fontWeight: 'bold' }}>
                                 {modifiedPathname[1]}
                             </h2>
                         </Link>
@@ -84,30 +100,14 @@ const BcAndLanguages = (props) => {
                 <div>
                 </div>
 
-                {props.language === "LT" ?
-                    <>
-                        <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', fontWeight: 'bold', color: ' rgba(0, 0, 0, 0.7501)' }}>
-                            LT
-                        </Link>
+                <Link id="bc-lt" to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
+                    LT
+                </Link>
 
-                        <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
-                            EN
-                        </Link>
-                    </>
-                    : props.language === "EN" &&
-                    <>
+                <Link id="bc-en" to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
+                    EN
+                </Link>
 
-                        <Link to={"/LT" + pathnameWO} onClick={() => props.setLanguage("LT")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
-                            LT
-            </Link>
-
-
-                        <Link to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: 'black', fontWeight: ' rgba(0, 0, 0, 0.7501)', }}>
-                            EN
-        </Link>
-                    </>
-
-                }
             </div>
         </ul >
     );
