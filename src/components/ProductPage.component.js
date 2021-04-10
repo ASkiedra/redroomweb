@@ -87,13 +87,14 @@ export default class ProductPage extends Component {
 
 
         enlargeImage = (imgSrc) => {
-                        if (document.getElementById("background-container") !== undefined) {
-                                document.getElementById("background-container").style.top = window.pageYOffset + 'px';
-                                document.getElementById("background-container").classList.toggle("display-none");
-                                document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
-                                document.getElementById("enlarged-img").src = imgSrc;
+                if (document.getElementById("background-container") !== undefined) {
+                        document.getElementById("background-container").style.top = window.pageYOffset + 'px';
+                        document.getElementById("product-page-grid").style.opacity = "0.5";
+                        document.getElementById("background-container").classList.toggle("display-none");
+                        document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
+                        document.getElementById("enlarged-img").src = imgSrc;
 
-                        }
+                }
         }
 
         render() {
@@ -101,13 +102,19 @@ export default class ProductPage extends Component {
 
                 return (
                         <div style={{ paddingTop: '1rem', paddingBottom: '18rem', minHeight: 'inherit' }} >
+
+                                {/* hidden by default */}
                                 <div style={{ cursor: 'pointer', background: 'rgb(0 0 0 / 85%)' }} onClick={() => {
                                         document.getElementById("background-container").classList.toggle("display-none");
+                                        document.getElementById("product-page-grid").style.opacity = "1";
                                         document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
                                 }} className="display-none" id="background-container">
 
                                         <div id="background-container-2">
-                                                <img className="big-img-container" style={{ borderRadius: '5px', zIndex: '111' }} id="enlarged-img" alt='enlarged' src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" />
+                                                <img className="big-img-container" style={{ borderRadius: '5px', zIndex: '111' }} onClick={() => {
+                                                        document.getElementById("product-page-grid").style.opacity = "1";
+
+                                                }} id="enlarged-img" alt='enlarged' src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" />
 
                                         </div>
 
@@ -151,14 +158,14 @@ export default class ProductPage extends Component {
 
                                         {/* 23 rem because mainproductphoto container has a height of 23rem */}
                                         {this.state.imageName.length > 1 &&
-                                                <div id="addit-photo-container" style={{paddingTop: '1.5rem', marginBottom: '-8rem', width: '100%', maxWidth: '100%', overflow: 'hidden', display: 'grid', height: 'auto', maxHeight: '23rem' }}>
+                                                <div id="addit-photo-container" style={{ paddingTop: '1.5rem', marginBottom: '-8rem', width: '100%', maxWidth: '100%', overflow: 'hidden', display: 'grid', height: 'auto', maxHeight: '23rem' }}>
                                                         {!this.state.loading &&
                                                                 this.state.imageName.map(() => {
                                                                         i++;
 
                                                                         if (this.state.imageName[i] !== undefined)
                                                                                 return (
-                                                                                        <div key={i+'-item'} id="asd">
+                                                                                        <div key={i + '-item'} id="asd">
                                                                                                 <img style={{ maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }}
                                                                                                         onClick={(e) => this.swapImages(e.target)} src={this.state.path + this.state.imageName[i]} id={'img' + i} alt={this.state.imageName[i] + "-additional-photo"} />
                                                                                         </div>
@@ -168,7 +175,7 @@ export default class ProductPage extends Component {
                                                                         if (i !== 3) {
 
                                                                                 return (
-                                                                                        <div key={i+'-item'}  id="asd">
+                                                                                        <div key={i + '-item'} id="asd">
                                                                                                 <img alt='additional-empty-pic' style={{ opacity: '0', height: 'inherit', maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }} ></img>
                                                                                         </div>
                                                                                 );

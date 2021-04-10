@@ -19,7 +19,7 @@ function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header language={language} />
-      <div style={{ minHeight: '90vh', marginTop: '5rem' }}>
+      <div id="main-container"style={{ minHeight: '90vh', marginTop: '5rem' }}>
         <BcAndLanguages language={language} setLanguage={setLanguage} />
         <Routes language={language} setLanguage={setLanguage} />
       </div>
