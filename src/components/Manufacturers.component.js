@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import filterLowercase, { manufacturersArr } from './filteredData';
 
-export default class Gamintojai extends Component {
+export default class Manufacturers extends Component {
     render() {
         // the client requested manufacturers to be displayed even if they have no products
         // 'Novamobili', 'Chairs&More','Longhi', 'Frigerio',  'Desalto', 'Potocco','Montbell',
@@ -28,7 +28,6 @@ const ManufacturersContainer = (props) => {
                 {props.filteredManufacturers.map(manufacturer => {
                     return (
                         <div className="manufacturer-div" key={manufacturer}>
-
                             <Link className="flexbox-container" style={{
                                 width: "100%", height: "100%"
                             }} to={"/" + props.language + "/products/null/null/" + manufacturer}>

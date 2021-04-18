@@ -50,27 +50,22 @@ const Header = (props) => {
         );
     }
 
-
+    // mobile dropdown
     const DropdownMenu2 = () => {
-        function DropdownItem(props) {
-            return props.children;
-        }
 
         return (
             <ul className="dropdown2" >
                 {dropdown2Collection.map(collectionPart => {
                     return (
-                        <DropdownItem>
-                            <li  style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
-                                <Link
-                                    style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/"+collectionPart.toLowerCase()}                        >
-                                    {
-                                        props.language === "LT" ? translateMainItems(collectionPart) :
-                                            props.language === "EN" && collectionPart
-                                    }
-                                </Link>
-                            </li>
-                        </DropdownItem>)
+                        <li key={collectionPart} style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
+                            <Link
+                                style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/" + collectionPart.toLowerCase()}                        >
+                                {
+                                    props.language === "LT" ? translateMainItems(collectionPart) :
+                                        props.language === "EN" && collectionPart
+                                }
+                            </Link>
+                        </li>)
 
                 })}
             </ul>
@@ -277,7 +272,6 @@ const Header = (props) => {
             </ul>
         </header >
     );
-
 }
 
 export default Header;

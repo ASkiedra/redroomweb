@@ -12,13 +12,12 @@ const enlargeImage = (imgSrc) => {
                 document.getElementById("background-container").classList.toggle("display-none");
                 document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
                 document.getElementById("enlarged-img").src = imgSrc;
-
         }
 }
 
 const Interior = () => {
         return (
-                < div style={{ minHeight: 'inherit' }}>
+                <div style={{ minHeight: 'inherit' }}>
                         <div style={{ cursor: 'pointer' }} onClick={() => {
                                 document.getElementById("background-container").classList.toggle("display-none");
                                 document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
@@ -26,26 +25,22 @@ const Interior = () => {
 
                                 <div id="background-container-2">
                                         <img id="enlarged-img" alt='enlarged' src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" />
-
                                 </div>
-
                         </div>
 
 
                         <div id="interior-container" style={{ paddingBottom: '12rem' }}>
                                 {
                                         images.map(element => {
-
                                                 return (
                                                         <div key={images.indexOf(element) + 'interior-photo'} id="interior-photo-container">
                                                                 <img style={{ transform: 'scale(2.3)', cursor: 'pointer' }} onClick={(e) => enlargeImage(e.target.src)} src={element.default} alt={element.default + '-photo'} />
                                                         </div>
                                                 )
                                         })
-
                                 }
                         </div>
-                </div >
+                </div>
         );
 }
 

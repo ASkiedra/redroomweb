@@ -3,7 +3,7 @@ import * as emailjs from 'emailjs-com';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
 
 
-class Inquire extends Component {
+export default class Inquire extends Component {
     state = {
         email: '',
         message: '',
@@ -55,7 +55,6 @@ class Inquire extends Component {
         e.preventDefault();
 
         if ((this.state.email !== "" && this.state.email !== undefined) && (this.state.message !== undefined && this.state.message !== '')) {
-
             let templateParams = {
                 from_name: this.state.email,
                 to_name: 'info@red-room.lt',
@@ -63,6 +62,7 @@ class Inquire extends Component {
             }
 
             emailjs.send(
+                // javascript code is visible to everyone so there's no point to encrypt or hide these parameters
                 'service_ndv2e3o',
                 'template_f4hsl36',
                 templateParams,
@@ -129,6 +129,3 @@ class Inquire extends Component {
         )
     }
 }
-
-
-export default Inquire;

@@ -1,4 +1,6 @@
-const MainPage = () => {
+import React from "react";
+
+const Main = () => {
     return (
         <div id="main-page-cont0" style={{ background: 'url(/images/bg-50percent-min.jpg)', backgroundSize: 'cover', marginTop: '-32rem', paddingBottom: '28rem', height: '100vh' }}>
             <div></div>
@@ -35,4 +37,4 @@ const MainPage = () => {
   );
 }
 
-export default MainPage;
+export default Main;

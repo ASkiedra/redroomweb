@@ -1,8 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-
-const Footer = (props) => {
+const StickyFooter = (props) => {
     var productName;
     const url = useLocation().pathname;
 
@@ -29,7 +28,6 @@ const Footer = (props) => {
                     </Link>
 
                     <Link className="footer-link" to={'/' + props.language + '/delivery'}>
-
                         <li>
                             {
                                 props.language === "LT" ? "Pristatymo sąlygos ir terminai"
@@ -48,4 +46,4 @@ const Footer = (props) => {
     );
 }
 
-export default Footer;
+export default StickyFooter;
