@@ -1,5 +1,5 @@
-# red-room.lt website 
+# <a href="https://red-room.lt">red-room.lt</a> website 
 
-Coded by <a href="https://github.com/jonwow">jonwow</a>
+Created by <a href="https://github.com/jonwow">jonwow</a>
 
 Designed by <a href="https://github.com/jonwow">jonwow</a> & <a href="https://github.com/OlimpoVaikas">OlimpoVaikas</a>
