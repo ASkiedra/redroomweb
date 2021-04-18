@@ -9,6 +9,7 @@
 <ul>
   <strong>Key points and notes:</strong>
   <li>Drag & drop simplicity of uploading pictures for the Interior page.</li>
+  <li>Products' dropdown only displays available categories & the categories that the owner asked for.</li>
 <li>The client asked that most pictures would remain uncompressed because it's a design oriented page and it is already fast.</li>
   <li>The client requested support for 2 languages and no more will be required in the future. The client also noted that products may have up to 3 photos only.</li>
   <li>You can click on the product description text and you will be redirected to the Inquire page and the message will autofill to "Hello, I am interested in {the name of the product of which page you were on}"</li>

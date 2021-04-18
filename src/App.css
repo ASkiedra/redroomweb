@@ -1004,7 +1004,7 @@ body {
 }
 
 #products-container {
-  grid-template-rows: auto;
+  grid-template-rows: max-content;
   -ms-grid-rows: auto;
   height: inherit;
   margin-top: 3rem;
