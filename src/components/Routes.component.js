@@ -16,7 +16,7 @@ const Routes = (props) => {
 
     // scroll up on every route change
     useEffect(() => {
-        var language = location.pathname[1] + location.pathname[2];
+        const locationLanguage = location.pathname[1] + location.pathname[2];
         window.scrollTo(0, 0)
 
         // if the user clicks on an itnerior image and then switches to another route
@@ -24,8 +24,11 @@ const Routes = (props) => {
             document.getElementsByTagName("body")[0].classList.remove('setHeightLimit')
 
 
-        if (location.pathname.length >= 3 && language !== props.language)
-            props.setLanguage(language);
+        // changes the language if it changes in the url
+        // if the location is longer or equal than three characters (for example: /en) and it doesnt match the props language
+        if (location.pathname.length >= 3 && locationLanguage.toUpperCase() !== props.language.toUpperCase())
+            if (locationLanguage === 'EN' || locationLanguage === 'LT')
+                props.setLanguage(locationLanguage);
 
     }, [location]);
 

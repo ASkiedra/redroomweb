@@ -156,9 +156,9 @@ export default class ProductPage extends Component {
                                                 </div>
                                         </div>
 
-                                        {/* 23 rem because mainproductphoto container has a height of 23rem */}
                                         {this.state.imageName.length > 1 &&
                                                 <div id="addit-photo-container" style={{ paddingTop: '1.5rem', marginBottom: '-8rem', width: '100%', maxWidth: '100%', overflow: 'hidden', display: 'grid', height: 'auto', maxHeight: '23rem' }}>
+                                                        {/* 23 rem because mainproductphoto container has a height of 23rem */}
                                                         {!this.state.loading &&
                                                                 this.state.imageName.map(() => {
                                                                         i++;
@@ -173,7 +173,6 @@ export default class ProductPage extends Component {
                                                                         // if there arent enough additional photos, the grid would portray them improperly therefore an empty picture seems like a decent solution
                                                                         // 3 because max 3 photos and it starts from 0
                                                                         if (i !== 3) {
-
                                                                                 return (
                                                                                         <div key={i + '-item'} id="asd">
                                                                                                 <img alt='additional-empty-pic' style={{ opacity: '0', height: 'inherit', maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }} ></img>
@@ -185,7 +184,6 @@ export default class ProductPage extends Component {
                                                                 })}
 
                                                 </div>
-
                                         }
                                 </div>
                         </div >

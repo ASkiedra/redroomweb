@@ -2,8 +2,8 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const StickyFooter = (props) => {
-    var productName;
     const url = useLocation().pathname;
+    let productName;
 
     // if there are at least 6 '/' characters, it means the user is on a product page
     if (url.split('/')[2] === 'products' && url.split('/').length >= 6)
@@ -21,12 +21,12 @@ const StickyFooter = (props) => {
                     }>
                         <li>
                             {
-                                props.language === "LT" ? "Siųsti užklausą"
-                                    : props.language === "EN" && "Inquire"
+                                props.language === "LT" ? "Siųsti užklausą dėl prekės"
+                                    : props.language === "EN" && "Send an inquiry"
                             }
                         </li>
                     </Link>
-
+{/* 
                     <Link className="footer-link" to={'/' + props.language + '/delivery'}>
                         <li>
                             {
@@ -34,7 +34,7 @@ const StickyFooter = (props) => {
                                     : props.language === "EN" && "Delivery information"
                             }
                         </li>
-                    </Link>
+                    </Link> */}
 
                 </ul>
 

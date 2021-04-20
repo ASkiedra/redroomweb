@@ -16,13 +16,13 @@ const Contacts = (props) => {
                 </div>
 
                 <div id="container-contacts-text-grid" className="fast-fix-2">
-                    <p> {
+                    <p style={{fontWeight: '550'}}> {
                         props.match.params.lang === "LT" ? "SUSISIEKIME:" :
                             props.match.params.lang === "EN" && "GET IN TOUCH:"
                     }
                     </p>
 
-                    <a href="tel:+37064310657">+370 643 10 657</a> 
+                    <a style={{paddingBottom: '0.55rem'}} href="tel:+37064310657">+370 643 10 657</a> 
                     <a href="mailto:info@red-room.lt">info@red-room.lt</a>
                 </div>
             </div>

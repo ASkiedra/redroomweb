@@ -412,8 +412,8 @@ footer :nth-child(4) {
 #first-footer ul {
   display: grid;
   display: -ms-grid;
-  grid-template-columns: 50% 50%;
-  -ms-grid-columns: 50% 50%;
+  /* grid-template-columns: 50% 50%;
+  -ms-grid-columns: 50% 50%; */
 }
 #first-footer ul li {
   -ms-grid-column: 2;
@@ -946,7 +946,7 @@ body {
 }
 
 #redroom-large-text {
-  padding-bottom: 1rem;
+  margin-bottom: 2rem;
   padding-right: 0.5rem;
 }
 
