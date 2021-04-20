@@ -16,6 +16,7 @@ const Routes = (props) => {
 
     // scroll up on every route change
     useEffect(() => {
+        var language = location.pathname[1] + location.pathname[2];
         window.scrollTo(0, 0)
 
         // if the user clicks on an itnerior image and then switches to another route
@@ -23,7 +24,6 @@ const Routes = (props) => {
             document.getElementsByTagName("body")[0].classList.remove('setHeightLimit')
 
 
-        var language = location.pathname[1] + location.pathname[2];
         if (location.pathname.length >= 3 && language !== props.language)
             props.setLanguage(language);
 
@@ -32,7 +32,7 @@ const Routes = (props) => {
     return (
         <Switch>
             {/* MainPage routes */}
-            <Route exact path='/:lang' language={props.language}component={MainPage} />
+            <Route exact path='/:lang' language={props.language} component={MainPage} />
             <Route exact path="/" language={props.language} component={MainPage} />
 
 
@@ -59,17 +59,13 @@ const Routes = (props) => {
             <Route exact path="/:lang/inquire" component={Inquire} />
             <Route exact path="/:lang/manufacturers" component={Manufacturers} />
 
-
-
             {/* non route pages / 404 */}
             <Route path="*">
-                < div style={{ height: 'inherit' }}>
+                <div style={{ height: 'inherit' }}>
                     <h1 style={{ marginTop: '10%', fontSize: '6rem', fontWeight: 'lighter', fontFamily: 'Roboto', textAlign: 'center', margin: '0 auto', width: '95%' }}>
-                        {
-                            props.language === "LT" ? "Nėra tokio puslapio." : "This page doesn't exist."
-                        }
+                        {props.language === "LT" ? "Nėra tokio puslapio." : "This page doesn't exist."}
                     </h1>
-                </div >
+                </div>
             </Route>
         </Switch>
     );

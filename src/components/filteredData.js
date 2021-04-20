@@ -1,6 +1,7 @@
 import Products from '../components/products';
 
 
+// filters all items when comparing their lowercase versions
 export default function filterLowercase(givenArr) {
     var result = [];
 
@@ -16,6 +17,7 @@ export default function filterLowercase(givenArr) {
             }
 
 
+        // if an item isn't empty and it wasn't found in the array, push it to the array of filtered items
         if (!found && item !== "")
             result.push(item)
     });

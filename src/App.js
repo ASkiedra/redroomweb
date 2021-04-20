@@ -8,8 +8,7 @@ import Footer from './components/Footer.component';
 import StickyFooter from './components/StickyFooter.component';
 import Routes from './components/Routes.component';
 
-
-function App() {
+export default function App() {
   // if the page is in english (red-room.lt/en), make the default language english.
   const [language, setLanguage] = useState(
     ((window.location.pathname[1] !== undefined && window.location.pathname[2] !== undefined) &&
@@ -31,5 +30,3 @@ function App() {
     </BrowserRouter >
   );
 };
-
-export default App;

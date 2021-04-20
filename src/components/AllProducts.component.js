@@ -320,16 +320,17 @@ const MainContainer = (props) => {
                         <div id='products-container'>
                                 {props.curProducts.map(curProduct => {
                                         return <Product key={curProduct.name + curProduct.imageName[0]} lang={props.lang} product={curProduct} />
-
                                 })}
                         </div>
                 </div>
         );
 }
 
+// filters
 const SidebarItem = (props) => {
         var text = props.value;
 
+        // whether the filter is a mainCategory or a subCategory
         //if (props.translatable === "main" && props.language === "LT")
         //        text = translateMainCats(text);
         //else
@@ -373,11 +374,11 @@ const Product = (props) => {
                                 pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.manufacturer + "/" + props.product.name + "/",
                                 product: props.product,
                         }}>
+
                         <div className={"flexbox-container product-container"} style={{ height: '94%', width: 'inherit', textAlign: 'center' }}>
                                 {
                                         <img style={{ margin: '0 auto' }} className="product-list-photo" src={path} alt="logo" />
                                 }
-
                         </div>
 
                         <p className={"product-name"}><b>{props.product.manufacturer} </b>{props.product.name}</p>

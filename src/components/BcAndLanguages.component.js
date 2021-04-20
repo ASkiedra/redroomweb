@@ -4,6 +4,8 @@ import translateMainCats, { translateSubCats, translateMainItems } from "../comp
 
 const BcAndLanguages = (props) => {
     const location = useLocation();
+    var modifiedPathname = [],
+        pathnameWO = "";
 
     // if you go back, the boldness doesnt change without this, e.g. you can be on /lt/products after being in /en/products and only EN will be bold
     useEffect(() => {
@@ -20,21 +22,17 @@ const BcAndLanguages = (props) => {
     }, [location]);
 
 
-    var modifiedPathname = [];
 
-    // if breadcrumbs are longer than PAGRINDINIS/*PAGE*
-    // example: PAGRINDINIS/*PAGE*/*CRITERIA*
     // 0th element is nonexistent because the string starts with /
     for (let i = location.pathname.split("/").length - 1; i > 0; i--)
         modifiedPathname[i - 2] = (location.pathname.split("/")[i]);
 
     // if the 3rd element of modifiedPathname is 'null' (a string because its a string in the url), a manufacturer exists and there is no need to translate it. 
     // it has to be !undefined and !null, because manufExists would be true even when modifiedPathname has <3 elements
-    //if modifiedPathname[2] is undefined or 'null'', it means that a word before manufacturer exists therefore manufacturer wont be in the breadcrumbs
+    // if modifiedPathname[2] is undefined or 'null'', it means that a word before manufacturer exists therefore manufacturer wont be in the breadcrumbs
     var manufExists = modifiedPathname[3] !== 'null' && modifiedPathname[3] !== undefined && modifiedPathname[3] !== null && (modifiedPathname[2] === undefined || modifiedPathname[2] === 'null');
 
 
-    var pathnameWO = "";
     for (let i = 3; i < location.pathname.length; i++)
         pathnameWO += location.pathname[i];
 
@@ -44,12 +42,13 @@ const BcAndLanguages = (props) => {
     modifiedPathname = modifiedPathname.filter(el => el !== "" && el !== "undefined" && el !== undefined && el !== "null" && el !== null);
 
     var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
+
     // translation of the second word in the breadcrumbs
     if (props.language === "LT" && modifiedPathname[0] !== undefined)
         modifiedPathname[0] = translateMainItems(modifiedPathname[0]);
 
 
-    // translation of the third word in the breadcrumbs. can be maincat, subcat, manuf ...
+    // translation of the third word in the breadcrumbs. can be maincat, subcat, manuf. If it's the manufacturer - no translation is required.
     if (props.language === "LT" && modifiedPathname[1] !== undefined && !manufExists)
         if (translateMainCats(modifiedPathname[1]) !== null)
             modifiedPathname[1] = translateMainCats(modifiedPathname[1]);
@@ -57,7 +56,6 @@ const BcAndLanguages = (props) => {
             modifiedPathname[1] = translateSubCats(modifiedPathname[1]);
 
     return (
-
         <ul style={{ background: "transparent" }} id="bcnl-container">
             <div id="breadcrumbs-links">
                 <Link to={"/" + props.language} style={{ paddingLeft: '1rem', transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
@@ -92,9 +90,8 @@ const BcAndLanguages = (props) => {
             </div>
 
             <div id="lang-container">
-
-
                 <div>
+                    {/* planning to implement some more functionality here */}
                 </div>
 
                 {/* bold by default in case of no language (e.g. red.room.lt has no lang pathname) */}
@@ -105,7 +102,6 @@ const BcAndLanguages = (props) => {
                 <Link id="bc-en" to={"/EN" + pathnameWO} onClick={() => props.setLanguage("EN")} style={{ fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
                     EN
                 </Link>
-
             </div>
         </ul >
     );

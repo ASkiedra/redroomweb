@@ -9,6 +9,7 @@ import { mainCategoriesArr, subCategoriesArr } from './filteredData'
 
 
 const Header = (props) => {
+    // everything for the main dropdown. these are checked and if any products of this type are available - displayed in the dropdown
     const dropdownCollection = [
         ['DAY SYSTEMS', 'SALON FURNITURE SYSTEMS', 'WORKPLACE FURNITURE', 'BOOKSHELVES', 'SOFA BEDS'],
         ['WARDROBE SYSTEMS', 'INDIVIDUALLY PLANNED WARDROBES', 'CLOTHING HANGERS'],
@@ -16,6 +17,7 @@ const Header = (props) => {
         ['BEDROOM FURNITURE', 'BEDS', 'BEDSIDE CABINETS', 'CHESTS OF DRAWERS', 'BEDROOM BENCHES'],
     ];
 
+    // items for the mobile dropdown
     const dropdown2Collection = ['PRODUCTS', 'INTERIOR', 'MANUFACTURERS', 'CONTACTS'];
 
     const Menu = () => {
@@ -32,7 +34,7 @@ const Header = (props) => {
         );
     };
 
-
+    // mobile dropdown button stylised as three lines
     const ThreeLines = (props) => {
         return (
             <div id="threeLinesDiv" className="flexbox-container" style={{ width: "inherit", height: 'inherit', margin: "0 auto" }}>
@@ -52,7 +54,6 @@ const Header = (props) => {
 
     // mobile dropdown
     const DropdownMenu2 = () => {
-
         return (
             <ul className="dropdown2" >
                 {dropdown2Collection.map(collectionPart => {
@@ -106,83 +107,75 @@ const Header = (props) => {
         );
     };
 
-
-    // need more dropdown levels? 11:40 https://www.youtube.com/watch?v=IF6k0uZuypA
     const DropdownMenu = () => {
-        function DropdownItem(props) {
-            return props.children;
-        }
-
-
         return (
             <ul className="dropdown" >
                 <div id="dropdown-grid">
                     {
-                        // collectionPart = 1, 2
-                        //                  3, 4
+                        // collectionPart items in the dropdown are displayed like this
+                        //   1, 2
+                        //   3, 4
+                        //   5, ..
                         dropdownCollection.map(collectionPart => {
                             if (mainCategoriesArr.indexOf(collectionPart[0].toLowerCase()) !== -1)
-                                return <DropdownItem key={collectionPart[0] + '-parent'} >
-                                    {/* // if the big text category in in stock and also the first element in the collection  */}
-                                    <li key={collectionPart[0]} style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
-                                        {mainCategoriesArr.indexOf(collectionPart[0].toLowerCase()) !== -1 &&
-                                            <Link style={{ color: 'white', paddingBottom: '0.5rem' }}
-                                                to={"/" + props.language + "/products/" + collectionPart[0].toLowerCase()}>
-                                                {
-                                                    // translate(item) vietoj item kur lt
-                                                    props.language === "LT" ? translateMainCats(collectionPart[0]) :
-                                                        props.language === "EN" && collectionPart[0]
-                                                }
-                                            </Link>
-                                        }
+                                return <li key={collectionPart[0]} style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
+                                    {/* // if any items with the particular main category are in stock and also the first element in the collection  */}
+                                    {mainCategoriesArr.indexOf(collectionPart[0].toLowerCase()) !== -1 &&
+                                        <Link style={{ color: 'white', paddingBottom: '0.5rem' }}
+                                            to={"/" + props.language + "/products/" + collectionPart[0].toLowerCase()}>
+                                            {
+                                                props.language === "LT" ? translateMainCats(collectionPart[0]) :
+                                                    props.language === "EN" && collectionPart[0]
+                                            }
+                                        </Link>
+                                    }
 
 
 
-                                        < ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
-                                            {collectionPart.map(item => {
-                                                // if its not the first item in the collection (not the big text) AND it exists in subCategoriesArr
-                                                if (collectionPart.indexOf(item) !== 0 && subCategoriesArr.indexOf(item.toLowerCase()) !== -1)
-                                                    return <div key={item}>
-                                                        <Link to={"/" + props.language + "/products//" + item.toLowerCase()} className="dropdown-subtext" >
-                                                            {
-                                                                props.language === "LT" ? translateSubCats(item) :
-                                                                    props.language === "EN" && item
-                                                            }
-                                                        </Link>
-                                                    </div>
-                                                else
-                                                    return null;
-                                            })}
-                                        </ul>
+                                    < ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
+                                        {collectionPart.map(item => {
+                                            // if its not the first item in the collection (not the big text) AND it exists in subCategoriesArr
+                                            if (collectionPart.indexOf(item) !== 0 && subCategoriesArr.indexOf(item.toLowerCase()) !== -1)
+                                                return <div key={item}>
+                                                    <Link to={"/" + props.language + "/products//" + item.toLowerCase()} className="dropdown-subtext" >
+                                                        {
+                                                            props.language === "LT" ? translateSubCats(item) :
+                                                                props.language === "EN" && item
+                                                        }
+                                                    </Link>
+                                                </div>
+                                            else
+                                                return null;
+                                        })}
+                                    </ul>
 
-                                    </li>
-                                </DropdownItem>
+                                </li>
                             else
+                                // .map has to return something. if there are cases without a return - its a bad practice
                                 return null;
                         })
                     }
                 </div>
 
-                <DropdownItem>
-                    <div>
-                        <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", }} >
-                            <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products/outdoor furniture and accessories"}>
-                                {
-                                    props.language === "LT" ? "lauko baldai ir aksesuarai" :
-                                        props.language === "EN" && "outdoor furniture and accessories"
-                                }
-                            </Link>
-                        </li>
+                <div>
+                    <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", }} >
+                        <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products/outdoor furniture and accessories"}>
+                            {
+                                props.language === "LT" ? "lauko baldai ir aksesuarai" :
+                                    props.language === "EN" && "outdoor furniture and accessories"
+                            }
+                        </Link>
+                    </li>
 
-                        <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", }} >
-                            <Link style={{ fontWeight: 'bold', color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products"}>
-                                {
-                                    props.language === "LT" ? "VISI PRODUKTAI" :
-                                        props.language === "EN" && "ALL PRODUCTS"
-                                }                                </Link>
-                        </li>
-                    </div>
-                </DropdownItem>
+                    <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", }} >
+                        <Link style={{ fontWeight: 'bold', color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products"}>
+                            {
+                                props.language === "LT" ? "VISI PRODUKTAI" :
+                                    props.language === "EN" && "ALL PRODUCTS"
+                            }
+                        </Link>
+                    </li>
+                </div>
             </ul >
 
         );
