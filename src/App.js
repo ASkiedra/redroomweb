@@ -13,8 +13,7 @@ export default function App() {
   const [language, setLanguage] = useState(
     (window.location.pathname[1] !== undefined && window.location.pathname[2] !== undefined) &&
     (window.location.pathname[1].toUpperCase() + window.location.pathname[2].toUpperCase() === 'EN') ? "EN" : "LT");
-    console.log(window.location.pathname[1].toUpperCase() + window.location.pathname[2].toUpperCase())
-    console.log(language)
+
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header language={language} />
