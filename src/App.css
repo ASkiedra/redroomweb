@@ -19,13 +19,51 @@
   filter: invert(1);
 }
 
-
 #first-footer ul a {
   background: #f5f3f4;
 }
 
 .p-heading2 {
   font-size: 2em;
+}
+
+#privacy-policy-container {
+  padding: 0 15vw;
+}
+
+#privacy-policy-container > h1,
+#privacy-policy-container > h3 {
+  text-align: center;
+  font-family: "Roboto";
+  margin-bottom: 2rem;
+}
+
+#privacy-policy-container p,
+#privacy-policy-container ul li {
+  text-align: justify;
+  font-family: "Quicksand", sans-serif;
+}
+
+#last-updated-date {
+  text-align: center;
+  color: grey;
+}
+
+#personal-data-container > h2 {
+  font-family: "Roboto";
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#personal-data-container {
+  width: 40%;
+  text-align: justify;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+#personal-data-container ul {
+  margin-left: 2rem;
 }
 
 footer p,
@@ -1713,4 +1751,14 @@ body {
 
 #products-sidebar {
   height: 17rem;
+}
+
+@media (max-width: 500px) {
+  #privacy-policy-container {
+    padding: 0 5vw;
+  }
+
+  #privacy-policy-container {
+    font-size: 1.2rem;
+  }
 }

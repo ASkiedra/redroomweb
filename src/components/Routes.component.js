@@ -9,6 +9,7 @@ import MainPage from '../components/MainPage.component.js';
 import ProductPage from '../components/ProductPage.component.js';
 import Inquire from '../components/Inquire.component.js';
 import Delivery from '../components/Delivery.component.js';
+import PrivacyPolicy from "./PrivacyPolicy.component";
 
 
 const Routes = (props) => {
@@ -61,6 +62,7 @@ const Routes = (props) => {
             <Route exact path="/:lang/delivery" component={Delivery} />
             <Route exact path="/:lang/inquire" component={Inquire} />
             <Route exact path="/:lang/manufacturers" component={Manufacturers} />
+            <Route exact path="/:lang/privacy policy" component={PrivacyPolicy} />
 
             {/* non route pages / 404 */}
             <Route path="*">
