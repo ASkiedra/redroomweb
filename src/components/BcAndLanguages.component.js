@@ -9,7 +9,7 @@ const BcAndLanguages = (props) => {
 
     // if you go back, the boldness doesnt change without this, e.g. you can be on /lt/products after being in /en/products and only EN will be bold
     useEffect(() => {
-        const language = (location.pathname[1] + location.pathname[2]).toUpperCase();
+        const language = location.pathname.length > 2 && (location.pathname[1] + location.pathname[2]).toUpperCase();
 
         if (language === "LT") {
             document.getElementById('bc-en').classList.remove('bold-text');
