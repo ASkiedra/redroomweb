@@ -34,7 +34,7 @@ export default class ProductPage extends Component {
                         );
                 }
                 else {
-                        var productFromJson = Products.find(el => el.name === this.props.match.params.name && el.manufacturer === this.props.match.params.manufacturer);
+                        const productFromJson = Products.find(el => el.name === this.props.match.params.name && el.manufacturer === this.props.match.params.manufacturer);
 
 
                         this.setState({
@@ -59,15 +59,14 @@ export default class ProductPage extends Component {
         swapImages(target) {
                 // if the click was on one of the side images and main picture is defined or not null (loaded in general)
                 if ((target.id === "img1" || target.id === 'img2') && document.getElementById('main-product-image') !== undefined && document.getElementById('main-product-image') !== null) {
-
-                        let temp = document.getElementById('main-product-image').src;
+                        const temp = document.getElementById('main-product-image').src;
                         document.getElementById('main-product-image').src = target.src;
                         target.src = temp;
                 }
         }
 
         separateWords(text) {
-                var char = text[0],
+                let char = text[0],
                         index = 0;
 
                 // find the index where the text needs to be cut
@@ -98,7 +97,7 @@ export default class ProductPage extends Component {
         }
 
         render() {
-                var i = 0;
+                let i = 0;
 
                 return (
                         <div style={{ paddingTop: '1rem', paddingBottom: '18rem', minHeight: 'inherit' }} >

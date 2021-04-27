@@ -4,12 +4,12 @@ import translateMainCats, { translateSubCats, translateMainItems } from "../comp
 
 const BcAndLanguages = (props) => {
     const location = useLocation();
-    var modifiedPathname = [],
+    let modifiedPathname = [],
         pathnameWO = "";
 
     // if you go back, the boldness doesnt change without this, e.g. you can be on /lt/products after being in /en/products and only EN will be bold
     useEffect(() => {
-        const language = location.pathname[1] + location.pathname[2];
+        const language = (location.pathname[1] + location.pathname[2]).toUpperCase();
 
         if (language === "LT") {
             document.getElementById('bc-en').classList.remove('bold-text');
@@ -30,7 +30,7 @@ const BcAndLanguages = (props) => {
     // if the 3rd element of modifiedPathname is 'null' (a string because its a string in the url), a manufacturer exists and there is no need to translate it. 
     // it has to be !undefined and !null, because manufExists would be true even when modifiedPathname has <3 elements
     // if modifiedPathname[2] is undefined or 'null'', it means that a word before manufacturer exists therefore manufacturer wont be in the breadcrumbs
-    var manufExists = modifiedPathname[3] !== 'null' && modifiedPathname[3] !== undefined && modifiedPathname[3] !== null && (modifiedPathname[2] === undefined || modifiedPathname[2] === 'null');
+    const manufExists = modifiedPathname[3] !== 'null' && modifiedPathname[3] !== undefined && modifiedPathname[3] !== null && (modifiedPathname[2] === undefined || modifiedPathname[2] === 'null');
 
 
     for (let i = 3; i < location.pathname.length; i++)
@@ -41,7 +41,7 @@ const BcAndLanguages = (props) => {
     // remove empty strings.
     modifiedPathname = modifiedPathname.filter(el => el !== "" && el !== "undefined" && el !== undefined && el !== "null" && el !== null);
 
-    var untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
+    const untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
 
     // translation of the second word in the breadcrumbs
     if (props.language === "LT" && modifiedPathname[0] !== undefined)

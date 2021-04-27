@@ -8,7 +8,7 @@ import filterLowercase, { mainCategoriesArr, subCategoriesArr, manufacturersArr 
 
 
 // cant store these in the state because it would update too often
-var paramsFiltersApplied = false, subCatFilterArr = [], mainCatFilterArr = [], manufFilterArr = [];
+let paramsFiltersApplied = false, subCatFilterArr = [], mainCatFilterArr = [], manufFilterArr = [];
 
 export default class AllProducts extends Component {
         constructor(props) {
@@ -59,11 +59,11 @@ export default class AllProducts extends Component {
                         let tempArr = [];
 
                         // for some reason if i use 'len' instead of what it is equal to, the loop doesnt stop
-                        let len = this.state.fetchedProducts.length;
+                        const len = this.state.fetchedProducts.length;
 
-                        for (var i = 0; i < len; i++) {
+                        for (let i = 0; i < len; i++) {
                                 let found = false;
-                                let curProduct = this.state.fetchedProducts[i];
+                                const curProduct = this.state.fetchedProducts[i];
 
                                 // check if the product matches any of the manufacturers in their filter array
                                 for (let j = 0; j < manufFilterArr.length; j++) {
@@ -192,7 +192,7 @@ export default class AllProducts extends Component {
 
         render() {
                 // using setState is too slow and for the purposes of this webpage state is not required for these items because they are only initialized and then get their data ONCE.
-                var typesArr = [], availSubCats = [],
+                let typesArr = [], availSubCats = [],
                         returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
 
                 if (this.props.match.params.manufacturer) {
@@ -233,7 +233,7 @@ const MainContainer = (props) => {
         const [showFilter, setSF] = useState(false);
 
         // if user is on a manufacturer page, set the link to the manufacturer link. otherwise - make it /products.
-        var clearBtnLink = props.this.props.match.params.manufacturer !== undefined && props.this.props.match.params.manufacturer !== 'null' ? "/" + language + "/products/null/null/" + props.this.props.match.params.manufacturer : "/" + language + "/products";
+        const clearBtnLink = props.this.props.match.params.manufacturer !== undefined && props.this.props.match.params.manufacturer !== 'null' ? "/" + language + "/products/null/null/" + props.this.props.match.params.manufacturer : "/" + language + "/products";
 
         // scroll up on every route change
         useEffect(() => {
@@ -328,7 +328,7 @@ const MainContainer = (props) => {
 
 // filters
 const SidebarItem = (props) => {
-        var text = props.value;
+        let text = props.value;
 
         // whether the filter is a mainCategory or a subCategory
         //if (props.translatable === "main" && props.language === "LT")
@@ -365,7 +365,7 @@ const SidebarItem = (props) => {
 
 
 const Product = (props) => {
-        var path = "/images/products/" + props.product.manufacturer + '/' + props.product.name + '/' + props.product.imageName[0];
+        const path = "/images/products/" + props.product.manufacturer + '/' + props.product.name + '/' + props.product.imageName[0];
 
         return (
                 <Link key={props.product.productCode + props.product.name}

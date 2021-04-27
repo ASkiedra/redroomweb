@@ -1,10 +1,10 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const Contacts = (props) => {
     return (
-        < div style={{ height: 'inherit' }}>
-
-            <div className="fast-fix" >
+        <div style={{ height: 'inherit' }}>
+            <div className="contacts-additional-container" >
                 <div id="container-contacts-text-grid">
                     <div id="redroom-large-text">
                         <span>RED-ROOM</span>
@@ -15,16 +15,23 @@ const Contacts = (props) => {
                     <p>LIETUVA, LT-45257/LITHUANIA</p>
                 </div>
 
-                <div id="container-contacts-text-grid" className="fast-fix-2">
-                    <p style={{fontWeight: '550'}}> {
+                <div id="container-contacts-text-grid" className="contacts-additional-container-2">
+                    <p style={{ fontWeight: '550' }}> {
                         props.match.params.lang === "LT" ? "SUSISIEKIME:" :
                             props.match.params.lang === "EN" && "GET IN TOUCH:"
                     }
                     </p>
 
-                    <a style={{paddingBottom: '0.55rem'}} href="tel:+37064310657">+370 643 10 657</a> 
+                    <a style={{ paddingBottom: '0.55rem' }} href="tel:+37064310657">+370 643 10 657</a>
                     <a href="mailto:info@red-room.lt">info@red-room.lt</a>
                 </div>
+
+                {/* <div id="privacy-policy-link-container">
+                    <Link to={`/${props.match.params.lang}/privacy policy`}>
+                        {props.match.params.lang === 'EN' ? 'PRIVACY POLICY' : props.match.params.lang === 'LT' && 'PRIVATUMO POLITIKA'}
+                    </Link>
+
+                </div> */}
             </div>
         </div >
     );

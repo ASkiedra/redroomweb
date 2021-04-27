@@ -164,6 +164,10 @@ export const translateMainItems = (text) => {
             text = "PRODUKTAI";
             break;
 
+        case "PRIVACY POLICY":
+            text = "PRIVATUMO POLITIKA";
+            break;
+
         case "INQUIRE":
             text = "SIŲSTI UŽKLAUSĄ";
             break;

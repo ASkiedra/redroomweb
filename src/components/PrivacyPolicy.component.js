@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
             <p style={{ marginBottom: '1.1rem' }}>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
             </p>
 
-            <p style={{marginBottom: '2.5rem'}}>
+            <p style={{ marginBottom: '2.5rem' }}>
                 We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.
             </p>
 
@@ -26,21 +26,43 @@ const PrivacyPolicy = () => {
 
 
             <h3>SECURITY OF YOUR PERSONAL DATA</h3>
-            <p id="security-of-your-personal-data-text">
-                The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.
-                Any personal data and information collected by us will not be distributed to a 3rd party or anyone outside of  EU and EEA.
-                Tracking Technologies and Cookies
-                We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service.
-                Children's Privacy
+            <div id="security-of-your-personal-data-text">
+                <p>
+                    The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.
+                    Any personal data and information collected by us will not be distributed to a 3rd party or anyone outside of  EU and EEA.
+                </p>
+            </div>
+
+            <h3>Tracking Technologies and Cookies</h3>
+            <p>
+                We may use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service.
+                </p>
+
+            <h3>Children's Privacy</h3>
+            <p>
                 Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.
                 If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.
+            </p>
+
+            <h3>
                 Links to Other Websites
+            </h3>
+
+            <p>
                 Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.
                 We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
-                Contact Us
+            </p>
+
+
+            <h3>Contact Us</h3>
+            <p style={{ marginTop: '1.5rem' }}>
                 If you have any questions about this Privacy Policy, You can contact us:
-                •	By email: johnburner@gmail.com
-                </p>
+                    </p>
+            <ul style={{ marginTop: '1rem' }} >
+                <li>By email: info@red-room.lt</li>
+                <li>By phone: +370 643 10 657</li>
+                <li>By post: A. JUOZAPAVIČIAUS PR. 31, KAUNAS, LIETUVA. LT-45257/LITHUANIA</li>
+            </ul>
 
         </div>
 

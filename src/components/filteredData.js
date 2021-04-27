@@ -3,10 +3,10 @@ import Products from '../components/products';
 
 // filters all items when comparing their lowercase versions
 export default function filterLowercase(givenArr) {
-    var result = [];
+    let result = [];
 
     givenArr.forEach(item => {
-        var found = false;
+        let found = false;
 
         for (let i = 0; i < result.length; i++)
             // an additional check is necessary because 'otherManufs' from 'Manufacturers.component.js' might be the same as the passed array and the client will definitely not remove something from otherManufs whenever available manufacturers change.

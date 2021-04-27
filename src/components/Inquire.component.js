@@ -12,7 +12,7 @@ export default class Inquire extends Component {
 
     componentDidMount() {
         if (this.props.location.productName) {
-            var text = '';
+            let text = '';
 
             if (this.props.match.params.lang === "LT")
                 text = "Sveiki, mane domina ";
@@ -35,14 +35,14 @@ export default class Inquire extends Component {
         if ((prevProps.location.key !== this.props.location.key || prevProps.location.pathname !== this.props.location.pathname)) {
             if (this.state.productName) {
 
-                var text = '';
+                let text = '';
 
                 if (this.props.match.params.lang === "LT")
                     text = "Sveiki, mane domina ";
                 else if (this.props.match.params.lang === "EN")
                     text = "Hello, I am interested in ";
 
-                
+
                 this.setState({
                     email: '',
                     message: text + this.state.productName,
@@ -110,7 +110,7 @@ export default class Inquire extends Component {
 
                         <FormGroup style={{ marginTop: '3rem' }} controlId="formBasicMessage">
                             {/* <Label className="text-muted">{this.props.match.params.lang === "LT" ? "Žinutė" : this.props.match.params.lang === "EN" && "Message"}<br/></Label> */}
-                            <Input style={{paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0.35rem'}} id="input-box"
+                            <Input style={{ paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0.35rem' }} id="input-box"
                                 type="textarea"
                                 name="message"
                                 className="text-primary"
@@ -120,7 +120,7 @@ export default class Inquire extends Component {
                             />
                         </FormGroup>
 
-                        <Button style={{ borderRadius: '5px', width: '7rem', fontSize: '1.2rem', height: '2.2rem' }} variant="primary" type="submit">
+                        <Button style={{ borderRadius: '5px', width: '7rem', fontSize: '1.2rem', height: '2.2rem' }} letiant="primary" type="submit">
                             {this.props.match.params.lang === "LT" ? "Siųsti" : this.props.match.params.lang === "EN" && "Send"}
                         </Button>
                     </Form>

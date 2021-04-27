@@ -12,7 +12,7 @@ export default function App() {
   // if the page is in english (red-room.lt/en), make the default language english.
   const [language, setLanguage] = useState(
     (window.location.pathname[1] !== undefined && window.location.pathname[2] !== undefined) &&
-    (window.location.pathname[1].toUpperCase() + window.location.pathname[2].toUpperCase() === 'EN') ? "EN" : "LT");
+      (window.location.pathname[1].toUpperCase() + window.location.pathname[2].toUpperCase() === 'EN') ? "EN" : "LT");
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -23,7 +23,7 @@ export default function App() {
       </div>
 
       {/* remove footer from small screen devices because it is unnecessary */}
-      {(window.innerHeight > 1000 && window.innerWidth > 1000) && <Footer />}
+      {(window.innerHeight > 1000 && window.innerWidth > 600) && <Footer />}
 
       <StickyFooter language={language} />
     </BrowserRouter >

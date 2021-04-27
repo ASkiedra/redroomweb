@@ -7,13 +7,13 @@ export default class Manufacturers extends Component {
         // the client requested manufacturers to be displayed even if they have no products
         // 'Novamobili', 'Chairs&More','Longhi', 'Frigerio',  'Desalto', 'Potocco','Montbell',
         //  'Connubia','Frei frau', 
-        var otherManufs = [
+        const otherManufs = [
             'PIANCA', 'ROBERTI RATTAN', 'SOVET', 'LE COMFORT',
             'Gaber', 'Saba', 'Accento', 'Porada'
         ];
 
         // pass an array that has all of the the manufacturers. NO DUPLICATES, but some problems with case sensitivity are possible 
-        var manufacturers = filterLowercase([...new Set(manufacturersArr.concat(otherManufs))]);
+        const manufacturers = filterLowercase([...new Set(manufacturersArr.concat(otherManufs))]);
 
         return <ManufacturersContainer language={this.props.match.params.lang} filteredManufacturers={manufacturers} />
     }
