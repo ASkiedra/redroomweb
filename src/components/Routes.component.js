@@ -8,7 +8,6 @@ import Interior from '../components/Interior.component.js';
 import MainPage from '../components/MainPage.component.js';
 import ProductPage from '../components/ProductPage.component.js';
 import Inquire from '../components/Inquire.component.js';
-import Delivery from '../components/Delivery.component.js';
 import PrivacyPolicy from "./PrivacyPolicy.component";
 
 
@@ -36,8 +35,8 @@ const Routes = (props) => {
     return (
         <Switch>
             {/* MainPage routes */}
-            <Route exact path='/:lang' language={props.language} component={MainPage} />
-            <Route exact path="/" language={props.language} component={MainPage} />
+            <Route exact path='/:lang' component={MainPage} />
+            <Route exact path="/" component={MainPage} />
 
 
             {/* AllProductsRoutes */}
@@ -59,10 +58,11 @@ const Routes = (props) => {
             <Route exact path="/:lang/products/:mainCategory/:subCategory/:manufacturer/:name/" component={ProductPage} />
             <Route exact path="/:lang/contacts" component={Contacts} />
             <Route exact path="/:lang/interior" component={Interior} />
-            <Route exact path="/:lang/delivery" component={Delivery} />
             <Route exact path="/:lang/inquire" component={Inquire} />
             <Route exact path="/:lang/manufacturers" component={Manufacturers} />
-            <Route exact path="/:lang/privacy policy" component={PrivacyPolicy} />
+            <Route exact path="/:lang/privacy policy">
+                <PrivacyPolicy language={props.language} />
+            </Route>
 
             {/* non route pages / 404 */}
             <Route path="*">

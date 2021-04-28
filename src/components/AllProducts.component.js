@@ -319,6 +319,7 @@ const MainContainer = (props) => {
 
                         <div id='products-container'>
                                 {props.curProducts.map(curProduct => {
+                                        console.log(curProduct)
                                         return <Product key={curProduct.name + curProduct.imageName[0]} lang={props.lang} product={curProduct} />
                                 })}
                         </div>
@@ -368,7 +369,7 @@ const Product = (props) => {
         const path = "/images/products/" + props.product.manufacturer + '/' + props.product.name + '/' + props.product.imageName[0];
 
         return (
-                <Link key={props.product.productCode + props.product.name}
+                <Link key={props.product.manufacturer + props.product.name}
                         style={{ padding: '0.2rem 0', height: '22rem', width: '100%' }}
                         to={{
                                 pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.manufacturer + "/" + props.product.name + "/",
@@ -381,7 +382,7 @@ const Product = (props) => {
                                 }
                         </div>
 
-                        <p className={"product-name"}><b>{props.product.manufacturer} </b>{props.product.name}</p>
+                        <p className={"product-name"}><b>{props.product.manufacturer}</b>{props.product.name}</p>
                 </Link>
         );
 }

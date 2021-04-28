@@ -29,7 +29,11 @@
 
 #privacy-policy-container {
   padding: 0 15vw;
-  padding-bottom: 12rem;
+  margin-bottom: 12rem;
+}
+
+#privacy-policy-container ul {
+  margin-left: 2rem;
 }
 
 #privacy-policy-container > h1,
@@ -503,6 +507,10 @@ footer :nth-child(4) {
   align-items: center;
   grid-template-columns: 33% 33% 33%;
   -ms-grid-columns: 33% 33% 33%;
+}
+
+#privacy-policy-container h3 {
+  margin-top: 2.5rem;
 }
 
 .ffr-item img {
@@ -1129,6 +1137,10 @@ body {
     min-height: inherit;
     grid-template-columns: 100%;
     -ms-grid-columns: 100%;
+  }
+
+  #personal-data-container {
+    width: 70%;
   }
 }
 
@@ -1786,7 +1798,8 @@ body {
 
 @media (max-width: 500px) {
   #privacy-policy-container {
-    padding: 0 5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
   }
 
   #privacy-policy-container {
