@@ -58,7 +58,7 @@ export default class ProductPage extends Component {
 
         swapImages(target) {
                 // if the click was on one of the side images and main picture is defined or not null (loaded in general)
-                if ((target.id === "img1" || target.id === 'img2') && document.getElementById('main-product-image') !== undefined && document.getElementById('main-product-image') !== null) {
+                if ((target.id === "img1" || target.id === 'img2') && document.getElementById('main-product-image')) {
                         const temp = document.getElementById('main-product-image').src;
                         document.getElementById('main-product-image').src = target.src;
                         target.src = temp;
@@ -86,13 +86,12 @@ export default class ProductPage extends Component {
 
 
         enlargeImage = (imgSrc) => {
-                if (document.getElementById("background-container") !== undefined) {
+                if (document.getElementById("background-container")) {
                         document.getElementById("background-container").style.top = window.pageYOffset + 'px';
                         document.getElementById("product-page-grid").style.opacity = "0.5";
                         document.getElementById("background-container").classList.toggle("display-none");
                         document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
                         document.getElementById("enlarged-img").src = imgSrc;
-
                 }
         }
 
@@ -126,9 +125,18 @@ export default class ProductPage extends Component {
                                                         pathname: '/' + this.props.match.params.lang + '/inquire',
                                                         productName: this.state.manufacturer + ' ' + this.state.name + '. '
                                                 }}>
-                                                        {this.props.match.params.lang === "LT" ?
-                                                                <span><b>{this.separateWords(this.state.info[0])[0]}</b>{this.separateWords(this.state.info[0])[1]}</span>
-                                                                : this.props.match.params.lang === "EN" && <span><b>{this.separateWords(this.state.info[1])[0]}</b>{this.separateWords(this.state.info[1])[1]}</span>}
+                                                        <span>
+                                                                {this.props.match.params.lang === "LT" ?
+                                                                        <>
+                                                                                <b>{this.separateWords(this.state.info[0])[0]}</b>{this.separateWords(this.state.info[0])[1]}
+                                                                        </>
+                                                                        :
+                                                                        <>
+                                                                                <b>{this.separateWords(this.state.info[1])[0]}</b>{this.separateWords(this.state.info[1])[1]}
+                                                                        </>
+                                                                }
+                                                        </span>
+
                                                 </Link>
                                                 :
 
@@ -162,7 +170,7 @@ export default class ProductPage extends Component {
                                                                 this.state.imageName.map(() => {
                                                                         i++;
 
-                                                                        if (this.state.imageName[i] !== undefined)
+                                                                        if (this.state.imageName[i])
                                                                                 return (
                                                                                         <div key={i + '-item'} id="asd">
                                                                                                 <img style={{ maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }}

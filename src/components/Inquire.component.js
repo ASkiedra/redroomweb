@@ -54,7 +54,7 @@ export default class Inquire extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        if ((this.state.email !== "" && this.state.email !== undefined) && (this.state.message !== undefined && this.state.message !== '')) {
+        if (this.state.email && this.state.message) {
             let templateParams = {
                 from_name: this.state.email,
                 to_name: 'info@red-room.lt',

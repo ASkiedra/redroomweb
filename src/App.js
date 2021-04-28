@@ -26,7 +26,7 @@ export default function App() {
       </div>
 
       {/* remove footer from small screen devices because it is unnecessary */}
-      {window.innerHeight > 1000 && window.innerWidth > 600 && <Footer />}
+      {window.innerHeight > 700 && window.innerWidth > 500 && <Footer />}
 
       <StickyFooter language={language} />
     </BrowserRouter >

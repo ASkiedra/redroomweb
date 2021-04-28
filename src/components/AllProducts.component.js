@@ -11,11 +11,7 @@ import filterLowercase, { mainCategoriesArr, subCategoriesArr, manufacturersArr 
 let paramsFiltersApplied = false, subCatFilterArr = [], mainCatFilterArr = [], manufFilterArr = [];
 
 export default class AllProducts extends Component {
-        constructor(props) {
-                super(props);
-
-                this.state = { curProducts: [], fetchedProducts: [], loading: true, filtered: false };
-        }
+        state = { curProducts: [], fetchedProducts: [], loading: true, filtered: false };
 
         componentDidUpdate(prevProps) {
                 // prevent infinite state update. if prev location is not the current location
@@ -200,7 +196,7 @@ export default class AllProducts extends Component {
                         availSubCats = (filterLowercase([...new Set(filteredByManuf.map(product => product.subCategory))]));
                 }
 
-                if (this.props.match.params.mainCategory !== 'null' && this.props.match.params.mainCategory !== undefined) {
+                if (this.props.match.params.mainCategory !== 'null' && this.props.match.params.mainCategory) {
                         const filteredByMainCat = Products.filter(x => x.mainCategory.toLowerCase() === this.props.match.params.mainCategory.toLowerCase() && x.mainCategory);
                         availSubCats = (filterLowercase([...new Set(filteredByMainCat.map(product => product.subCategory))]));
                 }
@@ -233,7 +229,7 @@ const MainContainer = (props) => {
         const [showFilter, setSF] = useState(false);
 
         // if user is on a manufacturer page, set the link to the manufacturer link. otherwise - make it /products.
-        const clearBtnLink = props.this.props.match.params.manufacturer !== undefined && props.this.props.match.params.manufacturer !== 'null' ? "/" + language + "/products/null/null/" + props.this.props.match.params.manufacturer : "/" + language + "/products";
+        const clearBtnLink = props.this.props.match.params.manufacturer && props.this.props.match.params.manufacturer !== 'null' ? "/" + language + "/products/null/null/" + props.this.props.match.params.manufacturer : "/" + language + "/products";
 
         // scroll up on every route change
         useEffect(() => {
@@ -358,8 +354,6 @@ const SidebarItem = (props) => {
                                 style={{ textAlign: 'right', listStyle: 'none' }}>
                                 <p key={props.value + 'p'} id={props.value} className={"product-type"}> {text}</p>
                         </li>
-
-
         );
 }
 

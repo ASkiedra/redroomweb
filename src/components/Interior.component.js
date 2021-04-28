@@ -7,7 +7,7 @@ function importAll(r) {
 const images = importAll(require.context('../../public/images/interior', false, /\.(jpg|bmp|ico|png|jpe?g|svg)$/));
 
 const enlargeImage = (imgSrc) => {
-        if (document.getElementById("background-container") !== undefined) {
+        if (document.getElementById("background-container")) {
                 document.getElementById("background-container").style.top = window.pageYOffset + 'px';
                 document.getElementById("background-container").classList.toggle("display-none");
                 document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
