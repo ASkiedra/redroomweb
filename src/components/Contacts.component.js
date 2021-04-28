@@ -26,12 +26,12 @@ const Contacts = (props) => {
                     <a href="mailto:info@red-room.lt">info@red-room.lt</a>
                 </div>
 
-                {/* <div id="privacy-policy-link-container">
+                <div id="privacy-policy-link-container">
                     <Link to={`/${props.match.params.lang}/privacy policy`}>
                         {props.match.params.lang === 'EN' ? 'PRIVACY POLICY' : props.match.params.lang === 'LT' && 'PRIVATUMO POLITIKA'}
                     </Link>
 
-                </div> */}
+                </div>
             </div>
         </div >
     );

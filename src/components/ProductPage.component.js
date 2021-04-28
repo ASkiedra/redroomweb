@@ -4,17 +4,13 @@ import { Link } from "react-router-dom";
 
 
 export default class ProductPage extends Component {
-        constructor(props) {
-                super(props)
-
-                this.state = {
-                        imageName: ['none'],
-                        manufacturer: undefined,
-                        info: [],
-                        name: undefined,
-                        path: undefined,
-                        loading: true
-                }
+        state = {
+                imageName: ['none'],
+                manufacturer: undefined,
+                info: [],
+                name: undefined,
+                path: undefined,
+                loading: true
         }
 
         componentDidMount() {
@@ -36,22 +32,18 @@ export default class ProductPage extends Component {
                 else {
                         const productFromJson = Products.find(el => el.name === this.props.match.params.name && el.manufacturer === this.props.match.params.manufacturer);
 
-
                         this.setState({
                                 manufacturer: productFromJson.manufacturer,
                                 name: productFromJson.name,
                                 imageName: productFromJson.imageName,
                                 info: productFromJson.info,
                                 path: "/images/products/" + this.props.match.params.manufacturer + '/' + this.props.match.params.name + '/',
-
                         },
                                 this.setState({
                                         loading: false,
                                 })
                         )
                 }
-
-
         }
 
 
@@ -66,15 +58,14 @@ export default class ProductPage extends Component {
         }
 
         separateWords(text) {
-                let char = text[0],
-                        index = 0;
+                let char = text[0], index = 0;
 
                 // find the index where the text needs to be cut
                 while (char !== ' ') {
                         index++;
                         char = text[index]
 
-                        // if text is over
+                        // if the text is over
                         if (index === text.length) {
                                 index = -1;
                                 break;
@@ -100,7 +91,6 @@ export default class ProductPage extends Component {
 
                 return (
                         <div style={{ paddingTop: '1rem', paddingBottom: '18rem', minHeight: 'inherit' }} >
-
                                 {/* hidden by default */}
                                 <div style={{ cursor: 'pointer', background: 'rgb(0 0 0 / 85%)' }} onClick={() => {
                                         document.getElementById("background-container").classList.toggle("display-none");
@@ -148,18 +138,17 @@ export default class ProductPage extends Component {
                                         }
 
                                         <div style={{ maxWidth: '100%', maxHeight: '23rem', height: 'auto' }}>
-
                                                 <div style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit', minHeight: '20rem', marginBottom: '1rem', maxHeight: 'inherit' }} id="container-1">
-
-                                                        {!this.state.loading && <img onClick={(e) => this.enlargeImage(e.target.src)} id="main-product-image" src={this.state.path + this.state.imageName[i]} style={{ cursor: 'pointer', maxHeight: 'inherit', minWidth: 'inherit', width: 'inherit', minHeight: '48%', fontSize: '0' }} alt="main-product" />}
-
-
-
+                                                        {!this.state.loading &&
+                                                                <img onClick={(e) => this.enlargeImage(e.target.src)}
+                                                                        id="main-product-image"
+                                                                        src={this.state.path + this.state.imageName[i]}
+                                                                        style={{ cursor: 'pointer', maxHeight: 'inherit', minWidth: 'inherit', width: 'inherit', minHeight: '48%', fontSize: '0' }}
+                                                                        alt="main-product" />}
                                                 </div>
 
                                                 <div id="product-text-container">
                                                         <h3 style={{ display: 'inline', fontWeight: 'normal', textAlign: 'CENTER', position: 'relative', marginTop: '3rem', zIndex: '0' }} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</h3>
-
                                                 </div>
                                         </div>
 
@@ -172,7 +161,7 @@ export default class ProductPage extends Component {
 
                                                                         if (this.state.imageName[i])
                                                                                 return (
-                                                                                        <div key={i + '-item'} id="asd">
+                                                                                        <div key={i + '-item'} id="additional-photo-container2">
                                                                                                 <img style={{ maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }}
                                                                                                         onClick={(e) => this.swapImages(e.target)} src={this.state.path + this.state.imageName[i]} id={'img' + i} alt={this.state.imageName[i] + "-additional-photo"} />
                                                                                         </div>
@@ -180,11 +169,9 @@ export default class ProductPage extends Component {
                                                                         // if there arent enough additional photos, the grid would portray them improperly therefore an empty picture seems like a decent solution
                                                                         // 3 because max 3 photos and it starts from 0
                                                                         if (i !== 3) {
-                                                                                return (
-                                                                                        <div key={i + '-item'} id="asd">
-                                                                                                <img alt='additional-empty-pic' style={{ opacity: '0', height: 'inherit', maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }} ></img>
-                                                                                        </div>
-                                                                                );
+                                                                                return <div key={i + '-item'} id="additional-photo-container2">
+                                                                                        <img alt='additional-empty-pic' style={{ opacity: '0', height: 'inherit', maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }} />
+                                                                                </div>
                                                                         }
 
                                                                         return null;
@@ -195,9 +182,6 @@ export default class ProductPage extends Component {
                                 </div>
                         </div >
                 );
-
-
         }
 
 }
-

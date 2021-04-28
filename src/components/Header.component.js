@@ -18,7 +18,7 @@ const Header = (props) => {
     ];
 
     // items for the mobile dropdown
-    const dropdown2Collection = ['PRODUCTS', 'INTERIOR', 'MANUFACTURERS', 'CONTACTS'];
+    const dropdown2Collection = ['PRODUCTS', 'INTERIOR', 'MANUFACTURERS', 'CONTACTS', 'PRIVACY POLICY'];
 
     const Menu = () => {
         return (

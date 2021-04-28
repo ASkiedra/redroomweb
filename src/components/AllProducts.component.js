@@ -250,22 +250,18 @@ const MainContainer = (props) => {
                         <div id="sidebar-container-2">
                                 {!showFilter && window.innerWidth < 1149 &&
                                         <div className="flexbox-container">
-
                                                 <p onClick={() => setSF(!showFilter)} id="filter-btn">
                                                         {language === "LT" ? "filtrai" : language === "EN" && "filters"}
                                                 </p>
                                         </div>
 
                                 }
-                                {
-                                        showFilter &&
 
+                                {showFilter &&
                                         <div id="sidebar-container" >
-
                                                 <div id="sidebar-btn-container">
                                                         {
                                                                 window.innerWidth < 1149 &&
-
                                                                 <div className="flexbox-container">
                                                                         <p onClick={() => setSF(!showFilter)} id="filter-btn">
                                                                                 {language === "LT" ? "filtrai" : language === "EN" && "filters"}
@@ -315,7 +311,6 @@ const MainContainer = (props) => {
 
                         <div id='products-container'>
                                 {props.curProducts.map(curProduct => {
-                                        console.log(curProduct)
                                         return <Product key={curProduct.name + curProduct.imageName[0]} lang={props.lang} product={curProduct} />
                                 })}
                         </div>
@@ -376,7 +371,7 @@ const Product = (props) => {
                                 }
                         </div>
 
-                        <p className={"product-name"}><b>{props.product.manufacturer}</b>{props.product.name}</p>
+                        <p className={"product-name"}><b>{props.product.manufacturer}</b> {props.product.name}</p>
                 </Link>
         );
 }

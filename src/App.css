@@ -35,40 +35,33 @@
 #privacy-policy-container ul {
   margin-left: 2rem;
 }
+#privacy-policy-container ul li a {
+  color: black;
+  text-align: justify;
+  font-family: "Quicksand", sans-serif;
+  text-decoration: none;
+  font-size: 1.05rem;
+  line-height: 2;
+}
 
-#privacy-policy-container > h1,
-#privacy-policy-container > h3 {
+#privacy-policy-container h1,
+#privacy-policy-container h3 {
   text-align: center;
   font-family: "Roboto";
   margin-bottom: 2rem;
+  margin-top: 4rem;
 }
 
 #privacy-policy-container p,
 #privacy-policy-container ul li {
   text-align: justify;
+  line-height: 2;
   font-family: "Quicksand", sans-serif;
 }
 
 #last-updated-date {
   text-align: center;
   color: grey;
-}
-
-#personal-data-container > h2 {
-  font-family: "Roboto";
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-#personal-data-container {
-  width: 40%;
-  text-align: justify;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-}
-
-#personal-data-container ul {
-  margin-left: 2rem;
 }
 
 footer p,
@@ -148,7 +141,7 @@ footer #div-for-text:hover {
   background: #555;
 }
 
-#asd {
+#additional-photo-container2 {
   /* 1/2 of grid height */
   height: 11.5rem;
   margin: 0 auto;
@@ -1137,10 +1130,6 @@ body {
     min-height: inherit;
     grid-template-columns: 100%;
     -ms-grid-columns: 100%;
-  }
-
-  #personal-data-container {
-    width: 70%;
   }
 }
 
