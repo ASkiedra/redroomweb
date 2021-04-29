@@ -2,9 +2,7 @@ import React from "react";
 
 const MainPage = () => {
     return (
-        <div id="main-page-cont0" style={{ background: 'url(/images/bg-50percent-min.jpg)', backgroundSize: 'cover', marginTop: '-32rem', paddingBottom: '28rem', height: '100vh' }}>
-            <div></div>
-
+        <div id="main-page-cont0" style={{ background: 'url(/images/bg-50percent-min.jpg)' }}>
             {/* <div id="main-page-cont">
                 <div style={{ width: '100%', textAlign: 'center', margin: '0 auto', paddingBottom: '3rem' }}>
 

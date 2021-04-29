@@ -3,7 +3,6 @@
 
 // used in AllProducts filter, menu dropdown, BcAndLanguages to translate breadcrumbs
 export default function translateMainCats(text) {
-    console.log(text)
     switch (text.toUpperCase()) {
         case "DAY SYSTEMS":
             text = "DIENOS SISTEMOS";

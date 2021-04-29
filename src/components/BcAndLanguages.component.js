@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
+
 import translateMainCats, { translateSubCats, translateMainItems } from "../modules/translate";
 
 
@@ -30,53 +31,46 @@ const BcAndLanguages = (props) => {
                     modifiedPathname[i] = translateMainCats(modifiedPathname[i]);
 
     return (
-        <ul style={{ background: "transparent" }} id="bcnl-container">
+        <ul id="bcnl-container">
             <div id="breadcrumbs-links">
-                <Link to={"/" + props.language} style={{ paddingLeft: '1rem', transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)' }}>
+                <Link to={"/" + props.language} style={{ paddingLeft: '1rem' }}>
                     {props.language === "LT" ? "PAGRINDINIS" : "MAIN"}
                 </Link>
 
                 {/* length is > 0 when at least one item is present. the item starts at index 0, therefore untranslatedPathname[0] is required */}
                 {modifiedPathname.length > 0 &&
                     <>
-                        <span style={{ color: 'rgba(0, 0, 0, 0.7501)' }}>/</span>
-                        <Link to={"/" + props.language + "/" + untranslatedPathname[0]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: ' rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
+                        <span>/</span>
+                        <Link to={"/" + props.language + "/" + untranslatedPathname[0]}>
                             <h1>
                                 {modifiedPathname[0]}
                             </h1>
                         </Link>
-                    </>
-                }
+                    </>}
 
 
 
                 {modifiedPathname.length > 1 &&
                     <>
-                        <span style={{ color: 'rgba(0, 0, 0, 0.7501)' }}>/</span>
-                        <Link to={location.pathname.split(untranslatedPathname[1])[0] + untranslatedPathname[1]} style={{ transition: '0.55s', cursor: 'pointer', fontFamily: 'Roboto', color: 'rgba(0, 0, 0, 0.7501)', textTransform: 'uppercase' }}>
+                        <span>/</span>
+                        <Link to={location.pathname.split(untranslatedPathname[1])[0] + untranslatedPathname[1]} >
                             <h2 style={{ fontWeight: 'bold' }}>
                                 {modifiedPathname[1]}
                             </h2>
                         </Link>
-                    </>
-                }
-
+                    </>}
             </div>
 
             <div id="lang-container">
-                <div>
-                    {/* planning to implement some more functionality here */}
-                </div>
-
                 <Link to={"/LT" + location.pathname.substr(3)}
                     onClick={() => props.setLanguage("LT")}
-                    className={props.language === "LT" && 'bold-text'}>
+                    className={props.language === "LT" ? 'bold-text' : undefined}>
                     LT
                 </Link>
 
                 <Link to={"/EN" + location.pathname.substr(3)}
                     onClick={() => props.setLanguage("EN")}
-                    className={props.language === "EN" && 'bold-text'}>
+                    className={props.language === "EN" ? 'bold-text' : undefined}>
                     EN
                 </Link>
             </div>

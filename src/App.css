@@ -168,6 +168,18 @@ footer #div-for-text:hover {
   text-align: center;
 }
 
+#breadcrumbs-links span {
+  color: rgba(0, 0, 0, 0.7501);
+}
+
+#breadcrumbs-links a {
+  transition: 0.55s;
+  color: rgba(0, 0, 0, 0.7501);
+  cursor: pointer;
+  font-family: "Roboto";
+  text-transform: uppercase;
+}
+
 #main-text-container {
   width: 100%;
   margin: 0 auto;
@@ -345,7 +357,7 @@ header div p,
   text-align: center;
   margin-top: 17rem;
   margin-bottom: 5rem;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   font-weight: bold;
 }
 #privacy-policy-link-container > a {
@@ -971,6 +983,12 @@ a {
 #main-page-cont0 {
   overflow: hidden;
   height: inherit;
+  background-size: cover;
+  height: 100vh;
+
+  /* client requested very specifically formatted and cropped image so these margins and paddings are appropriate for the purpose */
+  margin-top: -32rem;
+  padding-bottom: 28rem;
 }
 
 #email-box {
@@ -989,19 +1007,12 @@ body {
 #lang-container a {
   width: fit-content;
   font-family: "Roboto";
+  margin-right: calc(1.3vw + 1.1rem);
   color: rgba(0, 0, 0, 0.7501);
 }
 
 #lang-container {
-  padding-right: 1rem;
-  right: 1;
-  display: grid;
-  display: -ms-grid;
-
-  -ms-grid-column: 2;
-
-  grid-template-columns: 80% 10% 10%;
-  -ms-grid-columns: 80% 10% 10%;
+  text-align: right;
 }
 
 #redroom-large-text {
@@ -1519,11 +1530,6 @@ body {
     font-size: 2.5rem;
   }
 
-  #lang-container {
-    grid-template-columns: 68% 16% 16%;
-    -ms-grid-columns: 68% 16% 16%;
-  }
-
   /* footer */
   #div-for-text span {
     font-size: 1.4rem;
@@ -1596,11 +1602,6 @@ body {
     font-size: 2rem;
   }
 
-  #lang-container {
-    grid-template-columns: 68% 16% 16%;
-    -ms-grid-columns: 68% 16% 16%;
-  }
-
   /* footer */
   #div-for-text span {
     font-size: 1.4rem;
@@ -1637,11 +1638,6 @@ body {
 
   #bcnl-container a {
     font-size: 2rem;
-  }
-
-  #lang-container {
-    grid-template-columns: 68% 16% 16%;
-    -ms-grid-columns: 68% 16% 16%;
   }
 }
 

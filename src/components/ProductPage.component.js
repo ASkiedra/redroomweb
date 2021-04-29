@@ -109,7 +109,6 @@ export default class ProductPage extends Component {
                                 </div>
 
                                 <div id="product-page-grid">
-
                                         {this.state.info[0] === "Susisiekite su mumis dėl daugiau informacijos." ?
                                                 <Link id="product-text" to={{
                                                         pathname: '/' + this.props.match.params.lang + '/inquire',
@@ -131,8 +130,9 @@ export default class ProductPage extends Component {
                                                 :
 
                                                 <p id="product-text">
-                                                        {!this.state.loading &&
-                                                                this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]
+                                                        {
+                                                                !this.state.loading &&
+                                                                        this.props.match.params.lang === "LT" ? this.state.info[0] : this.props.match.params.lang === "EN" && this.state.info[1]
                                                         }
                                                 </p>
                                         }

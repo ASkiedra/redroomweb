@@ -12,12 +12,7 @@ export default class Inquire extends Component {
 
     componentDidMount() {
         if (this.props.location.productName) {
-            let text = '';
-
-            if (this.props.match.params.lang === "LT")
-                text = "Sveiki, mane domina ";
-            else if (this.props.match.params.lang === "EN")
-                text = "Hello, I am interested in ";
+            const text = this.props.language === "LT" ? "Sveiki, mane domina " : "Hello, I am interested in ";
 
             this.setState({
                 email: '',
@@ -34,22 +29,18 @@ export default class Inquire extends Component {
     componentDidUpdate(prevProps) {
         if ((prevProps.location.key !== this.props.location.key || prevProps.location.pathname !== this.props.location.pathname)) {
             if (this.state.productName) {
-
-                let text = '';
-
-                if (this.props.match.params.lang === "LT")
-                    text = "Sveiki, mane domina ";
-                else if (this.props.match.params.lang === "EN")
-                    text = "Hello, I am interested in ";
-
+                const text = this.props.language === "LT" ? "Sveiki, mane domina " : "Hello, I am interested in ";
 
                 this.setState({
                     email: '',
+
+                    // not using this.state.productName here because its async
                     message: text + this.state.productName,
                 })
             }
         }
     }
+
 
     handleSubmit(e) {
         e.preventDefault();
@@ -72,7 +63,7 @@ export default class Inquire extends Component {
         }
         else if (this.props.match.params.lang === "LT")
             alert("Prašome įvesti savo el. paštą ir žinutę.")
-        else if (this.props.match.params.lang === "EN")
+        else
             alert("Please enter the message and your e-mail.")
 
 
@@ -93,7 +84,7 @@ export default class Inquire extends Component {
         return (
             <div style={{ height: 'inherit' }}>
                 <div id="inquire-container">
-                    <h2 id="heading2" className="p-heading2">{this.props.match.params.lang === "LT" ? "Susisiekime" : this.props.match.params.lang === "EN" && "Get in Touch"}</h2  >
+                    <h2 id="heading2" className="p-heading2">{this.props.match.params.lang === "LT" ? "Susisiekime" : "Get in Touch"}</h2  >
 
                     <Form style={{ marginTop: '3rem' }} onSubmit={this.handleSubmit.bind(this)}>
                         <FormGroup style={{ marginTop: '3rem' }} controlId="formBasicEmail">
@@ -103,7 +94,7 @@ export default class Inquire extends Component {
                                 value={this.state.email}
                                 className="text-primary"
                                 onChange={this.handleChange.bind(this, 'email')}
-                                placeholder={this.props.match.params.lang === "LT" ? "Jūsų el. paštas" : this.props.match.params.lang === "EN" && "Your email"}
+                                placeholder={this.props.match.params.lang === "LT" ? "Jūsų el. paštas" : "Your email"}
                             />
                         </FormGroup>
 
@@ -116,12 +107,12 @@ export default class Inquire extends Component {
                                 className="text-primary"
                                 value={this.state.message}
                                 onChange={this.handleChange.bind(this, 'message')}
-                                placeholder={this.props.match.params.lang === "LT" ? "Jūsų užklausa" : this.props.match.params.lang === "EN" && "Your inquiry"}
+                                placeholder={this.props.match.params.lang === "LT" ? "Jūsų užklausa" : "Your inquiry"}
                             />
                         </FormGroup>
 
                         <Button style={{ borderRadius: '5px', width: '7rem', fontSize: '1.2rem', height: '2.2rem' }} letiant="primary" type="submit">
-                            {this.props.match.params.lang === "LT" ? "Siųsti" : this.props.match.params.lang === "EN" && "Send"}
+                            {this.props.match.params.lang === "LT" ? "Siųsti" : "Send"}
                         </Button>
                     </Form>
                 </div >

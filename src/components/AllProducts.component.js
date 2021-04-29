@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+
 import Products from '../modules/products';
 import { translateSubCats } from "../modules/translate";
 import filterLowercase, { mainCategoriesArr, subCategoriesArr, manufacturersArr } from '../modules/filteredData';
@@ -180,7 +181,7 @@ export default class AllProducts extends Component {
 
         render() {
                 // using setState is too slow and for the purposes of this webpage state is not required for these items because they are only initialized and then get their data ONCE.
-                let typesArr = [], availSubCats = [], returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
+                let typesArr = [], availSubCats = [], returnable = <div style={{ height: 'inherit', background: 'white' }} />;
 
                 if (this.props.match.params.manufacturer) {
                         const filteredByManuf = Products.filter(x => x.manufacturer.toLowerCase() === this.props.match.params.manufacturer.toLowerCase() && x.manufacturer);
@@ -208,9 +209,8 @@ export default class AllProducts extends Component {
                         // case no params in the url
                         else
                                 returnable = <MainContainer availSubCats={availSubCats} mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
-
-
                 }
+
                 return returnable;
         }
 }
@@ -358,7 +358,7 @@ const Product = (props) => {
 
                         <div className={"flexbox-container product-container"} style={{ height: '94%', width: 'inherit', textAlign: 'center' }}>
                                 {
-                                        <img style={{ margin: '0 auto' }} className="product-list-photo" src={path} alt="logo" />
+                                        <img style={{ margin: '0 auto' }} className="product-list-photo" src={path} alt={`${props.product.name}-logo`} />
                                 }
                         </div>
 

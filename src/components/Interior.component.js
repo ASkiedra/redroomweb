@@ -1,10 +1,6 @@
 import React from "react";
 
-function importAll(r) {
-        return r.keys().map(r);
-}
-
-const images = importAll(require.context('../../public/images/interior', false, /\.(jpg|bmp|ico|png|jpe?g|svg)$/));
+const importAll = (r) => r.keys().map(r);
 
 const enlargeImage = (imgSrc) => {
         if (document.getElementById("background-container")) {
@@ -14,6 +10,10 @@ const enlargeImage = (imgSrc) => {
                 document.getElementById("enlarged-img").src = imgSrc;
         }
 }
+
+const images = importAll(require.context('../../public/images/interior', false, /\.(jpg|bmp|ico|png|jpe?g|svg)$/));
+
+
 
 const Interior = () => {
         return (

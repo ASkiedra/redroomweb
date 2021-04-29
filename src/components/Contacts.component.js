@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const Contacts = (props) => {
+const Contacts = ({ language }) => {
     return (
         <div style={{ height: 'inherit' }}>
             <div className="contacts-additional-container" >
@@ -17,8 +17,8 @@ const Contacts = (props) => {
 
                 <div id="container-contacts-text-grid" className="contacts-additional-container-2">
                     <p style={{ fontWeight: '550' }}> {
-                        props.match.params.lang === "LT" ? "SUSISIEKIME:" :
-                            props.match.params.lang === "EN" && "GET IN TOUCH:"
+                        language === "EN" ? "GET IN TOUCH:" : "SUSISIEKIME:"
+
                     }
                     </p>
 
@@ -27,10 +27,9 @@ const Contacts = (props) => {
                 </div>
 
                 <div id="privacy-policy-link-container">
-                    <Link to={`/${props.match.params.lang}/privacy policy`}>
-                        {props.match.params.lang === 'EN' ? 'PRIVACY POLICY' : props.match.params.lang === 'LT' && 'PRIVATUMO POLITIKA'}
+                    <Link to={`/${language}/privacy policy`}>
+                        {language === 'EN' ? 'PRIVACY POLICY' : 'PRIVATUMO POLITIKA'}
                     </Link>
-
                 </div>
             </div>
         </div >
