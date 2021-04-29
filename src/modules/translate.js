@@ -1,5 +1,9 @@
+// all functions return null if the text cannot be translated
+
+
 // used in AllProducts filter, menu dropdown, BcAndLanguages to translate breadcrumbs
 export default function translateMainCats(text) {
+    console.log(text)
     switch (text.toUpperCase()) {
         case "DAY SYSTEMS":
             text = "DIENOS SISTEMOS";
@@ -39,7 +43,6 @@ export const translateSubCats = (text) => {
         case "LOUNGE CHAIRS":
             text = "POILSIO KĖDĖS";
             break;
-
 
         case "WORKPLACE FURNITURE":
             text = "DARBO VIETOS";
@@ -139,11 +142,11 @@ export const translateSubCats = (text) => {
 
         default:
             text = null;
+            break;
     }
 
     return text;
 }
-
 
 // used in BcAndLanguages to translate breadcrumbs
 export const translateMainItems = (text) => {
@@ -177,6 +180,7 @@ export const translateMainItems = (text) => {
             break;
 
         default:
+            text = null;
             break;
     }
 

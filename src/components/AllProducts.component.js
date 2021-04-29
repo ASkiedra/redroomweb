@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Products from '../components/products';
-import { translateSubCats } from "../components/translate";
-import filterLowercase, { mainCategoriesArr, subCategoriesArr, manufacturersArr } from './filteredData';
+import Products from '../modules/products';
+import { translateSubCats } from "../modules/translate";
+import filterLowercase, { mainCategoriesArr, subCategoriesArr, manufacturersArr } from '../modules/filteredData';
 
 
 // cant store these in the state because it would update too often
@@ -20,11 +19,11 @@ export default class AllProducts extends Component {
                         mainCatFilterArr = [];
                         manufFilterArr = [];
 
-                        if (this.props.match.params.manufacturer !== undefined && this.props.match.params.manufacturer !== 'null')
+                        if (this.props.match.params.manufacturer)
                                 manufFilterArr.push(this.props.match.params.manufacturer)
-                        if (this.props.match.params.subCategory !== undefined && this.props.match.params.subCategory !== 'null')
+                        if (this.props.match.params.subCategory)
                                 subCatFilterArr.push(this.props.match.params.subCategory)
-                        if (this.props.match.params.mainCategory !== undefined && this.props.match.params.mainCategory !== 'null')
+                        if (this.props.match.params.mainCategory)
                                 mainCatFilterArr.push(this.props.match.params.mainCategory)
 
                         this.setState({ loading: false }, this.filter())
@@ -38,11 +37,11 @@ export default class AllProducts extends Component {
                 manufFilterArr = [];
 
                 // if any props match params are in the url, push them to appropriate arrays
-                if (this.props.match.params.manufacturer !== undefined && this.props.match.params.manufacturer !== 'null')
+                if (this.props.match.params.manufacturer)
                         manufFilterArr.push(this.props.match.params.manufacturer)
-                if (this.props.match.params.subCategory !== undefined && this.props.match.params.subCategory !== 'null')
+                if (this.props.match.params.subCategory)
                         subCatFilterArr.push(this.props.match.params.subCategory)
-                if (this.props.match.params.mainCategory !== undefined && this.props.match.params.mainCategory !== 'null')
+                if (this.props.match.params.mainCategory)
                         mainCatFilterArr.push(this.props.match.params.mainCategory)
 
                 this.setState({ fetchedProducts: Products, curProducts: Products, loading: false });
@@ -129,9 +128,8 @@ export default class AllProducts extends Component {
                                         this.filter()
                                 }
 
-                                else if (value === undefined) {
+                                else if (value === undefined)
                                         this.filter()
-                                }
                                 else {
                                         manufFilterArr.push(value);
                                         this.filter()
@@ -144,11 +142,8 @@ export default class AllProducts extends Component {
                                         subCatFilterArr = subCatFilterArr.filter(el => el !== value)
                                         this.filter()
                                 }
-
-                                else if (value === undefined) {
+                                else if (value === undefined)
                                         this.filter()
-                                }
-
                                 else {
                                         subCatFilterArr.push(value)
                                         this.filter()
@@ -163,11 +158,8 @@ export default class AllProducts extends Component {
                                         mainCatFilterArr = mainCatFilterArr.filter(el => el !== value);
                                         this.filter();
                                 }
-
-                                else if (value === undefined) {
+                                else if (value === undefined)
                                         this.filter()
-                                }
-
                                 else {
                                         mainCatFilterArr.push(value);
                                         this.filter();
@@ -188,22 +180,21 @@ export default class AllProducts extends Component {
 
         render() {
                 // using setState is too slow and for the purposes of this webpage state is not required for these items because they are only initialized and then get their data ONCE.
-                let typesArr = [], availSubCats = [],
-                        returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
+                let typesArr = [], availSubCats = [], returnable = <div style={{ height: 'inherit', background: 'white' }}></div>;
 
                 if (this.props.match.params.manufacturer) {
                         const filteredByManuf = Products.filter(x => x.manufacturer.toLowerCase() === this.props.match.params.manufacturer.toLowerCase() && x.manufacturer);
                         availSubCats = (filterLowercase([...new Set(filteredByManuf.map(product => product.subCategory))]));
                 }
 
-                if (this.props.match.params.mainCategory !== 'null' && this.props.match.params.mainCategory) {
+                if (this.props.match.params.mainCategory) {
                         const filteredByMainCat = Products.filter(x => x.mainCategory.toLowerCase() === this.props.match.params.mainCategory.toLowerCase() && x.mainCategory);
                         availSubCats = (filterLowercase([...new Set(filteredByMainCat.map(product => product.subCategory))]));
                 }
 
                 if (!this.state.loading) {
                         // works only for the params of the url
-                        if (this.props.match.params.manufacturer !== undefined || this.props.match.params.subCategory !== undefined || this.props.match.params.mainCategory !== undefined) {
+                        if (this.props.match.params.manufacturer || this.props.match.params.subCategory || this.props.match.params.mainCategory) {
                                 if ((!paramsFiltersApplied) && (subCatFilterArr.length > 0 || mainCatFilterArr.length > 0 || manufFilterArr.length > 0)) {
 
                                         this.filter();
@@ -225,13 +216,8 @@ export default class AllProducts extends Component {
 }
 
 const MainContainer = (props) => {
-        const language = useLocation().pathname[1] + useLocation().pathname[2];
         const [showFilter, setSF] = useState(false);
 
-        // if user is on a manufacturer page, set the link to the manufacturer link. otherwise - make it /products.
-        const clearBtnLink = props.this.props.match.params.manufacturer && props.this.props.match.params.manufacturer !== 'null' ? "/" + language + "/products/null/null/" + props.this.props.match.params.manufacturer : "/" + language + "/products";
-
-        // scroll up on every route change
         useEffect(() => {
                 window.scrollTo(0, 0)
                 window.scroll(0, 0)
@@ -244,6 +230,11 @@ const MainContainer = (props) => {
         }, [props.this.state]);
 
 
+        // if user is on a manufacturer page, set the link to the manufacturer link. otherwise - make it /products.
+        const clearBtnLink = props.this.props.match.params.manufacturer ? "/" + props.lang + "/products///" + props.this.props.match.params.manufacturer : "/" + props.lang + "/products";
+
+
+
         return (
                 <div id='allproducts-container' >
                         {/* sidebar */}
@@ -251,7 +242,7 @@ const MainContainer = (props) => {
                                 {!showFilter && window.innerWidth < 1149 &&
                                         <div className="flexbox-container">
                                                 <p onClick={() => setSF(!showFilter)} id="filter-btn">
-                                                        {language === "LT" ? "filtrai" : language === "EN" && "filters"}
+                                                        {props.lang === "LT" ? "filtrai" : props.lang === "EN" && "filters"}
                                                 </p>
                                         </div>
 
@@ -264,14 +255,14 @@ const MainContainer = (props) => {
                                                                 window.innerWidth < 1149 &&
                                                                 <div className="flexbox-container">
                                                                         <p onClick={() => setSF(!showFilter)} id="filter-btn">
-                                                                                {language === "LT" ? "filtrai" : language === "EN" && "filters"}
+                                                                                {props.lang === "LT" ? "filtrai" : props.lang === "EN" && "filters"}
                                                                         </p>
                                                                 </div>
                                                         }
                                                         <Link onClick={() => window.innerWidth < 1149 && setSF(false)}
                                                                 id="clear-btn" to={clearBtnLink
 
-                                                                }>{language === "LT" ? "išvalyti filtrus" : language === "EN" && "clear filters"}</Link>
+                                                                }>{props.lang === "LT" ? "išvalyti filtrus" : props.lang === "EN" && "clear filters"}</Link>
 
                                                 </div>
 
@@ -286,11 +277,11 @@ const MainContainer = (props) => {
                                                         <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
                                                                 {props.availSubCats.length === 0 ?
                                                                         props.subCategoriesArr.map(curSubCat => {
-                                                                                return <SidebarItem key={curSubCat} language={language} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
+                                                                                return <SidebarItem key={curSubCat} language={props.lang} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
                                                                         })
                                                                         :
                                                                         props.availSubCats.map(curSubCat => {
-                                                                                return <SidebarItem key={curSubCat} language={language} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
+                                                                                return <SidebarItem key={curSubCat} language={props.lang} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
                                                                         })
                                                                 }
                                                         </div>

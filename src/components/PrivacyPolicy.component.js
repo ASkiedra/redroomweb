@@ -19,7 +19,7 @@ const PrivacyPolicy = (props) => {
                         : 'Šioje privatumo politikoje aprašoma MB „Studio Red" (toliau – Mūsų) politika ir procedūros, susijusios su klientų ir kitų duomenų subjektų (toliau – Jūsų) informacijos rinkimu, naudojimu ir atskleidimu, kai naudojatės Mūsų svetaine ir/ar jos funkcionalumu (toliau – Paslauga).'}
                 </p>
 
-                <p style={{ marginBottom: '2.5rem' }}>
+                <p style={{ fontWeight: '525', marginBottom: '2.5rem' }}>
                     {props.language === "EN" ? 'We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.'
                         : 'Mes naudojame Jūsų asmens duomenis Paslaugai teikti ir tobulinti. Naudodamiesi Paslauga, Jūs sutinkate, kad bus renkama ir naudojama informaciją pagal šią privatumo politiką.'}
                 </p>
@@ -55,7 +55,7 @@ const PrivacyPolicy = (props) => {
 
                 <h3>{props.language === "EN" ? "TRACKING TECHNOLOGIES AND COOKIES" : "INFORMACIJOS RINKIMO TECHNOLOGIJOS IR SLAPUKAI"}</h3>
                 <p>
-                    {props.language === "EN" ? "We may use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used may include beacons, tags, and scripts to collect and track information and to improve and analyze Our Service to You."
+                    {props.language === "EN" ? "We may use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used may include but are not limited to beacons, tags, and scripts to collect and track information and to improve and analyze Our Service to You."
                         :
                         'Mes naudojame slapukus ir panašias informacijos rinkimo technologijas, kad galėtume stebėti Mūsų Paslaugos veiklą ir saugoti tam tikrą informaciją. Stebėjimo technologijos, kurias galime naudoti (bet tuo neapsiriboja), yra „beacons", „tags", ir „scripts", skirti rinkti ir sekti informaciją bei tobulinti ir analizuoti Mūsų Paslaugą Jums.'}
                 </p>
@@ -80,7 +80,6 @@ const PrivacyPolicy = (props) => {
 
 
             <h3> {props.language === "EN" ? "CONTACT US" : "SUSISIEKITE SU MUMIS"}</h3>
-
             <p style={{ marginTop: '1.5rem' }}>
                 {props.language === 'EN' ? "If you have any questions about this Privacy Policy, You can contact us:" : "Jei Jūs turite klausimų apie šią privatumo politiką, galite susisiekti su mumis:"}
             </p>

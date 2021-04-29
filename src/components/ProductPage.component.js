@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Products from '../components/products';
+import Products from '../modules/products';
 import { Link } from "react-router-dom";
 
 

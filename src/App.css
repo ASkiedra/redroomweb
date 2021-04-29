@@ -986,6 +986,12 @@ body {
   overflow-x: hidden;
 }
 
+#lang-container a {
+  width: fit-content;
+  font-family: "Roboto";
+  color: rgba(0, 0, 0, 0.7501);
+}
+
 #lang-container {
   padding-right: 1rem;
   right: 1;

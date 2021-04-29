@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
-import filterLowercase, { manufacturersArr } from './filteredData';
+import filterLowercase, { manufacturersArr } from '../modules/filteredData';
 
 export default class Manufacturers extends Component {
     render() {
@@ -30,7 +30,7 @@ const ManufacturersContainer = (props) => {
                         <div className="manufacturer-div" key={manufacturer}>
                             <Link className="flexbox-container" style={{
                                 width: "100%", height: "100%"
-                            }} to={"/" + props.language + "/products/null/null/" + manufacturer}>
+                            }} to={"/" + props.language + "/products///" + manufacturer}>
 
                                 <img alt={manufacturer + "-logo"} src={"/images/logos/" + manufacturer + ".png"} />
                             </Link>

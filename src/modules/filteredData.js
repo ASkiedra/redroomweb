@@ -1,4 +1,4 @@
-import Products from '../components/products';
+import Products from './products';
 
 
 // filters all items when comparing their lowercase versions

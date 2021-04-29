@@ -4,8 +4,7 @@ import { useState } from "react";
 
 import Header from './components/Header.component';
 import BcAndLanguages from './components/BcAndLanguages.component';
-import Footer from './components/Footer.component';
-import StickyFooter from './components/StickyFooter.component';
+import Footer, { StickyFooter } from './components/Footers.component';
 import Routes from './components/Routes.component';
 
 export default function App() {

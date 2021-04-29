@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from './logo minus black.png';
 import threeLinesLogo from './three-lines-logo.png';
-import translateMainCats, { translateMainItems, translateSubCats } from "../components/translate";
-import { mainCategoriesArr, subCategoriesArr } from './filteredData'
+import translateMainCats, { translateMainItems, translateSubCats } from "../modules/translate";
+import { mainCategoriesArr, subCategoriesArr } from '../modules/filteredData'
 
 
 
