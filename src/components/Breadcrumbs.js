@@ -2,9 +2,9 @@ import React from "react";
 import { useLocation, Link } from "react-router-dom";
 
 import translateMainCats, { translateSubCats, translateMainItems } from "../modules/translate";
+import LanguagesContainer from './LanguagesContainer';
 
-
-const BcAndLanguages = (props) => {
+const Breadcrumbs = (props) => {
     const location = useLocation();
     let modifiedPathname = [];
 
@@ -31,7 +31,7 @@ const BcAndLanguages = (props) => {
                     modifiedPathname[i] = translateMainCats(modifiedPathname[i]);
 
     return (
-        <ul id="bcnl-container">
+        <ul id="breadcrumbs-container">
             <div id="breadcrumbs-links">
                 <Link to={"/" + props.language} style={{ paddingLeft: '1rem' }}>
                     {props.language === "LT" ? "PAGRINDINIS" : "MAIN"}
@@ -61,21 +61,9 @@ const BcAndLanguages = (props) => {
                     </>}
             </div>
 
-            <div id="lang-container">
-                <Link to={"/LT" + location.pathname.substr(3)}
-                    onClick={() => props.setLanguage("LT")}
-                    className={props.language === "LT" ? 'bold-text' : undefined}>
-                    LT
-                </Link>
-
-                <Link to={"/EN" + location.pathname.substr(3)}
-                    onClick={() => props.setLanguage("EN")}
-                    className={props.language === "EN" ? 'bold-text' : undefined}>
-                    EN
-                </Link>
-            </div>
+            <LanguagesContainer language={props.language} setLanguage={props.setLanguage} />
         </ul >
     );
 }
 
-export default BcAndLanguages;
+export default Breadcrumbs;

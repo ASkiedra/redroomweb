@@ -11,6 +11,7 @@ export default class Inquire extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props)
         if (this.props.location.productName) {
             const text = this.props.language === "LT" ? "Sveiki, mane domina " : "Hello, I am interested in ";
 
@@ -61,7 +62,7 @@ export default class Inquire extends Component {
             )
             this.resetForm()
         }
-        else if (this.props.match.params.lang === "LT")
+        else if (this.props.language === "LT")
             alert("Prašome įvesti savo el. paštą ir žinutę.")
         else
             alert("Please enter the message and your e-mail.")
@@ -84,7 +85,7 @@ export default class Inquire extends Component {
         return (
             <div style={{ height: 'inherit' }}>
                 <div id="inquire-container">
-                    <h2 id="heading2" className="p-heading2">{this.props.match.params.lang === "LT" ? "Susisiekime" : "Get in Touch"}</h2  >
+                    <h2 id="heading2" className="p-heading2">{this.props.language === "LT" ? "Susisiekime" : "Get in Touch"}</h2  >
 
                     <Form style={{ marginTop: '3rem' }} onSubmit={this.handleSubmit.bind(this)}>
                         <FormGroup style={{ marginTop: '3rem' }} controlId="formBasicEmail">
@@ -94,25 +95,25 @@ export default class Inquire extends Component {
                                 value={this.state.email}
                                 className="text-primary"
                                 onChange={this.handleChange.bind(this, 'email')}
-                                placeholder={this.props.match.params.lang === "LT" ? "Jūsų el. paštas" : "Your email"}
+                                placeholder={this.props.language === "LT" ? "Jūsų el. paštas" : "Your email"}
                             />
                         </FormGroup>
 
 
                         <FormGroup style={{ marginTop: '3rem' }} controlId="formBasicMessage">
-                            {/* <Label className="text-muted">{this.props.match.params.lang === "LT" ? "Žinutė" : this.props.match.params.lang === "EN" && "Message"}<br/></Label> */}
+                            {/* <Label className="text-muted">{this.props.language === "LT" ? "Žinutė" : this.props.language === "EN" && "Message"}<br/></Label> */}
                             <Input style={{ paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0.35rem' }} id="input-box"
                                 type="textarea"
                                 name="message"
                                 className="text-primary"
                                 value={this.state.message}
                                 onChange={this.handleChange.bind(this, 'message')}
-                                placeholder={this.props.match.params.lang === "LT" ? "Jūsų užklausa" : "Your inquiry"}
+                                placeholder={this.props.language === "LT" ? "Jūsų užklausa" : "Your inquiry"}
                             />
                         </FormGroup>
 
                         <Button style={{ borderRadius: '5px', width: '7rem', fontSize: '1.2rem', height: '2.2rem' }} letiant="primary" type="submit">
-                            {this.props.match.params.lang === "LT" ? "Siųsti" : "Send"}
+                            {this.props.language === "LT" ? "Siųsti" : "Send"}
                         </Button>
                     </Form>
                 </div >

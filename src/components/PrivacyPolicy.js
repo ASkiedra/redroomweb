@@ -16,7 +16,7 @@ const PrivacyPolicy = ({ language }) => {
             <div id="privacy-description-container">
                 <p style={{ marginBottom: '1.1rem' }}>
                     {language === "EN" ? `This Privacy Policy describes MB "Studio Red" (hereinafter – We, Us, Our) policies and procedures on the collection, use and disclosure of Our clients', people who use this website and/or its functions, and/or other data storage subjects' (hereinafter – You, Your) information when You use this website and/or its functions (hereinafter – Service) and informs You about Your privacy rights and how the law protects You.`
-                        : 'Šioje privatumo politikoje aprašoma Mažosios bendrijos „Studio Red" (toliau – Mūsų) politika ir procedūros, susijusios su klientų ir kitų duomenų subjektų (toliau – Jūsų) informacijos rinkimu, naudojimu ir atskleidimu, kai naudojatės Mūsų svetaine ir/ar jos funkcionalumu (toliau – Paslauga).'}
+                        : 'Šioje privatumo politikoje aprašoma mažosios bendrijos „Studio Red" (toliau – Mūsų) politika ir procedūros, susijusios su klientų ir kitų duomenų subjektų (toliau – Jūsų) informacijos rinkimu, naudojimu ir atskleidimu, kai naudojatės Mūsų svetaine ir/ar jos funkcionalumu (toliau – Paslauga).'}
                 </p>
 
                 <p style={{ fontWeight: '525', marginBottom: '2.5rem' }}>

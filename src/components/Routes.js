@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { Route, Switch, useLocation } from "react-router-dom"
 
-import Contacts from './Contacts.component';
-import AllProducts from './AllProducts.component';
-import Manufacturers from './Manufacturers.component.js';
-import Interior from './Interior.component.js';
-import MainPage from './MainPage.component.js';
-import ProductPage from './ProductPage.component.js';
-import Inquire from './Inquire.component.js';
-import PrivacyPolicy from "./PrivacyPolicy.component";
+import Contacts from './Contacts';
+import AllProducts from './AllProducts';
+import Manufacturers from './Manufacturers';
+import Interior from './Interior';
+import MainPage from './MainPage';
+import ProductPage from './ProductPage';
+import Inquire from './Inquire';
+import PrivacyPolicy from "./PrivacyPolicy";
 
 
 const Routes = ({ language, setLanguage }) => {
@@ -60,12 +60,14 @@ const Routes = ({ language, setLanguage }) => {
 
             {/* Other routes */}
             <Route exact path="/:lang/products/:mainCategory/:subCategory/:manufacturer/:name/" component={ProductPage} />
+
+            <Route exact path="/:lang/inquire" render={({ location }) => (<Inquire language={language} location={location} />)} />
+
+            <Route exact path="/:lang/interior" component={Interior} />
+
             <Route exact path="/:lang/contacts">
                 <Contacts language={language} />
             </Route>
-
-            <Route exact path="/:lang/interior" component={Interior} />
-            <Route exact path="/:lang/inquire" component={Inquire} language={language} />
 
             <Route exact path="/:lang/manufacturers">
                 <Manufacturers language={language} />
@@ -84,7 +86,7 @@ const Routes = ({ language, setLanguage }) => {
                     </h1>
                 </div>
             </Route>
-        </Switch>
+        </Switch >
     );
 }
 
