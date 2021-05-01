@@ -271,10 +271,9 @@ html {
   margin-top: 5rem;
 }
 #header-logo {
-  height: 100%;
+  height: 64%;
   text-align: center;
   margin: 0 auto;
-  transform: scale(0.62);
 }
 .social-media-logo {
   text-align: center;
@@ -735,30 +734,51 @@ a {
   overflow-x: hidden;
 }
 
-#welcome-container {
-  background: rgba(0, 0, 0, 0.845);
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 35vh;
+#FirstTimeBox-container {
+  z-index: 999999;
+  padding-top: 1rem;
+  background: rgba(0, 0, 0, 0.905);
+  position: fixed;
+  bottom: 3.4rem;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50vw;
-  height: 10rem;
+  /* height: 7rem; */
+  width: 100%;
 }
 
-#welcome-container #lang-container a {
+#FirstTimeBox-container #lang-container a {
   color: rgba(255, 255, 255, 0.842);
   margin-right: 0;
 }
 
-#welcome-container > span {
-  color: rgba(255, 255, 255, 0.842);
+#FirstTimeBox-container > button {
+  margin-top: 1rem;
+  cursor: pointer;
   font-family: "Roboto";
+  opacity: 0.8;
+  font-size: 1.5rem;
+  background: none;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 0.2rem 2.75rem;
+  margin-bottom: 1rem;
+  transition: opacity 0.25s;
 }
 
-#welcome-container > span > a {
+#FirstTimeBox-container > button:hover {
+  opacity: 1;
+}
+
+#FirstTimeBox-container > p {
+  color: rgba(255, 255, 255, 0.842);
+  font-family: "Roboto";
+  margin: 0 auto;
+  text-align: center;
+  width: 90%;
+}
+
+#FirstTimeBox-container > p > a {
+  font-family: "Roboto";
   font-weight: bold;
   color: rgba(255, 255, 255, 0.842);
 }

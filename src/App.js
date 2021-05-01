@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Breadcrumbs from './components/Breadcrumbs';
 import Footer, { StickyFooter } from './components/Footers';
 import Routes from './components/Routes';
-import WelcomeContainer from './components/WelcomeContainer';
+import FirstTimeBox from './components/FirstTimeBox';
 
 export default function App() {
   // if the page is in english (red-room.lt/en), set the language to EN. otherwise LT
@@ -21,7 +21,6 @@ export default function App() {
       <Header language={language} />
 
       <div id="main-container" style={{ minHeight: '90vh', marginTop: '5rem' }}>
-        {/* <WelcomeContainer language={language} setLanguage={setLanguage} /> */}
         <Breadcrumbs language={language} setLanguage={setLanguage} />
         <Routes language={language} setLanguage={setLanguage} />
       </div>
@@ -29,6 +28,7 @@ export default function App() {
       {/* remove footer from small screen devices because it is unnecessary */}
       {window.innerHeight > 650 && window.innerWidth > 500 && <Footer language={language} />}
 
+      {!localStorage.getItem('agreedToPP') && <FirstTimeBox language={language} setLanguage={setLanguage} />}
       <StickyFooter language={language} />
     </BrowserRouter >
   );

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import logo from '../logos/logo minus black.png';
+import logo from '../logos/redroom-logo-black.png';
 import threeLinesLogo from '../logos/three-lines-logo.png';
 import translateMainCats, { translateMainItems, translateSubCats } from "../modules/translate";
 import { mainCategoriesArr, subCategoriesArr } from '../modules/filteredData'

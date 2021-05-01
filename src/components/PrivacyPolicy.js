@@ -2,7 +2,7 @@ import React from "react";
 
 const PrivacyPolicy = ({ language }) => {
     // months start from 0, therefore march (the 3rd month) should be written as 2 (3-1)
-    const date = new Date(Date.UTC(2021, 3, 28));
+    const date = new Date(Date.UTC(2021, 4, 1));
 
     return (
         <div id="privacy-policy-container">
@@ -20,8 +20,8 @@ const PrivacyPolicy = ({ language }) => {
                 </p>
 
                 <p style={{ fontWeight: '525', marginBottom: '2.5rem' }}>
-                    {language === "EN" ? 'We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.'
-                        : 'Mes naudojame Jūsų asmens duomenis Paslaugai teikti ir tobulinti. Naudodamiesi Paslauga, Jūs sutinkate, kad bus renkama ir naudojama informaciją pagal šią privatumo politiką.'}
+                    {language === "EN" ? 'We use Your Personal data to provide and improve the Service. By using the Service, You consent to be tracked, receive cookies and agree to the collection and use of information in accordance with this Privacy Policy.'
+                        : 'Mes naudojame Jūsų asmens duomenis Paslaugai teikti ir tobulinti. Naudodamiesi Paslauga, Jūs duodate sutikimą, kad galimai būsite sekami ir priimate slapukus (angl. „cookies“   ) bei sutinkate, kad bus renkama ir naudojama informaciją pagal šią privatumo politiką.'}
                 </p>
             </div>
 
