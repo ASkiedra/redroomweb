@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      {!localStorage.getItem('agreedToPP') && <FirstTimeBox language={language} setLanguage={setLanguage} />}
+      {!localStorage.getItem('agreedToPP') && <FirstTimeBox language={language} />}
 
       <Header language={language} setLanguage={setLanguage} />
 
