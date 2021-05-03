@@ -7,7 +7,6 @@ const btnClicked = (setNotHidden) => {
     setNotHidden();
 }
 
-
 const FirstTimeBox = ({ language }) => {
     const [notHidden, setNotHidden] = useState(true);
 
@@ -15,8 +14,9 @@ const FirstTimeBox = ({ language }) => {
         <div id="FirstTimeBox-container">
             <p>
                 {
+                    // padaryt kad tikrintu visa masyva kalbu ir default jei nieko nematchian - english
                     language === "EN" ?
-                        'WE MAY USE COOKIES AND OTHER TRACKING TECHNOLOGIES FOR VARIOUS PURPOSES SUCH AS FUNCTIONALITY AND ANALYTICS. BY BROWSING THIS WEBSITE YOU AGREE WITH OUR '
+                        'WE MAY USE COOKIES AND OTHER TRACKING TECHNOLOGIES FOR VARIOUS PURPOSES SUCH AS BUT NOT LIMITED TO FUNCTIONALITY AND ANALYTICS. BY BROWSING THIS WEBSITE YOU AGREE WITH OUR '
                         :
                         'MES GALIME NAUDOTI SLAPUKUS (ANGL. „COOKIES“) IR KITAS INFORMACIJOS RINKIMO TECHNOLOGIJAS ĮVAIRIOMS PASKIRTIMS, KURIOS GALI APIMTI (BET TUO NEAPSIRIBOJA) SVETAINĖS FUNKCIONALUMĄ IR ANALITIKĄ. NAUDODAMIESI ŠIA SVETAINE, JŪS SUTINKATE SU MŪSŲ '
                 }
@@ -28,8 +28,7 @@ const FirstTimeBox = ({ language }) => {
 
             <button onClick={() => { btnClicked(setNotHidden) }}>{language === "EN" ? "I AGREE" : "SUTINKU"}</button>
         </div>
-        :
-        null;
+        : null;
 }
 
 export default FirstTimeBox;

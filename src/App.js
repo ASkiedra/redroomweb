@@ -18,17 +18,16 @@ export default function App() {
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Header language={language} />
+      {!localStorage.getItem('agreedToPP') && <FirstTimeBox language={language} setLanguage={setLanguage} />}
+
+      <Header language={language} setLanguage={setLanguage} />
 
       <div id="main-container" style={{ minHeight: '90vh', marginTop: '5rem' }}>
         <Breadcrumbs language={language} setLanguage={setLanguage} />
         <Routes language={language} setLanguage={setLanguage} />
       </div>
 
-      {/* remove footer from small screen devices because it is unnecessary */}
-      {window.innerHeight > 650 && window.innerWidth > 500 && <Footer language={language} />}
-
-      {!localStorage.getItem('agreedToPP') && <FirstTimeBox language={language} setLanguage={setLanguage} />}
+      <Footer language={language} />
       <StickyFooter language={language} />
     </BrowserRouter >
   );

@@ -5,7 +5,7 @@ import logo from '../logos/redroom-logo-black.png';
 import threeLinesLogo from '../logos/three-lines-logo.png';
 import translateMainCats, { translateMainItems, translateSubCats } from "../modules/translate";
 import { mainCategoriesArr, subCategoriesArr } from '../modules/filteredData'
-
+import LanguagesContainer from './LanguagesContainer';
 
 
 
@@ -39,10 +39,10 @@ const Header = (props) => {
     const MobileMenu = () => {
         return (
             <div onClick={() => { setOTL(!openedThreeLines) }}
-                id="threeLines" style={{ cursor: 'pointer', width: "inherit", height: 'inherit', margin: "0 auto" }} >
-                <div id="threeLinesDiv" className="flexbox-container" style={{ width: "inherit", height: 'inherit', margin: "0 auto" }}>
+                id="threeLines" style={{ cursor: 'pointer', height: 'inherit', margin: "0 auto" }} >
+                <div id="threeLinesDiv" className="flexbox-container" style={{ height: 'inherit', margin: "0 auto" }}>
                     <img
-                        style={{ margin: '0 auto', cursor: 'pointer', transform: 'scale(0.6)', width: "inherit", height: 'inherit' }}
+                        style={{ margin: '0 auto', cursor: 'pointer', transform: 'scale(0.6)', height: 'inherit' }}
                         src={threeLinesLogo}
                         className="icon-button clickable"
                         alt="threeLines-logo"
@@ -219,6 +219,10 @@ const Header = (props) => {
                         </p>
                     </div>
                 </Link>
+
+                <div className="flexbox-container">
+                    <LanguagesContainer setLanguage={props.setLanguage} language={props.language} onlyOneLang={props.language === "LT" ? "EN" : "LT"} />
+                </div>
             </ul>
         </header >
     );

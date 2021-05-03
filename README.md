@@ -1,4 +1,4 @@
-# <a href="https://red-room.lt/EN/">red-room.lt</a> website 
+# <a href="https://red-room.lt/EN/">red-room.lt</a> website
 
 <p>Created by <a href="https://github.com/jonwow">jonwow</a></p>
 <p>Designed by <a href="https://github.com/jonwow">jonwow</a> & <a href="https://github.com/OlimpoVaikas">OlimpoVaikas</a></p>

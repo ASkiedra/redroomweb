@@ -29,7 +29,7 @@
 
 #privacy-policy-container {
   padding: 0 15vw;
-  margin-bottom: 12rem;
+  margin-bottom: 16rem;
 }
 
 #privacy-policy-container ul {
@@ -139,6 +139,21 @@ footer #div-for-text:hover {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+#header-list #lang-container {
+  display: none;
+  margin: 0 auto;
+  text-align: center;
+  width: 33vw;
+}
+
+#header-list #lang-container a {
+  font-size: 1.6rem;
+  margin: 0 auto;
+  text-align: center;
+
+  padding: 1.5rem;
 }
 
 #additional-photo-container2 {
@@ -431,6 +446,7 @@ header ul li img {
 /* start of footer  */
 footer {
   position: relative;
+  display: none;
   background: black;
   width: 100%;
 
@@ -625,6 +641,7 @@ a {
 
 .flexbox-container {
   display: flex;
+  justify-content: center;
   align-items: center;
   height: inherit;
   text-align: center;
@@ -739,15 +756,10 @@ a {
   padding-top: 1rem;
   background: rgba(0, 0, 0, 0.905);
   position: fixed;
-  bottom: 3.4rem;
+  bottom: 3.44rem;
   text-align: center;
   /* height: 7rem; */
   width: 100%;
-}
-
-#FirstTimeBox-container #lang-container a {
-  color: rgba(255, 255, 255, 0.842);
-  margin-right: 0;
 }
 
 #FirstTimeBox-container > button {
@@ -1098,6 +1110,8 @@ body {
 
 #threeLines {
   display: none;
+  /* mobile dropdown is 100vw and that messes with this container's sizing */
+  width: 33vw;
 }
 
 .product-type {
@@ -1181,6 +1195,12 @@ body {
 @media (max-height: 800px) and (max-width: 800px) {
   html {
     font-size: 12px;
+  }
+}
+
+@media (max-height: 950px) {
+  #privacy-policy-container {
+    margin-bottom: 20rem;
   }
 }
 
@@ -1471,23 +1491,23 @@ body {
     -ms-grid-columns: 1fr;
   }
 
-  #lang-container {
-    position: absolute;
-    display: block;
-    right: 0;
-    top: 0;
-  }
-
   #products-container {
     order: 2;
   }
 
-  #lang-container a {
+  #header-list #lang-container {
+    display: block;
+  }
+
+  #breadcrumbs-container #lang-container {
+    display: none;
+  }
+  /* #lang-container a {
     font-size: 2.5rem;
     padding: 0 1rem;
     top: 1rem;
     position: relative;
-  }
+  } */
 
   #products-container {
     margin: 0 auto;
@@ -1842,5 +1862,12 @@ body {
 
   #privacy-policy-container {
     font-size: 1.2rem;
+  }
+}
+
+/* remove footer from small screen devices because it is unnecessary */
+@media (min-height: 650px) and (min-width: 500px) {
+  footer {
+    display: block;
   }
 }
