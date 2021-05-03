@@ -220,7 +220,7 @@ const Header = (props) => {
                     </div>
                 </Link>
 
-                <div className="flexbox-container">
+                <div className="flexbox-container" id="lang-container-parent">
                     <LanguagesContainer setLanguage={props.setLanguage} language={props.language} onlyOneLang={props.language === "LT" ? "EN" : "LT"} />
                 </div>
             </ul>

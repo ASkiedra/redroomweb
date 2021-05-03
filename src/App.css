@@ -142,10 +142,13 @@ footer #div-for-text:hover {
 }
 
 #header-list #lang-container {
-  display: none;
   margin: 0 auto;
   text-align: center;
   width: 33vw;
+}
+
+#header-list #lang-container-parent {
+  display: none;
 }
 
 #header-list #lang-container a {
@@ -1495,8 +1498,8 @@ body {
     order: 2;
   }
 
-  #header-list #lang-container {
-    display: block;
+  #header-list #lang-container-parent {
+    display: flex;
   }
 
   #breadcrumbs-container #lang-container {
