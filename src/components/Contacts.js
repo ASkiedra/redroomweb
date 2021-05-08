@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Contacts = ({ language }) => {
     return (
-        <div style={{ height: 'inherit' }}>
+        <div style={{ height: 'inherit', marginTop: '1rem' }}>
             <div className="contacts-additional-container" >
                 <div id="container-contacts-text-grid">
                     <div id="redroom-large-text">
@@ -24,6 +24,7 @@ const Contacts = ({ language }) => {
 
                     <a style={{ paddingBottom: '0.55rem' }} href="tel:+37064310657">+370 643 10 657</a>
                     <a href="mailto:info@red-room.lt">info@red-room.lt</a>
+                    <p>MB „Studio Red" {language === "EN" ? "Company code " : "Įmonės kodas "}305434886</p>
                 </div>
 
                 <div id="privacy-policy-link-container">

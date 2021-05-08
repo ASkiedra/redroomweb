@@ -83,7 +83,6 @@ export const translateSubCats = (text) => {
             text = "FOTELIAI";
             break;
 
-
         case "POUFS":
             text = "SUOLIUKAI IR PUFAI";
             break;
@@ -96,26 +95,21 @@ export const translateSubCats = (text) => {
             text = "INDIVIDUALIAI PROJEKTUOJAMOS DRABUŽINĖS";
             break;
 
-
         case "CLOTHING HANGERS":
             text = "RŪBŲ KABYKLOS";
             break;
-
 
         case "SIDEBOARDS":
             text = "INDAUJOS";
             break;
 
-
         case "BEDSIDE CABINETS":
             text = "SPINTELĖS PRIE LOVOS";
             break;
 
-
         case "CHESTS OF DRAWERS":
             text = "KOMODOS";
             break;
-
 
         case "BEDROOM BENCHES":
             text = "SUOLAI PRIE LOVOS";
@@ -125,11 +119,9 @@ export const translateSubCats = (text) => {
             text = "GULTAI";
             break;
 
-
         case "TABLES":
             text = "STALAI";
             break;
-
 
         case "BASKETS":
             text = "KREPŠIAI";

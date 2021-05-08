@@ -30,6 +30,16 @@
 #privacy-policy-container {
   padding: 0 15vw;
   margin-bottom: 16rem;
+  margin-top: 8rem;
+}
+
+#no-products-available-text {
+  font-size: 2.4rem;
+  padding: 0 2rem;
+  font-family: "Roboto";
+  width: inherit;
+  text-align: center;
+  margin-top: 7rem;
 }
 
 #privacy-policy-container ul {
@@ -217,7 +227,6 @@ footer #div-for-text:hover {
 }
 
 #addit-photo-container img {
-  /* width: 50%; */
   max-height: 100%;
 }
 #sidebar-btn-container {
@@ -228,7 +237,6 @@ footer #div-for-text:hover {
   -ms-grid-columns: 1fr;
 }
 #filter-btn {
-  /* background: rgb(223, 223, 223); */
   background: white;
   color: black;
   border: 1px solid black;
@@ -268,14 +276,9 @@ html {
 }
 
 #container-1 img {
-  /* max-height: 70%; */
   transition: transform 0.17s;
   height: auto;
   max-width: 100%;
-}
-
-#big-container {
-  /* padding: 0 4rem; */
 }
 
 #social-media-container {
@@ -308,8 +311,6 @@ html {
 }
 
 header {
-  /* position: sticky;
-  z-index: 9999; */
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.411);
   display: block;
   background: white;
@@ -325,7 +326,6 @@ header {
   padding: 0;
   margin: 0 6rem;
   height: 5rem;
-  /* border-bottom: 2px solid rgb(197, 0, 0); */
   display: grid;
   display: -ms-grid;
 
@@ -453,7 +453,6 @@ footer {
   background: black;
   width: 100%;
 
-  /* without these the stickyfooter would cover a part of the footer */
   bottom: 3.5rem;
   margin-top: 3.5rem;
 }
@@ -491,8 +490,6 @@ footer :nth-child(4) {
 #first-footer ul {
   display: grid;
   display: -ms-grid;
-  /* grid-template-columns: 50% 50%;
-  -ms-grid-columns: 50% 50%; */
 }
 #first-footer ul li {
   -ms-grid-column: 2;
@@ -589,7 +586,6 @@ a {
 
 #gamintoju-container {
   overflow: hidden;
-  /* background-color: rgb(227, 233, 237); */
   background-color: white;
 }
 
@@ -745,12 +741,10 @@ a {
 }
 
 .container {
-  /* margin-top: 5rem; */
   min-height: 90vh;
   height: calc(100vh - 5rem);
   overflow: auto;
   background: white;
-  /* background: rgba(255, 255, 240, 0.651); */
   overflow-x: hidden;
 }
 
@@ -761,7 +755,6 @@ a {
   position: fixed;
   bottom: 3.44rem;
   text-align: center;
-  /* height: 7rem; */
   width: 100%;
 }
 
@@ -835,7 +828,7 @@ a {
 #breadcrumbs-container h2,
 #breadcrumbs-container h3,
 #breadcrumbs-container span {
-  font-size: 1.25rem;
+  font-size: 1.32rem;
   font-family: "Roboto";
 }
 
@@ -872,7 +865,6 @@ a {
 .product-name {
   text-decoration: none;
   z-index: 100;
-  /* posrel vien del z index kuris del transform scale img onhover */
   position: relative;
   color: black;
 }
@@ -891,7 +883,6 @@ a {
   top: 30%;
 }
 #products-sidebar {
-  /* same as the area for the grid -10% */
   width: 100%;
   top: 30%;
   scrollbar-width: thin;
@@ -933,7 +924,6 @@ a {
 .product-container img {
   max-height: 70%;
   transition: transform 0.17s;
-  /* height: 70%; */
   height: auto;
   min-height: 40%;
   max-width: 100%;
@@ -981,8 +971,6 @@ a {
   box-shadow: 0 23px 15px rgba(0, 0, 0, 0.411);
   position: relative;
   top: 17%;
-  /* min-height: inherit; */
-  /* height: 100%; */
 }
 
 #main-page-cont *::selection {
@@ -1070,7 +1058,7 @@ body {
   width: fit-content;
   font-family: "Roboto";
   margin-right: calc(1.3vw + 1.1rem);
-  color: rgba(0, 0, 0, 0.7501);
+  color: rgba(0, 0, 0, 1);
 }
 
 #lang-container {
@@ -1113,8 +1101,7 @@ body {
 
 #threeLines {
   display: none;
-  /* mobile dropdown is 100vw and that messes with this container's sizing */
-  width: 33vw;
+  width: 33.3vw;
 }
 
 .product-type {
@@ -1328,7 +1315,6 @@ body {
   }
   #product-text {
     order: 3;
-    /* margin-top: -10rem; */
   }
 }
 
@@ -1502,15 +1488,9 @@ body {
     display: flex;
   }
 
-  #breadcrumbs-container #lang-container {
+  #breadcrumbs-container {
     display: none;
   }
-  /* #lang-container a {
-    font-size: 2.5rem;
-    padding: 0 1rem;
-    top: 1rem;
-    position: relative;
-  } */
 
   #products-container {
     margin: 0 auto;
@@ -1752,9 +1732,6 @@ body {
   #product-name {
     font-size: 3rem;
   }
-  #container-1 img {
-    /* transform: scale(0.8); */
-  }
   #product-text {
     margin-top: 4rem;
     font-size: 2rem;
@@ -1781,7 +1758,6 @@ body {
 
 #prod-photo-container {
   margin: 0 auto;
-  /* padding: 0 4rem; */
   text-align: center;
 }
 
@@ -1827,7 +1803,6 @@ body {
 }
 
 #interior-photo-container img {
-  /* transform: scale(2.7); */
   width: unset;
   height: unset;
   margin: 0 auto;
@@ -1865,6 +1840,10 @@ body {
 
   #privacy-policy-container {
     font-size: 1.2rem;
+  }
+
+  #no-products-available-text {
+    font-size: 2rem;
   }
 }
 

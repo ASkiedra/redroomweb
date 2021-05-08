@@ -96,12 +96,10 @@ export default class AllProducts extends Component {
                                         found = false;
 
                                 for (let j = 0; j < mainCatFilterArr.length; j++) {
-
                                         if (mainCatFilterArr[j].toUpperCase() === curProduct.mainCategory.toUpperCase()) {
                                                 found = true;
                                                 break;
                                         }
-
                                 }
 
 
@@ -236,58 +234,64 @@ const MainContainer = (props) => {
 
 
         return (
-                <div id='allproducts-container' >
-                        {/* sidebar */}
-                        <div id="sidebar-container-2">
-                                {!showFilter && window.innerWidth < 1149 &&
-                                        <div className="flexbox-container">
-                                                <p onClick={() => setSF(!showFilter)} id="filter-btn">
-                                                        {props.lang === "LT" ? "filtrai" : props.lang === "EN" && "filters"}
-                                                </p>
-                                        </div>
+                <div>
+                        {props.curProducts.length === 0 &&
+                                <p id="no-products-available-text">{props.lang === "LT" ? "Šiuo metu produktų neturime." : "No products available."}</p>
+                        }
 
-                                }
+                        <div id='allproducts-container' >
+                                {/* sidebar */}
 
-                                {showFilter &&
-                                        <div id="sidebar-container" >
-                                                <div id="sidebar-btn-container">
-                                                        {
-                                                                window.innerWidth < 1149 &&
-                                                                <div className="flexbox-container">
-                                                                        <p onClick={() => setSF(!showFilter)} id="filter-btn">
-                                                                                {props.lang === "LT" ? "filtrai" : props.lang === "EN" && "filters"}
-                                                                        </p>
-                                                                </div>
-                                                        }
-                                                        <Link onClick={() => window.innerWidth < 1149 && setSF(false)}
-                                                                id="clear-btn" to={clearBtnLink
-
-                                                                }>{props.lang === "LT" ? "išvalyti filtrus" : props.lang === "EN" && "clear filters"}</Link>
-
+                                <div id="sidebar-container-2">
+                                        {!showFilter && window.innerWidth < 1149 &&
+                                                <div className="flexbox-container">
+                                                        <p onClick={() => setSF(!showFilter)} id="filter-btn">
+                                                                {props.lang === "LT" ? "filtrai" : props.lang === "EN" && "filters"}
+                                                        </p>
                                                 </div>
 
-                                                <ul id={"products-sidebar"}>
+                                        }
 
-                                                        {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                        {showFilter &&
+                                                <div id="sidebar-container" >
+                                                        <div id="sidebar-btn-container">
+                                                                {
+                                                                        window.innerWidth < 1149 &&
+                                                                        <div className="flexbox-container">
+                                                                                <p onClick={() => setSF(!showFilter)} id="filter-btn">
+                                                                                        {props.lang === "LT" ? "filtrai" : props.lang === "EN" && "filters"}
+                                                                                </p>
+                                                                        </div>
+                                                                }
+                                                                <Link onClick={() => window.innerWidth < 1149 && setSF(false)}
+                                                                        id="clear-btn" to={clearBtnLink
+
+                                                                        }>{props.lang === "LT" ? "išvalyti filtrus" : props.lang === "EN" && "clear filters"}</Link>
+
+                                                        </div>
+
+                                                        <ul id={"products-sidebar"}>
+
+                                                                {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
                                                                 {props.mainCategoriesArr.map(curMainCat => {
                                                                         return <SidebarItem key={curMainCat} language={language} translatable={"main"} filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
                                                                 })}
                                                         </div> */}
 
-                                                        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                                                {props.availSubCats.length === 0 ?
-                                                                        props.subCategoriesArr.map(curSubCat => {
-                                                                                return <SidebarItem key={curSubCat} language={props.lang} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
-                                                                        })
-                                                                        :
-                                                                        props.availSubCats.map(curSubCat => {
-                                                                                return <SidebarItem key={curSubCat} language={props.lang} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
-                                                                        })
-                                                                }
-                                                        </div>
+                                                                <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                                        {props.availSubCats.length === 0 ?
+                                                                                props.subCategoriesArr.map(curSubCat => {
+                                                                                        return <SidebarItem key={curSubCat} language={props.lang} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
+                                                                                })
+                                                                                :
+                                                                                props.availSubCats.map(curSubCat => {
+                                                                                        return <SidebarItem key={curSubCat} language={props.lang} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
+                                                                                })
+                                                                        }
+                                                                </div>
 
 
-                                                        {/* <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>
+                                                                {/* <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>
                                                                 {props.manufacturersArr.map(curManufacturer => {
                                                                         return <SidebarItem key={curManufacturer} language={language} translatable={false} filterArr={manufFilterArr} type={"MANUFACTURER"} this={props.this} value={curManufacturer} />
                                                                 })}
@@ -295,15 +299,18 @@ const MainContainer = (props) => {
                                                         </div> */}
 
 
-                                                </ul>
-                                        </div>
-                                }
-                        </div>
+                                                        </ul>
+                                                </div>
+                                        }
+                                </div>
 
-                        <div id='products-container'>
-                                {props.curProducts.map(curProduct => {
-                                        return <Product key={curProduct.name + curProduct.imageName[0]} lang={props.lang} product={curProduct} />
-                                })}
+
+
+                                <div id='products-container'>
+                                        {props.curProducts.map(curProduct => {
+                                                return <Product key={curProduct.name + curProduct.imageName[0]} lang={props.lang} product={curProduct} />
+                                        })}
+                                </div>
                         </div>
                 </div>
         );
@@ -355,11 +362,8 @@ const Product = (props) => {
                                 pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.manufacturer + "/" + props.product.name + "/",
                                 product: props.product,
                         }}>
-
                         <div className={"flexbox-container product-container"} style={{ height: '94%', width: 'inherit', textAlign: 'center' }}>
-                                {
-                                        <img style={{ margin: '0 auto' }} className="product-list-photo" src={path} alt={`${props.product.name}-logo`} />
-                                }
+                                <img style={{ margin: '0 auto' }} className="product-list-photo" src={path} alt={`${props.product.name}-logo`} />
                         </div>
 
                         <p className={"product-name"}><b>{props.product.manufacturer}</b> {props.product.name}</p>

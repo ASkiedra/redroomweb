@@ -83,7 +83,7 @@ export default class Inquire extends Component {
 
     render() {
         return (
-            <div style={{ height: 'inherit' }}>
+            <div style={{ height: 'inherit', marginTop: '7.5rem' }}>
                 <div id="inquire-container">
                     <h2 id="heading2" className="p-heading2">{this.props.language === "LT" ? "Susisiekime" : "Get in Touch"}</h2  >
 

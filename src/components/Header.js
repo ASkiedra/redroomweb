@@ -14,7 +14,7 @@ const Header = (props) => {
     const [openedThreeLines, setOTL] = useState(false);
 
     React.useEffect(() => {
-        function handleKeyPress(event) {
+        const handleKeyPress = event => {
             if (event.key === 'Escape') {
                 setOPD(false);
                 setOTL(false);
@@ -67,8 +67,7 @@ const Header = (props) => {
                         <li key={collectionPart} style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
                             <Link
                                 style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/" + collectionPart.toLowerCase()}                        >
-                                {
-                                    props.language === "LT" ? translateMainItems(collectionPart) : collectionPart}
+                                {props.language === "LT" ? translateMainItems(collectionPart) : collectionPart}
                             </Link>
                         </li>)
                 })}
@@ -145,7 +144,7 @@ const Header = (props) => {
 
                                 </li>
                             else
-                                // .map has to return something. if there are cases without a return - its a bad practice
+                                // .map has to return something. if there are cases without a return - it's a bad practice
                                 return null;
                         })
                     }
