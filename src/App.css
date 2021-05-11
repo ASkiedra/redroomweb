@@ -324,7 +324,6 @@ header {
 
 #header-list {
   padding: 0;
-  margin: 0 6rem;
   height: 5rem;
   display: grid;
   display: -ms-grid;
@@ -696,9 +695,7 @@ a {
 }
 
 .dropdown {
-  /* left = same as #header-list margin second  value */
   background: rgba(0, 0, 0, 0.8301);
-  left: -6rem;
 
   position: relative;
   transform-origin: top center;
@@ -717,8 +714,6 @@ a {
 }
 
 .dropdown2 {
-  /* left = same as #header-list margin second  value */
-
   width: 100vw;
   overflow-x: hidden;
 
@@ -1092,6 +1087,7 @@ body {
   text-align: center;
   font-size: 1.5rem;
   color: black;
+  height: max-content;
   text-decoration: none;
   padding: 1rem;
   position: relative;

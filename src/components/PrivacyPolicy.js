@@ -16,7 +16,7 @@ const PrivacyPolicy = ({ language }) => {
             <div id="privacy-description-container">
                 <p style={{ marginBottom: '1.1rem' }}>
                     {language === "EN" ? `This Privacy Policy describes MB "Studio Red" (hereinafter – We, Us, Our) policies and procedures on the collection, use and disclosure of Our clients', people who use this website and/or its functions, and/or other data storage subjects' (hereinafter – You, Your) information when You use this website and/or its functions (hereinafter – Service) and informs You about Your privacy rights and how the law protects You.`
-                        : 'Šioje privatumo politikoje aprašoma mažosios bendrijos „Studio Red" (toliau – Mūsų) politika ir procedūros, susijusios su klientų ir kitų duomenų subjektų (toliau – Jūsų) informacijos rinkimu, naudojimu ir atskleidimu, kai naudojatės Mūsų svetaine ir/ar jos funkcionalumu (toliau – Paslauga).'}
+                        : 'Šioje privatumo politikoje aprašoma mažosios bendrijos „Studio Red" (toliau – Mūsų, Mes, Mus) politika ir procedūros, susijusios su klientų ir kitų duomenų subjektų (toliau – Jūsų) informacijos rinkimu, naudojimu ir atskleidimu, kai naudojatės Mūsų svetaine ir/ar jos funkcionalumu (toliau – Paslauga).'}
                 </p>
 
                 <p style={{ fontWeight: '525', marginBottom: '2.5rem' }}>
@@ -41,8 +41,8 @@ const PrivacyPolicy = ({ language }) => {
 
                 <h3>{language === "EN" ? 'SECURITY OF YOUR PERSONAL DATA' : 'JŪSŲ ASMENS DUOMENŲ SAUGUMAS'}</h3>
                 <p>
-                    {language === "EN" ? 'The security of Your personal data is important to Us, but no method of transmission over the Internet, or method of electronic storage is fully secure. While We strive to use commercially acceptable means to protect Your personal data, We cannot guarantee its absolute security. Any personal data and information collected by Us will not be distributed to a third party or anyone outside of EU and EEA.'
-                        : 'Jūsų asmeninių duomenų saugumas Mums yra svarbus, tačiau joks perdavimo internetu būdas ar elektroninės saugyklos būdas nėra visiškai saugus. Nors mes stengiamės naudoti komerciškai pasiekiamas priemones, kad apsaugotume Jūsų asmens duomenis, negalime garantuoti visiško jų saugumo. Surinkti asmens duomenys ir informacija nebus platinami trečiajai šaliai ar niekam, esančiam už ES ir EEE ribų.'}
+                    {language === "EN" ? 'The security of Your personal data is important to Us, but no method of transmission over the Internet, or method of electronic storage is fully secure. While We strive to use commercially acceptable means such as HTTPS encryption to protect Your personal data, We cannot guarantee its absolute security. Any personal data and information collected by Us will not be distributed to a third party or anyone outside of EU and EEA.'
+                        : 'Jūsų asmeninių duomenų saugumas Mums yra svarbus, tačiau joks perdavimo internetu būdas ar elektroninės saugyklos būdas nėra visiškai saugus. Nors Mes stengiamės naudoti komerciškai pasiekiamas priemones (pavyzdžiui: HTTPS šifravimą), kad apsaugotume Jūsų asmens duomenis, negalime garantuoti visiško jų saugumo. Surinkti asmens duomenys ir informacija nebus platinami trečiajai šaliai ar niekam, esančiam už ES ir EEE ribų.'}
                 </p>
 
                 <h3>{language === "EN" ? 'YOUR RIGHTS' : 'JŪSŲ TEISĖS'}</h3>
@@ -74,7 +74,7 @@ const PrivacyPolicy = ({ language }) => {
                 <h3>{language === "EN" ? "LINKS TO OTHER WEBSITES" : "NUORODOS Į KITAS SVETAINES"}</h3>
                 <p>
                     {language === "EN" ? "Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the privacy policy of every site You visit. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services."
-                        : "Mūsų Paslaugoje gali būti nuorodų į kitas svetaines, kurių mes nevaldome. Jei Jūs spustelėsite trečiosios šalies nuorodą, būsite nukreipti į tos trečiosios šalies svetainę. Mes primygtinai rekomenduojame peržiūrėti kiekvienos lankomos svetainės privatumo politiką. Mes nekontroliuojame ir neprisiimame jokios atsakomybės už trečiųjų šalių svetainių ar paslaugų turinį, privatumo politiką ar praktiką."}
+                        : "Mūsų Paslaugoje gali būti nuorodų į kitas svetaines, kurių Mes nevaldome. Jei Jūs spustelėsite trečiosios šalies nuorodą, būsite nukreipti į tos trečiosios šalies svetainę. Mes primygtinai rekomenduojame peržiūrėti kiekvienos lankomos svetainės privatumo politiką. Mes nekontroliuojame ir neprisiimame jokios atsakomybės už trečiųjų šalių svetainių ar paslaugų turinį, privatumo politiką ar praktiką."}
                 </p>
             </div>
 

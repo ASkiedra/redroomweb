@@ -59,8 +59,11 @@ export default class Inquire extends Component {
                 'template_f4hsl36',
                 templateParams,
                 'user_6JdN9Zns1wIN50N8dUi13'
-            )
-            this.resetForm()
+            );
+
+            this.resetForm();
+
+            alert(this.props.language === "LT" ? "Ačiū už jūsų užklausą! Greitai su Jumis susisieksime." : "Thank You for the inquiry! We will contact you soon.");
         }
         else if (this.props.language === "LT")
             alert("Prašome įvesti savo el. paštą ir žinutę.")
