@@ -14,7 +14,6 @@ const FirstTimeBox = ({ language }) => {
         <div id="FirstTimeBox-container">
             <p>
                 {
-                    // padaryt kad tikrintu visa masyva kalbu ir default jei nieko nematchian - english
                     language === "EN" ?
                         'WE MAY USE COOKIES AND OTHER TRACKING TECHNOLOGIES FOR VARIOUS PURPOSES SUCH AS BUT NOT LIMITED TO FUNCTIONALITY AND ANALYTICS. BY BROWSING THIS WEBSITE YOU AGREE WITH OUR '
                         :

@@ -30,6 +30,8 @@ const Header = (props) => {
             }
         }
 
+        // these event listeners only "fire off" once because an empty array is provided to this function
+        // this is handy because state updates WILL NOT create additional event listeners
         document.addEventListener('click', handleMouseClick);
         document.addEventListener('keydown', handleKeyPress);
     }, []);
@@ -66,7 +68,8 @@ const Header = (props) => {
                     return (
                         <li key={collectionPart} style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
                             <Link
-                                style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }} to={"/" + props.language + "/" + collectionPart.toLowerCase()}                        >
+                                style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }}
+                                to={`/${props.language}/${collectionPart.toLowerCase()}`}>
                                 {props.language === "LT" ? translateMainItems(collectionPart) : collectionPart}
                             </Link>
                         </li>)
@@ -117,7 +120,7 @@ const Header = (props) => {
                                     {/* // if any items with the particular main category are in stock and also the first element in the collection, show them in the dropdown with a different style than the other items  */}
                                     {mainCategoriesArr.indexOf(collectionPart[0].toLowerCase()) !== -1 &&
                                         <Link style={{ color: 'white', paddingBottom: '0.5rem' }}
-                                            to={"/" + props.language + "/products/" + collectionPart[0].toLowerCase()}>
+                                            to={`/${props.language}/products/${collectionPart[0].toLowerCase()}`}>
                                             {
                                                 props.language === "LT" ? translateMainCats(collectionPart[0]) : collectionPart[0]
                                             }
@@ -131,7 +134,7 @@ const Header = (props) => {
                                             // if its not the first item in the collection (not the big text) AND it exists in subCategoriesArr
                                             if (collectionPart.indexOf(item) !== 0 && subCategoriesArr.indexOf(item.toLowerCase()) !== -1)
                                                 return <div key={item}>
-                                                    <Link to={"/" + props.language + "/products//" + item.toLowerCase()} className="dropdown-subtext" >
+                                                    <Link to={`/${props.language}/products//${item.toLowerCase()}`} className="dropdown-subtext" >
                                                         {
                                                             props.language === "LT" ? translateSubCats(item) : item
                                                         }
@@ -152,7 +155,9 @@ const Header = (props) => {
 
                 <div>
                     <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550" }}>
-                        <Link style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products/outdoor furniture and accessories"}>
+                        <Link to={`/${props.language}/products/outdoor furniture and accessories`}
+                            style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }}
+                        >
                             {
                                 props.language === "LT" ? "lauko baldai ir aksesuarai" :
                                     props.language === "EN" && "outdoor furniture and accessories"
@@ -161,7 +166,9 @@ const Header = (props) => {
                     </li>
 
                     <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", }} >
-                        <Link style={{ fontWeight: 'bold', color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }} to={"/" + props.language + "/products"}>
+                        <Link to={`/${props.language}/products`}
+                            style={{ fontWeight: 'bold', color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }}
+                        >
                             {
                                 props.language === "LT" ? "VISI PRODUKTAI" :
                                     props.language === "EN" && "ALL PRODUCTS"
@@ -185,7 +192,7 @@ const Header = (props) => {
                 <MobileMenu id="produktai" />
                 <ProductsMenu id="produktai" className="header-item-onhover" />
 
-                <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/interior"}>
+                <Link to={`/${props.language}/interior`} className="headerText header-item-onhover flexbox-container" >
                     <div>
                         <p>
                             {props.language === "LT" ? translateMainItems("INTERIOR") : "INTERIOR"}
@@ -194,7 +201,10 @@ const Header = (props) => {
                 </Link>
 
                 <div id="header-logo-container" className="header-img-onhover" style={{ height: 'inherit', transition: '0.5s all' }}>
-                    <Link style={{ height: ' 100%' }} className="flexbox-container" to={"/" + props.language}>
+                    <Link to={`/${props.language}`}
+                        style={{ height: ' 100%' }}
+                        className="flexbox-container"
+                    >
                         <div className="flexbox-container" style={{ margin: '0 auto', height: 'inherit' }}>
                             <img id="header-logo" alt="header-logo" src={logo} />
                         </div>
@@ -202,7 +212,9 @@ const Header = (props) => {
                 </div>
 
 
-                <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/manufacturers"}>
+                <Link to={`/${props.language}/manufacturers`}
+                    className="headerText header-item-onhover flexbox-container"
+                >
                     <div>
                         <p>
                             {props.language === "LT" ? translateMainItems("MANUFACTURERS") : "MANUFACTURERS"}
@@ -211,7 +223,9 @@ const Header = (props) => {
                 </Link>
 
 
-                <Link className="headerText header-item-onhover flexbox-container" to={"/" + props.language + "/contacts"}>
+                <Link to={`/${props.language}/contacts`}
+                    className="headerText header-item-onhover flexbox-container"
+                >
                     <div>
                         <p>
                             {props.language === "LT" ? translateMainItems("CONTACTS") : "CONTACTS"}

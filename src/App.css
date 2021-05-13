@@ -693,7 +693,12 @@ a {
 #container-contacts-text-grid span {
   font-size: 3rem;
 }
-
+#product-img-container {
+  height: 23rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .dropdown {
   background: rgba(0, 0, 0, 0.8301);
 

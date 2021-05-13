@@ -33,7 +33,7 @@ const Breadcrumbs = (props) => {
     return (
         <ul id="breadcrumbs-container">
             <div id="breadcrumbs-links">
-                <Link to={"/" + props.language} style={{ paddingLeft: '1rem' }}>
+                <Link to={`/${props.language}`} style={{ paddingLeft: '1rem' }}>
                     {props.language === "LT" ? "PAGRINDINIS" : "MAIN"}
                 </Link>
 
@@ -41,7 +41,7 @@ const Breadcrumbs = (props) => {
                 {modifiedPathname.length > 0 &&
                     <>
                         <span>/</span>
-                        <Link to={"/" + props.language + "/" + untranslatedPathname[0]}>
+                        <Link to={`/${props.language}/${untranslatedPathname[0]}`}>
                             <h1>
                                 {modifiedPathname[0]}
                             </h1>

@@ -11,7 +11,6 @@ export default class Inquire extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
         if (this.props.location.productName) {
             const text = this.props.language === "LT" ? "Sveiki, mane domina " : "Hello, I am interested in ";
 
@@ -47,7 +46,7 @@ export default class Inquire extends Component {
         e.preventDefault();
 
         if (this.state.email && this.state.message) {
-            let templateParams = {
+            const templateParams = {
                 from_name: this.state.email,
                 to_name: 'info@red-room.lt',
                 message: this.state.message,

@@ -98,6 +98,8 @@ export default class ProductPage extends Component {
                                         document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
                                 }} className="display-none" id="background-container">
 
+
+
                                         <div id="background-container-2">
                                                 <img className="big-img-container" style={{ borderRadius: '5px', zIndex: '111' }} onClick={() => {
                                                         document.getElementById("product-page-grid").style.opacity = "1";
@@ -111,7 +113,7 @@ export default class ProductPage extends Component {
                                 <div id="product-page-grid">
                                         {this.state.info[0] === "Susisiekite su mumis dėl daugiau informacijos." ?
                                                 <Link id="product-text" to={{
-                                                        pathname: '/' + this.props.match.params.lang + '/inquire',
+                                                        pathname: `/${this.props.match.params.lang}/inquire`,
                                                         productName: this.state.manufacturer + ' ' + this.state.name + '. '
                                                 }}>
                                                         <span>
@@ -140,18 +142,21 @@ export default class ProductPage extends Component {
                                         <div style={{ maxWidth: '100%', maxHeight: '23rem', height: 'auto' }}>
                                                 <div style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit', minHeight: '20rem', marginBottom: '1rem', maxHeight: 'inherit' }} id="container-1">
                                                         {!this.state.loading &&
-                                                                <img onClick={(e) => this.enlargeImage(e.target.src)}
-                                                                        id="main-product-image"
-                                                                        src={this.state.path + this.state.imageName[i]}
-                                                                        style={{ cursor: 'pointer', maxHeight: 'inherit', minWidth: 'inherit', width: 'inherit', minHeight: '48%', fontSize: '0' }}
-                                                                        alt="main-product" />}
+                                                                <div id="product-img-container">
+
+                                                                        <img onClick={(e) => this.enlargeImage(e.target.src)}
+                                                                                id="main-product-image"
+                                                                                src={this.state.path + this.state.imageName[i]}
+                                                                                style={{ cursor: 'pointer', maxHeight: '23rem', minWidth: 'inherit', width: 'inherit', fontSize: '0' }}
+                                                                                alt="main-product" />
+                                                                </div>
+                                                        }
                                                 </div>
 
                                                 <div id="product-text-container">
                                                         <h3 style={{ display: 'inline', fontWeight: 'normal', textAlign: 'CENTER', position: 'relative', marginTop: '3rem', zIndex: '0' }} id="product-name"><b>{this.state.manufacturer}</b> {this.state.name}</h3>
                                                 </div>
                                         </div>
-
                                         {this.state.imageName.length > 1 &&
                                                 <div id="addit-photo-container" style={{ paddingTop: '1.5rem', marginBottom: '-8rem', width: '100%', maxWidth: '100%', overflow: 'hidden', display: 'grid', height: 'auto', maxHeight: '23rem' }}>
                                                         {/* 23 rem because mainproductphoto container has a height of 23rem */}

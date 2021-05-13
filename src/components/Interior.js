@@ -2,6 +2,7 @@ import React from "react";
 
 const importAll = (r) => r.keys().map(r);
 
+// set a dark backrgound and enlarge the clicked image
 const enlargeImage = (imgSrc) => {
         if (document.getElementById("background-container")) {
                 document.getElementById("background-container").style.top = window.pageYOffset + 'px';

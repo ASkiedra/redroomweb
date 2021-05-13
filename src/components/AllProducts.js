@@ -264,9 +264,9 @@ const MainContainer = (props) => {
                                                                         </div>
                                                                 }
                                                                 <Link onClick={() => window.innerWidth < 1149 && setSF(false)}
-                                                                        id="clear-btn" to={clearBtnLink
-
-                                                                        }>{props.lang === "LT" ? "išvalyti filtrus" : props.lang === "EN" && "clear filters"}</Link>
+                                                                        id="clear-btn" to={clearBtnLink}>
+                                                                        {props.lang === "LT" ? "išvalyti filtrus" : props.lang === "EN" && "clear filters"}
+                                                                </Link>
 
                                                         </div>
 
@@ -359,7 +359,7 @@ const Product = (props) => {
                 <Link key={props.product.manufacturer + props.product.name}
                         style={{ padding: '0.2rem 0', height: '22rem', width: '100%' }}
                         to={{
-                                pathname: "/" + props.lang + "/products/" + props.product.mainCategory + "/" + props.product.subCategory + '/' + props.product.manufacturer + "/" + props.product.name + "/",
+                                pathname: `/${props.lang}/products/${props.product.mainCategory}/${props.product.subCategory}/${props.product.manufacturer}/${props.product.name}/`,
                                 product: props.product,
                         }}>
                         <div className={"flexbox-container product-container"} style={{ height: '94%', width: 'inherit', textAlign: 'center' }}>

@@ -3,7 +3,8 @@ import Products from './products';
 
 // filters all items when comparing their lowercase versions
 export default function filterLowercase(givenArr) {
-    let result = [];
+    // extra security with 'const' instead of 'let'. pushing to array is possible but accidentally reassigning the value to a random value is prohibited
+    const result = [];
 
     givenArr.forEach(item => {
         let found = false;

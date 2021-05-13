@@ -16,10 +16,10 @@ const Manufacturers = ({ language }) => {
                 {manufacturers.map(manufacturer => {
                     return (
                         <div className="manufacturer-div" key={manufacturer}>
-                            <Link className="flexbox-container"
+                            <Link to={`/${language}/products///${manufacturer}`}
+                                className="flexbox-container"
                                 style={{ width: "100%", height: "100%" }}
-                                to={"/" + language + "/products///" + manufacturer}>
-
+                            >
                                 <img alt={manufacturer + "-logo"} src={"/images/logos/" + manufacturer + ".png"} />
                             </Link>
                         </div>
