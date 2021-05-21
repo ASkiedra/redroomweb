@@ -6,6 +6,7 @@ const PrivacyPolicy = ({ language }) => {
 
     return (
         <div id="privacy-policy-container">
+            {/* TODO: CHANGE H3 TO H2 & ADD <section> tags */}
             <h1>{language === "EN" ? 'PRIVACY POLICY' : 'PRIVATUMO POLITIKA'}</h1>
 
             <p id="last-updated-date">
@@ -21,7 +22,7 @@ const PrivacyPolicy = ({ language }) => {
 
                 <p style={{ fontWeight: '525', marginBottom: '2.5rem' }}>
                     {language === "EN" ? 'We use Your Personal data to provide and improve the Service. By using the Service, You consent to be tracked, receive cookies and agree to the collection and use of information in accordance with this Privacy Policy.'
-                        : 'Mes naudojame Jūsų asmens duomenis Paslaugai teikti ir tobulinti. Naudodamiesi Paslauga, Jūs duodate sutikimą, kad galimai būsite sekami ir priimate slapukus (angl. „cookies“   ) bei sutinkate, kad bus renkama ir naudojama informaciją pagal šią privatumo politiką.'}
+                        : 'Mes naudojame Jūsų asmens duomenis Paslaugai teikti ir tobulinti. Naudodamiesi Paslauga, Jūs duodate sutikimą, kad galimai būsite sekami ir priimate slapukus (angl. „cookies“) bei sutinkate, kad bus renkama ir naudojama informaciją pagal šią privatumo politiką.'}
                 </p>
             </div>
 

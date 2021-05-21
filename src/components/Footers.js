@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import facebookLogo from '../logos/facebook.png';
+import instagramLogo from '../logos/instagram.png';
 
 
 const Footer = ({ language }) => {
@@ -11,12 +13,21 @@ const Footer = ({ language }) => {
                     <span style={{ color: '#a4161a' }}>SHOWROOM</span>
                 </div>
 
-                <a href="tel:+37064310657">+370 6 431 0657</a>
+                <div id="social-media-logos">
+                    <a href="https://www.facebook.com/redroom.lt/">
+                        <img src={facebookLogo} />
+                    </a>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '40% 60%' }}>
-                    <a target="_blank" rel="noreferrer" href="https://www.google.com/maps/place/A.+Juozapavi%C4%8Diaus+pr.+31,+Kaunas+45257/@54.8668655,23.9344156,15z/data=!4m5!3m4!1s0x46e722ed909bb75d:0xf8d9bafe7a1e18c1!8m2!3d54.8696559!4d23.9405218">A. Juozapavičiaus pr. 31, Kaunas, Lietuva, LT-45257</a>
-                    <Link to={`/${language}/privacy policy`}>{language === "EN" ? 'PRIVACY POLICY' : 'PRIVATUMO POLITIKA'}</Link>
+                    <a href="https://www.facebook.com/redroom.lt/">
+                        <img src={instagramLogo} />
+                    </a>
                 </div>
+
+                <a href="tel:+37064310657">+370 643 10 657</a>
+
+                <a target="_blank" rel="noreferrer" href="https://www.google.com/maps/place/A.+Juozapavi%C4%8Diaus+pr.+31,+Kaunas+45257/@54.8668655,23.9344156,15z/data=!4m5!3m4!1s0x46e722ed909bb75d:0xf8d9bafe7a1e18c1!8m2!3d54.8696559!4d23.9405218">A. Juozapavičiaus pr. 31, Kaunas, Lietuva, LT-45257</a>
+
+                <Link style={{ padding: '0' }} className="smaller-text centered" to={`/${language}/privacy policy`}>{language === "EN" ? 'PRIVACY POLICY' : 'PRIVATUMO POLITIKA'}</Link>
 
                 <a href="mailto:info@red-room.lt">info@red-room.lt</a>
             </div>

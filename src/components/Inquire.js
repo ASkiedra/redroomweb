@@ -87,7 +87,7 @@ export default class Inquire extends Component {
         return (
             <div style={{ height: 'inherit', marginTop: '7.5rem' }}>
                 <div id="inquire-container">
-                    <h2 id="heading2" className="p-heading2">{this.props.language === "LT" ? "Susisiekime" : "Get in Touch"}</h2  >
+                    <h2 id="heading2" className="p-heading2">{this.props.language === "LT" ? "Siųsti el. laišką" : "Send an e-mail"}</h2  >
 
                     <Form style={{ marginTop: '3rem' }} onSubmit={this.handleSubmit.bind(this)}>
                         <FormGroup style={{ marginTop: '3rem' }} controlId="formBasicEmail">

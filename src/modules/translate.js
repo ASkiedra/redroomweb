@@ -8,7 +8,7 @@ export default function translateMainCats(text) {
             text = "DIENOS SISTEMOS";
             break;
 
-        case "DINING ROOM FURNITURE":
+        case "LIVING ROOM FURNITURE":
             text = "SVETAINĖS IR VALGOMOJO BALDAI";
             break;
 
@@ -123,6 +123,11 @@ export const translateSubCats = (text) => {
             text = "STALAI";
             break;
 
+        case "FURNITURE":
+            text = "BALDAI";
+            break;
+
+
         case "BASKETS":
             text = "KREPŠIAI";
             break;
@@ -156,6 +161,10 @@ export const translateMainItems = (text) => {
 
         case "PRODUCTS":
             text = "PRODUKTAI";
+            break;
+
+        case "FURNITURE":
+            text = "BALDAI";
             break;
 
         case "PRIVACY POLICY":

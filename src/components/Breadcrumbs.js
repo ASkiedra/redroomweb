@@ -4,7 +4,7 @@ import { useLocation, Link } from "react-router-dom";
 import translateMainCats, { translateSubCats, translateMainItems } from "../modules/translate";
 import LanguagesContainer from './LanguagesContainer';
 
-const Breadcrumbs = (props) => {
+const Breadcrumbs = ({ language, setLanguage }) => {
     const location = useLocation();
     let modifiedPathname = [];
 
@@ -19,7 +19,7 @@ const Breadcrumbs = (props) => {
     const untranslatedPathname = [modifiedPathname[0], modifiedPathname[1]];
 
     // translate breadcrumbs
-    if (props.language === "LT")
+    if (language === "LT")
         // only 2 strings (0, 1) need to be translated for the breadcrumbs. the first one is always 'PAGRINDINIS' or 'MAIN'
         for (let i = 0; i < 2; i++)
             if (modifiedPathname[i])
@@ -32,18 +32,26 @@ const Breadcrumbs = (props) => {
 
     return (
         <ul id="breadcrumbs-container">
-            <div id="breadcrumbs-links">
-                <Link to={`/${props.language}`} style={{ paddingLeft: '1rem' }}>
-                    {props.language === "LT" ? "PAGRINDINIS" : "MAIN"}
+            <nav id="breadcrumbs-links">
+                <Link to={`/${language}`} style={{ paddingLeft: '1rem' }}>
+                    {language === "LT" ? "PAGRINDINIS" : "MAIN"}
                 </Link>
 
                 {/* length is > 0 when at least one item is present. the item starts at index 0, therefore untranslatedPathname[0] is required */}
                 {modifiedPathname.length > 0 &&
                     <>
                         <span>/</span>
-                        <Link to={`/${props.language}/${untranslatedPathname[0]}`}>
+                        <Link to={`/${language}/${untranslatedPathname[0]}`}>
+                            {/* using headings because this particular website will not have headings on most pages due to their simplicity and headings in the breadcrumbs component (which is loaded in every route) will boost the page's SEO */}
                             <h1>
-                                {modifiedPathname[0]}
+                                {/* client asked to change 'products' to 'furniture' everywhere therefore a workaround is needed for the breadcrumbs which reads the URL */}
+                                {/* restructuring the whole routing system could cause bugs so this is the best solution */}
+                                {
+                                    language === "LT" ?
+                                        modifiedPathname[0].toUpperCase() === "PRODUKTAI" ? 'BALDAI' : modifiedPathname[0]
+                                        :
+                                        modifiedPathname[0].toUpperCase() === "PRODUCTS" ? 'FURNITURE' : modifiedPathname[0]
+                                }
                             </h1>
                         </Link>
                     </>}
@@ -59,9 +67,9 @@ const Breadcrumbs = (props) => {
                             </h2>
                         </Link>
                     </>}
-            </div>
+            </nav>
 
-            <LanguagesContainer language={props.language} setLanguage={props.setLanguage} />
+            <LanguagesContainer language={language} setLanguage={setLanguage} />
         </ul >
     );
 }

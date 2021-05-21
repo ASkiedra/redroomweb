@@ -32,7 +32,7 @@ export default class AllProducts extends Component {
 
         }
 
-        componentDidMount() {
+        componentWillMount() {
                 subCatFilterArr = [];
                 mainCatFilterArr = [];
                 manufFilterArr = [];
@@ -52,7 +52,7 @@ export default class AllProducts extends Component {
 
         filter() {
                 if (manufFilterArr.length > 0 || subCatFilterArr.length > 0 || mainCatFilterArr.length > 0) {
-                        let tempArr = [];
+                        const tempArr = [];
 
                         // for some reason if i use 'len' instead of what it is equal to, the loop doesnt stop
                         const len = this.state.fetchedProducts.length;
@@ -236,13 +236,12 @@ const MainContainer = (props) => {
         return (
                 <div>
                         {props.curProducts.length === 0 &&
-                                <p id="no-products-available-text">{props.lang === "LT" ? "Šiuo metu produktų neturime." : "No products available."}</p>
+                                <p id="no-products-available-text">{props.lang === "LT" ? "Šiuo metu baldų neturime." : "No furniture available."}</p>
                         }
 
                         <div id='allproducts-container' >
-                                {/* sidebar */}
 
-                                <div id="sidebar-container-2">
+                                <aside id="sidebar-container-2">
                                         {!showFilter && window.innerWidth < 1149 &&
                                                 <div className="flexbox-container">
                                                         <p onClick={() => setSF(!showFilter)} id="filter-btn">
@@ -265,7 +264,7 @@ const MainContainer = (props) => {
                                                                 }
                                                                 <Link onClick={() => window.innerWidth < 1149 && setSF(false)}
                                                                         id="clear-btn" to={clearBtnLink}>
-                                                                        {props.lang === "LT" ? "išvalyti filtrus" : props.lang === "EN" && "clear filters"}
+                                                                        {props.lang === "LT" ? "visi baldai" : props.lang === "EN" && "all furniture"}
                                                                 </Link>
 
                                                         </div>
@@ -302,7 +301,7 @@ const MainContainer = (props) => {
                                                         </ul>
                                                 </div>
                                         }
-                                </div>
+                                </aside>
 
 
 
@@ -353,7 +352,7 @@ const SidebarItem = (props) => {
 
 
 const Product = (props) => {
-        const path = "/images/products/" + props.product.manufacturer + '/' + props.product.name + '/' + props.product.imageName[0];
+        const path = `/images/products/${props.product.manufacturer}/${props.product.name}/${props.product.imageName[0]}`;
 
         return (
                 <Link key={props.product.manufacturer + props.product.name}
@@ -362,6 +361,7 @@ const Product = (props) => {
                                 pathname: `/${props.lang}/products/${props.product.mainCategory}/${props.product.subCategory}/${props.product.manufacturer}/${props.product.name}/`,
                                 product: props.product,
                         }}>
+
                         <div className={"flexbox-container product-container"} style={{ height: '94%', width: 'inherit', textAlign: 'center' }}>
                                 <img style={{ margin: '0 auto' }} className="product-list-photo" src={path} alt={`${props.product.name}-logo`} />
                         </div>

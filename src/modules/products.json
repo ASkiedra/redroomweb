@@ -1,11 +1,8 @@
 [
   {
     "name": "Life",
-    "imageName": [
-      "Life4x-2.jpg",
-      "Life5.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Life4x-2.jpg", "Life5.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofa beds",
     "manufacturer": "Dienne",
     "info": [
@@ -15,11 +12,8 @@
   },
   {
     "name": "Lisbona",
-    "imageName": [
-      "Lisbona4x.jpg",
-      "Lisbona5.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Lisbona4x.jpg", "Lisbona5.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofa beds",
     "manufacturer": "Dienne",
     "info": [
@@ -29,11 +23,8 @@
   },
   {
     "name": "Mithos",
-    "imageName": [
-      "Mithos4x.jpg",
-      "Mithos5.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Mithos4x.jpg", "Mithos5.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofa beds",
     "manufacturer": "Dienne",
     "info": [
@@ -43,11 +34,8 @@
   },
   {
     "name": "More",
-    "imageName": [
-      "More3.jpg",
-      "More4.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["More3.jpg", "More4.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofa beds",
     "manufacturer": "Dienne",
     "info": [
@@ -57,11 +45,8 @@
   },
   {
     "name": "Space",
-    "imageName": [
-      "Space2-2.jpg",
-      "Space4.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Space2-2.jpg", "Space4.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofa beds",
     "manufacturer": "Dienne",
     "info": [
@@ -71,11 +56,8 @@
   },
   {
     "name": "Valentina",
-    "imageName": [
-      "Valentina4-2.jpg",
-      "Valentina5.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Valentina4-2.jpg", "Valentina5.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofa beds",
     "manufacturer": "Dienne",
     "info": [
@@ -85,10 +67,8 @@
   },
   {
     "name": "REGINA",
-    "imageName": [
-      "VANESSA-58d90f7247c216.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["VANESSA-58d90f7247c216.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "armchairs",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -98,9 +78,7 @@
   },
   {
     "name": "ORBITALE",
-    "imageName": [
-      "ORBITALE-5d9c9b7435c451.jpg"
-    ],
+    "imageName": ["ORBITALE-5d9c9b7435c451.jpg"],
     "mainCategory": "bedroom furniture",
     "subCategory": "beds",
     "manufacturer": "Natuzzi Editions",
@@ -111,9 +89,7 @@
   },
   {
     "name": "GALATTICO",
-    "imageName": [
-      "GALATTICO-5d9ca45d3221a1.jpg"
-    ],
+    "imageName": ["GALATTICO-5d9ca45d3221a1.jpg"],
     "mainCategory": "bedroom furniture",
     "subCategory": "beds",
     "manufacturer": "Natuzzi Editions",
@@ -124,10 +100,8 @@
   },
   {
     "name": "Astratto",
-    "imageName": [
-      "Astratto.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Astratto.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "coffee tables",
     "manufacturer": "Nicoline",
     "info": [
@@ -137,10 +111,8 @@
   },
   {
     "name": "Circolo",
-    "imageName": [
-      "Circolo.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Circolo.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "coffee tables",
     "manufacturer": "Nicoline",
     "info": [
@@ -150,10 +122,8 @@
   },
   {
     "name": "Deco",
-    "imageName": [
-      "Deco.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Deco.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "coffee tables",
     "manufacturer": "Nicoline",
     "info": [
@@ -163,10 +133,8 @@
   },
   {
     "name": "Deco Small",
-    "imageName": [
-      "Deco-Small.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Deco-Small.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "coffee tables",
     "manufacturer": "Nicoline",
     "info": [
@@ -176,10 +144,8 @@
   },
   {
     "name": "Fly",
-    "imageName": [
-      "Fly.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Fly.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "coffee tables",
     "manufacturer": "Nicoline",
     "info": [
@@ -189,10 +155,8 @@
   },
   {
     "name": "Fly Small",
-    "imageName": [
-      "Fly-Small.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Fly-Small.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "coffee tables",
     "manufacturer": "Nicoline",
     "info": [
@@ -202,10 +166,8 @@
   },
   {
     "name": "Grancircolo",
-    "imageName": [
-      "Grancircolo.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Grancircolo.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "coffee tables",
     "manufacturer": "Nicoline",
     "info": [
@@ -215,10 +177,8 @@
   },
   {
     "name": "Metrico",
-    "imageName": [
-      "Metrico.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Metrico.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "coffee tables",
     "manufacturer": "Nicoline",
     "info": [
@@ -228,10 +188,8 @@
   },
   {
     "name": "Metrico Small",
-    "imageName": [
-      "Metrico-Small.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Metrico-Small.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "coffee tables",
     "manufacturer": "Nicoline",
     "info": [
@@ -241,10 +199,8 @@
   },
   {
     "name": "Plane",
-    "imageName": [
-      "Plane.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Plane.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "coffee tables",
     "manufacturer": "Nicoline",
     "info": [
@@ -254,10 +210,8 @@
   },
   {
     "name": "Round",
-    "imageName": [
-      "Round.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Round.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "coffee tables",
     "manufacturer": "Nicoline",
     "info": [
@@ -267,10 +221,8 @@
   },
   {
     "name": "Shiny",
-    "imageName": [
-      "Shiny.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Shiny.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "coffee tables",
     "manufacturer": "Nicoline",
     "info": [
@@ -280,11 +232,8 @@
   },
   {
     "name": "Archie",
-    "imageName": [
-      "Archie.jpg",
-      "Archie2.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Archie.jpg", "Archie2.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "dining tables",
     "manufacturer": "Domitalia",
     "info": [
@@ -294,11 +243,8 @@
   },
   {
     "name": "Archie BO",
-    "imageName": [
-      "Archie3.jpg",
-      "Archie4.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Archie3.jpg", "Archie4.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "dining tables",
     "manufacturer": "Domitalia",
     "info": [
@@ -308,12 +254,8 @@
   },
   {
     "name": "Dorico",
-    "imageName": [
-      "Dorico.jpg",
-      "Dorico2.jpg",
-      "Dorico3.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Dorico.jpg", "Dorico2.jpg", "Dorico3.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "dining tables",
     "manufacturer": "Domitalia",
     "info": [
@@ -323,10 +265,8 @@
   },
   {
     "name": "Carino",
-    "imageName": [
-      "CARINO-5f51f2b2048eb5.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["CARINO-5f51f2b2048eb5.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -336,10 +276,8 @@
   },
   {
     "name": "Autentico",
-    "imageName": [
-      "AUTENTICO-5cc6be8c9103f4.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["AUTENTICO-5cc6be8c9103f4.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -349,10 +287,8 @@
   },
   {
     "name": "Carisma",
-    "imageName": [
-      "CARISMA-5afabd5d081fa3.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["CARISMA-5afabd5d081fa3.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -362,10 +298,8 @@
   },
   {
     "name": "Click",
-    "imageName": [
-      "CLICK-5f3d3faedcd464.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["CLICK-5f3d3faedcd464.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -375,10 +309,8 @@
   },
   {
     "name": "Intenso",
-    "imageName": [
-      "INTENSO-5d9dd9efd7c274.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["INTENSO-5d9dd9efd7c274.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -388,10 +320,8 @@
   },
   {
     "name": "Ispirazione",
-    "imageName": [
-      "Ispirazione-5cadbe3bb69a18.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Ispirazione-5cadbe3bb69a18.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -401,10 +331,8 @@
   },
   {
     "name": "Kartun",
-    "imageName": [
-      "KARTUN-5f3d43d3b3cc23.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["KARTUN-5f3d43d3b3cc23.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -414,10 +342,8 @@
   },
   {
     "name": "Leggerezza",
-    "imageName": [
-      "LEGGEREZZA-5acf66854fc3e6.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["LEGGEREZZA-5acf66854fc3e6.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -427,10 +353,8 @@
   },
   {
     "name": "Piacere",
-    "imageName": [
-      "PIACERE-58d53f2294d547.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["PIACERE-58d53f2294d547.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -440,10 +364,8 @@
   },
   {
     "name": "Premura",
-    "imageName": [
-      "PREMURA-5bbf80228b5474.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["PREMURA-5bbf80228b5474.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -453,10 +375,8 @@
   },
   {
     "name": "Raffinato",
-    "imageName": [
-      "RAFFINATO-5cc6bd6108d9b6.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["RAFFINATO-5cc6bd6108d9b6.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -466,10 +386,8 @@
   },
   {
     "name": "Romantico",
-    "imageName": [
-      "ROMANTICO 58d56523377fd5.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["ROMANTICO 58d56523377fd5.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -479,10 +397,8 @@
   },
   {
     "name": "Stupore",
-    "imageName": [
-      "STUPORE.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["STUPORE.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Natuzzi Editions",
     "info": [
@@ -492,10 +408,8 @@
   },
   {
     "name": "Amanda",
-    "imageName": [
-      "amanda.png"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["amanda.png"],
+    "mainCategory": "living room furniture",
     "subCategory": "chairs",
     "manufacturer": "Quinti",
     "info": [
@@ -505,10 +419,8 @@
   },
   {
     "name": "Deep",
-    "imageName": [
-      "deep.png"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["deep.png"],
+    "mainCategory": "living room furniture",
     "subCategory": "chairs",
     "manufacturer": "Quinti",
     "info": [
@@ -518,10 +430,8 @@
   },
   {
     "name": "Fourside",
-    "imageName": [
-      "fourside.png"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["fourside.png"],
+    "mainCategory": "living room furniture",
     "subCategory": "chairs",
     "manufacturer": "Quinti",
     "info": [
@@ -531,10 +441,8 @@
   },
   {
     "name": "Gilda",
-    "imageName": [
-      "gilda.png"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["gilda.png"],
+    "mainCategory": "living room furniture",
     "subCategory": "chairs",
     "manufacturer": "Quinti",
     "info": [
@@ -544,10 +452,8 @@
   },
   {
     "name": "Ginevra",
-    "imageName": [
-      "ginevra.png"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["ginevra.png"],
+    "mainCategory": "living room furniture",
     "subCategory": "chairs",
     "manufacturer": "Quinti",
     "info": [
@@ -557,10 +463,8 @@
   },
   {
     "name": "Manta",
-    "imageName": [
-      "manta.png"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["manta.png"],
+    "mainCategory": "living room furniture",
     "subCategory": "chairs",
     "manufacturer": "Quinti",
     "info": [
@@ -570,10 +474,8 @@
   },
   {
     "name": "Minimax",
-    "imageName": [
-      "minimax.png"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["minimax.png"],
+    "mainCategory": "living room furniture",
     "subCategory": "chairs",
     "manufacturer": "Quinti",
     "info": [
@@ -583,11 +485,8 @@
   },
   {
     "name": "Olga",
-    "imageName": [
-      "olga.png",
-      "olga2.png"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["olga.png", "olga2.png"],
+    "mainCategory": "living room furniture",
     "subCategory": "chairs",
     "manufacturer": "Quinti",
     "info": [
@@ -597,10 +496,8 @@
   },
   {
     "name": "Assago",
-    "imageName": [
-      "Assago_B8A7310_mod18-1920x745.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Assago_B8A7310_mod18-1920x745.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Nicoline",
     "info": [
@@ -610,10 +507,8 @@
   },
   {
     "name": "Cavour",
-    "imageName": [
-      "Cavour-2-1400x933.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Cavour-2-1400x933.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Nicoline",
     "info": [
@@ -623,10 +518,8 @@
   },
   {
     "name": "Ghisolfa",
-    "imageName": [
-      "ghisolfa-1400x933.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["ghisolfa-1400x933.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Nicoline",
     "info": [
@@ -636,10 +529,8 @@
   },
   {
     "name": "Isola",
-    "imageName": [
-      "Isola_B8A7562_scont_mod18.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Isola_B8A7562_scont_mod18.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Nicoline",
     "info": [
@@ -649,10 +540,8 @@
   },
   {
     "name": "Manzoni",
-    "imageName": [
-      "manzoni-1-1400x933.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["manzoni-1-1400x933.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Nicoline",
     "info": [
@@ -662,10 +551,8 @@
   },
   {
     "name": "Turro",
-    "imageName": [
-      "Turro-living-1400x933.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Turro-living-1400x933.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Nicoline",
     "info": [
@@ -680,7 +567,7 @@
       "zara-deep-1400x933.jpg",
       "Zara-light_6D2018_2018_09_07_1307-copia.jpg"
     ],
-    "mainCategory": "dining room furniture",
+    "mainCategory": "living room furniture",
     "subCategory": "sofas",
     "manufacturer": "Nicoline",
     "info": [
@@ -690,9 +577,7 @@
   },
   {
     "name": "Brema",
-    "imageName": [
-      "Brema.jpg"
-    ],
+    "imageName": ["Brema.jpg"],
     "mainCategory": "day systems",
     "subCategory": "sideboards",
     "manufacturer": "Pianca",
@@ -703,10 +588,8 @@
   },
   {
     "name": "Cartagena Seida",
-    "imageName": [
-      "Cartagena Seida.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Cartagena Seida.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "dining tables",
     "manufacturer": "Pianca",
     "info": [
@@ -716,10 +599,8 @@
   },
   {
     "name": "Confluence Orchestra",
-    "imageName": [
-      "Confluence-Orchestra.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Confluence-Orchestra.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "dining tables",
     "manufacturer": "Pianca",
     "info": [
@@ -729,10 +610,8 @@
   },
   {
     "name": "Maestro Emi",
-    "imageName": [
-      "Maestro Emi.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Maestro Emi.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "dining tables",
     "manufacturer": "Pianca",
     "info": [
@@ -742,10 +621,8 @@
   },
   {
     "name": "Delta",
-    "imageName": [
-      "Delta.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Delta.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "dining tables",
     "manufacturer": "Pianca",
     "info": [
@@ -754,54 +631,10 @@
     ]
   },
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   {
     "name": "Bonola",
-    "imageName": [
-      "Bonola_6D2018_2018_09_07_1234-e1551692415228.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Bonola_6D2018_2018_09_07_1234-e1551692415228.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "armchairs",
     "manufacturer": "Nicoline",
     "info": [
@@ -811,10 +644,8 @@
   },
   {
     "name": "Dia",
-    "imageName": [
-      "Dia_6D2018_2018_09_07_1171-e1551699233739.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Dia_6D2018_2018_09_07_1171-e1551699233739.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "armchairs",
     "manufacturer": "Nicoline",
     "info": [
@@ -824,10 +655,8 @@
   },
   {
     "name": "Ghirla",
-    "imageName": [
-      "ghirla-e1551722865526.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["ghirla-e1551722865526.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "armchairs",
     "manufacturer": "Nicoline",
     "info": [
@@ -837,10 +666,8 @@
   },
   {
     "name": "Gioia",
-    "imageName": [
-      "Gioia_mod18-e1551700221299.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Gioia_mod18-e1551700221299.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "armchairs",
     "manufacturer": "Nicoline",
     "info": [
@@ -850,10 +677,8 @@
   },
   {
     "name": "Iseo",
-    "imageName": [
-      "iseo-e1551723634867.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["iseo-e1551723634867.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "armchairs",
     "manufacturer": "Nicoline",
     "info": [
@@ -863,10 +688,8 @@
   },
   {
     "name": "Lima",
-    "imageName": [
-      "Lima_mod18-e1551708255785.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Lima_mod18-e1551708255785.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "armchairs",
     "manufacturer": "Nicoline",
     "info": [
@@ -876,10 +699,8 @@
   },
   {
     "name": "Luis",
-    "imageName": [
-      "Luis_6D2018_2018_09_07_1273-e1551720580384.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Luis_6D2018_2018_09_07_1273-e1551720580384.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "armchairs",
     "manufacturer": "Nicoline",
     "info": [
@@ -889,10 +710,8 @@
   },
   {
     "name": "Moscova",
-    "imageName": [
-      "Moscova_mod18-e1551721041538.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Moscova_mod18-e1551721041538.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "armchairs",
     "manufacturer": "Nicoline",
     "info": [
@@ -902,10 +721,8 @@
   },
   {
     "name": "Rho",
-    "imageName": [
-      "Rho_mod18_mod18-e1551721263934.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Rho_mod18_mod18-e1551721263934.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "armchairs",
     "manufacturer": "Nicoline",
     "info": [
@@ -915,10 +732,8 @@
   },
   {
     "name": "Rondo",
-    "imageName": [
-      "Rondo_mod18-e1551721468336.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Rondo_mod18-e1551721468336.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "armchairs",
     "manufacturer": "Nicoline",
     "info": [
@@ -928,10 +743,8 @@
   },
   {
     "name": "Stresa",
-    "imageName": [
-      "Stresa_6D2018_2018_09_06_0994-e1551724113770.jpg"
-    ],
-    "mainCategory": "dining room furniture",
+    "imageName": ["Stresa_6D2018_2018_09_06_0994-e1551724113770.jpg"],
+    "mainCategory": "living room furniture",
     "subCategory": "armchairs",
     "manufacturer": "Nicoline",
     "info": [
@@ -942,9 +755,7 @@
 
   {
     "name": "Key West Caribe",
-    "imageName": [
-      "Caribe.jpg"
-    ],
+    "imageName": ["Caribe.jpg"],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "lounge chairs",
     "manufacturer": "Roberti Rattan",
@@ -955,9 +766,7 @@
   },
   {
     "name": "Key West Sunbed",
-    "imageName": [
-      "Key West Sunbed.jpg"
-    ],
+    "imageName": ["Key West Sunbed.jpg"],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "sunbeds",
     "manufacturer": "Roberti Rattan",
@@ -968,10 +777,7 @@
   },
   {
     "name": "Key West Chair",
-    "imageName": [
-      "Key West Kede.jpg",
-      "Key West Kede2.jpg"
-    ],
+    "imageName": ["Key West Kede.jpg", "Key West Kede2.jpg"],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "chairs",
     "manufacturer": "Roberti Rattan",
@@ -982,10 +788,7 @@
   },
   {
     "name": "Key West Basket",
-    "imageName": [
-      "Key West  Krepsys.jpg",
-      "Key West  Krepsys2.jpg"
-    ],
+    "imageName": ["Key West  Krepsys.jpg", "Key West  Krepsys2.jpg"],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "baskets",
     "manufacturer": "Roberti Rattan",
@@ -996,9 +799,7 @@
   },
   {
     "name": "Key West Pouf",
-    "imageName": [
-      "Key West pufas.jpg"
-    ],
+    "imageName": ["Key West pufas.jpg"],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "poufs",
     "manufacturer": "Roberti Rattan",
@@ -1009,9 +810,7 @@
   },
   {
     "name": "Key West Chaise Lounge",
-    "imageName": [
-      "key west sezlongas.jpg"
-    ],
+    "imageName": ["key west sezlongas.jpg"],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "lounge chairs",
     "manufacturer": "Roberti Rattan",
@@ -1022,10 +821,7 @@
   },
   {
     "name": "Key West Sofa",
-    "imageName": [
-      "Key West Sofa.jpg",
-      "Key West Sofa2.jpg"
-    ],
+    "imageName": ["Key West Sofa.jpg", "Key West Sofa2.jpg"],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "sofas",
     "manufacturer": "Roberti Rattan",
@@ -1036,10 +832,7 @@
   },
   {
     "name": "Key West Sofas",
-    "imageName": [
-      "Key West Sofa3.jpg",
-      "Key West Sofa4.jpg"
-    ],
+    "imageName": ["Key West Sofa3.jpg", "Key West Sofa4.jpg"],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "sofas",
     "manufacturer": "Roberti Rattan",
@@ -1050,10 +843,7 @@
   },
   {
     "name": "Key West Table",
-    "imageName": [
-      "Key West stalas.jpg",
-      "Key West stalas2.jpg"
-    ],
+    "imageName": ["Key West stalas.jpg", "Key West stalas2.jpg"],
     "mainCategory": "outdoor furniture and accessories",
     "subCategory": "tables",
     "manufacturer": "Roberti Rattan",

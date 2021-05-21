@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import logo from '../logos/redroom-logo-black.png';
@@ -13,7 +13,7 @@ const Header = (props) => {
     const [openedProductsDropdown, setOPD] = useState(false);
     const [openedThreeLines, setOTL] = useState(false);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const handleKeyPress = event => {
             if (event.key === 'Escape') {
                 setOPD(false);
@@ -21,9 +21,8 @@ const Header = (props) => {
             }
         }
 
-
         const handleMouseClick = (event) => {
-            // if the click wasnt on the products button
+            // if the click wasnt on the products button or threelines
             if (event.target.id !== "produktai" && event.target.id !== "three-lines-img" && event.target.id !== "threeLinesDiv") {
                 setOPD(false);
                 setOTL(false);
@@ -60,7 +59,7 @@ const Header = (props) => {
     // mobile dropdown
     const DropdownMenu2 = () => {
         // items for the mobile dropdown
-        const dropdown2Collection = ['PRODUCTS', 'INTERIOR', 'MANUFACTURERS', 'CONTACTS', 'PRIVACY POLICY'];
+        const dropdown2Collection = ['FURNITURE', 'INTERIOR', 'MANUFACTURERS', 'CONTACTS', 'PRIVACY POLICY'];
 
         return (
             <ul className="dropdown2" >
@@ -69,7 +68,10 @@ const Header = (props) => {
                         <li key={collectionPart} style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
                             <Link
                                 style={{ fontSize: '1.2rem', color: 'white', paddingBottom: '0.5rem' }}
-                                to={`/${props.language}/${collectionPart.toLowerCase()}`}>
+                                // the client asked to change 'products' to 'furniture' everywhere therefore a workaround is needed for this algorithm 
+                                // restructuring the whole routing system could cause bugs so this is the best solution 
+                                to={`/${props.language}/${collectionPart.toUpperCase() === "FURNITURE" ? "products" : collectionPart.toLowerCase()
+                                    }`}>
                                 {props.language === "LT" ? translateMainItems(collectionPart) : collectionPart}
                             </Link>
                         </li>)
@@ -86,7 +88,7 @@ const Header = (props) => {
                     <div id="produktai" className="flexbox-container" style={{ height: "inherit" }}>
                         <p id="produktai" className="header-item-onhover">
                             {
-                                props.language === "LT" ? "PRODUKTAI" : "PRODUCTS"
+                                props.language === "LT" ? "BALDAI" : "FURNITURE"
                             }
                         </p>
                     </div>
@@ -98,11 +100,12 @@ const Header = (props) => {
     };
 
     const DropdownMenu = () => {
+        // AN ARRAY INSTEAD OF A LOOP ONLY BECAUSE A CUSTOMER REQUESTED THE ORDER OF THESE ITEMS IN THE DROPDOWN.
         // everything for the main dropdown. these are checked and if any products of this type are available - displayed in the dropdown
         const dropdownCollection = [
             ['DAY SYSTEMS', 'SALON FURNITURE SYSTEMS', 'WORKPLACE FURNITURE', 'BOOKSHELVES', 'SOFA BEDS'],
             ['WARDROBE SYSTEMS', 'INDIVIDUALLY PLANNED WARDROBES', 'CLOTHING HANGERS'],
-            ['DINING ROOM FURNITURE', 'CHAIRS', 'SOFAS', 'COFFEE TABLES', 'ARMCHAIRS', 'POUFS', 'DINING TABLES'],
+            ['LIVING ROOM FURNITURE', 'CHAIRS', 'SOFAS', 'COFFEE TABLES', 'ARMCHAIRS', 'POUFS', 'DINING TABLES'],
             ['BEDROOM FURNITURE', 'BEDS', 'BEDSIDE CABINETS', 'CHESTS OF DRAWERS', 'BEDROOM BENCHES'],
         ];
 
@@ -119,7 +122,7 @@ const Header = (props) => {
                                 return <li key={collectionPart[0]} style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
                                     {/* // if any items with the particular main category are in stock and also the first element in the collection, show them in the dropdown with a different style than the other items  */}
                                     {mainCategoriesArr.indexOf(collectionPart[0].toLowerCase()) !== -1 &&
-                                        <Link style={{ color: 'white', paddingBottom: '0.5rem' }}
+                                        <Link style={{ fontWeight: '520', color: 'white', paddingBottom: '0.5rem' }}
                                             to={`/${props.language}/products/${collectionPart[0].toLowerCase()}`}>
                                             {
                                                 props.language === "LT" ? translateMainCats(collectionPart[0]) : collectionPart[0]
@@ -170,8 +173,8 @@ const Header = (props) => {
                             style={{ fontWeight: 'bold', color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }}
                         >
                             {
-                                props.language === "LT" ? "VISI PRODUKTAI" :
-                                    props.language === "EN" && "ALL PRODUCTS"
+                                props.language === "LT" ? "VISI BALDAI" :
+                                    props.language === "EN" && "ALL FURNITURE"
                             }
                         </Link>
                     </li>

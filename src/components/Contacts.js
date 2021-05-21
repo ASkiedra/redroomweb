@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
 const Contacts = ({ language }) => {
     return (
@@ -18,20 +17,17 @@ const Contacts = ({ language }) => {
                 <div id="container-contacts-text-grid" className="contacts-additional-container-2">
                     <p style={{ fontWeight: '550' }}> {
                         language === "EN" ? "GET IN TOUCH:" : "SUSISIEKIME:"
-
                     }
                     </p>
 
                     <a style={{ paddingBottom: '0.55rem' }} href="tel:+37064310657">+370 643 10 657</a>
                     <a href="mailto:info@red-room.lt">info@red-room.lt</a>
                     <p>MB „Studio Red" {language === "EN" ? "Company code " : "Įmonės kodas "}305434886</p>
+                    <p>TAIKOS PR. 61-51, LT-50433 KAUNAS</p>
+                    <a style={{ fontWeight: 'bold' }} target="_blank" rel="noreferrer" href="https://rekvizitai.vz.lt/imone/studio_red/">REKVIZITAI</a>
                 </div>
 
-                <div id="privacy-policy-link-container">
-                    <Link to={`/${language}/privacy policy`}>
-                        {language === 'EN' ? 'PRIVACY POLICY' : 'PRIVATUMO POLITIKA'}
-                    </Link>
-                </div>
+
             </div>
         </div >
     );
