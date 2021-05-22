@@ -357,8 +357,7 @@ header {
 
 #header-list ul li {
   font-family: "Quicksand", sans-serif;
-  text-align: left;
-  padding-left: 1rem;
+  text-align: center;
 }
 
 #header-list p,
@@ -731,16 +730,16 @@ a {
 .dropdown {
   background: rgba(0, 0, 0, 1);
   /* background: rgba(0, 0, 0, 0.8301); */
-
+  width: 100vw;
   position: relative;
   transform-origin: top center;
 }
 
 #dropdown-grid {
   display: grid;
-  display: -ms-grid;
-  grid-template-columns: 50% 50%;
-  -ms-grid-columns: 50% 50%;
+  margin-bottom: 2.5rem;
+  padding-top: 0.5rem;
+  grid-template-columns: 25% 25% 25% 25%;
 }
 
 .dropdown li {
@@ -866,9 +865,7 @@ a {
   text-decoration: underline;
 }
 
-.dropdown a:hover {
-  text-decoration: underline white;
-}
+.dropdown a:hover,
 .dropdown2 a:hover {
   text-decoration: underline white;
 }
@@ -915,6 +912,7 @@ a {
 #products-sidebar {
   width: 100%;
   top: 30%;
+  padding: 0 0.5rem;
   scrollbar-width: thin;
   overflow: hidden auto;
   scrollbar-color: rgba(255, 0, 0, 0.373) rgba(221, 221, 221, 0.159);
@@ -1494,9 +1492,7 @@ footer #social-media-logos a {
   }
 
   #products-sidebar {
-    width: 70%;
-    left: 30%;
-    position: relative;
+    width: 100vw;
   }
 
   #sidebar-btn-container {
@@ -1581,7 +1577,7 @@ footer #social-media-logos a {
 
 @media (min-width: 1150px) {
   .dropdown {
-    width: 40rem;
+    width: 100vw;
   }
 
   .product-type {

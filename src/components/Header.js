@@ -107,6 +107,7 @@ const Header = (props) => {
             ['WARDROBE SYSTEMS', 'INDIVIDUALLY PLANNED WARDROBES', 'CLOTHING HANGERS'],
             ['LIVING ROOM FURNITURE', 'CHAIRS', 'SOFAS', 'COFFEE TABLES', 'ARMCHAIRS', 'POUFS', 'DINING TABLES'],
             ['BEDROOM FURNITURE', 'BEDS', 'BEDSIDE CABINETS', 'CHESTS OF DRAWERS', 'BEDROOM BENCHES'],
+            ['OUTDOOR FURNITURE AND ACCESSORIES']
         ];
 
         return (
@@ -132,7 +133,7 @@ const Header = (props) => {
 
 
 
-                                    <ul style={{ width: '100%', marginTop: '0.5rem', paddingLeft: '1rem', listStyle: 'none' }}>
+                                    <ul style={{ width: '100%', marginTop: '0.5rem', listStyle: 'none' }}>
                                         {collectionPart.map(item => {
                                             // if its not the first item in the collection (not the big text) AND it exists in subCategoriesArr
                                             if (collectionPart.indexOf(item) !== 0 && subCategoriesArr.indexOf(item.toLowerCase()) !== -1)
@@ -157,7 +158,7 @@ const Header = (props) => {
                 </div>
 
                 <div>
-                    <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550" }}>
+                    {/* <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550" }}>
                         <Link to={`/${props.language}/products/outdoor furniture and accessories`}
                             style={{ color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }}
                         >
@@ -166,9 +167,9 @@ const Header = (props) => {
                                     props.language === "EN" && "outdoor furniture and accessories"
                             }
                         </Link>
-                    </li>
+                    </li> */}
 
-                    <li style={{ color: 'white', textTransform: 'uppercase', fontWeight: "550", }} >
+                    <li style={{ color: 'white', textAlign: 'center', textTransform: 'uppercase', fontWeight: "550", }} >
                         <Link to={`/${props.language}/products`}
                             style={{ fontWeight: 'bold', color: 'white', paddingTop: '0', paddingBottom: '0.5rem' }}
                         >
