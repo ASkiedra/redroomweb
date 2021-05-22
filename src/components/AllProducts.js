@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import Products from '../modules/products';
-import { translateSubCats } from "../modules/translate";
+import translateMainCats, { translateSubCats } from "../modules/translate";
 import filterLowercase, { mainCategoriesArr, subCategoriesArr, manufacturersArr } from '../modules/filteredData';
 
 
@@ -32,7 +32,7 @@ export default class AllProducts extends Component {
 
         }
 
-        componentWillMount() {
+        componentDidMount() {
                 subCatFilterArr = [];
                 mainCatFilterArr = [];
                 manufFilterArr = [];
@@ -179,17 +179,24 @@ export default class AllProducts extends Component {
 
         render() {
                 // using setState is too slow and for the purposes of this webpage state is not required for these items because they are only initialized and then get their data ONCE.
-                let typesArr = [], availSubCats = [], returnable = <div style={{ height: 'inherit', background: 'white' }} />;
+                let typesArr = [], availSubCats = [], availMainCats = [], returnable = <div style={{ height: 'inherit', background: 'white' }} />;
 
                 if (this.props.match.params.manufacturer) {
                         const filteredByManuf = Products.filter(x => x.manufacturer.toLowerCase() === this.props.match.params.manufacturer.toLowerCase() && x.manufacturer);
+
+                        // availSubCats = available sub categories (product types) of that particular manufacturer
                         availSubCats = (filterLowercase([...new Set(filteredByManuf.map(product => product.subCategory))]));
+                        availMainCats = (filterLowercase([...new Set(filteredByManuf.map(product => product.mainCategory))]));
                 }
 
                 if (this.props.match.params.mainCategory) {
                         const filteredByMainCat = Products.filter(x => x.mainCategory.toLowerCase() === this.props.match.params.mainCategory.toLowerCase() && x.mainCategory);
+
+                        // availSubCats = available sub categories (product types) of that particular main category
                         availSubCats = (filterLowercase([...new Set(filteredByMainCat.map(product => product.subCategory))]));
                 }
+
+                console.info(availSubCats)
 
                 if (!this.state.loading) {
                         // works only for the params of the url
@@ -202,11 +209,11 @@ export default class AllProducts extends Component {
 
                                 // dont render it if its not filtered
                                 if (this.state.filtered)
-                                        returnable = <MainContainer availSubCats={availSubCats} mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
+                                        returnable = <MainContainer availMainCats={availMainCats} availSubCats={availSubCats} mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
                         }
                         // case no params in the url
                         else
-                                returnable = <MainContainer availSubCats={availSubCats} mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
+                                returnable = <MainContainer availMainCats={availMainCats} availSubCats={availSubCats} mainCategoriesArr={mainCategoriesArr} subCategoriesArr={subCategoriesArr} typesArr={typesArr} this={this} manufacturersArr={manufacturersArr} lang={this.props.match.params.lang} curProducts={this.state.curProducts} />;
                 }
 
                 return returnable;
@@ -214,22 +221,22 @@ export default class AllProducts extends Component {
 }
 
 const MainContainer = (props) => {
-        const [showFilter, setSF] = useState(false);
+        const [showFilter, setSF] = useState(window.innerWidth > 1149 ? true : false);
 
-        useEffect(() => {
-                window.scrollTo(0, 0)
-                window.scroll(0, 0)
+        // useEffect(() => {
+        //         window.scrollTo(0, 0)
+        //         window.scroll(0, 0)
 
-                // if not on a mobile device, show filter by default
-                if (window.innerWidth > 1149) {
-                        setSF(true);
-                }
+        //         // if not on a mobile device, show filter by default
+        //         if (window.innerWidth > 1149) {
+        //                 setSF(true);
+        //         }
 
-        }, [props.this.state]);
+        // }, [props.this.state]);
 
 
         // if user is on a manufacturer page, set the link to the manufacturer link. otherwise - make it /products.
-        const clearBtnLink = props.this.props.match.params.manufacturer ? "/" + props.lang + "/products///" + props.this.props.match.params.manufacturer : "/" + props.lang + "/products";
+        // const clearBtnLink = props.this.props.match.params.manufacturer ? "/" + props.lang + "/products///" + props.this.props.match.params.manufacturer : "/" + props.lang + "/products";
 
 
 
@@ -245,7 +252,7 @@ const MainContainer = (props) => {
                                         {!showFilter && window.innerWidth < 1149 &&
                                                 <div className="flexbox-container">
                                                         <p onClick={() => setSF(!showFilter)} id="filter-btn">
-                                                                {props.lang === "LT" ? "filtrai" : props.lang === "EN" && "filters"}
+                                                                {props.lang === "LT" ? "filtrai" : "filters"}
                                                         </p>
                                                 </div>
 
@@ -258,31 +265,43 @@ const MainContainer = (props) => {
                                                                         window.innerWidth < 1149 &&
                                                                         <div className="flexbox-container">
                                                                                 <p onClick={() => setSF(!showFilter)} id="filter-btn">
-                                                                                        {props.lang === "LT" ? "filtrai" : props.lang === "EN" && "filters"}
+                                                                                        {props.lang === "LT" ? "filtrai" : "filters"}
                                                                                 </p>
                                                                         </div>
                                                                 }
                                                                 <Link onClick={() => window.innerWidth < 1149 && setSF(false)}
-                                                                        id="clear-btn" to={clearBtnLink}>
-                                                                        {props.lang === "LT" ? "visi baldai" : props.lang === "EN" && "all furniture"}
+                                                                        id="clear-btn" to={`/${props.lang}/products`}>
+                                                                        {props.lang === "LT" ? "visi baldai" : "all furniture"}
                                                                 </Link>
 
                                                         </div>
 
                                                         <ul id={"products-sidebar"}>
-
-                                                                {/* <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                                                                {props.mainCategoriesArr.map(curMainCat => {
-                                                                        return <SidebarItem key={curMainCat} language={language} translatable={"main"} filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
-                                                                })}
-                                                        </div> */}
-
+                                                                {/* MAIN CATEGORY FILTERS */}
                                                                 <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                                        {/* if there arent any main categories available of that manufacturer or maincategory, print all of the main categories (typically when not on a manufacturer/maincategory URL) */}
+                                                                        {props.availMainCats.length === 0 ?
+                                                                                props.mainCategoriesArr.map(curMainCat => {
+                                                                                        return <SidebarItem key={curMainCat} language={props.lang} translatable={"main"} filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
+                                                                                })
+                                                                                :
+                                                                                // if not - print the available main cats
+                                                                                props.availMainCats.map(curMainCat => {
+                                                                                        return <SidebarItem key={curMainCat} language={props.lang} translatable={"main"} filterArr={mainCatFilterArr} type={"MAIN"} this={props.this} value={curMainCat} />
+                                                                                })
+                                                                        }
+                                                                </div>
+
+
+                                                                {/* SUB CATEGORY FILTERS */}
+                                                                <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                                                                        {/* if there arent any sub categories available of that manufacturer or maincategory, print all of the subcats (typically when not on a manufacturer/maincategory URL) */}
                                                                         {props.availSubCats.length === 0 ?
                                                                                 props.subCategoriesArr.map(curSubCat => {
                                                                                         return <SidebarItem key={curSubCat} language={props.lang} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
                                                                                 })
                                                                                 :
+                                                                                // if not - print the available sub cats
                                                                                 props.availSubCats.map(curSubCat => {
                                                                                         return <SidebarItem key={curSubCat} language={props.lang} translatable={"second"} filterArr={subCatFilterArr} type={"SUB"} this={props.this} value={curSubCat} />
                                                                                 })
@@ -320,32 +339,22 @@ const SidebarItem = (props) => {
         let text = props.value;
 
         // whether the filter is a mainCategory or a subCategory
-        //if (props.translatable === "main" && props.language === "LT")
-        //        text = translateMainCats(text);
-        //else
-        if (props.translatable === "second" && props.language === "LT")
-                text = translateSubCats(text);
+        if (props.translatable === "main" && props.language === "LT")
+                text = translateMainCats(text);
+        else
+                if (props.translatable === "second" && props.language === "LT")
+                        text = translateSubCats(text);
 
         return (
-                // if its in the filter array, make it bold to show the filter is selected
-                props.filterArr.includes(props.value) ?
-                        <li key={props.value} className={"type-li"} onClick={(e) => {
-                                e.target.classList.toggle("bold-text");
+                <li key={props.value} className={"type-li"}
+                        onClick={() => {
                                 props.this.addAndRemoveFilters(props.value, props.type)
-                        }}
-                                style={{ textAlign: 'right', listStyle: 'none' }}>
-
-                                <p key={props.value + 'p'} id={props.value} className={"product-type bold-text"}>
-                                        {text}
-                                </p>
-                        </li>
-                        : <li key={props.value} className={"type-li"} onClick={(e) => {
-                                e.target.classList.toggle("bold-text");
-                                props.this.addAndRemoveFilters(props.value, props.type)
-                        }}
-                                style={{ textAlign: 'right', listStyle: 'none' }}>
-                                <p key={props.value + 'p'} id={props.value} className={"product-type"}> {text}</p>
-                        </li>
+                        }}>
+                        <p key={props.value + 'p'} id={props.value}
+                                className={props.filterArr.includes(props.value) ? "bold-text product-type " : "product-type"}>
+                                {text}
+                        </p>
+                </li>
         );
 }
 

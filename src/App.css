@@ -563,6 +563,10 @@ footer :nth-child(4) {
   border-radius: 10px;
 }
 
+.type-li {
+  text-align: center;
+  list-style: none;
+}
 #second-footer {
   background-color: black;
   color: white;
@@ -1048,12 +1052,14 @@ a {
   text-decoration: none;
   font-size: 1.2rem;
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 0;
   font-weight: bold;
   display: block;
   position: relative;
-  left: 10%;
   text-transform: lowercase;
+
+  /* same as scrollbar width in the filters' container */
+  padding-right: 5px;
 }
 
 #main-page-cont0 {

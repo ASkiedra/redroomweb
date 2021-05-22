@@ -15,11 +15,11 @@ const Footer = ({ language }) => {
 
                 <div id="social-media-logos">
                     <a href="https://www.facebook.com/redroom.lt/">
-                        <img src={facebookLogo} />
+                        <img alt="logo-fb-social" src={facebookLogo} />
                     </a>
 
-                    <a href="https://www.facebook.com/redroom.lt/">
-                        <img src={instagramLogo} />
+                    <a href="https://www.instagram.com/redroom.baldai/">
+                        <img alt="logo-ig-social" src={instagramLogo} />
                     </a>
                 </div>
 
