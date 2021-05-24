@@ -194,9 +194,10 @@ export default class AllProducts extends Component {
 
                         // availSubCats = available sub categories (product types) of that particular main category
                         availSubCats = (filterLowercase([...new Set(filteredByMainCat.map(product => product.subCategory))]));
+                        availMainCats = (filterLowercase([...new Set(filteredByMainCat.map(product => product.mainCategory))]));
+
                 }
 
-                console.info(availSubCats)
 
                 if (!this.state.loading) {
                         // works only for the params of the url
@@ -223,16 +224,10 @@ export default class AllProducts extends Component {
 const MainContainer = (props) => {
         const [showFilter, setSF] = useState(window.innerWidth > 1149 ? true : false);
 
-        // useEffect(() => {
-        //         window.scrollTo(0, 0)
-        //         window.scroll(0, 0)
-
-        //         // if not on a mobile device, show filter by default
-        //         if (window.innerWidth > 1149) {
-        //                 setSF(true);
-        //         }
-
-        // }, [props.this.state]);
+        useEffect(() => {
+                window.scrollTo(0, 0)
+                window.scroll(0, 0)
+        }, [props.this.state]);
 
 
         // if user is on a manufacturer page, set the link to the manufacturer link. otherwise - make it /products.
