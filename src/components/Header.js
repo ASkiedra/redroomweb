@@ -9,21 +9,21 @@ import LanguagesContainer from './LanguagesContainer';
 
 
 
-const Header = (props) => {
+const Header = props => {
     const [openedProductsDropdown, setOPD] = useState(false);
     const [openedThreeLines, setOTL] = useState(false);
 
     useEffect(() => {
-        const handleKeyPress = event => {
-            if (event.key === 'Escape') {
+        const handleKeyPress = e => {
+            if (e.key === 'Escape') {
                 setOPD(false);
                 setOTL(false);
             }
         }
 
-        const handleMouseClick = (event) => {
+        const handleMouseClick = e => {
             // if the click wasnt on the products button or threelines
-            if (event.target.id !== "produktai" && event.target.id !== "three-lines-img" && event.target.id !== "threeLinesDiv") {
+            if (e.target.id !== "produktai" && e.target.id !== "three-lines-img" && e.target.id !== "threeLinesDiv") {
                 setOPD(false);
                 setOTL(false);
             }
@@ -183,12 +183,6 @@ const Header = (props) => {
             </ul >
         );
     }
-
-
-
-
-
-
 
     return (
         <header style={{ display: 'block' }}>

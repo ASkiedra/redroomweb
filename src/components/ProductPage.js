@@ -93,9 +93,13 @@ export default class ProductPage extends Component {
                                         }
 
                                         <div style={{ maxWidth: '100%', maxHeight: '23rem', height: 'auto' }}>
-                                                <div style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit', minHeight: '20rem', marginBottom: '1rem', maxHeight: 'inherit' }} id='container-1'>
+                                                <div
+                                                        style={{ height: 'inherit', textAlign: 'center', maxWidth: 'inherit', minHeight: '20rem', marginBottom: '1rem', maxHeight: 'inherit' }}
+                                                        id='container-1'
+                                                >
                                                         {!this.state.loading && <div id='product-img-container'>
-                                                                <img onClick={e => enlargeImage(e.target.src, 'product-page-grid')}
+                                                                <img
+                                                                        onClick={e => enlargeImage(e.target.src, 'product-page-grid')}
                                                                         id='main-product-image'
                                                                         src={this.state.path + this.state.imageName[i]}
                                                                         style={{ cursor: 'pointer', maxHeight: '23rem', minWidth: 'inherit', width: 'inherit', fontSize: '0' }}
@@ -120,15 +124,21 @@ export default class ProductPage extends Component {
                                                                         if (this.state.imageName[i])
                                                                                 return (
                                                                                         <div key={i + '-item'} id='additional-photo-container2'>
-                                                                                                <img style={{ maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }}
-                                                                                                        onClick={(e) => this.swapImages(e.target)} src={this.state.path + this.state.imageName[i]} id={'img' + i} alt={this.state.imageName[i] + '-additional-photo'} />
+                                                                                                <img
+                                                                                                        src={this.state.path + this.state.imageName[i]} id={'img' + i} alt={this.state.imageName[i] + '-additional-photo'}
+                                                                                                        style={{ maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }}
+                                                                                                        onClick={(e) => this.swapImages(e.target)}
+                                                                                                />
                                                                                         </div>
                                                                                 );
                                                                         // if there arent enough additional photos, the grid would portray them improperly therefore an empty picture seems like a decent solution
                                                                         // 3 because max 3 photos and it starts from 0
                                                                         if (i !== 3) {
                                                                                 return <div key={i + '-item'} id='additional-photo-container2'>
-                                                                                        <img alt='additional-empty-pic' style={{ opacity: '0', height: 'inherit', maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }} />
+                                                                                        <img
+                                                                                                alt='additional-empty-pic'
+                                                                                                style={{ opacity: '0', height: 'inherit', maxWidth: '100%', cursor: 'pointer', fontSize: '0', margin: '0 auto' }}
+                                                                                        />
                                                                                 </div>
                                                                         }
 

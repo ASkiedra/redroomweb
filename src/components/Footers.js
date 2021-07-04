@@ -38,7 +38,7 @@ const Footer = ({ language }) => {
 export const StickyFooter = ({ language }) => {
     const url = useLocation().pathname;
 
-    // if there are at least 6 '/' characters, it means the user is on a product page
+    // if there are at least 6 '/' characters and the url has 'products', it means the user is on a product page
     const productName = url.split('/')[2] === 'products' && url.split('/').length >= 6 && url.split('/')[5] + ' ' + url.split('/')[6] + '. ';
 
 

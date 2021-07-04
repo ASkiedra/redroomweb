@@ -14,13 +14,14 @@ const Interior = () => {
 
                         <div id="interior-container" style={{ paddingBottom: '12rem' }}>
                                 {
-                                        images.map(element => {
-                                                return (
-                                                        <div key={images.indexOf(element) + 'interior-photo'} id="interior-photo-container">
-                                                                <img style={{ transform: 'scale(2.3)', cursor: 'pointer' }} onClick={(e) => enlargeImage(e.target.src)} src={element.default} alt={element.default + '-photo'} />
-                                                        </div>
-                                                )
-                                        })
+                                        images.map((el, i) => <div id="interior-photo-container" key={i + '-interior-photo'}>
+                                                <img 
+                                                        src={el.default}
+                                                        onClick={e => enlargeImage(e.target.src)}
+                                                        style={{ transform: 'scale(2.3)', cursor: 'pointer' }}
+                                                        alt={el.default + '-photo'}
+                                                />
+                                        </div>)
                                 }
                         </div>
                 </div>

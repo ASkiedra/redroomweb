@@ -12,7 +12,7 @@ import PrivacyPolicy from './PrivacyPolicy';
 
 const Routes = ({ SUPPORTED_LANGUAGES, language, setLanguage }) => {
     const location = useLocation();
-console.log(language)
+    
     // on every route change
     useEffect(() => {
         const locationLanguage = location.pathname[1] + location.pathname[2];

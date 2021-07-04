@@ -12,15 +12,22 @@ const Manufacturers = ({ language }) => {
 
     return (
         <div style={{ paddingBottom: '11rem', height: 'inherit' }}>
-            <div id='gamintoju-grid' style={{ paddingBottom: '5rem' }}>
-                {manufacturers.map(manufacturer => {
+            <div 
+                id='gamintoju-grid' 
+                style={{ paddingBottom: '5rem' }}
+            >
+                {manufacturers.map((manufacturer, i) => {
                     return (
-                        <div className="manufacturer-div" key={manufacturer}>
-                            <Link to={`/${language}/products///${manufacturer}`}
+                        <div className="manufacturer-div" key={i}>
+                            <Link 
+                                to={`/${language}/products///${manufacturer}`}
                                 className="flexbox-container"
                                 style={{ width: "100%", height: "100%" }}
                             >
-                                <img alt={manufacturer + "-logo"} src={"/images/logos/" + manufacturer + ".png"} />
+                                <img 
+                                    alt={manufacturer + "-logo"} 
+                                    src={"/images/logos/" + manufacturer + ".png"} 
+                                />
                             </Link>
                         </div>
                     )

@@ -35,7 +35,7 @@ const FullScreen = ({editableComponent}) => {
             <div id='background-container-2'>
                 <img className='big-img-container'
                     id='enlarged-img'
-                    onClick={() => { document.getElementById(editableComponent || null).style.opacity = '1'}}
+                    onClick={editableComponent ? () => { document.getElementById(editableComponent).style.opacity = '1'} : null}
                     src='https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg'
                     alt='enlarged'
                 />
