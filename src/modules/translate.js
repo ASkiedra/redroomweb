@@ -6,7 +6,6 @@ export default function translateMainCats(text) {
     if (typeof text !== 'string')
         return null;
 
-
     switch (text.toUpperCase()) {
         case 'DAY SYSTEMS':
             text = 'DIENOS SISTEMOS';
