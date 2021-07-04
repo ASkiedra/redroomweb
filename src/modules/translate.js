@@ -37,6 +37,10 @@ export default function translateMainCats(text) {
 
 // used in menu dropdown, AllProducts filter, BcAndLanguages to translate breadcrumbs
 export const translateSubCats = text => {
+    if (typeof text !== 'string')
+        return null;
+
+
     switch (text.toUpperCase()) {
         case 'SALON FURNITURE SYSTEMS':
             text = 'SVETAINĖS IR TV BALDŲ SISTEMOS';
@@ -147,6 +151,10 @@ export const translateSubCats = text => {
 
 // used in BcAndLanguages to translate breadcrumbs
 export const translateMainItems = text => {
+    if (typeof text !== 'string')
+        return null;
+
+
     switch (text.toUpperCase()) {
         case 'CONTACTS':
             text = 'KONTAKTAI';
