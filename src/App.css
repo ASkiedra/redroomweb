@@ -27,6 +27,12 @@ footer #social-media-logos img {
   width: 2rem;
 }
 
+#product-page-container {
+  padding-top: 1rem;
+  padding-bottom: 18rem;
+  min-height: inherit;
+}
+
 #first-footer ul li {
   background-color: #f5f3f4;
   padding: 1.1rem 0;
@@ -209,10 +215,25 @@ footer #div-for-text:hover {
   overflow: hidden;
 }
 
+.product-manuf-and-name {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
 #product-text-container {
   width: 100%;
   margin: 0 auto;
   text-align: center;
+}
+
+#product-text-container > h3 {
+  display: inline;
+  font-weight: normal;
+  text-align: center;
+  position: relative;
+  margin-top: 3rem;
+  z-index: 0;
 }
 
 #breadcrumbs-links span {
@@ -286,11 +307,11 @@ html {
   text-align: center;
 }
 
-.product-name {
+#product-text-container > h3 {
   text-align: center;
 }
 
-#product-name {
+#product-text-container > h3 {
   font-size: 1.4rem;
 }
 
@@ -409,6 +430,20 @@ header ul li {
 }
 header ul li img {
   width: 60%;
+}
+
+#container-404 {
+  height: inherit;
+}
+
+#container-404 > h1 {
+  margin-top: 10%;
+  font-size: 6rem;
+  font-weight: lighter;
+  font-family: "Roboto";
+  text-align: center;
+  margin: 0 auto;
+  width: 95%;
 }
 
 .content-box {
@@ -618,6 +653,8 @@ a {
   background: #000000e8;
   width: 100vw;
   height: 100vh;
+  cursor: pointer;
+  background: rgb(0 0 0 / 85%);
   position: absolute;
   z-index: 9999;
   top: 0;
@@ -715,6 +752,7 @@ a {
 }
 
 .dropdown2 {
+  /* previous background for reference */
   /* background: rgba(0, 0, 0, 0.8301); */
   background: rgba(0, 0, 0, 1);
 }
@@ -729,6 +767,7 @@ a {
 }
 .dropdown {
   background: rgba(0, 0, 0, 1);
+  /* previous background for reference */
   /* background: rgba(0, 0, 0, 0.8301); */
   width: 100vw;
   position: relative;
@@ -889,7 +928,7 @@ a {
   font-weight: 300;
 }
 
-.product-name {
+#product-text-container > h3 {
   text-decoration: none;
   z-index: 100;
   position: relative;
@@ -1172,6 +1211,16 @@ body {
 
 footer #social-media-logos a {
   padding: 0 0.4rem;
+}
+
+.big-img-container{
+  z-index: 111;
+  border-radius: 5px;
+}
+
+#main-container {
+  min-height: 90vh;
+  margin-top: 5rem;
 }
 
 /* ~2k support */
@@ -1762,7 +1811,7 @@ footer #social-media-logos a {
     font-size: 11px;
   }
 
-  #product-name {
+  #product-text-container > h3 {
     font-size: 3rem;
   }
   #product-text {

@@ -119,10 +119,10 @@ const Header = (props) => {
                         //   3, 4
                         //   5, ...
                         dropdownCollection.map(collectionPart => {
-                            if (mainCategoriesArr.indexOf(collectionPart[0].toLowerCase()) !== -1)
+                            if (mainCategoriesArr.includes(collectionPart[0].toLowerCase()))
                                 return <li key={collectionPart[0]} style={{ textTransform: 'uppercase', fontWeight: "550", color: 'white' }} >
                                     {/* // if any items with the particular main category are in stock and also the first element in the collection, show them in the dropdown with a different style than the other items  */}
-                                    {mainCategoriesArr.indexOf(collectionPart[0].toLowerCase()) !== -1 &&
+                                    {mainCategoriesArr.includes(collectionPart[0].toLowerCase())&&
                                         <Link style={{ fontWeight: '520', color: 'white', paddingBottom: '0.5rem' }}
                                             to={`/${props.language}/products/${collectionPart[0].toLowerCase()}`}>
                                             {
@@ -136,7 +136,7 @@ const Header = (props) => {
                                     <ul style={{ width: '100%', marginTop: '0.5rem', listStyle: 'none' }}>
                                         {collectionPart.map(item => {
                                             // if its not the first item in the collection (not the big text) AND it exists in subCategoriesArr
-                                            if (collectionPart.indexOf(item) !== 0 && subCategoriesArr.indexOf(item.toLowerCase()) !== -1)
+                                            if (collectionPart.indexOf(item) !== 0 && subCategoriesArr.includes(item.toLowerCase()))
                                                 return <div key={item}>
                                                     <Link to={`/${props.language}/products//${item.toLowerCase()}`} className="dropdown-subtext" >
                                                         {

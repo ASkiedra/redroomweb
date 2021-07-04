@@ -1,34 +1,16 @@
 import React from "react";
+import FullScreen, { enlargeImage } from "./FullScreen";
 
-const importAll = (r) => r.keys().map(r);
+const importAll = r => r.keys().map(r);
 
-// set a dark backrgound and enlarge the clicked image
-const enlargeImage = (imgSrc) => {
-        if (document.getElementById("background-container")) {
-                document.getElementById("background-container").style.top = window.pageYOffset + 'px';
-                document.getElementById("background-container").classList.toggle("display-none");
-                document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
-                document.getElementById("enlarged-img").src = imgSrc;
-        }
-}
 
 const images = importAll(require.context('../../public/images/interior', false, /\.(jpg|bmp|ico|png|jpe?g|svg)$/));
-
 
 
 const Interior = () => {
         return (
                 <div style={{ minHeight: 'inherit' }}>
-                        <div style={{ cursor: 'pointer' }} onClick={() => {
-                                document.getElementById("background-container").classList.toggle("display-none");
-                                document.getElementsByTagName("body")[0].classList.toggle("setHeightLimit");
-                        }} className="display-none" id="background-container">
-
-                                <div id="background-container-2">
-                                        <img id="enlarged-img" alt='enlarged' src="https://i.ytimg.com/vi/MPV2METPeJU/maxresdefault.jpg" />
-                                </div>
-                        </div>
-
+                        <FullScreen />
 
                         <div id="interior-container" style={{ paddingBottom: '12rem' }}>
                                 {

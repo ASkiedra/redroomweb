@@ -4,25 +4,25 @@
 // used in AllProducts filter, menu dropdown, BcAndLanguages to translate breadcrumbs
 export default function translateMainCats(text) {
     switch (text.toUpperCase()) {
-        case "DAY SYSTEMS":
-            text = "DIENOS SISTEMOS";
+        case 'DAY SYSTEMS':
+            text = 'DIENOS SISTEMOS';
             break;
 
-        case "LIVING ROOM FURNITURE":
-            text = "SVETAINĖS IR VALGOMOJO BALDAI";
+        case 'LIVING ROOM FURNITURE':
+            text = 'SVETAINĖS IR VALGOMOJO BALDAI';
             break;
 
-        case "BEDROOM FURNITURE":
-            text = "MIEGAMOJO BALDAI";
+        case 'BEDROOM FURNITURE':
+            text = 'MIEGAMOJO BALDAI';
             break;
 
-        case "WARDROBE SYSTEMS":
-            text = "SPINTŲ SISTEMOS";
+        case 'WARDROBE SYSTEMS':
+            text = 'SPINTŲ SISTEMOS';
             break;
 
         // necessary for 'AllProducts'
-        case "OUTDOOR FURNITURE AND ACCESSORIES":
-            text = "LAUKO BALDAI IR AKSESUARAI";
+        case 'OUTDOOR FURNITURE AND ACCESSORIES':
+            text = 'LAUKO BALDAI IR AKSESUARAI';
             break;
 
         default:
@@ -33,155 +33,152 @@ export default function translateMainCats(text) {
 }
 
 // used in menu dropdown, AllProducts filter, BcAndLanguages to translate breadcrumbs
-export const translateSubCats = (text) => {
+export const translateSubCats = text => {
     switch (text.toUpperCase()) {
-        case "SALON FURNITURE SYSTEMS":
-            text = "SVETAINĖS IR TV BALDŲ SISTEMOS";
+        case 'SALON FURNITURE SYSTEMS':
+            text = 'SVETAINĖS IR TV BALDŲ SISTEMOS';
             break;
 
-        case "LOUNGE CHAIRS":
-            text = "POILSIO KĖDĖS";
+        case 'LOUNGE CHAIRS':
+            text = 'POILSIO KĖDĖS';
             break;
 
-        case "WORKPLACE FURNITURE":
-            text = "DARBO VIETOS";
+        case 'WORKPLACE FURNITURE':
+            text = 'DARBO VIETOS';
             break;
 
-        case "BEDS":
-            text = "LOVOS";
+        case 'BEDS':
+            text = 'LOVOS';
             break;
 
-        case "INTERIOR":
-            text = "INTERJERAS";
+        case 'INTERIOR':
+            text = 'INTERJERAS';
             break;
 
-        case "BOOKSHELVES":
-            text = "KNYGŲ LENTYNOS";
+        case 'BOOKSHELVES':
+            text = 'KNYGŲ LENTYNOS';
             break;
 
-        case "BED":
-            text = "LOVOS";
+        case 'BED':
+            text = 'LOVOS';
             break;
 
-        case "SOFA BEDS":
-            text = "SOFA LOVOS";
+        case 'SOFA BEDS':
+            text = 'SOFA LOVOS';
             break;
 
-        case "CHAIRS":
-            text = "KĖDĖS";
+        case 'CHAIRS':
+            text = 'KĖDĖS';
             break;
 
-        case "SOFAS":
-            text = "SOFOS";
+        case 'SOFAS':
+            text = 'SOFOS';
             break;
 
-        case "COFFEE TABLES":
-            text = "KAVOS STALIUKAI";
+        case 'COFFEE TABLES':
+            text = 'KAVOS STALIUKAI';
             break;
 
-        case "ARMCHAIRS":
-            text = "FOTELIAI";
+        case 'ARMCHAIRS':
+            text = 'FOTELIAI';
             break;
 
-        case "POUFS":
-            text = "SUOLIUKAI IR PUFAI";
+        case 'POUFS':
+            text = 'SUOLIUKAI IR PUFAI';
             break;
 
-        case "DINING TABLES":
-            text = "VALGOMOJO STALAI";
+        case 'DINING TABLES':
+            text = 'VALGOMOJO STALAI';
             break;
 
-        case "INDIVIDUALLY PLANNED WARDROBES":
-            text = "INDIVIDUALIAI PROJEKTUOJAMOS DRABUŽINĖS";
+        case 'INDIVIDUALLY PLANNED WARDROBES':
+            text = 'INDIVIDUALIAI PROJEKTUOJAMOS DRABUŽINĖS';
             break;
 
-        case "CLOTHING HANGERS":
-            text = "RŪBŲ KABYKLOS";
+        case 'CLOTHING HANGERS':
+            text = 'RŪBŲ KABYKLOS';
             break;
 
-        case "SIDEBOARDS":
-            text = "INDAUJOS";
+        case 'SIDEBOARDS':
+            text = 'INDAUJOS';
             break;
 
-        case "BEDSIDE CABINETS":
-            text = "SPINTELĖS PRIE LOVOS";
+        case 'BEDSIDE CABINETS':
+            text = 'SPINTELĖS PRIE LOVOS';
             break;
 
-        case "CHESTS OF DRAWERS":
-            text = "KOMODOS";
+        case 'CHESTS OF DRAWERS':
+            text = 'KOMODOS';
             break;
 
-        case "BEDROOM BENCHES":
-            text = "SUOLAI PRIE LOVOS";
+        case 'BEDROOM BENCHES':
+            text = 'SUOLAI PRIE LOVOS';
             break;
 
-        case "SUNBEDS":
-            text = "GULTAI";
+        case 'SUNBEDS':
+            text = 'GULTAI';
             break;
 
-        case "TABLES":
-            text = "STALAI";
+        case 'TABLES':
+            text = 'STALAI';
             break;
 
-        case "FURNITURE":
-            text = "BALDAI";
+        case 'FURNITURE':
+            text = 'BALDAI';
             break;
 
-
-        case "BASKETS":
-            text = "KREPŠIAI";
+        case 'BASKETS':
+            text = 'KREPŠIAI';
             break;
 
-        case "OUTDOOR FURNITURE AND ACCESSORIES":
-            text = "LAUKO BALDAI IR AKSESUARAI";
+        case 'OUTDOOR FURNITURE AND ACCESSORIES':
+            text = 'LAUKO BALDAI IR AKSESUARAI';
             break;
 
         default:
             text = null;
-            break;
     }
 
     return text;
 }
 
 // used in BcAndLanguages to translate breadcrumbs
-export const translateMainItems = (text) => {
+export const translateMainItems = text => {
     switch (text.toUpperCase()) {
-        case "CONTACTS":
-            text = "KONTAKTAI";
+        case 'CONTACTS':
+            text = 'KONTAKTAI';
             break;
 
-        case "MANUFACTURERS":
-            text = "GAMINTOJAI";
+        case 'MANUFACTURERS':
+            text = 'GAMINTOJAI';
             break;
 
-        case "INTERIOR":
-            text = "INTERJERAS";
+        case 'INTERIOR':
+            text = 'INTERJERAS';
             break;
 
-        case "PRODUCTS":
-            text = "PRODUKTAI";
+        case 'PRODUCTS':
+            text = 'PRODUKTAI';
             break;
 
-        case "FURNITURE":
-            text = "BALDAI";
+        case 'FURNITURE':
+            text = 'BALDAI';
             break;
 
-        case "PRIVACY POLICY":
-            text = "PRIVATUMO POLITIKA";
+        case 'PRIVACY POLICY':
+            text = 'PRIVATUMO POLITIKA';
             break;
 
-        case "INQUIRE":
-            text = "SIŲSTI UŽKLAUSĄ";
+        case 'INQUIRE':
+            text = 'SIŲSTI UŽKLAUSĄ';
             break;
 
-        case "DELIVERY":
-            text = "PRISTATYMO SĄLYGOS IR TERMINAI";
+        case 'DELIVERY':
+            text = 'PRISTATYMO SĄLYGOS IR TERMINAI';
             break;
 
         default:
             text = null;
-            break;
     }
 
     return text;

@@ -1,8 +1,10 @@
 import Products from './products';
 
 
-// filters all items when comparing their lowercase versions
 export default function filterLowercase(givenArr) {
+    if (typeof givenArr !== 'object' || givenArr.length === 0)
+        return [];
+    
     // extra security with 'const' instead of 'let'. pushing to array is possible but accidentally reassigning the value to a random value is prohibited
     const result = [];
 
@@ -10,8 +12,6 @@ export default function filterLowercase(givenArr) {
         let found = false;
 
         for (let i = 0; i < result.length; i++)
-            // an additional check is necessary because 'otherManufs' from 'Manufacturers.component.js' might be the same as the passed array and the client will definitely not remove something from otherManufs whenever available manufacturers change.
-            // if there are problems with case sensitivity - this function helps out a lot
             if (result[i].toLowerCase() === item.toLowerCase()) {
                 found = true;
                 break;
@@ -19,7 +19,7 @@ export default function filterLowercase(givenArr) {
 
 
         // if an item isn't empty and it wasn't found in the array, push it to the array of filtered items
-        if (!found && item !== "")
+        if (!found && item)
             result.push(item)
     });
 

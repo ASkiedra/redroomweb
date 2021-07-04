@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 import Products from '../modules/products';
 import translateMainCats, { translateSubCats } from "../modules/translate";
 import filterLowercase, { mainCategoriesArr, subCategoriesArr, manufacturersArr } from '../modules/filteredData';
 
 
-// cant store these in the state because it would update too often
 let paramsFiltersApplied = false, subCatFilterArr = [], mainCatFilterArr = [], manufFilterArr = [];
 
 export default class AllProducts extends Component {
@@ -221,7 +219,7 @@ export default class AllProducts extends Component {
         }
 }
 
-const MainContainer = (props) => {
+const MainContainer = props => {
         const [showFilter, setSF] = useState(window.innerWidth > 1149 ? true : false);
 
         useEffect(() => {
@@ -330,7 +328,7 @@ const MainContainer = (props) => {
 }
 
 // filters
-const SidebarItem = (props) => {
+const SidebarItem = props => {
         let text = props.value;
 
         // whether the filter is a mainCategory or a subCategory
@@ -355,7 +353,7 @@ const SidebarItem = (props) => {
 
 
 
-const Product = (props) => {
+const Product = props => {
         const path = `/images/products/${props.product.manufacturer}/${props.product.name}/${props.product.imageName[0]}`;
 
         return (
@@ -370,7 +368,7 @@ const Product = (props) => {
                                 <img style={{ margin: '0 auto' }} className="product-list-photo" src={path} alt={`${props.product.name}-logo`} />
                         </div>
 
-                        <p className={"product-name"}><b>{props.product.manufacturer}</b> {props.product.name}</p>
+                        <p className={"product-manuf-and-name"}><b>{props.product.manufacturer}</b> {props.product.name}</p>
                 </Link>
         );
 }
