@@ -1,15 +1,14 @@
 import translateMainCats from './translate';
 import {translateSubCats} from './translate';
 
-const junkValues = [null, undefined, NaN, 123, -123, 0.123, '', "zzz", "ąčęėįšųūž", {}, console.log(), []];
+const junkValues = [null, undefined, NaN, 123, '', "zzz", "ąčęėįšųūž", {}, console.log(), []];
 
 test('translateMainCats translates properly', () => {
     expect(translateMainCats("DAY SYSTEMS")).toBe("DIENOS SISTEMOS");
-    expect(translateMainCats("day systems")).not.toBe("");
-    expect(translateMainCats("LIVING ROOM FURNITURE")).toBe("SVETAINĖS IR VALGOMOJO BALDAI");
-    expect(translateMainCats("BEDROOM FURNITURE")).toBe("MIEGAMOJO BALDAI");
+    expect(translateMainCats("day systems")).toBe("DIENOS SISTEMOS");
+    expect(translateMainCats("living room furniture")).toBe("SVETAINĖS IR VALGOMOJO BALDAI");
+    expect(translateMainCats("bedroom furniture")).toBe("MIEGAMOJO BALDAI");
     expect(translateMainCats("wardrobe systems")).toBe("SPINTŲ SISTEMOS");
-    expect(translateMainCats("WARDROBESYSTEMS")).not.toBe("SPINTŲ SISTEMOS");
     expect(translateMainCats("outdoor furniture and accessories")).toBe("LAUKO BALDAI IR AKSESUARAI");
     expect(translateMainCats("OUTDOOR_FURNITURE_AND_ACCESSORIES")).not.toBe("LAUKO BALDAI IR AKSESUARAI");
 
@@ -43,7 +42,6 @@ test('translateSubCats translates properly', () => {
     expect(translateSubCats("furniture")).toBe("BALDAI");
     expect(translateSubCats("baskets")).toBe("KREPŠIAI");
     expect(translateSubCats("outdoor furniture and accessories")).toBe("LAUKO BALDAI IR AKSESUARAI");
-    expect(translateSubCats("")).toBe(null);
 
     junkValues.forEach(val => expect(translateSubCats(val)).toBe(null))
 })
