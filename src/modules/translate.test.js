@@ -13,7 +13,7 @@ test('translateMainCats translates properly', () => {
     expect(translateMainCats("outdoor furniture and accessories")).toBe("LAUKO BALDAI IR AKSESUARAI");
     expect(translateMainCats("OUTDOOR_FURNITURE_AND_ACCESSORIES")).not.toBe("LAUKO BALDAI IR AKSESUARAI");
 
-    const junkValues = [null, undefined, NaN, 123, -123, 0, '', ' ', "", " ", "AAA", "zzz"];
+    const junkValues = [null, undefined, NaN, 0, '', ' ', "", " ", "AAA", "zzz"];
     junkValues.forEach(val => expect(translateMainCats(val)).toBe(null))
 })
 
