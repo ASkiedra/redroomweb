@@ -1,6 +1,6 @@
 # <a href="https://red-room.lt/EN/">red-room.lt</a> website - ES6+, fast and scalable
 
-<p>Created by <a href="https://github.com/jonwow">jonwow</a>, designed by <a href="https://github.com/jonwow">jonwow</a> & <a href="https://github.com/OlimpoVaikas">OlimpoVaikas</a>, quality assurance by <a href="https://github.com/jonwow">jonwow</a> & <a href="https://github.com/dominykasvil">DomBomb</a>.</p>
+<p>Created by <a href="https://github.com/jonwow">jonwow</a>, designed by <a href="https://github.com/jonwow">jonwow</a> & <a href="https://github.com/OlimpoVaikas">OlimpoVaikas</a>, quality assurance by <a href="https://github.com/jonwow">jonwow</a>, <a href="https://github.com/dominykasvil">DomBomb</a> & <a href="https://github.com/askiedra">ASkiedra</a>.</p>
 
 <h1>React, Javascript & HTML + CSS</h1>
 
