@@ -1,8 +1,8 @@
-import translateMainCats from './translate';
-import {translateSubCats} from './translate';
+import translateMainCats, { translateMainItems, translateSubCats } from './translate';
 
-const junkValues = [null, undefined, NaN, 123, '', "zzz", "ąčęėįšųūž", {}, console.log(), []];
+const junkValues = [null, undefined, NaN, 0, '', "foo", true, {}, console.log, []];
 
+// to be improved - don't type expect(x).toBe(y) every time. use an array of objects & call the function in the forEach method
 test('translateMainCats translates properly', () => {
     expect(translateMainCats("DAY SYSTEMS")).toBe("DIENOS SISTEMOS");
     expect(translateMainCats("day systems")).toBe("DIENOS SISTEMOS");
@@ -10,10 +10,25 @@ test('translateMainCats translates properly', () => {
     expect(translateMainCats("bedroom furniture")).toBe("MIEGAMOJO BALDAI");
     expect(translateMainCats("wardrobe systems")).toBe("SPINTŲ SISTEMOS");
     expect(translateMainCats("outdoor furniture and accessories")).toBe("LAUKO BALDAI IR AKSESUARAI");
-    expect(translateMainCats("OUTDOOR_FURNITURE_AND_ACCESSORIES")).not.toBe("LAUKO BALDAI IR AKSESUARAI");
 
-    junkValues.forEach(val => expect(translateMainCats(val)).toBe(null))
+    junkValues.forEach(val => expect(translateMainCats(val)).toBe(null));
 })
+
+
+test('translateMainItems translates properly', () => {
+    expect(translateMainItems("CONTACTS")).toBe("KONTAKTAI");
+    expect(translateMainItems("contacts")).toBe("KONTAKTAI")
+    expect(translateMainItems("MANUFACTURERS")).toBe("GAMINTOJAI");
+    expect(translateMainItems("INTERIOR")).toBe("INTERJERAS");
+    expect(translateMainItems("PRODUCTS")).toBe("PRODUKTAI");
+    expect(translateMainItems("FURNITURE")).toBe("BALDAI");
+    expect(translateMainItems("PRIVACY POLICY")).toBe("PRIVATUMO POLITIKA");
+    expect(translateMainItems("INQUIRE")).toBe("SIŲSTI UŽKLAUSĄ");
+    expect(translateMainItems("DELIVERY")).toBe("PRISTATYMO SĄLYGOS IR TERMINAI");
+
+    junkValues.forEach(val => expect(translateMainCats(val)).toBe(null));
+})
+
 
 test('translateSubCats translates properly', () => {
     expect(translateSubCats("SALON FURNITURE SYSTEMS")).toBe("SVETAINĖS IR TV BALDŲ SISTEMOS");
@@ -43,5 +58,5 @@ test('translateSubCats translates properly', () => {
     expect(translateSubCats("baskets")).toBe("KREPŠIAI");
     expect(translateSubCats("outdoor furniture and accessories")).toBe("LAUKO BALDAI IR AKSESUARAI");
 
-    junkValues.forEach(val => expect(translateSubCats(val)).toBe(null))
+    junkValues.forEach(val => expect(translateSubCats(val)).toBe(null));
 })
