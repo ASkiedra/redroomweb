@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Products from '../modules/products';
 import { Link } from 'react-router-dom';
 import FullScreen, { enlargeImage } from './FullScreen';
+import separateWords from '../modules/separateWords';
+
 
 export default class ProductPage extends Component {
         state = {
@@ -50,19 +52,12 @@ export default class ProductPage extends Component {
                 }
         };
 
-        separateWords = text => {
-                if (typeof text !== 'string')
-                        return ['', ''];
 
-                let index = text.indexOf(' ');
-
-                return [text.substring(0, index), text.substring(index)];
-        };
 
 
         render() {
                 let i = 0, langIndex = this.props.language === 'LT' ? 0 : 1;
-                const separatedWords = this.separateWords(this.state.info[langIndex]);
+                const separatedWords = separateWords(this.state.info[langIndex]);
 
 
                 return (
